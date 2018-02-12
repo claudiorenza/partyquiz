@@ -11,13 +11,19 @@ import UIKit
 
 extension UIButton  {
   
-  func entering()  {
+    func entering(directionFrom: String, view: UIView)  {
     let enterAnimation = CABasicAnimation(keyPath: "position")
     
     
     var cgPointButtonInit = self.center
     let cgPointButtonFinal = cgPointButtonInit
-    cgPointButtonInit.x = -self.frame.width
+        
+        if(directionFrom == "left") {
+            cgPointButtonInit.x = -self.frame.width
+        } else if (directionFrom == "right")    {
+            cgPointButtonInit.x = view.bounds.width + self.frame.width
+            
+        }
     
     
     enterAnimation.fromValue = NSValue(cgPoint: cgPointButtonInit)

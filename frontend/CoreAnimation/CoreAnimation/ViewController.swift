@@ -10,18 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
-  @IBOutlet weak var buttonCreate: UIButton!
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
+    @IBOutlet weak var buttonCreate: UIButton!
+    @IBOutlet weak var buttonJoin: UIButton!
     
-    buttonCreate.entering()
-  }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+        buttonCreate.entering(directionFrom: "left", view: self.view)
+        buttonJoin.entering(directionFrom: "right", view: self.view)
+    }
 
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+      }
 
 
 }
