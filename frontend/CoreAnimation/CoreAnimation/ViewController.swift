@@ -10,11 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
-  @IBAction func createGame(_ sender: UIButton) {
-  }
+  @IBOutlet weak var buttonCreate: UIButton!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    buttonCreate.entering()
   }
 
   override func didReceiveMemoryWarning() {

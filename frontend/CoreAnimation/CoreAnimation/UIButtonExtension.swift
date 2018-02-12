@@ -13,9 +13,19 @@ extension UIButton  {
   
   func entering()  {
     let enterAnimation = CABasicAnimation(keyPath: "position")
-    enterAnimation.fromValue = [0, 0]
-    enterAnimation.toValue = [100, 100]
     
+    
+    var cgPointButtonInit = self.center
+    let cgPointButtonFinal = cgPointButtonInit
+    cgPointButtonInit.x = -self.frame.width
+    
+    
+    enterAnimation.fromValue = NSValue(cgPoint: cgPointButtonInit)
+    enterAnimation.toValue = NSValue(cgPoint: cgPointButtonFinal)
+    
+    
+    enterAnimation.duration = 1.0
+    enterAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
     
     layer.add(enterAnimation, forKey: nil)
   }
