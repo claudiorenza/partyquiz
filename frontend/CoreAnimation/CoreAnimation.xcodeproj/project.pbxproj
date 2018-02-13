@@ -14,6 +14,8 @@
 		CD3BC91C2031CE3600E032FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD3BC91B2031CE3600E032FE /* Assets.xcassets */; };
 		CD3BC91F2031CE3600E032FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD3BC91D2031CE3600E032FE /* LaunchScreen.storyboard */; };
 		CD3BC9272031CE6C00E032FE /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC9262031CE6C00E032FE /* UIButtonExtension.swift */; };
+		CD3BC9372033093100E032FE /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC9362033093100E032FE /* MainMenuView.swift */; };
+		CD3BC93D20330BF600E032FE /* MainMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3BC93C20330BF600E032FE /* MainMenuView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		CD3BC91E2031CE3600E032FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD3BC9202031CE3600E032FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD3BC9262031CE6C00E032FE /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		CD3BC9362033093100E032FE /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
+		CD3BC93C20330BF600E032FE /* MainMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenuView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				CD3BC9202031CE3600E032FE /* Info.plist */,
 				CD3BC9182031CE3600E032FE /* CoreAnimation.xcdatamodeld */,
 				CD3BC9262031CE6C00E032FE /* UIButtonExtension.swift */,
+				CD3BC9362033093100E032FE /* MainMenuView.swift */,
+				CD3BC93C20330BF600E032FE /* MainMenuView.xib */,
 			);
 			path = CoreAnimation;
 			sourceTree = "<group>";
@@ -131,6 +137,7 @@
 			files = (
 				CD3BC91F2031CE3600E032FE /* LaunchScreen.storyboard in Resources */,
 				CD3BC91C2031CE3600E032FE /* Assets.xcassets in Resources */,
+				CD3BC93D20330BF600E032FE /* MainMenuView.xib in Resources */,
 				CD3BC9172031CE3600E032FE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD3BC9372033093100E032FE /* MainMenuView.swift in Sources */,
 				CD3BC9142031CE3600E032FE /* ViewController.swift in Sources */,
 				CD3BC9272031CE6C00E032FE /* UIButtonExtension.swift in Sources */,
 				CD3BC9122031CE3600E032FE /* AppDelegate.swift in Sources */,
@@ -285,6 +293,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 89LM9XZWA3;
 				INFOPLIST_FILE = CoreAnimation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.abusivedesigners.CoreAnimation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -300,6 +309,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 89LM9XZWA3;
 				INFOPLIST_FILE = CoreAnimation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.abusivedesigners.CoreAnimation;
 				PRODUCT_NAME = "$(TARGET_NAME)";

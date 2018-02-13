@@ -10,14 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var buttonCreate: UIButton!
-    @IBOutlet weak var buttonJoin: UIButton!
+    var mainMenuView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        buttonCreate.entering(directionFrom: "left", view: self.view)
-        buttonJoin.entering(directionFrom: "right", view: self.view)
+        if let mainMenuView = Bundle.main.loadNibNamed("MainMenuView", owner: self, options: nil)?.first as? MainMenuView {
+          view.addSubview(mainMenuView)
+        }
+      
     }
 
     override func didReceiveMemoryWarning() {
