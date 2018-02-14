@@ -26,9 +26,18 @@ extension UIButton  {
     enterAnimation.toValue = NSValue(cgPoint: cgPointButtonFinal)
     enterAnimation.duration = 1.0
     enterAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+    
     layer.add(enterAnimation, forKey: nil)
   }
   
+    func buzzerDown(view: UIView) {
+        let down = CABasicAnimation(keyPath: "position")
+        down.fromValue = NSValue(cgPoint: self.center)
+        down.toValue = NSValue(cgPoint: CGPoint(x: self.center.x, y: (view.bounds.height + self.frame.height)))
+        down.duration = 1
+        
+        layer.add(down, forKey: nil)
+    }
   
 }
 
