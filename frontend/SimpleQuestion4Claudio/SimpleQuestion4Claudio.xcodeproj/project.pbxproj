@@ -95,20 +95,37 @@
 		ACA1703B2033069D003511AC /* SimpleQuestion4Claudio */ = {
 			isa = PBXGroup;
 			children = (
+				CD3A86FB203480EE00EF5AF7 /* View */,
+				CD3A86FA203480DD00EF5AF7 /* Controller */,
 				ACA1703C2033069D003511AC /* AppDelegate.swift */,
-				AC163DE6203451D900A0C4E4 /* MainPageViewController.swift */,
-				ACA1703E2033069D003511AC /* QuestionViewController.swift */,
 				AC163DED20345FA700A0C4E4 /* PeerManager.swift */,
 				ACA170402033069D003511AC /* Main.storyboard */,
 				ACA170432033069D003511AC /* Assets.xcassets */,
 				ACA170452033069D003511AC /* LaunchScreen.storyboard */,
-				AC163DF120346D5000A0C4E4 /* AnswersView.swift */,
-				AC163DEF20346CCE00A0C4E4 /* AnswersView.xib */,
 				CDE69FC120347A4200543F74 /* UIButtonExtension.swift */,
 				AC56F224203476490001EB4F /* Fonts */,
 				ACA170482033069D003511AC /* Info.plist */,
 			);
 			path = SimpleQuestion4Claudio;
+			sourceTree = "<group>";
+		};
+		CD3A86FA203480DD00EF5AF7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AC163DE6203451D900A0C4E4 /* MainPageViewController.swift */,
+				ACA1703E2033069D003511AC /* QuestionViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CD3A86FB203480EE00EF5AF7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AC163DF120346D5000A0C4E4 /* AnswersView.swift */,
+				AC163DEF20346CCE00A0C4E4 /* AnswersView.xib */,
+			);
+			name = View;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
