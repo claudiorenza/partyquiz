@@ -24,6 +24,7 @@
 		ACA170422033069D003511AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACA170402033069D003511AC /* Main.storyboard */; };
 		ACA170442033069D003511AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACA170432033069D003511AC /* Assets.xcassets */; };
 		ACA170472033069D003511AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACA170452033069D003511AC /* LaunchScreen.storyboard */; };
+		CDE69FC220347A4200543F74 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE69FC120347A4200543F74 /* UIButtonExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		ACA170432033069D003511AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACA170462033069D003511AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACA170482033069D003511AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDE69FC120347A4200543F74 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				ACA170452033069D003511AC /* LaunchScreen.storyboard */,
 				AC163DF120346D5000A0C4E4 /* AnswersView.swift */,
 				AC163DEF20346CCE00A0C4E4 /* AnswersView.xib */,
+				CDE69FC120347A4200543F74 /* UIButtonExtension.swift */,
 				AC56F224203476490001EB4F /* Fonts */,
 				ACA170482033069D003511AC /* Info.plist */,
 			);
@@ -194,6 +197,7 @@
 				AC163DEE20345FA700A0C4E4 /* PeerManager.swift in Sources */,
 				ACA1703D2033069D003511AC /* AppDelegate.swift in Sources */,
 				AC163DF220346D5000A0C4E4 /* AnswersView.swift in Sources */,
+				CDE69FC220347A4200543F74 /* UIButtonExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
