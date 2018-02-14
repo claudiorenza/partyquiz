@@ -16,6 +16,11 @@
 		CD3BC9272031CE6C00E032FE /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC9262031CE6C00E032FE /* UIButtonExtension.swift */; };
 		CD3BC9372033093100E032FE /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC9362033093100E032FE /* MainMenuView.swift */; };
 		CD3BC93D20330BF600E032FE /* MainMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3BC93C20330BF600E032FE /* MainMenuView.xib */; };
+		CD3BC9432033512900E032FE /* BuzzerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC9422033512900E032FE /* BuzzerViewController.swift */; };
+		CD3BC9462033519B00E032FE /* ClassicBuzzerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3BC9452033519B00E032FE /* ClassicBuzzerView.xib */; };
+		CD3BC948203351AD00E032FE /* ClassicBuzzerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC947203351AD00E032FE /* ClassicBuzzerView.swift */; };
+		CD3BC94A2033521400E032FE /* QuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3BC9492033521400E032FE /* QuestionView.xib */; };
+		CD3BC94C2033524100E032FE /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC94B2033524100E032FE /* QuestionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +35,11 @@
 		CD3BC9262031CE6C00E032FE /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		CD3BC9362033093100E032FE /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		CD3BC93C20330BF600E032FE /* MainMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenuView.xib; sourceTree = "<group>"; };
+		CD3BC9422033512900E032FE /* BuzzerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuzzerViewController.swift; sourceTree = "<group>"; };
+		CD3BC9452033519B00E032FE /* ClassicBuzzerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassicBuzzerView.xib; sourceTree = "<group>"; };
+		CD3BC947203351AD00E032FE /* ClassicBuzzerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicBuzzerView.swift; sourceTree = "<group>"; };
+		CD3BC9492033521400E032FE /* QuestionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionView.xib; sourceTree = "<group>"; };
+		CD3BC94B2033524100E032FE /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,18 +72,55 @@
 		CD3BC9102031CE3600E032FE /* CoreAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				CD3BC94D20335B1F00E032FE /* Controller */,
+				CD3BC94120334BA400E032FE /* View */,
 				CD3BC9112031CE3600E032FE /* AppDelegate.swift */,
-				CD3BC9132031CE3600E032FE /* ViewController.swift */,
 				CD3BC9152031CE3600E032FE /* Main.storyboard */,
 				CD3BC91B2031CE3600E032FE /* Assets.xcassets */,
 				CD3BC91D2031CE3600E032FE /* LaunchScreen.storyboard */,
 				CD3BC9202031CE3600E032FE /* Info.plist */,
 				CD3BC9182031CE3600E032FE /* CoreAnimation.xcdatamodeld */,
 				CD3BC9262031CE6C00E032FE /* UIButtonExtension.swift */,
+			);
+			path = CoreAnimation;
+			sourceTree = "<group>";
+		};
+		CD3BC94020334B9200E032FE /* MainMenuView */ = {
+			isa = PBXGroup;
+			children = (
 				CD3BC9362033093100E032FE /* MainMenuView.swift */,
 				CD3BC93C20330BF600E032FE /* MainMenuView.xib */,
 			);
-			path = CoreAnimation;
+			path = MainMenuView;
+			sourceTree = "<group>";
+		};
+		CD3BC94120334BA400E032FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD3BC9442033517C00E032FE /* BuzzerView */,
+				CD3BC94020334B9200E032FE /* MainMenuView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CD3BC9442033517C00E032FE /* BuzzerView */ = {
+			isa = PBXGroup;
+			children = (
+				CD3BC9452033519B00E032FE /* ClassicBuzzerView.xib */,
+				CD3BC947203351AD00E032FE /* ClassicBuzzerView.swift */,
+				CD3BC9492033521400E032FE /* QuestionView.xib */,
+				CD3BC94B2033524100E032FE /* QuestionView.swift */,
+			);
+			path = BuzzerView;
+			sourceTree = "<group>";
+		};
+		CD3BC94D20335B1F00E032FE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CD3BC9422033512900E032FE /* BuzzerViewController.swift */,
+				CD3BC9132031CE3600E032FE /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +184,8 @@
 			files = (
 				CD3BC91F2031CE3600E032FE /* LaunchScreen.storyboard in Resources */,
 				CD3BC91C2031CE3600E032FE /* Assets.xcassets in Resources */,
+				CD3BC94A2033521400E032FE /* QuestionView.xib in Resources */,
+				CD3BC9462033519B00E032FE /* ClassicBuzzerView.xib in Resources */,
 				CD3BC93D20330BF600E032FE /* MainMenuView.xib in Resources */,
 				CD3BC9172031CE3600E032FE /* Main.storyboard in Resources */,
 			);
@@ -149,10 +198,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD3BC94C2033524100E032FE /* QuestionView.swift in Sources */,
 				CD3BC9372033093100E032FE /* MainMenuView.swift in Sources */,
 				CD3BC9142031CE3600E032FE /* ViewController.swift in Sources */,
 				CD3BC9272031CE6C00E032FE /* UIButtonExtension.swift in Sources */,
 				CD3BC9122031CE3600E032FE /* AppDelegate.swift in Sources */,
+				CD3BC9432033512900E032FE /* BuzzerViewController.swift in Sources */,
+				CD3BC948203351AD00E032FE /* ClassicBuzzerView.swift in Sources */,
 				CD3BC91A2031CE3600E032FE /* CoreAnimation.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

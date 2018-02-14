@@ -15,9 +15,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let mainMenuView = Bundle.main.loadNibNamed("MainMenuView", owner: self, options: nil)?.first as? MainMenuView {
-          view.addSubview(mainMenuView)
+          
+          self.view.addSubview(mainMenuView)
+            
+          mainMenuView.frame = view.frame
+          //view.autoresizesSubviews = true
+          
         }
-      
     }
 
     override func didReceiveMemoryWarning() {
