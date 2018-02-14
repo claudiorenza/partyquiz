@@ -12,11 +12,16 @@ import MultipeerConnectivity
 class MainPageViewController: UIViewController, MCBrowserViewControllerDelegate, MCNearbyServiceBrowserDelegate, MCAdvertiserAssistantDelegate {
   
   func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
-    dismiss(animated: true, completion: nil)
+    dismiss(animated: true, completion: {
+        PeerManager.shared.browser?.stopBrowsingForPeers()
+        PeerManager.shared.advertiser?.stop()
+       self.performSegue(withIdentifier: "GameController", sender: nil)
+    })
   }
   
   func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
     dismiss(animated: true, completion: {
+      PeerManager.shared.session?.disconnect()
       PeerManager.shared.browser?.stopBrowsingForPeers()
       PeerManager.shared.advertiser?.stop()
     })

@@ -108,7 +108,6 @@
                                 <state key="normal" image="Icon(Infos)"/>
                                 <connections>
                                     <action selector="pressForInfo:" destination="g28-jk-LDH" eventType="touchUpInside" id="nWh-Vc-ZRU"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="1U8-ke-Uos"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQa-rH-uGx">
@@ -128,6 +127,7 @@
                         <outlet property="createGameOutlet" destination="EpX-uI-O5M" id="X1B-lN-z2N"/>
                         <outlet property="joinGameOutlet" destination="GdX-al-lOJ" id="o9E-9x-whX"/>
                         <outlet property="labelOutlet" destination="WQa-rH-uGx" id="1UI-hh-epd"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="GameController" id="Twx-G7-Kph"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RKC-Yr-skb" sceneMemberID="firstResponder"/>
