@@ -21,6 +21,8 @@
 		CD3BC948203351AD00E032FE /* ClassicBuzzerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC947203351AD00E032FE /* ClassicBuzzerView.swift */; };
 		CD3BC94A2033521400E032FE /* QuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3BC9492033521400E032FE /* QuestionView.xib */; };
 		CD3BC94C2033524100E032FE /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC94B2033524100E032FE /* QuestionView.swift */; };
+		CDE69FB7203456A000543F74 /* AnswersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDE69FB6203456A000543F74 /* AnswersView.xib */; };
+		CDE69FBB20345B8E00543F74 /* AnswersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE69FBA20345B8E00543F74 /* AnswersView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		CD3BC947203351AD00E032FE /* ClassicBuzzerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicBuzzerView.swift; sourceTree = "<group>"; };
 		CD3BC9492033521400E032FE /* QuestionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionView.xib; sourceTree = "<group>"; };
 		CD3BC94B2033524100E032FE /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		CDE69FB6203456A000543F74 /* AnswersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswersView.xib; sourceTree = "<group>"; };
+		CDE69FBA20345B8E00543F74 /* AnswersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,8 @@
 			children = (
 				CD3BC9452033519B00E032FE /* ClassicBuzzerView.xib */,
 				CD3BC947203351AD00E032FE /* ClassicBuzzerView.swift */,
+				CDE69FB6203456A000543F74 /* AnswersView.xib */,
+				CDE69FBA20345B8E00543F74 /* AnswersView.swift */,
 				CD3BC9492033521400E032FE /* QuestionView.xib */,
 				CD3BC94B2033524100E032FE /* QuestionView.swift */,
 			);
@@ -185,6 +191,7 @@
 				CD3BC91F2031CE3600E032FE /* LaunchScreen.storyboard in Resources */,
 				CD3BC91C2031CE3600E032FE /* Assets.xcassets in Resources */,
 				CD3BC94A2033521400E032FE /* QuestionView.xib in Resources */,
+				CDE69FB7203456A000543F74 /* AnswersView.xib in Resources */,
 				CD3BC9462033519B00E032FE /* ClassicBuzzerView.xib in Resources */,
 				CD3BC93D20330BF600E032FE /* MainMenuView.xib in Resources */,
 				CD3BC9172031CE3600E032FE /* Main.storyboard in Resources */,
@@ -202,6 +209,7 @@
 				CD3BC9372033093100E032FE /* MainMenuView.swift in Sources */,
 				CD3BC9142031CE3600E032FE /* ViewController.swift in Sources */,
 				CD3BC9272031CE6C00E032FE /* UIButtonExtension.swift in Sources */,
+				CDE69FBB20345B8E00543F74 /* AnswersView.swift in Sources */,
 				CD3BC9122031CE3600E032FE /* AppDelegate.swift in Sources */,
 				CD3BC9432033512900E032FE /* BuzzerViewController.swift in Sources */,
 				CD3BC948203351AD00E032FE /* ClassicBuzzerView.swift in Sources */,
