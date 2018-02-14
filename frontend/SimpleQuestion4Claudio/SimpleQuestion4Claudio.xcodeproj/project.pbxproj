@@ -1,0 +1,405 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC163DE7203451D900A0C4E4 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC163DE6203451D900A0C4E4 /* MainPageViewController.swift */; };
+		AC163DEA203452A000A0C4E4 /* CoreAnimation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC163DE82034529F00A0C4E4 /* CoreAnimation.xcdatamodeld */; };
+		AC163DEC203452A900A0C4E4 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC163DEB203452A900A0C4E4 /* UIButtonExtension.swift */; };
+		AC163DEE20345FA700A0C4E4 /* PeerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC163DED20345FA700A0C4E4 /* PeerManager.swift */; };
+		AC163DF020346CCE00A0C4E4 /* AnswersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC163DEF20346CCE00A0C4E4 /* AnswersView.xib */; };
+		AC163DF220346D5000A0C4E4 /* AnswersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC163DF120346D5000A0C4E4 /* AnswersView.swift */; };
+		AC56F21B203476320001EB4F /* Trivial-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = AC56F214203476310001EB4F /* Trivial-ExtraLight.otf */; };
+		AC56F21C203476320001EB4F /* Trivial-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = AC56F215203476310001EB4F /* Trivial-Thin.otf */; };
+		AC56F21D203476320001EB4F /* Trivial-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = AC56F216203476310001EB4F /* Trivial-Heavy.otf */; };
+		AC56F21E203476320001EB4F /* Trivial-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = AC56F217203476310001EB4F /* Trivial-Light.otf */; };
+		AC56F21F203476320001EB4F /* Trivial-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = AC56F218203476310001EB4F /* Trivial-Regular.otf */; };
+		AC56F220203476320001EB4F /* Trivial-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = AC56F219203476320001EB4F /* Trivial-UltraLight.otf */; };
+		AC56F221203476320001EB4F /* Trivial-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AC56F21A203476320001EB4F /* Trivial-Bold.otf */; };
+		AC56F2232034763F0001EB4F /* TRAJANUS.TTF in Resources */ = {isa = PBXBuildFile; fileRef = AC56F2222034763F0001EB4F /* TRAJANUS.TTF */; };
+		ACA1703D2033069D003511AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA1703C2033069D003511AC /* AppDelegate.swift */; };
+		ACA1703F2033069D003511AC /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA1703E2033069D003511AC /* QuestionViewController.swift */; };
+		ACA170422033069D003511AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACA170402033069D003511AC /* Main.storyboard */; };
+		ACA170442033069D003511AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACA170432033069D003511AC /* Assets.xcassets */; };
+		ACA170472033069D003511AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACA170452033069D003511AC /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AC163DE6203451D900A0C4E4 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		AC163DE92034529F00A0C4E4 /* CoreAnimation.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreAnimation.xcdatamodel; sourceTree = "<group>"; };
+		AC163DEB203452A900A0C4E4 /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIButtonExtension.swift; path = ../../../Documents/GitHub/partyquiz/frontend/CoreAnimation/CoreAnimation/UIButtonExtension.swift; sourceTree = "<group>"; };
+		AC163DED20345FA700A0C4E4 /* PeerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerManager.swift; sourceTree = "<group>"; };
+		AC163DEF20346CCE00A0C4E4 /* AnswersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswersView.xib; sourceTree = "<group>"; };
+		AC163DF120346D5000A0C4E4 /* AnswersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersView.swift; sourceTree = "<group>"; };
+		AC56F214203476310001EB4F /* Trivial-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Trivial-ExtraLight.otf"; sourceTree = "<group>"; };
+		AC56F215203476310001EB4F /* Trivial-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Trivial-Thin.otf"; sourceTree = "<group>"; };
+		AC56F216203476310001EB4F /* Trivial-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Trivial-Heavy.otf"; sourceTree = "<group>"; };
+		AC56F217203476310001EB4F /* Trivial-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Trivial-Light.otf"; sourceTree = "<group>"; };
+		AC56F218203476310001EB4F /* Trivial-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Trivial-Regular.otf"; sourceTree = "<group>"; };
+		AC56F219203476320001EB4F /* Trivial-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Trivial-UltraLight.otf"; sourceTree = "<group>"; };
+		AC56F21A203476320001EB4F /* Trivial-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Trivial-Bold.otf"; sourceTree = "<group>"; };
+		AC56F2222034763F0001EB4F /* TRAJANUS.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = TRAJANUS.TTF; sourceTree = "<group>"; };
+		ACA170392033069D003511AC /* SimpleQuestion4Claudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleQuestion4Claudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACA1703C2033069D003511AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ACA1703E2033069D003511AC /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		ACA170412033069D003511AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ACA170432033069D003511AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ACA170462033069D003511AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ACA170482033069D003511AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ACA170362033069D003511AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AC56F224203476490001EB4F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AC56F2222034763F0001EB4F /* TRAJANUS.TTF */,
+				AC56F21A203476320001EB4F /* Trivial-Bold.otf */,
+				AC56F214203476310001EB4F /* Trivial-ExtraLight.otf */,
+				AC56F216203476310001EB4F /* Trivial-Heavy.otf */,
+				AC56F217203476310001EB4F /* Trivial-Light.otf */,
+				AC56F218203476310001EB4F /* Trivial-Regular.otf */,
+				AC56F215203476310001EB4F /* Trivial-Thin.otf */,
+				AC56F219203476320001EB4F /* Trivial-UltraLight.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		ACA170302033069D003511AC = {
+			isa = PBXGroup;
+			children = (
+				ACA1703B2033069D003511AC /* SimpleQuestion4Claudio */,
+				ACA1703A2033069D003511AC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ACA1703A2033069D003511AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ACA170392033069D003511AC /* SimpleQuestion4Claudio.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ACA1703B2033069D003511AC /* SimpleQuestion4Claudio */ = {
+			isa = PBXGroup;
+			children = (
+				ACA1703C2033069D003511AC /* AppDelegate.swift */,
+				AC163DE6203451D900A0C4E4 /* MainPageViewController.swift */,
+				ACA1703E2033069D003511AC /* QuestionViewController.swift */,
+				AC163DED20345FA700A0C4E4 /* PeerManager.swift */,
+				ACA170402033069D003511AC /* Main.storyboard */,
+				ACA170432033069D003511AC /* Assets.xcassets */,
+				ACA170452033069D003511AC /* LaunchScreen.storyboard */,
+				AC163DF120346D5000A0C4E4 /* AnswersView.swift */,
+				AC163DEF20346CCE00A0C4E4 /* AnswersView.xib */,
+				AC56F224203476490001EB4F /* Fonts */,
+				ACA170482033069D003511AC /* Info.plist */,
+				AC163DE82034529F00A0C4E4 /* CoreAnimation.xcdatamodeld */,
+				AC163DEB203452A900A0C4E4 /* UIButtonExtension.swift */,
+			);
+			path = SimpleQuestion4Claudio;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ACA170382033069D003511AC /* SimpleQuestion4Claudio */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACA1704B2033069D003511AC /* Build configuration list for PBXNativeTarget "SimpleQuestion4Claudio" */;
+			buildPhases = (
+				ACA170352033069D003511AC /* Sources */,
+				ACA170362033069D003511AC /* Frameworks */,
+				ACA170372033069D003511AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpleQuestion4Claudio;
+			productName = SimpleQuestion4Claudio;
+			productReference = ACA170392033069D003511AC /* SimpleQuestion4Claudio.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ACA170312033069D003511AC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Giovanni Frate";
+				TargetAttributes = {
+					ACA170382033069D003511AC = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = ACA170342033069D003511AC /* Build configuration list for PBXProject "SimpleQuestion4Claudio" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ACA170302033069D003511AC;
+			productRefGroup = ACA1703A2033069D003511AC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ACA170382033069D003511AC /* SimpleQuestion4Claudio */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ACA170372033069D003511AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC56F2232034763F0001EB4F /* TRAJANUS.TTF in Resources */,
+				AC56F221203476320001EB4F /* Trivial-Bold.otf in Resources */,
+				AC56F21E203476320001EB4F /* Trivial-Light.otf in Resources */,
+				AC56F21B203476320001EB4F /* Trivial-ExtraLight.otf in Resources */,
+				AC56F21D203476320001EB4F /* Trivial-Heavy.otf in Resources */,
+				AC56F220203476320001EB4F /* Trivial-UltraLight.otf in Resources */,
+				ACA170472033069D003511AC /* LaunchScreen.storyboard in Resources */,
+				AC56F21C203476320001EB4F /* Trivial-Thin.otf in Resources */,
+				ACA170442033069D003511AC /* Assets.xcassets in Resources */,
+				AC163DF020346CCE00A0C4E4 /* AnswersView.xib in Resources */,
+				ACA170422033069D003511AC /* Main.storyboard in Resources */,
+				AC56F21F203476320001EB4F /* Trivial-Regular.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ACA170352033069D003511AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACA1703F2033069D003511AC /* QuestionViewController.swift in Sources */,
+				AC163DEC203452A900A0C4E4 /* UIButtonExtension.swift in Sources */,
+				AC163DE7203451D900A0C4E4 /* MainPageViewController.swift in Sources */,
+				AC163DEE20345FA700A0C4E4 /* PeerManager.swift in Sources */,
+				ACA1703D2033069D003511AC /* AppDelegate.swift in Sources */,
+				AC163DEA203452A000A0C4E4 /* CoreAnimation.xcdatamodeld in Sources */,
+				AC163DF220346D5000A0C4E4 /* AnswersView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		ACA170402033069D003511AC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ACA170412033069D003511AC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ACA170452033069D003511AC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ACA170462033069D003511AC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ACA170492033069D003511AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ACA1704A2033069D003511AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ACA1704C2033069D003511AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V2L54HAWB7;
+				INFOPLIST_FILE = SimpleQuestion4Claudio/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = johnny.SimpleQuestion4Claudio;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ACA1704D2033069D003511AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V2L54HAWB7;
+				INFOPLIST_FILE = SimpleQuestion4Claudio/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = johnny.SimpleQuestion4Claudio;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ACA170342033069D003511AC /* Build configuration list for PBXProject "SimpleQuestion4Claudio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACA170492033069D003511AC /* Debug */,
+				ACA1704A2033069D003511AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACA1704B2033069D003511AC /* Build configuration list for PBXNativeTarget "SimpleQuestion4Claudio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACA1704C2033069D003511AC /* Debug */,
+				ACA1704D2033069D003511AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AC163DE82034529F00A0C4E4 /* CoreAnimation.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AC163DE92034529F00A0C4E4 /* CoreAnimation.xcdatamodel */,
+			);
+			currentVersion = AC163DE92034529F00A0C4E4 /* CoreAnimation.xcdatamodel */;
+			name = CoreAnimation.xcdatamodeld;
+			path = ../../../Documents/GitHub/partyquiz/frontend/CoreAnimation/CoreAnimation/CoreAnimation.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = ACA170312033069D003511AC /* Project object */;
+}
