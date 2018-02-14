@@ -27,12 +27,14 @@ class QuestionViewController: UIViewController {
   @IBAction func pressBuzzer(_ sender: UIButton) {
     sender.buzzerDown(view: self.view)
     if let answersView = Bundle.main.loadNibNamed("AnswersView", owner: self, options: nil)?.first as? AnswersView {
+      
+      answersView.frame = viewOutlet.frame
       answersView.setButton(tempButton: answersView.firstAnswer)
       answersView.setButton(tempButton: answersView.secondAnswer)
       answersView.setButton(tempButton: answersView.thirdAnswer)
       answersView.setButton(tempButton: answersView.fourthAnswer)
       
-      self.viewOutlet.addSubview(answersView)
+      self.view.addSubview(answersView)
     }
   }
   
