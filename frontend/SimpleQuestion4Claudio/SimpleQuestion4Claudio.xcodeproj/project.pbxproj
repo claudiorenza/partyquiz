@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		AC163DE7203451D900A0C4E4 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC163DE6203451D900A0C4E4 /* MainPageViewController.swift */; };
-		AC163DEA203452A000A0C4E4 /* CoreAnimation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC163DE82034529F00A0C4E4 /* CoreAnimation.xcdatamodeld */; };
-		AC163DEC203452A900A0C4E4 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC163DEB203452A900A0C4E4 /* UIButtonExtension.swift */; };
 		AC163DEE20345FA700A0C4E4 /* PeerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC163DED20345FA700A0C4E4 /* PeerManager.swift */; };
 		AC163DF020346CCE00A0C4E4 /* AnswersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC163DEF20346CCE00A0C4E4 /* AnswersView.xib */; };
 		AC163DF220346D5000A0C4E4 /* AnswersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC163DF120346D5000A0C4E4 /* AnswersView.swift */; };
@@ -26,12 +24,12 @@
 		ACA170422033069D003511AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACA170402033069D003511AC /* Main.storyboard */; };
 		ACA170442033069D003511AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACA170432033069D003511AC /* Assets.xcassets */; };
 		ACA170472033069D003511AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACA170452033069D003511AC /* LaunchScreen.storyboard */; };
+		CDE69FBF2034795700543F74 /* CoreAnimation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CDE69FBC2034795700543F74 /* CoreAnimation.xcdatamodeld */; };
+		CDE69FC02034795700543F74 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE69FBE2034795700543F74 /* UIButtonExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AC163DE6203451D900A0C4E4 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
-		AC163DE92034529F00A0C4E4 /* CoreAnimation.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreAnimation.xcdatamodel; sourceTree = "<group>"; };
-		AC163DEB203452A900A0C4E4 /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIButtonExtension.swift; path = ../../../Documents/GitHub/partyquiz/frontend/CoreAnimation/CoreAnimation/UIButtonExtension.swift; sourceTree = "<group>"; };
 		AC163DED20345FA700A0C4E4 /* PeerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerManager.swift; sourceTree = "<group>"; };
 		AC163DEF20346CCE00A0C4E4 /* AnswersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswersView.xib; sourceTree = "<group>"; };
 		AC163DF120346D5000A0C4E4 /* AnswersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersView.swift; sourceTree = "<group>"; };
@@ -50,6 +48,8 @@
 		ACA170432033069D003511AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACA170462033069D003511AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACA170482033069D003511AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDE69FBD2034795700543F74 /* CoreAnimation.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreAnimation.xcdatamodel; sourceTree = "<group>"; };
+		CDE69FBE2034795700543F74 /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIButtonExtension.swift; path = "../../../../../Dropbox (iOSDA-IT)/Xcode/partyquiz/frontend/CoreAnimation/CoreAnimation/UIButtonExtension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,8 +108,8 @@
 				AC163DEF20346CCE00A0C4E4 /* AnswersView.xib */,
 				AC56F224203476490001EB4F /* Fonts */,
 				ACA170482033069D003511AC /* Info.plist */,
-				AC163DE82034529F00A0C4E4 /* CoreAnimation.xcdatamodeld */,
-				AC163DEB203452A900A0C4E4 /* UIButtonExtension.swift */,
+				CDE69FBC2034795700543F74 /* CoreAnimation.xcdatamodeld */,
+				CDE69FBE2034795700543F74 /* UIButtonExtension.swift */,
 			);
 			path = SimpleQuestion4Claudio;
 			sourceTree = "<group>";
@@ -196,12 +196,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACA1703F2033069D003511AC /* QuestionViewController.swift in Sources */,
-				AC163DEC203452A900A0C4E4 /* UIButtonExtension.swift in Sources */,
 				AC163DE7203451D900A0C4E4 /* MainPageViewController.swift in Sources */,
 				AC163DEE20345FA700A0C4E4 /* PeerManager.swift in Sources */,
 				ACA1703D2033069D003511AC /* AppDelegate.swift in Sources */,
-				AC163DEA203452A000A0C4E4 /* CoreAnimation.xcdatamodeld in Sources */,
+				CDE69FC02034795700543F74 /* UIButtonExtension.swift in Sources */,
 				AC163DF220346D5000A0C4E4 /* AnswersView.swift in Sources */,
+				CDE69FBF2034795700543F74 /* CoreAnimation.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,14 +388,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		AC163DE82034529F00A0C4E4 /* CoreAnimation.xcdatamodeld */ = {
+		CDE69FBC2034795700543F74 /* CoreAnimation.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				AC163DE92034529F00A0C4E4 /* CoreAnimation.xcdatamodel */,
+				CDE69FBD2034795700543F74 /* CoreAnimation.xcdatamodel */,
 			);
-			currentVersion = AC163DE92034529F00A0C4E4 /* CoreAnimation.xcdatamodel */;
+			currentVersion = CDE69FBD2034795700543F74 /* CoreAnimation.xcdatamodel */;
 			name = CoreAnimation.xcdatamodeld;
-			path = ../../../Documents/GitHub/partyquiz/frontend/CoreAnimation/CoreAnimation/CoreAnimation.xcdatamodeld;
+			path = "../../../../../Dropbox (iOSDA-IT)/Xcode/partyquiz/frontend/CoreAnimation/CoreAnimation/CoreAnimation.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
