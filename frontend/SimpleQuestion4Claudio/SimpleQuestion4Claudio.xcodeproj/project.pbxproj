@@ -24,6 +24,10 @@
 		ACA170422033069D003511AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACA170402033069D003511AC /* Main.storyboard */; };
 		ACA170442033069D003511AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACA170432033069D003511AC /* Assets.xcassets */; };
 		ACA170472033069D003511AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACA170452033069D003511AC /* LaunchScreen.storyboard */; };
+		CD3A86FF203481E000EF5AF7 /* ClassicBuzzerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3A86FD203481E000EF5AF7 /* ClassicBuzzerView.xib */; };
+		CD3A8700203481E000EF5AF7 /* ClassicBuzzerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A86FE203481E000EF5AF7 /* ClassicBuzzerView.swift */; };
+		CD3A87032034820800EF5AF7 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A87012034820800EF5AF7 /* QuestionView.swift */; };
+		CD3A87042034820800EF5AF7 /* QuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3A87022034820800EF5AF7 /* QuestionView.xib */; };
 		CDE69FC220347A4200543F74 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE69FC120347A4200543F74 /* UIButtonExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +51,10 @@
 		ACA170432033069D003511AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACA170462033069D003511AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACA170482033069D003511AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD3A86FD203481E000EF5AF7 /* ClassicBuzzerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassicBuzzerView.xib; sourceTree = "<group>"; };
+		CD3A86FE203481E000EF5AF7 /* ClassicBuzzerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassicBuzzerView.swift; sourceTree = "<group>"; };
+		CD3A87012034820800EF5AF7 /* QuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		CD3A87022034820800EF5AF7 /* QuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionView.xib; sourceTree = "<group>"; };
 		CDE69FC120347A4200543F74 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,11 +129,23 @@
 		CD3A86FB203480EE00EF5AF7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CD3A86FC2034819300EF5AF7 /* Buzzers */,
 				AC163DF120346D5000A0C4E4 /* AnswersView.swift */,
 				AC163DEF20346CCE00A0C4E4 /* AnswersView.xib */,
+				CD3A87012034820800EF5AF7 /* QuestionView.swift */,
+				CD3A87022034820800EF5AF7 /* QuestionView.xib */,
 			);
 			name = View;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		CD3A86FC2034819300EF5AF7 /* Buzzers */ = {
+			isa = PBXGroup;
+			children = (
+				CD3A86FE203481E000EF5AF7 /* ClassicBuzzerView.swift */,
+				CD3A86FD203481E000EF5AF7 /* ClassicBuzzerView.xib */,
+			);
+			path = Buzzers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +209,8 @@
 			files = (
 				AC56F2232034763F0001EB4F /* TRAJANUS.TTF in Resources */,
 				AC56F221203476320001EB4F /* Trivial-Bold.otf in Resources */,
+				CD3A87042034820800EF5AF7 /* QuestionView.xib in Resources */,
+				CD3A86FF203481E000EF5AF7 /* ClassicBuzzerView.xib in Resources */,
 				AC56F21E203476320001EB4F /* Trivial-Light.otf in Resources */,
 				AC56F21B203476320001EB4F /* Trivial-ExtraLight.otf in Resources */,
 				AC56F21D203476320001EB4F /* Trivial-Heavy.otf in Resources */,
@@ -209,7 +231,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD3A87032034820800EF5AF7 /* QuestionView.swift in Sources */,
 				ACA1703F2033069D003511AC /* QuestionViewController.swift in Sources */,
+				CD3A8700203481E000EF5AF7 /* ClassicBuzzerView.swift in Sources */,
 				AC163DE7203451D900A0C4E4 /* MainPageViewController.swift in Sources */,
 				AC163DEE20345FA700A0C4E4 /* PeerManager.swift in Sources */,
 				ACA1703D2033069D003511AC /* AppDelegate.swift in Sources */,
