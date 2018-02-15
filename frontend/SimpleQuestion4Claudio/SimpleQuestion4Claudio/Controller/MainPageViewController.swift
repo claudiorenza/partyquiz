@@ -58,7 +58,7 @@ class MainPageViewController: UIViewController, MCBrowserViewControllerDelegate,
   func setButton(tempButton: UIButton) {
     tempButton.layer.cornerRadius = 25.0
     tempButton.layer.borderColor = UIColor.white.cgColor
-    tempButton.layer.borderWidth = 1.0
+    tempButton.layer.borderWidth = 10.0
   }
   
   @IBAction func pressToCreate(_ sender: UIButton) {
