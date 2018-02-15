@@ -10,8 +10,10 @@ import UIKit
 
 class ClassicBuzzerView: UIView {
   
-  
   @IBOutlet var buttonBuzzer: UIButton!
   
+  @IBAction func buttonBuzzerAction(_ sender: UIButton) {
+    //sender.buzzerDown(view: self.buttonBuzzer)
+  }
   
 }
