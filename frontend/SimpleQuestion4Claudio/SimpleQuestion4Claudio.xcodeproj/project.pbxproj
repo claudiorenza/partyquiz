@@ -32,6 +32,9 @@
 		CD3A870820356F2200EF5AF7 /* JoinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A870720356F2200EF5AF7 /* JoinGameViewController.swift */; };
 		CD3A870A20356F3200EF5AF7 /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A870920356F3200EF5AF7 /* LobbyViewController.swift */; };
 		CD3A870C20356F4200EF5AF7 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A870B20356F4200EF5AF7 /* LoadingViewController.swift */; };
+		CD3A870F20358E2A00EF5AF7 /* BuzzerBlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A870E20358E2A00EF5AF7 /* BuzzerBlowViewController.swift */; };
+		CD3A871120358E7D00EF5AF7 /* BuzzerShakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A871020358E7D00EF5AF7 /* BuzzerShakeViewController.swift */; };
+		CD3A871320358F1200EF5AF7 /* BuzzerDoubleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A871220358F1200EF5AF7 /* BuzzerDoubleViewController.swift */; };
 		CDE69FC220347A4200543F74 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE69FC120347A4200543F74 /* UIButtonExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +66,9 @@
 		CD3A870720356F2200EF5AF7 /* JoinGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinGameViewController.swift; sourceTree = "<group>"; };
 		CD3A870920356F3200EF5AF7 /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
 		CD3A870B20356F4200EF5AF7 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		CD3A870E20358E2A00EF5AF7 /* BuzzerBlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuzzerBlowViewController.swift; sourceTree = "<group>"; };
+		CD3A871020358E7D00EF5AF7 /* BuzzerShakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuzzerShakeViewController.swift; sourceTree = "<group>"; };
+		CD3A871220358F1200EF5AF7 /* BuzzerDoubleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuzzerDoubleViewController.swift; sourceTree = "<group>"; };
 		CDE69FC120347A4200543F74 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,8 +134,9 @@
 		CD3A86FA203480DD00EF5AF7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				AC163DE6203451D900A0C4E4 /* MainPageViewController.swift */,
 				ACA1703E2033069D003511AC /* QuestionViewController.swift */,
+				CD3A870D20358DCA00EF5AF7 /* BuzzersVC */,
+				AC163DE6203451D900A0C4E4 /* MainPageViewController.swift */,
 				CD3A870520356F1000EF5AF7 /* CreateGameViewController.swift */,
 				CD3A870720356F2200EF5AF7 /* JoinGameViewController.swift */,
 				CD3A870920356F3200EF5AF7 /* LobbyViewController.swift */,
@@ -158,6 +165,16 @@
 				CD3A86FD203481E000EF5AF7 /* ClassicBuzzerView.xib */,
 			);
 			path = Buzzers;
+			sourceTree = "<group>";
+		};
+		CD3A870D20358DCA00EF5AF7 /* BuzzersVC */ = {
+			isa = PBXGroup;
+			children = (
+				CD3A870E20358E2A00EF5AF7 /* BuzzerBlowViewController.swift */,
+				CD3A871020358E7D00EF5AF7 /* BuzzerShakeViewController.swift */,
+				CD3A871220358F1200EF5AF7 /* BuzzerDoubleViewController.swift */,
+			);
+			path = BuzzersVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,10 +268,13 @@
 				AC163DE7203451D900A0C4E4 /* MainPageViewController.swift in Sources */,
 				AC163DEE20345FA700A0C4E4 /* PeerManager.swift in Sources */,
 				CD3A870A20356F3200EF5AF7 /* LobbyViewController.swift in Sources */,
+				CD3A870F20358E2A00EF5AF7 /* BuzzerBlowViewController.swift in Sources */,
 				ACA1703D2033069D003511AC /* AppDelegate.swift in Sources */,
 				AC163DF220346D5000A0C4E4 /* AnswersView.swift in Sources */,
+				CD3A871120358E7D00EF5AF7 /* BuzzerShakeViewController.swift in Sources */,
 				CDE69FC220347A4200543F74 /* UIButtonExtension.swift in Sources */,
 				CD3A870C20356F4200EF5AF7 /* LoadingViewController.swift in Sources */,
+				CD3A871320358F1200EF5AF7 /* BuzzerDoubleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
