@@ -33,6 +33,7 @@
 		CD3A870A20356F3200EF5AF7 /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A870920356F3200EF5AF7 /* LobbyViewController.swift */; };
 		CD3A870C20356F4200EF5AF7 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A870B20356F4200EF5AF7 /* LoadingViewController.swift */; };
 		CDE69FC220347A4200543F74 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE69FC120347A4200543F74 /* UIButtonExtension.swift */; };
+		F92DEAF22035DDDB00C821F1 /* TwoBuzzers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92DEAF12035DDDB00C821F1 /* TwoBuzzers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		CD3A870920356F3200EF5AF7 /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
 		CD3A870B20356F4200EF5AF7 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		CDE69FC120347A4200543F74 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		F92DEAF12035DDDB00C821F1 /* TwoBuzzers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoBuzzers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			children = (
 				CD3A86FE203481E000EF5AF7 /* ClassicBuzzerView.swift */,
 				CD3A86FD203481E000EF5AF7 /* ClassicBuzzerView.xib */,
+				F92DEAF12035DDDB00C821F1 /* TwoBuzzers.swift */,
 			);
 			path = Buzzers;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 			files = (
 				CD3A870820356F2200EF5AF7 /* JoinGameViewController.swift in Sources */,
 				CD3A870620356F1000EF5AF7 /* CreateGameViewController.swift in Sources */,
+				F92DEAF22035DDDB00C821F1 /* TwoBuzzers.swift in Sources */,
 				CD3A87032034820800EF5AF7 /* QuestionView.swift in Sources */,
 				ACA1703F2033069D003511AC /* QuestionViewController.swift in Sources */,
 				CD3A8700203481E000EF5AF7 /* ClassicBuzzerView.swift in Sources */,
