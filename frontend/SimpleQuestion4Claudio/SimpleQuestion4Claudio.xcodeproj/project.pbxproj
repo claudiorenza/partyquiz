@@ -28,7 +28,12 @@
 		CD3A8700203481E000EF5AF7 /* ClassicBuzzerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A86FE203481E000EF5AF7 /* ClassicBuzzerView.swift */; };
 		CD3A87032034820800EF5AF7 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A87012034820800EF5AF7 /* QuestionView.swift */; };
 		CD3A87042034820800EF5AF7 /* QuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3A87022034820800EF5AF7 /* QuestionView.xib */; };
+		CD3A870620356F1000EF5AF7 /* CreateGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A870520356F1000EF5AF7 /* CreateGameViewController.swift */; };
+		CD3A870820356F2200EF5AF7 /* JoinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A870720356F2200EF5AF7 /* JoinGameViewController.swift */; };
+		CD3A870A20356F3200EF5AF7 /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A870920356F3200EF5AF7 /* LobbyViewController.swift */; };
+		CD3A870C20356F4200EF5AF7 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A870B20356F4200EF5AF7 /* LoadingViewController.swift */; };
 		CDE69FC220347A4200543F74 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE69FC120347A4200543F74 /* UIButtonExtension.swift */; };
+		F92DEAF42035DE6600C821F1 /* DoubleBuzzerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92DEAF32035DE6600C821F1 /* DoubleBuzzerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +60,12 @@
 		CD3A86FE203481E000EF5AF7 /* ClassicBuzzerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassicBuzzerView.swift; sourceTree = "<group>"; };
 		CD3A87012034820800EF5AF7 /* QuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		CD3A87022034820800EF5AF7 /* QuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionView.xib; sourceTree = "<group>"; };
+		CD3A870520356F1000EF5AF7 /* CreateGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameViewController.swift; sourceTree = "<group>"; };
+		CD3A870720356F2200EF5AF7 /* JoinGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinGameViewController.swift; sourceTree = "<group>"; };
+		CD3A870920356F3200EF5AF7 /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
+		CD3A870B20356F4200EF5AF7 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		CDE69FC120347A4200543F74 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		F92DEAF32035DE6600C821F1 /* DoubleBuzzerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleBuzzerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +130,12 @@
 		CD3A86FA203480DD00EF5AF7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				AC163DE6203451D900A0C4E4 /* MainPageViewController.swift */,
 				ACA1703E2033069D003511AC /* QuestionViewController.swift */,
+				AC163DE6203451D900A0C4E4 /* MainPageViewController.swift */,
+				CD3A870520356F1000EF5AF7 /* CreateGameViewController.swift */,
+				CD3A870720356F2200EF5AF7 /* JoinGameViewController.swift */,
+				CD3A870920356F3200EF5AF7 /* LobbyViewController.swift */,
+				CD3A870B20356F4200EF5AF7 /* LoadingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -144,6 +158,7 @@
 			children = (
 				CD3A86FE203481E000EF5AF7 /* ClassicBuzzerView.swift */,
 				CD3A86FD203481E000EF5AF7 /* ClassicBuzzerView.xib */,
+				F92DEAF32035DE6600C821F1 /* DoubleBuzzerView.swift */,
 			);
 			path = Buzzers;
 			sourceTree = "<group>";
@@ -231,14 +246,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD3A870820356F2200EF5AF7 /* JoinGameViewController.swift in Sources */,
+				CD3A870620356F1000EF5AF7 /* CreateGameViewController.swift in Sources */,
 				CD3A87032034820800EF5AF7 /* QuestionView.swift in Sources */,
 				ACA1703F2033069D003511AC /* QuestionViewController.swift in Sources */,
 				CD3A8700203481E000EF5AF7 /* ClassicBuzzerView.swift in Sources */,
 				AC163DE7203451D900A0C4E4 /* MainPageViewController.swift in Sources */,
 				AC163DEE20345FA700A0C4E4 /* PeerManager.swift in Sources */,
+				CD3A870A20356F3200EF5AF7 /* LobbyViewController.swift in Sources */,
 				ACA1703D2033069D003511AC /* AppDelegate.swift in Sources */,
 				AC163DF220346D5000A0C4E4 /* AnswersView.swift in Sources */,
 				CDE69FC220347A4200543F74 /* UIButtonExtension.swift in Sources */,
+				CD3A870C20356F4200EF5AF7 /* LoadingViewController.swift in Sources */,
+				F92DEAF42035DE6600C821F1 /* DoubleBuzzerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,7 +396,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N444ZE3779;
+				DEVELOPMENT_TEAM = 89LM9XZWA3;
 				INFOPLIST_FILE = SimpleQuestion4Claudio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = johnny.SimpleQuestion4Claudio;
@@ -391,7 +411,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N444ZE3779;
+				DEVELOPMENT_TEAM = 89LM9XZWA3;
 				INFOPLIST_FILE = SimpleQuestion4Claudio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = johnny.SimpleQuestion4Claudio;

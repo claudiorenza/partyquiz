@@ -15,6 +15,8 @@ class QuestionViewController: UIViewController {
   @IBOutlet weak var backgroundOutlet: UIImageView!
   @IBOutlet weak var viewOutlet: UIView!
   
+  
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     setButton(tempButton: buzzerOutlet)
