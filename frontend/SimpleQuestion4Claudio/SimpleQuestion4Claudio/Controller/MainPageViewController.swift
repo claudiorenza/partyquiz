@@ -9,38 +9,7 @@
 import UIKit
 import MultipeerConnectivity
 
-class MainPageViewController: UIViewController, MCBrowserViewControllerDelegate, MCNearbyServiceBrowserDelegate, MCAdvertiserAssistantDelegate {
-  
-  func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
-    dismiss(animated: true, completion: {
-        PeerManager.shared.browser?.stopBrowsingForPeers()
-        PeerManager.shared.advertiser?.stop()
-       self.performSegue(withIdentifier: "GameController", sender: nil)
-    })
-  }
-  
-  func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
-    dismiss(animated: true, completion: {
-      PeerManager.shared.session?.disconnect()
-      PeerManager.shared.browser?.stopBrowsingForPeers()
-      PeerManager.shared.advertiser?.stop()
-    })
-  }
-  func browser(_ browser: MCNearbyServiceBrowser, didNotStartBrowsingForPeers error: Error) {
-    print("errore \(error)")
-  }
-  
-  func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
-    print("trovato \(peerID)")
-    PeerManager.shared.peerArray.append(peerID)
-  }
-  
-  func browser(_ browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
-    print("perso \(peerID)")
-    PeerManager.shared.removePeer(peerID: peerID)
-  }
-  
- 
+class MainPageViewController: UIViewController {
   
   @IBOutlet weak var createGameOutlet: UIButton!
   @IBOutlet weak var joinGameOutlet: UIButton!
@@ -62,24 +31,19 @@ class MainPageViewController: UIViewController, MCBrowserViewControllerDelegate,
   }
   
   @IBAction func pressToCreate(_ sender: UIButton) {
-    PeerManager.shared.browser?.stopBrowsingForPeers()
-    PeerManager.shared.advertiser = MCAdvertiserAssistant(serviceType: PeerManager.shared.service, discoveryInfo: nil, session: PeerManager.shared.session!)
-    PeerManager.shared.advertiser?.delegate = self
-    PeerManager.shared.advertiser?.start()
-    let controller = MCBrowserViewController(serviceType: PeerManager.shared.service, session: PeerManager.shared.session!)
-    controller.delegate = self
-    present(controller, animated: true, completion: nil)
+    PeerManager.shared.stopBrowser()
+    PeerManager.shared.setupAdvertise()
+    PeerManager.shared.startAdvertise()
+    PeerManager.shared.setupBrowserController()
+    present(PeerManager.shared.controller, animated: true, completion: nil)
   }
   
   @IBAction func pressToJoin(_ sender: UIButton) {
-    PeerManager.shared.advertiser?.stop()
-    PeerManager.shared.session = MCSession(peer: PeerManager.shared.peerID!, securityIdentity: nil, encryptionPreference: .none)
-    PeerManager.shared.browser = MCNearbyServiceBrowser(peer: PeerManager.shared.peerID!, serviceType: PeerManager.shared.service)
-    PeerManager.shared.browser?.delegate = self
-    PeerManager.shared.browser?.startBrowsingForPeers()
-    let controller = MCBrowserViewController(serviceType: PeerManager.shared.service, session: PeerManager.shared.session!)
-    controller.delegate = self
-    present(controller, animated: true, completion: nil)
+    PeerManager.shared.stopAdvertise()
+    PeerManager.shared.setupSession()
+    PeerManager.shared.setupBrowser()
+    PeerManager.shared.setupBrowserController()
+    present(PeerManager.shared.controller, animated: true, completion: nil)
   }
   
   @IBAction func pressForInfo(_ sender: UIButton) {

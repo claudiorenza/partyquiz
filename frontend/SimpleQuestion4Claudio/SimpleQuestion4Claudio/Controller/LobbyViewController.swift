@@ -22,9 +22,6 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
     table.register(UITableViewCell.self, forCellReuseIdentifier: "mycell")
     table.dataSource = self
     table.delegate = self
-    
-    
-    
     // Do any additional setup after loading the view.
     
   }
@@ -35,7 +32,6 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
       PeerManager.shared.advertiser?.stop()
       PeerManager.shared.browser?.stopBrowsingForPeers()
       self.performSegue(withIdentifier: "GameController", sender: nil)
-      print("hooooola\(String(describing: PeerManager.shared.session?.connectedPeers))")
       
     })
   }
@@ -53,8 +49,6 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "mycell", for: indexPath as IndexPath)
-    
-    
     cell.textLabel!.text = "\(String(describing: PeerManager.shared.peerArray[indexPath.row].displayName))"
     cell.backgroundColor = UIColor.clear
     
@@ -62,7 +56,6 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    print("hola \(PeerManager.shared.peerArray.count)")
     return PeerManager.shared.peerArray.count
   }
   

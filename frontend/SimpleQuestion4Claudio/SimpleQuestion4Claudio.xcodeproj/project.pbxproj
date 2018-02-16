@@ -396,7 +396,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 89LM9XZWA3;
+				DEVELOPMENT_TEAM = N444ZE3779;
 				INFOPLIST_FILE = SimpleQuestion4Claudio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = johnny.SimpleQuestion4Claudio;
@@ -411,7 +411,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 89LM9XZWA3;
+				DEVELOPMENT_TEAM = N444ZE3779;
 				INFOPLIST_FILE = SimpleQuestion4Claudio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = johnny.SimpleQuestion4Claudio;

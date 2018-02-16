@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="O60-Jq-hJl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g28-jk-LDH">
     <device id="retina4_0" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -42,7 +42,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LUe-2N-5BH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2698" y="-609"/>
+            <point key="canvasLocation" x="2269" y="-219"/>
         </scene>
         <!--Question View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -101,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3715.1408450704225" y="-609.375"/>
+            <point key="canvasLocation" x="2917" y="-632"/>
         </scene>
         <!--Join Game View Controller-->
         <scene sceneID="rmi-ud-7xK">
@@ -205,7 +205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IaZ-hn-Lmj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1812.6760563380283" y="-607.5"/>
+            <point key="canvasLocation" x="1563" y="-219"/>
         </scene>
         <!--Create Game View Controller-->
         <scene sceneID="SpS-QH-ZRy">
@@ -280,7 +280,7 @@
                                 </state>
                                 <connections>
                                     <action selector="pressToCreate:" destination="g28-jk-LDH" eventType="touchUpInside" id="raT-pv-kCg"/>
-                                    <segue destination="54S-1f-Dfk" kind="show" id="CMe-gi-bNc"/>
+                                    <segue destination="54S-1f-Dfk" kind="show" identifier="CreateGame" id="CMe-gi-bNc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GdX-al-lOJ">
@@ -293,7 +293,7 @@
                                 </state>
                                 <connections>
                                     <action selector="pressToJoin:" destination="g28-jk-LDH" eventType="touchUpInside" id="uv0-u1-ahm"/>
-                                    <segue destination="Iaj-em-wgE" kind="show" id="GUO-2H-Osw"/>
+                                    <segue destination="Iaj-em-wgE" kind="show" identifier="JoinGame" id="GUO-2H-Osw"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gE-OF-oUO">
