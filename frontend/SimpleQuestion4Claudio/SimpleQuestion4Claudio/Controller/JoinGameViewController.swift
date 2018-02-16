@@ -88,20 +88,16 @@ class JoinGameViewController: UIViewController, UITableViewDataSource, UITableVi
     PeerManager.shared.browser?.invitePeer(peerSelect, to: PeerManager.shared.session!, withContext: nil, timeout: 20)
     performSegue(withIdentifier: "LobbyController", sender: nil)
   }
-  
-  var myPeerID = PeerManager.shared.peerID
-  
-  
-  deinit {
-    PeerManager.shared.browser?.stopBrowsingForPeers()
+
+    deinit {
+    PeerManager.shared.stopBrowser()
   }
   
   override func viewWillAppear(_ animated: Bool) {
-    PeerManager.shared.advertiser?.stop()
-    PeerManager.shared.session = MCSession(peer: PeerManager.shared.peerID!, securityIdentity: nil, encryptionPreference: .none)
-    PeerManager.shared.browser = MCNearbyServiceBrowser(peer: PeerManager.shared.peerID!, serviceType: PeerManager.shared.service)
-    PeerManager.shared.browser?.delegate = self
-    PeerManager.shared.browser?.startBrowsingForPeers()
+    PeerManager.shared.stopAdvertise()
+    PeerManager.shared.setupSession()
+    PeerManager.shared.setupBrowser()
+    PeerManager.shared.startBrowser()
   }
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
