@@ -13,6 +13,25 @@ class JoinGameViewController: UIViewController, UITableViewDataSource, UITableVi
   
   @IBOutlet var table: UITableView!
   
+  @IBOutlet var backButton: UIButton!
+  
+  @IBAction func goPreviousView(_ sender: UIButton) {
+    self.dismiss(animated: true, completion: nil)
+  }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    table.register(UITableViewCell.self, forCellReuseIdentifier: "mycell")
+    table.dataSource = self
+    table.delegate = self
+    
+    backButton.layer.cornerRadius = 10
+    
+    
+    // Do any additional setup after loading the view.
+  }
+  
+
   func browser(_ browser: MCNearbyServiceBrowser, didNotStartBrowsingForPeers error: Error) {
     print("errore \(error)")
   }
@@ -71,14 +90,7 @@ class JoinGameViewController: UIViewController, UITableViewDataSource, UITableVi
   }
   
   var myPeerID = PeerManager.shared.peerID
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    table.register(UITableViewCell.self, forCellReuseIdentifier: "mycell")
-    table.dataSource = self
-    table.delegate = self
-
-    // Do any additional setup after loading the view.
-  }
+  
   
   deinit {
     PeerManager.shared.browser?.stopBrowsingForPeers()
