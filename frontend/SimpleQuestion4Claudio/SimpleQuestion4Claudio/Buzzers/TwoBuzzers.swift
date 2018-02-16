@@ -1,15 +1,15 @@
 //
-//  DoubleBuzzerView.swift
-//  SimpleQuestion4Claudio
+//  TwoBuzzers.swift
+//  SimpleBuzzer
 //
-//  Created by Pasquale Bruno on 15/02/2018.
+//  Created by Giovanni Frate on 15/02/18.
 //  Copyright © 2018 Giovanni Frate. All rights reserved.
 //
 
 import UIKit
 
-class DoubleBuzzerView: UIView {
-
+class TwoBuzzers: UIView {
+  
   @IBOutlet weak var leftBuzzer: UIButton!
   @IBOutlet weak var rightBuzzer: UIButton!
   @IBOutlet weak var label: UILabel!
@@ -40,8 +40,8 @@ class DoubleBuzzerView: UIView {
       leftBuzzer.isUserInteractionEnabled = true
       rightBuzzer.isUserInteractionEnabled = false
     } else {
-      rightBuzzer.isUserInteractionEnabled = false
+      leftBuzzer.isUserInteractionEnabled = false
     }
   }
-
+  
 }
