@@ -36,7 +36,6 @@
 		ACAEEAE7203735DF00EB6131 /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACAEEAE5203735DF00EB6131 /* ProgressView.xib */; };
 		CD3A87032034820800EF5AF7 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A87012034820800EF5AF7 /* QuestionView.swift */; };
 		CD3A87042034820800EF5AF7 /* QuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3A87022034820800EF5AF7 /* QuestionView.xib */; };
-		CD3A870620356F1000EF5AF7 /* CreateGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A870520356F1000EF5AF7 /* CreateGameViewController.swift */; };
 		CD3A870820356F2200EF5AF7 /* JoinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A870720356F2200EF5AF7 /* JoinGameViewController.swift */; };
 		CD3A870A20356F3200EF5AF7 /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A870920356F3200EF5AF7 /* LobbyViewController.swift */; };
 		CD3A870C20356F4200EF5AF7 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A870B20356F4200EF5AF7 /* LoadingViewController.swift */; };
@@ -75,7 +74,6 @@
 		ACAEEAE5203735DF00EB6131 /* ProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
 		CD3A87012034820800EF5AF7 /* QuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		CD3A87022034820800EF5AF7 /* QuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionView.xib; sourceTree = "<group>"; };
-		CD3A870520356F1000EF5AF7 /* CreateGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameViewController.swift; sourceTree = "<group>"; };
 		CD3A870720356F2200EF5AF7 /* JoinGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinGameViewController.swift; sourceTree = "<group>"; };
 		CD3A870920356F3200EF5AF7 /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
 		CD3A870B20356F4200EF5AF7 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
@@ -172,7 +170,6 @@
 			children = (
 				ACA1703E2033069D003511AC /* QuestionViewController.swift */,
 				AC163DE6203451D900A0C4E4 /* MainPageViewController.swift */,
-				CD3A870520356F1000EF5AF7 /* CreateGameViewController.swift */,
 				CD3A870720356F2200EF5AF7 /* JoinGameViewController.swift */,
 				CD3A870920356F3200EF5AF7 /* LobbyViewController.swift */,
 				CD3A870B20356F4200EF5AF7 /* LoadingViewController.swift */,
@@ -280,7 +277,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD3A870820356F2200EF5AF7 /* JoinGameViewController.swift in Sources */,
-				CD3A870620356F1000EF5AF7 /* CreateGameViewController.swift in Sources */,
 				ACAEEADC203735AC00EB6131 /* OneBuzzer.swift in Sources */,
 				CD3A87032034820800EF5AF7 /* QuestionView.swift in Sources */,
 				ACA1703F2033069D003511AC /* QuestionViewController.swift in Sources */,
