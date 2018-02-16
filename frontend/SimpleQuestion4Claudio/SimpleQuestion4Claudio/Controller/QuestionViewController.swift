@@ -10,59 +10,56 @@ import UIKit
 
 class QuestionViewController: UIViewController {
 
-  @IBOutlet weak var buzzerOutlet: UIButton!
-  @IBOutlet weak var questionOutlet: UILabel!
-  @IBOutlet weak var backgroundOutlet: UIImageView!
-  @IBOutlet weak var viewOutlet: UIView!
-  
-  
+  @IBOutlet weak var buzzerView: UIView!
+  @IBOutlet weak var progressControllerView: UIView!
+  var index = 0
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    setButton(tempButton: buzzerOutlet)
-    setQuestion(tempLabel: questionOutlet)
-    backgroundOutlet.layer.cornerRadius = 25.0
-    backgroundOutlet.layer.borderColor = UIColor.black.cgColor
-    backgroundOutlet.layer.borderWidth = 1.0
+    loadProgressView()
+    randomBuzzers()
   }
-
-  @IBAction func pressBuzzer(_ sender: UIButton) {
-    sender.buzzerDown(view: self.view)
-    if let answersView = Bundle.main.loadNibNamed("AnswersView", owner: self, options: nil)?.first as? AnswersView {
-      
-      answersView.frame = viewOutlet.frame
-      answersView.setButton(tempButton: answersView.firstAnswer)
-      answersView.setButton(tempButton: answersView.secondAnswer)
-      answersView.setButton(tempButton: answersView.thirdAnswer)
-      answersView.setButton(tempButton: answersView.fourthAnswer)
-      
-      self.view.addSubview(answersView)
+  
+  // - MARK: 3: Method that loads the progress view
+  func loadProgressView() {
+    if let progressView = Bundle.main.loadNibNamed("ProgressView", owner: self, options: nil)?.first as? ProgressView {
+      progressControllerView.addSubview(progressView)
+      progressView.manageProgress()
+      progressView.frame = progressControllerView.bounds
     }
   }
   
-  
-  func setQuestion(tempLabel: UILabel) {
-    tempLabel.text = "This is a new question!!"
-  }
-  
-  func hideAnswers(ans1: UIButton, ans2: UIButton, ans3: UIButton, ans4: UIButton) {
-    ans1.isHidden = true
-    ans2.isHidden = true
-    ans3.isHidden = true
-    ans4.isHidden = true
-  }
-  
-  func showAnswers(ans1: UIButton, ans2: UIButton, ans3: UIButton, ans4: UIButton) {
-    ans1.isHidden = false
-    ans2.isHidden = false
-    ans3.isHidden = false
-    ans4.isHidden = false
-  }
-  
-  func setButton(tempButton: UIButton) {
-    tempButton.layer.cornerRadius = 25.0
-    tempButton.layer.borderColor = UIColor.black.cgColor
-    tempButton.layer.borderWidth = 1.0
+  // - MARK: 4: Method that generates random buzzers
+  func randomBuzzers() {
+    index = Int(arc4random_uniform(4))
+    if index == 0 {
+      if let oneBuzzer = Bundle.main.loadNibNamed("OneBuzzer", owner: self, options: nil)?.first as? OneBuzzer {
+        buzzerView.addSubview(oneBuzzer)
+        oneBuzzer.setBuzzer()
+        oneBuzzer.frame = buzzerView.bounds
+      }
+    } else if index == 1 {
+      if let twoBuzzers = Bundle.main.loadNibNamed("TwoBuzzers", owner: self, options: nil)?.first as? TwoBuzzers {
+        buzzerView.addSubview(twoBuzzers)
+        twoBuzzers.setBuzzers()
+        twoBuzzers.frame = buzzerView.bounds
+      }
+    } else if index == 2 {
+      if let shakeBuzzer = Bundle.main.loadNibNamed("ShakeBuzzer", owner: self, options: nil)?.first as? ShakeBuzzer {
+        buzzerView.addSubview(shakeBuzzer)
+        shakeBuzzer.setRoundedView()
+        shakeBuzzer.setRoundedLabel()
+        shakeBuzzer.beginShaking()
+        shakeBuzzer.frame = buzzerView.bounds
+      }
+    } else {
+      if let blowBuzzer = Bundle.main.loadNibNamed("BlowBuzzer", owner: self, options: nil)?.first as? BlowBuzzer {
+        buzzerView.addSubview(blowBuzzer)
+        blowBuzzer.setRoundedView()
+        blowBuzzer.startBlowing()
+        blowBuzzer.frame = buzzerView.bounds
+      }
+    }
   }
 
 }
