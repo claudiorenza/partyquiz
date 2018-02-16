@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,30 +10,26 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ClassicBuzzerView" customModule="SimpleQuestion4Claudio" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OneBuzzer" customModule="SimpleBuzzer" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ClassicBuzzerView" customModule="SimpleQuestion4Claudio" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="OneBuzzer" customModule="SimpleBuzzer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="518" height="250"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hf4-rX-ltJ">
-                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tp1-uw-T2b">
+                    <rect key="frame" x="268" y="0.0" width="250" height="250"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="Buzzer_Active"/>
+                    <color key="backgroundColor" red="0.66666668650000005" green="0.01248114164" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <connections>
-                        <action selector="buttonBuzzerAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="5WX-5F-pb4"/>
+                        <action selector="pressBuzzer:" destination="iN0-l3-epB" eventType="touchUpInside" id="Rd0-fx-3FK"/>
                     </connections>
                 </button>
             </subviews>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="buttonBuzzer" destination="Hf4-rX-ltJ" id="d5M-1g-Vk9"/>
+                <outlet property="buzzer" destination="Tp1-uw-T2b" id="2MN-lf-vWN"/>
             </connections>
-            <point key="canvasLocation" x="-4" y="-483"/>
         </view>
     </objects>
-    <resources>
-        <image name="Buzzer_Active" width="1000" height="1000"/>
-    </resources>
 </document>

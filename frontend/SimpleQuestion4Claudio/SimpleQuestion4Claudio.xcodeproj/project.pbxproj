@@ -24,8 +24,16 @@
 		ACA170422033069D003511AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACA170402033069D003511AC /* Main.storyboard */; };
 		ACA170442033069D003511AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACA170432033069D003511AC /* Assets.xcassets */; };
 		ACA170472033069D003511AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACA170452033069D003511AC /* LaunchScreen.storyboard */; };
-		CD3A86FF203481E000EF5AF7 /* ClassicBuzzerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3A86FD203481E000EF5AF7 /* ClassicBuzzerView.xib */; };
-		CD3A8700203481E000EF5AF7 /* ClassicBuzzerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A86FE203481E000EF5AF7 /* ClassicBuzzerView.swift */; };
+		ACAEEADB203735AC00EB6131 /* OneBuzzer.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACAEEAD3203735AC00EB6131 /* OneBuzzer.xib */; };
+		ACAEEADC203735AC00EB6131 /* OneBuzzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAEEAD4203735AC00EB6131 /* OneBuzzer.swift */; };
+		ACAEEADD203735AC00EB6131 /* TwoBuzzers.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACAEEAD5203735AC00EB6131 /* TwoBuzzers.xib */; };
+		ACAEEADE203735AC00EB6131 /* BlowBuzzer.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACAEEAD6203735AC00EB6131 /* BlowBuzzer.xib */; };
+		ACAEEADF203735AC00EB6131 /* BlowBuzzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAEEAD7203735AC00EB6131 /* BlowBuzzer.swift */; };
+		ACAEEAE0203735AC00EB6131 /* TwoBuzzers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAEEAD8203735AC00EB6131 /* TwoBuzzers.swift */; };
+		ACAEEAE1203735AC00EB6131 /* ShakeBuzzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAEEAD9203735AC00EB6131 /* ShakeBuzzer.swift */; };
+		ACAEEAE2203735AC00EB6131 /* ShakeBuzzer.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACAEEADA203735AC00EB6131 /* ShakeBuzzer.xib */; };
+		ACAEEAE6203735DF00EB6131 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAEEAE4203735DF00EB6131 /* ProgressView.swift */; };
+		ACAEEAE7203735DF00EB6131 /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACAEEAE5203735DF00EB6131 /* ProgressView.xib */; };
 		CD3A87032034820800EF5AF7 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A87012034820800EF5AF7 /* QuestionView.swift */; };
 		CD3A87042034820800EF5AF7 /* QuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3A87022034820800EF5AF7 /* QuestionView.xib */; };
 		CD3A870620356F1000EF5AF7 /* CreateGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A870520356F1000EF5AF7 /* CreateGameViewController.swift */; };
@@ -33,7 +41,6 @@
 		CD3A870A20356F3200EF5AF7 /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A870920356F3200EF5AF7 /* LobbyViewController.swift */; };
 		CD3A870C20356F4200EF5AF7 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A870B20356F4200EF5AF7 /* LoadingViewController.swift */; };
 		CDE69FC220347A4200543F74 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE69FC120347A4200543F74 /* UIButtonExtension.swift */; };
-		F92DEAF42035DE6600C821F1 /* DoubleBuzzerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92DEAF32035DE6600C821F1 /* DoubleBuzzerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,8 +63,16 @@
 		ACA170432033069D003511AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACA170462033069D003511AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACA170482033069D003511AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CD3A86FD203481E000EF5AF7 /* ClassicBuzzerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassicBuzzerView.xib; sourceTree = "<group>"; };
-		CD3A86FE203481E000EF5AF7 /* ClassicBuzzerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassicBuzzerView.swift; sourceTree = "<group>"; };
+		ACAEEAD3203735AC00EB6131 /* OneBuzzer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OneBuzzer.xib; sourceTree = "<group>"; };
+		ACAEEAD4203735AC00EB6131 /* OneBuzzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneBuzzer.swift; sourceTree = "<group>"; };
+		ACAEEAD5203735AC00EB6131 /* TwoBuzzers.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwoBuzzers.xib; sourceTree = "<group>"; };
+		ACAEEAD6203735AC00EB6131 /* BlowBuzzer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlowBuzzer.xib; sourceTree = "<group>"; };
+		ACAEEAD7203735AC00EB6131 /* BlowBuzzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlowBuzzer.swift; sourceTree = "<group>"; };
+		ACAEEAD8203735AC00EB6131 /* TwoBuzzers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoBuzzers.swift; sourceTree = "<group>"; };
+		ACAEEAD9203735AC00EB6131 /* ShakeBuzzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShakeBuzzer.swift; sourceTree = "<group>"; };
+		ACAEEADA203735AC00EB6131 /* ShakeBuzzer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShakeBuzzer.xib; sourceTree = "<group>"; };
+		ACAEEAE4203735DF00EB6131 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		ACAEEAE5203735DF00EB6131 /* ProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
 		CD3A87012034820800EF5AF7 /* QuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		CD3A87022034820800EF5AF7 /* QuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionView.xib; sourceTree = "<group>"; };
 		CD3A870520356F1000EF5AF7 /* CreateGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameViewController.swift; sourceTree = "<group>"; };
@@ -65,7 +80,6 @@
 		CD3A870920356F3200EF5AF7 /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
 		CD3A870B20356F4200EF5AF7 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		CDE69FC120347A4200543F74 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
-		F92DEAF32035DE6600C821F1 /* DoubleBuzzerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleBuzzerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +127,8 @@
 		ACA1703B2033069D003511AC /* SimpleQuestion4Claudio */ = {
 			isa = PBXGroup;
 			children = (
+				ACAEEAD2203735AC00EB6131 /* Buzzers */,
+				ACAEEAE3203735DF00EB6131 /* ProgressView */,
 				CD3A86FB203480EE00EF5AF7 /* View */,
 				CD3A86FA203480DD00EF5AF7 /* Controller */,
 				ACA1703C2033069D003511AC /* AppDelegate.swift */,
@@ -125,6 +141,30 @@
 				ACA170482033069D003511AC /* Info.plist */,
 			);
 			path = SimpleQuestion4Claudio;
+			sourceTree = "<group>";
+		};
+		ACAEEAD2203735AC00EB6131 /* Buzzers */ = {
+			isa = PBXGroup;
+			children = (
+				ACAEEAD3203735AC00EB6131 /* OneBuzzer.xib */,
+				ACAEEAD4203735AC00EB6131 /* OneBuzzer.swift */,
+				ACAEEAD5203735AC00EB6131 /* TwoBuzzers.xib */,
+				ACAEEAD8203735AC00EB6131 /* TwoBuzzers.swift */,
+				ACAEEADA203735AC00EB6131 /* ShakeBuzzer.xib */,
+				ACAEEAD9203735AC00EB6131 /* ShakeBuzzer.swift */,
+				ACAEEAD6203735AC00EB6131 /* BlowBuzzer.xib */,
+				ACAEEAD7203735AC00EB6131 /* BlowBuzzer.swift */,
+			);
+			path = Buzzers;
+			sourceTree = "<group>";
+		};
+		ACAEEAE3203735DF00EB6131 /* ProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				ACAEEAE4203735DF00EB6131 /* ProgressView.swift */,
+				ACAEEAE5203735DF00EB6131 /* ProgressView.xib */,
+			);
+			path = ProgressView;
 			sourceTree = "<group>";
 		};
 		CD3A86FA203480DD00EF5AF7 /* Controller */ = {
@@ -143,7 +183,6 @@
 		CD3A86FB203480EE00EF5AF7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CD3A86FC2034819300EF5AF7 /* Buzzers */,
 				AC163DF120346D5000A0C4E4 /* AnswersView.swift */,
 				AC163DEF20346CCE00A0C4E4 /* AnswersView.xib */,
 				CD3A87012034820800EF5AF7 /* QuestionView.swift */,
@@ -151,16 +190,6 @@
 			);
 			name = View;
 			path = "New Group";
-			sourceTree = "<group>";
-		};
-		CD3A86FC2034819300EF5AF7 /* Buzzers */ = {
-			isa = PBXGroup;
-			children = (
-				CD3A86FE203481E000EF5AF7 /* ClassicBuzzerView.swift */,
-				CD3A86FD203481E000EF5AF7 /* ClassicBuzzerView.xib */,
-				F92DEAF32035DE6600C821F1 /* DoubleBuzzerView.swift */,
-			);
-			path = Buzzers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,13 +251,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACAEEADD203735AC00EB6131 /* TwoBuzzers.xib in Resources */,
 				AC56F2232034763F0001EB4F /* TRAJANUS.TTF in Resources */,
 				AC56F221203476320001EB4F /* Trivial-Bold.otf in Resources */,
 				CD3A87042034820800EF5AF7 /* QuestionView.xib in Resources */,
-				CD3A86FF203481E000EF5AF7 /* ClassicBuzzerView.xib in Resources */,
 				AC56F21E203476320001EB4F /* Trivial-Light.otf in Resources */,
+				ACAEEADE203735AC00EB6131 /* BlowBuzzer.xib in Resources */,
 				AC56F21B203476320001EB4F /* Trivial-ExtraLight.otf in Resources */,
 				AC56F21D203476320001EB4F /* Trivial-Heavy.otf in Resources */,
+				ACAEEADB203735AC00EB6131 /* OneBuzzer.xib in Resources */,
+				ACAEEAE7203735DF00EB6131 /* ProgressView.xib in Resources */,
 				AC56F220203476320001EB4F /* Trivial-UltraLight.otf in Resources */,
 				ACA170472033069D003511AC /* LaunchScreen.storyboard in Resources */,
 				AC56F21C203476320001EB4F /* Trivial-Thin.otf in Resources */,
@@ -236,6 +268,7 @@
 				AC163DF020346CCE00A0C4E4 /* AnswersView.xib in Resources */,
 				ACA170422033069D003511AC /* Main.storyboard in Resources */,
 				AC56F21F203476320001EB4F /* Trivial-Regular.otf in Resources */,
+				ACAEEAE2203735AC00EB6131 /* ShakeBuzzer.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,9 +281,10 @@
 			files = (
 				CD3A870820356F2200EF5AF7 /* JoinGameViewController.swift in Sources */,
 				CD3A870620356F1000EF5AF7 /* CreateGameViewController.swift in Sources */,
+				ACAEEADC203735AC00EB6131 /* OneBuzzer.swift in Sources */,
 				CD3A87032034820800EF5AF7 /* QuestionView.swift in Sources */,
 				ACA1703F2033069D003511AC /* QuestionViewController.swift in Sources */,
-				CD3A8700203481E000EF5AF7 /* ClassicBuzzerView.swift in Sources */,
+				ACAEEAE1203735AC00EB6131 /* ShakeBuzzer.swift in Sources */,
 				AC163DE7203451D900A0C4E4 /* MainPageViewController.swift in Sources */,
 				AC163DEE20345FA700A0C4E4 /* PeerManager.swift in Sources */,
 				CD3A870A20356F3200EF5AF7 /* LobbyViewController.swift in Sources */,
@@ -258,7 +292,9 @@
 				AC163DF220346D5000A0C4E4 /* AnswersView.swift in Sources */,
 				CDE69FC220347A4200543F74 /* UIButtonExtension.swift in Sources */,
 				CD3A870C20356F4200EF5AF7 /* LoadingViewController.swift in Sources */,
-				F92DEAF42035DE6600C821F1 /* DoubleBuzzerView.swift in Sources */,
+				ACAEEAE6203735DF00EB6131 /* ProgressView.swift in Sources */,
+				ACAEEAE0203735AC00EB6131 /* TwoBuzzers.swift in Sources */,
+				ACAEEADF203735AC00EB6131 /* BlowBuzzer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
