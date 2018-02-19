@@ -16,6 +16,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    
+    let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+    if UserDefaults.standard.value(forKey: "launchedBefore") != nil {
+      if launchedBefore {
+        UserDefaults.standard.set(false, forKey: "launchedBefore")
+      }
+    } else {
+      UserDefaults.standard.set(true, forKey: "launchedBefore")
+    }
+    
+    let lastRun = UserDefaults.standard.value(forKey: "lastRun")
+    if lastRun == nil {
+      UserDefaults.standard.set(Date(), forKey: "lastRun")
+    }
+    
+    let lastUpdate = UserDefaults.standard.value(forKey: "lastUpdate")
+    if lastUpdate == nil {
+      UserDefaults.standard.set(Date(), forKey: "lastUpdate")
+    }
+    
     return true
   }
   
@@ -52,7 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      application to it. This property is optional since there are legitimate
      error conditions that could cause the creation of the store to fail.
      */
-    let container = NSPersistentContainer(name: "Save to the Cloud")
+    let container = NSPersistentContainer(name: "Party_Quiz_Game")
     container.loadPersistentStores(completionHandler: { (storeDescription, error) in
       if let error = error as NSError? {
         // Replace this implementation with code to handle the error appropriately.
@@ -81,7 +101,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         try context.save()
       } catch {
         // Replace this implementation with code to handle the error appropriately.
-        
         // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
         let nserror = error as NSError
         fatalError("Unresolved error \(nserror), \(nserror.userInfo)")

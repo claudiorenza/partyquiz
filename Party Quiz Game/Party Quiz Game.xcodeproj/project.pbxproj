@@ -9,8 +9,12 @@
 /* Begin PBXBuildFile section */
 		253490F6203B1B92006A3CEE /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253490F5203B1B92006A3CEE /* CoreDataManager.swift */; };
 		253490F8203B1B9A006A3CEE /* CloudKitQuestionsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253490F7203B1B9A006A3CEE /* CloudKitQuestionsClass.swift */; };
+		253490FC203B20E8006A3CEE /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253490F9203B20E8006A3CEE /* StartViewController.swift */; };
+		253490FD203B20E8006A3CEE /* MigrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253490FA203B20E8006A3CEE /* MigrationViewController.swift */; };
+		253490FE203B20E8006A3CEE /* DownloadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253490FB203B20E8006A3CEE /* DownloadingViewController.swift */; };
+		25349101203B2180006A3CEE /* CheckConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253490FF203B2180006A3CEE /* CheckConnection.swift */; };
+		25349102203B2180006A3CEE /* ManageQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25349100203B2180006A3CEE /* ManageQuestions.swift */; };
 		253E8E62203B17A500FE75AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253E8E61203B17A500FE75AD /* AppDelegate.swift */; };
-		253E8E64203B17A500FE75AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253E8E63203B17A500FE75AD /* ViewController.swift */; };
 		253E8E67203B17A500FE75AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 253E8E65203B17A500FE75AD /* Main.storyboard */; };
 		253E8E6A203B17A500FE75AD /* Party_Quiz_Game.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 253E8E68203B17A500FE75AD /* Party_Quiz_Game.xcdatamodeld */; };
 		253E8E6C203B17A500FE75AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 253E8E6B203B17A500FE75AD /* Assets.xcassets */; };
@@ -21,9 +25,13 @@
 /* Begin PBXFileReference section */
 		253490F5203B1B92006A3CEE /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		253490F7203B1B9A006A3CEE /* CloudKitQuestionsClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitQuestionsClass.swift; sourceTree = "<group>"; };
+		253490F9203B20E8006A3CEE /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		253490FA203B20E8006A3CEE /* MigrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MigrationViewController.swift; sourceTree = "<group>"; };
+		253490FB203B20E8006A3CEE /* DownloadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadingViewController.swift; sourceTree = "<group>"; };
+		253490FF203B2180006A3CEE /* CheckConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckConnection.swift; path = "Party Quiz Game/Swift Files/CheckConnection.swift"; sourceTree = SOURCE_ROOT; };
+		25349100203B2180006A3CEE /* ManageQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManageQuestions.swift; path = "Party Quiz Game/Swift Files/ManageQuestions.swift"; sourceTree = SOURCE_ROOT; };
 		253E8E5E203B17A500FE75AD /* Party Quiz Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Party Quiz Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		253E8E61203B17A500FE75AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		253E8E63203B17A500FE75AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		253E8E66203B17A500FE75AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		253E8E69203B17A500FE75AD /* Party_Quiz_Game.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Party_Quiz_Game.xcdatamodel; sourceTree = "<group>"; };
 		253E8E6B203B17A500FE75AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,7 +79,6 @@
 				253E8E76203B184C00FE75AD /* Party Quiz Game.entitlements */,
 				253E8E6B203B17A500FE75AD /* Assets.xcassets */,
 				253E8E70203B17A500FE75AD /* Info.plist */,
-				253E8E68203B17A500FE75AD /* Party_Quiz_Game.xcdatamodeld */,
 			);
 			path = "Party Quiz Game";
 			sourceTree = "<group>";
@@ -87,6 +94,7 @@
 		253E8E7A203B194300FE75AD /* Core Data Model */ = {
 			isa = PBXGroup;
 			children = (
+				253E8E68203B17A500FE75AD /* Party_Quiz_Game.xcdatamodeld */,
 			);
 			path = "Core Data Model";
 			sourceTree = "<group>";
@@ -94,6 +102,8 @@
 		253E8E7B203B195500FE75AD /* Swift Files */ = {
 			isa = PBXGroup;
 			children = (
+				253490FF203B2180006A3CEE /* CheckConnection.swift */,
+				25349100203B2180006A3CEE /* ManageQuestions.swift */,
 				253E8E80203B198300FE75AD /* View Controller */,
 				253E8E7F203B197E00FE75AD /* Delegate */,
 				253E8E7E203B197200FE75AD /* CoreData Manager */,
@@ -138,7 +148,9 @@
 		253E8E80203B198300FE75AD /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				253E8E63203B17A500FE75AD /* ViewController.swift */,
+				253490FB203B20E8006A3CEE /* DownloadingViewController.swift */,
+				253490FA203B20E8006A3CEE /* MigrationViewController.swift */,
+				253490F9203B20E8006A3CEE /* StartViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -223,10 +235,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				253E8E64203B17A500FE75AD /* ViewController.swift in Sources */,
+				253490FC203B20E8006A3CEE /* StartViewController.swift in Sources */,
 				253E8E62203B17A500FE75AD /* AppDelegate.swift in Sources */,
 				253490F8203B1B9A006A3CEE /* CloudKitQuestionsClass.swift in Sources */,
+				253490FE203B20E8006A3CEE /* DownloadingViewController.swift in Sources */,
+				253490FD203B20E8006A3CEE /* MigrationViewController.swift in Sources */,
 				253490F6203B1B92006A3CEE /* CoreDataManager.swift in Sources */,
+				25349102203B2180006A3CEE /* ManageQuestions.swift in Sources */,
+				25349101203B2180006A3CEE /* CheckConnection.swift in Sources */,
 				253E8E6A203B17A500FE75AD /* Party_Quiz_Game.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

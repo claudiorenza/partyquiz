@@ -1,6 +1,6 @@
 //
 //  CoreDataManager.swift
-//  esempioCoreData
+//  Party Quiz Game
 //
 //  Created by Michele Golino on 08/02/18.
 //  Copyright © 2018 Michele Golino. All rights reserved.
@@ -47,9 +47,9 @@ class CoreDataManager {
                 
                 do {
                     try context.save()
-//                    print ("Record cancellati")
+                    print ("Record deleted")
                 } catch {
-                    print("Cancellazione fallita")
+                    print("Delete failed")
                 }
                 
             } catch let error {
@@ -81,13 +81,13 @@ class CoreDataManager {
         do {
             let result = try context.fetch(requestDomanda)
             for data in result as! [NSManagedObject] {
-//                print ("\(String(describing: data.value(forKey: "id")))" )
-                print ("\(String(describing: data.value(forKey: "testo")!))" )
-                print ("\(String(describing: data.value(forKey: "rispostaCorretta")!))" )
-                print ("\(String(describing: data.value(forKey: "rispostaSbagliata1")!))" )
-                print ("\(String(describing: data.value(forKey: "rispostaSbagliata2")!))" )
-                print ("\(String(describing: data.value(forKey: "rispostaSbagliata3")!))" )
-                print ("\(String(describing: data.value(forKey: "categoria")) )")
+                print ("\(String(describing: data.value(forKey: "id")!))" )
+                print ("\(String(describing: data.value(forKey: "text")!))" )
+                print ("\(String(describing: data.value(forKey: "correctlyAnswer")!))" )
+                print ("\(String(describing: data.value(forKey: "wrongAnswer1")!))" )
+                print ("\(String(describing: data.value(forKey: "wrongAnswer2")!))" )
+                print ("\(String(describing: data.value(forKey: "wrongAnswer3")!))" )
+                print ("\(String(describing: data.value(forKey: "category")!) )")
             }
         } catch {
             print("Failed")
