@@ -21,6 +21,7 @@
 		253E8E79203B185300FE75AD /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253E8E78203B185300FE75AD /* CloudKit.framework */; };
 		CD8E4F72203B3728008C48AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD8E4F71203B3728008C48AE /* Main.storyboard */; };
 		CD8E4F75203B393D008C48AE /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E4F74203B393D008C48AE /* MainPageViewController.swift */; };
+		F9614DAA203B3AB2001F4448 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9614DA9203B3AB2001F4448 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		253E8E78203B185300FE75AD /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		CD8E4F71203B3728008C48AE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CD8E4F74203B393D008C48AE /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		F9614DA9203B3AB2001F4448 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				CD8E4F74203B393D008C48AE /* MainPageViewController.swift */,
+				F9614DA9203B3AB2001F4448 /* ViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				253490FC203B20E8006A3CEE /* StartViewController.swift in Sources */,
 				253E8E62203B17A500FE75AD /* AppDelegate.swift in Sources */,
 				253490F8203B1B9A006A3CEE /* CloudKitQuestionsClass.swift in Sources */,
+				F9614DAA203B3AB2001F4448 /* ViewController.swift in Sources */,
 				253490FE203B20E8006A3CEE /* DownloadingViewController.swift in Sources */,
 				253490FD203B20E8006A3CEE /* MigrationViewController.swift in Sources */,
 				253490F6203B1B92006A3CEE /* CoreDataManager.swift in Sources */,
