@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		253490F6203B1B92006A3CEE /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253490F5203B1B92006A3CEE /* CoreDataManager.swift */; };
+		253490F8203B1B9A006A3CEE /* CloudKitQuestionsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253490F7203B1B9A006A3CEE /* CloudKitQuestionsClass.swift */; };
 		253E8E62203B17A500FE75AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253E8E61203B17A500FE75AD /* AppDelegate.swift */; };
 		253E8E64203B17A500FE75AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253E8E63203B17A500FE75AD /* ViewController.swift */; };
 		253E8E67203B17A500FE75AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 253E8E65203B17A500FE75AD /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		253490F5203B1B92006A3CEE /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		253490F7203B1B9A006A3CEE /* CloudKitQuestionsClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitQuestionsClass.swift; sourceTree = "<group>"; };
 		253E8E5E203B17A500FE75AD /* Party Quiz Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Party Quiz Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		253E8E61203B17A500FE75AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		253E8E63203B17A500FE75AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 		253E8E7D203B196A00FE75AD /* CloudKit Manager */ = {
 			isa = PBXGroup;
 			children = (
+				253490F7203B1B9A006A3CEE /* CloudKitQuestionsClass.swift */,
 			);
 			path = "CloudKit Manager";
 			sourceTree = "<group>";
@@ -117,6 +122,7 @@
 		253E8E7E203B197200FE75AD /* CoreData Manager */ = {
 			isa = PBXGroup;
 			children = (
+				253490F5203B1B92006A3CEE /* CoreDataManager.swift */,
 			);
 			path = "CoreData Manager";
 			sourceTree = "<group>";
@@ -219,6 +225,8 @@
 			files = (
 				253E8E64203B17A500FE75AD /* ViewController.swift in Sources */,
 				253E8E62203B17A500FE75AD /* AppDelegate.swift in Sources */,
+				253490F8203B1B9A006A3CEE /* CloudKitQuestionsClass.swift in Sources */,
+				253490F6203B1B92006A3CEE /* CoreDataManager.swift in Sources */,
 				253E8E6A203B17A500FE75AD /* Party_Quiz_Game.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
