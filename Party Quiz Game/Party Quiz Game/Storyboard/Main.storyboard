@@ -37,6 +37,7 @@
                                 </state>
                                 <connections>
                                     <action selector="pressToCreate:" destination="g28-jk-LDH" eventType="touchUpInside" id="raT-pv-kCg"/>
+                                    <segue destination="nsp-Qw-qe6" kind="show" id="8Wx-jl-lAQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GdX-al-lOJ">
@@ -82,10 +83,10 @@
             </objects>
             <point key="canvasLocation" x="1375" y="-324"/>
         </scene>
-        <!--ViewController-->
+        <!--Question View Controller-->
         <scene sceneID="Vp5-uX-eLA">
             <objects>
-                <viewController storyboardIdentifier="ViewController" title="ViewController" id="nsp-Qw-qe6" customClass="ViewController" customModule="SimpleBuzzer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" title="Question View Controller" id="nsp-Qw-qe6" userLabel="Question View Controller" customClass="QuestionViewController" customModule="Party_Quiz_Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xlh-92-Wvl">
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -126,7 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uq9-7T-8bW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1374" y="-1607"/>
+            <point key="canvasLocation" x="2225" y="-324"/>
         </scene>
     </scenes>
     <resources>

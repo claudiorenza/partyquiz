@@ -3,7 +3,7 @@
 //  Party Quiz Game
 //
 //  Created by Ernesto De Crecchio on 14/02/18.
-//  Copyright © 2018 Ernesto De Crecchio. All rights reserved.
+//  Copyright © 2018 Abusive Designers. All rights reserved.
 //
 
 import UIKit

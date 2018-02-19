@@ -1,14 +1,14 @@
 //
 //  MainViewController.swift
-//  SimpleBuzzer
+//  Party Quiz Game
 //
 //  Created by Giovanni Frate on 12/02/18.
-//  Copyright © 2018 Giovanni Frate. All rights reserved.
+//  Copyright © 2018 Abusive Designers. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class QuestionViewController: UIViewController {
   
   // - MARK: 1: Variables and Outlets declaration
   @IBOutlet weak var buzzerView: UIView!

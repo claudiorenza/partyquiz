@@ -3,7 +3,7 @@
 //  Party Quiz Game
 //
 //  Created by Michele Golino on 08/02/18.
-//  Copyright © 2018 Michele Golino. All rights reserved.
+//  Copyright © 2018 Abusive Designers. All rights reserved.
 //
 
 import UIKit
