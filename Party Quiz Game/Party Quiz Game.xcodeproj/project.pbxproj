@@ -13,6 +13,7 @@
 		253E8E6A203B17A500FE75AD /* Party_Quiz_Game.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 253E8E68203B17A500FE75AD /* Party_Quiz_Game.xcdatamodeld */; };
 		253E8E6C203B17A500FE75AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 253E8E6B203B17A500FE75AD /* Assets.xcassets */; };
 		253E8E6F203B17A500FE75AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 253E8E6D203B17A500FE75AD /* LaunchScreen.storyboard */; };
+		253E8E79203B185300FE75AD /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253E8E78203B185300FE75AD /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		253E8E6B203B17A500FE75AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		253E8E6E203B17A500FE75AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		253E8E70203B17A500FE75AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		253E8E76203B184C00FE75AD /* Party Quiz Game.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Party Quiz Game.entitlements"; sourceTree = "<group>"; };
+		253E8E78203B185300FE75AD /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				253E8E79203B185300FE75AD /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +46,7 @@
 			children = (
 				253E8E60203B17A500FE75AD /* Party Quiz Game */,
 				253E8E5F203B17A500FE75AD /* Products */,
+				253E8E77203B185300FE75AD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +61,80 @@
 		253E8E60203B17A500FE75AD /* Party Quiz Game */ = {
 			isa = PBXGroup;
 			children = (
-				253E8E61203B17A500FE75AD /* AppDelegate.swift */,
-				253E8E63203B17A500FE75AD /* ViewController.swift */,
-				253E8E65203B17A500FE75AD /* Main.storyboard */,
+				253E8E7C203B195E00FE75AD /* Storyboard */,
+				253E8E7B203B195500FE75AD /* Swift Files */,
+				253E8E7A203B194300FE75AD /* Core Data Model */,
+				253E8E76203B184C00FE75AD /* Party Quiz Game.entitlements */,
 				253E8E6B203B17A500FE75AD /* Assets.xcassets */,
-				253E8E6D203B17A500FE75AD /* LaunchScreen.storyboard */,
 				253E8E70203B17A500FE75AD /* Info.plist */,
 				253E8E68203B17A500FE75AD /* Party_Quiz_Game.xcdatamodeld */,
 			);
 			path = "Party Quiz Game";
+			sourceTree = "<group>";
+		};
+		253E8E77203B185300FE75AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				253E8E78203B185300FE75AD /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		253E8E7A203B194300FE75AD /* Core Data Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Core Data Model";
+			sourceTree = "<group>";
+		};
+		253E8E7B203B195500FE75AD /* Swift Files */ = {
+			isa = PBXGroup;
+			children = (
+				253E8E80203B198300FE75AD /* View Controller */,
+				253E8E7F203B197E00FE75AD /* Delegate */,
+				253E8E7E203B197200FE75AD /* CoreData Manager */,
+				253E8E7D203B196A00FE75AD /* CloudKit Manager */,
+			);
+			path = "Swift Files";
+			sourceTree = "<group>";
+		};
+		253E8E7C203B195E00FE75AD /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				253E8E65203B17A500FE75AD /* Main.storyboard */,
+				253E8E6D203B17A500FE75AD /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		253E8E7D203B196A00FE75AD /* CloudKit Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "CloudKit Manager";
+			sourceTree = "<group>";
+		};
+		253E8E7E203B197200FE75AD /* CoreData Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "CoreData Manager";
+			sourceTree = "<group>";
+		};
+		253E8E7F203B197E00FE75AD /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				253E8E61203B17A500FE75AD /* AppDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		253E8E80203B198300FE75AD /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				253E8E63203B17A500FE75AD /* ViewController.swift */,
+			);
+			path = "View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -100,6 +170,14 @@
 					253E8E5D203B17A500FE75AD = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -278,6 +356,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Party Quiz Game/Party Quiz Game.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6NHZGWQ43K;
 				INFOPLIST_FILE = "Party Quiz Game/Info.plist";
@@ -293,6 +372,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Party Quiz Game/Party Quiz Game.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6NHZGWQ43K;
 				INFOPLIST_FILE = "Party Quiz Game/Info.plist";
