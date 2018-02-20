@@ -154,7 +154,7 @@
 				CD2E9852203C57EE00CE646E /* Buzzers */,
 				CD2E9853203C581300CE646E /* ProgressView */,
 				CD97F036203C276B0068AA4D /* Answers */,
-				CD8E4F8B203B3E36008C48AE /* Extension & Singlerton */,
+				CD8E4F8B203B3E36008C48AE /* Extension & Singleton */,
 				CD8E4F73203B38B7008C48AE /* ViewController */,
 				253E8E7C203B195E00FE75AD /* Storyboard */,
 				253E8E7B203B195500FE75AD /* Swift Files */,
@@ -304,7 +304,7 @@
 			path = Sounds;
 			sourceTree = "<group>";
 		};
-		CD8E4F8B203B3E36008C48AE /* Extension & Singlerton */ = {
+		CD8E4F8B203B3E36008C48AE /* Extension & Singleton */ = {
 			isa = PBXGroup;
 			children = (
 				CD8E4FB8203B3FD7008C48AE /* UIImageViewExtension.swift */,
@@ -314,7 +314,7 @@
 				F9646A47203C703B0071BDA7 /* UILabelExtension.swift */,
 				F9646A49203C73C50071BDA7 /* Singleton.swift */,
 			);
-			path = "Extension & Singlerton";
+			path = "Extension & Singleton";
 			sourceTree = "<group>";
 		};
 		CD97F036203C276B0068AA4D /* Answers */ = {
