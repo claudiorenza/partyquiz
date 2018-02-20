@@ -37,14 +37,14 @@ class QuestionViewController: UIViewController {
     if index == 0 {
       if let oneBuzzer = Bundle.main.loadNibNamed("OneBuzzer", owner: self, options: nil)?.first as? OneBuzzer {
         buzzerView.addSubview(oneBuzzer)
-        oneBuzzer.loadPopUp()
+        oneBuzzer.loadPopUp(view: buzzerView)
         oneBuzzer.setBuzzer()
         oneBuzzer.frame = buzzerView.bounds
       }
     } else if index == 1 {
       if let twoBuzzers = Bundle.main.loadNibNamed("TwoBuzzers", owner: self, options: nil)?.first as? TwoBuzzers {
         buzzerView.addSubview(twoBuzzers)
-        twoBuzzers.loadPopUp()
+        twoBuzzers.loadPopUp(view: buzzerView)
         twoBuzzers.setBuzzers()
         twoBuzzers.frame = buzzerView.bounds
       }
@@ -67,6 +67,16 @@ class QuestionViewController: UIViewController {
       }
     }
   }
+  
+  func loadAnswers() {
+    if let answersView = Bundle.main.loadNibNamed("AnswersView", owner: self, options: nil)?.first as? AnswersView {
+      buzzerView.addSubview(answersView)
+      answersView.setAnswers()
+      answersView.frame = buzzerView.bounds
+    }
+    
+  }
+  
   
   @IBAction func buttonAction(_ sender: UIButton) {
     randomBuzzers()

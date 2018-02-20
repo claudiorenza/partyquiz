@@ -19,6 +19,24 @@
 		253E8E6C203B17A500FE75AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 253E8E6B203B17A500FE75AD /* Assets.xcassets */; };
 		253E8E6F203B17A500FE75AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 253E8E6D203B17A500FE75AD /* LaunchScreen.storyboard */; };
 		253E8E79203B185300FE75AD /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253E8E78203B185300FE75AD /* CloudKit.framework */; };
+		CD2E985C203C58AB00CE646E /* TwoBuzzersPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2E9854203C58AB00CE646E /* TwoBuzzersPopUp.xib */; };
+		CD2E985D203C58AB00CE646E /* TwoBuzzersPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E9855203C58AB00CE646E /* TwoBuzzersPopUp.swift */; };
+		CD2E985E203C58AB00CE646E /* BlowBuzzerPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E9856203C58AB00CE646E /* BlowBuzzerPopUp.swift */; };
+		CD2E985F203C58AB00CE646E /* BlowBuzzerPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2E9857203C58AB00CE646E /* BlowBuzzerPopUp.xib */; };
+		CD2E9860203C58AB00CE646E /* OneBuzzerPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2E9858203C58AB00CE646E /* OneBuzzerPopUp.xib */; };
+		CD2E9861203C58AB00CE646E /* ShakeBuzzerPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E9859203C58AB00CE646E /* ShakeBuzzerPopUp.swift */; };
+		CD2E9862203C58AB00CE646E /* OneBuzzerPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E985A203C58AB00CE646E /* OneBuzzerPopUp.swift */; };
+		CD2E9863203C58AB00CE646E /* ShakeBuzzerPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2E985B203C58AB00CE646E /* ShakeBuzzerPopUp.xib */; };
+		CD2E986C203C58BA00CE646E /* TwoBuzzers.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2E9864203C58BA00CE646E /* TwoBuzzers.xib */; };
+		CD2E986D203C58BA00CE646E /* OneBuzzer.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2E9865203C58BA00CE646E /* OneBuzzer.xib */; };
+		CD2E986E203C58BA00CE646E /* ShakeBuzzer.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2E9866203C58BA00CE646E /* ShakeBuzzer.xib */; };
+		CD2E986F203C58BA00CE646E /* BlowBuzzer.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2E9867203C58BA00CE646E /* BlowBuzzer.xib */; };
+		CD2E9870203C58BA00CE646E /* ShakeBuzzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E9868203C58BA00CE646E /* ShakeBuzzer.swift */; };
+		CD2E9871203C58BA00CE646E /* TwoBuzzers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E9869203C58BA00CE646E /* TwoBuzzers.swift */; };
+		CD2E9872203C58BA00CE646E /* BlowBuzzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E986A203C58BA00CE646E /* BlowBuzzer.swift */; };
+		CD2E9873203C58BA00CE646E /* OneBuzzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E986B203C58BA00CE646E /* OneBuzzer.swift */; };
+		CD2E9876203C58C400CE646E /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E9874203C58C400CE646E /* ProgressView.swift */; };
+		CD2E9877203C58C400CE646E /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2E9875203C58C400CE646E /* ProgressView.xib */; };
 		CD8E4F72203B3728008C48AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD8E4F71203B3728008C48AE /* Main.storyboard */; };
 		CD8E4F75203B393D008C48AE /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E4F74203B393D008C48AE /* MainPageViewController.swift */; };
 		CD8E4F7D203B3D0B008C48AE /* timeUp.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CD8E4F77203B3D0B008C48AE /* timeUp.m4a */; };
@@ -33,26 +51,10 @@
 		CD8E4F8A203B3E01008C48AE /* gong.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CD8E4F89203B3E01008C48AE /* gong.m4a */; };
 		CD8E4F8E203B3E46008C48AE /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E4F8C203B3E46008C48AE /* UIColorExtension.swift */; };
 		CD8E4F8F203B3E46008C48AE /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E4F8D203B3E46008C48AE /* UIButtonExtension.swift */; };
-		CD8E4FA5203B3FC2008C48AE /* OneBuzzer.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8E4F91203B3FC2008C48AE /* OneBuzzer.xib */; };
-		CD8E4FA6203B3FC2008C48AE /* OneBuzzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E4F92203B3FC2008C48AE /* OneBuzzer.swift */; };
-		CD8E4FA7203B3FC2008C48AE /* TwoBuzzers.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8E4F93203B3FC2008C48AE /* TwoBuzzers.xib */; };
-		CD8E4FA8203B3FC2008C48AE /* BlowBuzzer.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8E4F94203B3FC2008C48AE /* BlowBuzzer.xib */; };
-		CD8E4FA9203B3FC2008C48AE /* BlowBuzzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E4F95203B3FC2008C48AE /* BlowBuzzer.swift */; };
-		CD8E4FAA203B3FC2008C48AE /* TwoBuzzers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E4F96203B3FC2008C48AE /* TwoBuzzers.swift */; };
-		CD8E4FAB203B3FC2008C48AE /* ShakeBuzzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E4F97203B3FC2008C48AE /* ShakeBuzzer.swift */; };
-		CD8E4FAC203B3FC2008C48AE /* ShakeBuzzer.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8E4F98203B3FC2008C48AE /* ShakeBuzzer.xib */; };
-		CD8E4FAD203B3FC2008C48AE /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E4F9A203B3FC2008C48AE /* ProgressView.swift */; };
-		CD8E4FAE203B3FC2008C48AE /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8E4F9B203B3FC2008C48AE /* ProgressView.xib */; };
-		CD8E4FAF203B3FC2008C48AE /* BlowBuzzerPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8E4F9D203B3FC2008C48AE /* BlowBuzzerPopUp.xib */; };
-		CD8E4FB0203B3FC2008C48AE /* TwoBuzzersPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8E4F9E203B3FC2008C48AE /* TwoBuzzersPopUp.xib */; };
-		CD8E4FB1203B3FC2008C48AE /* ShakeBuzzerPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8E4F9F203B3FC2008C48AE /* ShakeBuzzerPopUp.xib */; };
-		CD8E4FB2203B3FC2008C48AE /* ShakeBuzzerPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E4FA0203B3FC2008C48AE /* ShakeBuzzerPopUp.swift */; };
-		CD8E4FB3203B3FC2008C48AE /* BlowBuzzerPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E4FA1203B3FC2008C48AE /* BlowBuzzerPopUp.swift */; };
-		CD8E4FB4203B3FC2008C48AE /* OneBuzzerPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E4FA2203B3FC2008C48AE /* OneBuzzerPopUp.swift */; };
-		CD8E4FB5203B3FC2008C48AE /* TwoBuzzersPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E4FA3203B3FC2008C48AE /* TwoBuzzersPopUp.swift */; };
-		CD8E4FB6203B3FC2008C48AE /* OneBuzzerPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8E4FA4203B3FC2008C48AE /* OneBuzzerPopUp.xib */; };
 		CD8E4FB9203B3FD7008C48AE /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E4FB7203B3FD7008C48AE /* UIViewExtension.swift */; };
 		CD8E4FBA203B3FD7008C48AE /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E4FB8203B3FD7008C48AE /* UIImageViewExtension.swift */; };
+		CD97F03B203C29310068AA4D /* AnswersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD97F03A203C29310068AA4D /* AnswersView.xib */; };
+		CD97F03D203C29410068AA4D /* AnswersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD97F03C203C29410068AA4D /* AnswersView.swift */; };
 		F9614DAA203B3AB2001F4448 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9614DA9203B3AB2001F4448 /* QuestionViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +74,24 @@
 		253E8E70203B17A500FE75AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		253E8E76203B184C00FE75AD /* Party Quiz Game.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Party Quiz Game.entitlements"; sourceTree = "<group>"; };
 		253E8E78203B185300FE75AD /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		CD2E9854203C58AB00CE646E /* TwoBuzzersPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwoBuzzersPopUp.xib; sourceTree = "<group>"; };
+		CD2E9855203C58AB00CE646E /* TwoBuzzersPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoBuzzersPopUp.swift; sourceTree = "<group>"; };
+		CD2E9856203C58AB00CE646E /* BlowBuzzerPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlowBuzzerPopUp.swift; sourceTree = "<group>"; };
+		CD2E9857203C58AB00CE646E /* BlowBuzzerPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlowBuzzerPopUp.xib; sourceTree = "<group>"; };
+		CD2E9858203C58AB00CE646E /* OneBuzzerPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OneBuzzerPopUp.xib; sourceTree = "<group>"; };
+		CD2E9859203C58AB00CE646E /* ShakeBuzzerPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShakeBuzzerPopUp.swift; sourceTree = "<group>"; };
+		CD2E985A203C58AB00CE646E /* OneBuzzerPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneBuzzerPopUp.swift; sourceTree = "<group>"; };
+		CD2E985B203C58AB00CE646E /* ShakeBuzzerPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShakeBuzzerPopUp.xib; sourceTree = "<group>"; };
+		CD2E9864203C58BA00CE646E /* TwoBuzzers.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwoBuzzers.xib; sourceTree = "<group>"; };
+		CD2E9865203C58BA00CE646E /* OneBuzzer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OneBuzzer.xib; sourceTree = "<group>"; };
+		CD2E9866203C58BA00CE646E /* ShakeBuzzer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShakeBuzzer.xib; sourceTree = "<group>"; };
+		CD2E9867203C58BA00CE646E /* BlowBuzzer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlowBuzzer.xib; sourceTree = "<group>"; };
+		CD2E9868203C58BA00CE646E /* ShakeBuzzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShakeBuzzer.swift; sourceTree = "<group>"; };
+		CD2E9869203C58BA00CE646E /* TwoBuzzers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoBuzzers.swift; sourceTree = "<group>"; };
+		CD2E986A203C58BA00CE646E /* BlowBuzzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlowBuzzer.swift; sourceTree = "<group>"; };
+		CD2E986B203C58BA00CE646E /* OneBuzzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneBuzzer.swift; sourceTree = "<group>"; };
+		CD2E9874203C58C400CE646E /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		CD2E9875203C58C400CE646E /* ProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
 		CD8E4F71203B3728008C48AE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CD8E4F74203B393D008C48AE /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		CD8E4F77203B3D0B008C48AE /* timeUp.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeUp.m4a; sourceTree = "<group>"; };
@@ -86,26 +106,10 @@
 		CD8E4F89203B3E01008C48AE /* gong.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = gong.m4a; sourceTree = "<group>"; };
 		CD8E4F8C203B3E46008C48AE /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		CD8E4F8D203B3E46008C48AE /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
-		CD8E4F91203B3FC2008C48AE /* OneBuzzer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OneBuzzer.xib; sourceTree = "<group>"; };
-		CD8E4F92203B3FC2008C48AE /* OneBuzzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneBuzzer.swift; sourceTree = "<group>"; };
-		CD8E4F93203B3FC2008C48AE /* TwoBuzzers.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwoBuzzers.xib; sourceTree = "<group>"; };
-		CD8E4F94203B3FC2008C48AE /* BlowBuzzer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlowBuzzer.xib; sourceTree = "<group>"; };
-		CD8E4F95203B3FC2008C48AE /* BlowBuzzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlowBuzzer.swift; sourceTree = "<group>"; };
-		CD8E4F96203B3FC2008C48AE /* TwoBuzzers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoBuzzers.swift; sourceTree = "<group>"; };
-		CD8E4F97203B3FC2008C48AE /* ShakeBuzzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShakeBuzzer.swift; sourceTree = "<group>"; };
-		CD8E4F98203B3FC2008C48AE /* ShakeBuzzer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShakeBuzzer.xib; sourceTree = "<group>"; };
-		CD8E4F9A203B3FC2008C48AE /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
-		CD8E4F9B203B3FC2008C48AE /* ProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
-		CD8E4F9D203B3FC2008C48AE /* BlowBuzzerPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlowBuzzerPopUp.xib; sourceTree = "<group>"; };
-		CD8E4F9E203B3FC2008C48AE /* TwoBuzzersPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwoBuzzersPopUp.xib; sourceTree = "<group>"; };
-		CD8E4F9F203B3FC2008C48AE /* ShakeBuzzerPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShakeBuzzerPopUp.xib; sourceTree = "<group>"; };
-		CD8E4FA0203B3FC2008C48AE /* ShakeBuzzerPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShakeBuzzerPopUp.swift; sourceTree = "<group>"; };
-		CD8E4FA1203B3FC2008C48AE /* BlowBuzzerPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlowBuzzerPopUp.swift; sourceTree = "<group>"; };
-		CD8E4FA2203B3FC2008C48AE /* OneBuzzerPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneBuzzerPopUp.swift; sourceTree = "<group>"; };
-		CD8E4FA3203B3FC2008C48AE /* TwoBuzzersPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoBuzzersPopUp.swift; sourceTree = "<group>"; };
-		CD8E4FA4203B3FC2008C48AE /* OneBuzzerPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OneBuzzerPopUp.xib; sourceTree = "<group>"; };
 		CD8E4FB7203B3FD7008C48AE /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		CD8E4FB8203B3FD7008C48AE /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		CD97F03A203C29310068AA4D /* AnswersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswersView.xib; sourceTree = "<group>"; };
+		CD97F03C203C29410068AA4D /* AnswersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersView.swift; sourceTree = "<group>"; };
 		F9614DA9203B3AB2001F4448 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,9 +146,10 @@
 		253E8E60203B17A500FE75AD /* Party Quiz Game */ = {
 			isa = PBXGroup;
 			children = (
-				CD8E4F9C203B3FC2008C48AE /* PopUps */,
-				CD8E4F90203B3FC2008C48AE /* Buzzers */,
-				CD8E4F99203B3FC2008C48AE /* ProgressView */,
+				CD2E9853203C581300CE646E /* ProgressView */,
+				CD2E9852203C57EE00CE646E /* Buzzers */,
+				CD2E9851203C57E200CE646E /* PopUps */,
+				CD97F036203C276B0068AA4D /* Answers */,
 				CD8E4F8B203B3E36008C48AE /* Extension */,
 				CD8E4F73203B38B7008C48AE /* ViewController */,
 				253E8E7C203B195E00FE75AD /* Storyboard */,
@@ -231,6 +236,45 @@
 			path = "View Controller";
 			sourceTree = "<group>";
 		};
+		CD2E9851203C57E200CE646E /* PopUps */ = {
+			isa = PBXGroup;
+			children = (
+				CD2E9856203C58AB00CE646E /* BlowBuzzerPopUp.swift */,
+				CD2E9857203C58AB00CE646E /* BlowBuzzerPopUp.xib */,
+				CD2E985A203C58AB00CE646E /* OneBuzzerPopUp.swift */,
+				CD2E9858203C58AB00CE646E /* OneBuzzerPopUp.xib */,
+				CD2E9859203C58AB00CE646E /* ShakeBuzzerPopUp.swift */,
+				CD2E985B203C58AB00CE646E /* ShakeBuzzerPopUp.xib */,
+				CD2E9855203C58AB00CE646E /* TwoBuzzersPopUp.swift */,
+				CD2E9854203C58AB00CE646E /* TwoBuzzersPopUp.xib */,
+			);
+			path = PopUps;
+			sourceTree = "<group>";
+		};
+		CD2E9852203C57EE00CE646E /* Buzzers */ = {
+			isa = PBXGroup;
+			children = (
+				CD2E9865203C58BA00CE646E /* OneBuzzer.xib */,
+				CD2E986B203C58BA00CE646E /* OneBuzzer.swift */,
+				CD2E9864203C58BA00CE646E /* TwoBuzzers.xib */,
+				CD2E9869203C58BA00CE646E /* TwoBuzzers.swift */,
+				CD2E9866203C58BA00CE646E /* ShakeBuzzer.xib */,
+				CD2E9868203C58BA00CE646E /* ShakeBuzzer.swift */,
+				CD2E9867203C58BA00CE646E /* BlowBuzzer.xib */,
+				CD2E986A203C58BA00CE646E /* BlowBuzzer.swift */,
+			);
+			path = Buzzers;
+			sourceTree = "<group>";
+		};
+		CD2E9853203C581300CE646E /* ProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				CD2E9874203C58C400CE646E /* ProgressView.swift */,
+				CD2E9875203C58C400CE646E /* ProgressView.xib */,
+			);
+			path = ProgressView;
+			sourceTree = "<group>";
+		};
 		CD8E4F73203B38B7008C48AE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,46 +311,13 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		CD8E4F90203B3FC2008C48AE /* Buzzers */ = {
+		CD97F036203C276B0068AA4D /* Answers */ = {
 			isa = PBXGroup;
 			children = (
-				CD8E4F91203B3FC2008C48AE /* OneBuzzer.xib */,
-				CD8E4F92203B3FC2008C48AE /* OneBuzzer.swift */,
-				CD8E4F93203B3FC2008C48AE /* TwoBuzzers.xib */,
-				CD8E4F94203B3FC2008C48AE /* BlowBuzzer.xib */,
-				CD8E4F95203B3FC2008C48AE /* BlowBuzzer.swift */,
-				CD8E4F96203B3FC2008C48AE /* TwoBuzzers.swift */,
-				CD8E4F97203B3FC2008C48AE /* ShakeBuzzer.swift */,
-				CD8E4F98203B3FC2008C48AE /* ShakeBuzzer.xib */,
+				CD97F03A203C29310068AA4D /* AnswersView.xib */,
+				CD97F03C203C29410068AA4D /* AnswersView.swift */,
 			);
-			name = Buzzers;
-			path = "../../../../Dropbox (iOSDA-IT)/Challenges/2nd Mini Challenge - Abusive Designers/KuroiOpenThisDir/SimpleBuzzer/Buzzers";
-			sourceTree = "<group>";
-		};
-		CD8E4F99203B3FC2008C48AE /* ProgressView */ = {
-			isa = PBXGroup;
-			children = (
-				CD8E4F9A203B3FC2008C48AE /* ProgressView.swift */,
-				CD8E4F9B203B3FC2008C48AE /* ProgressView.xib */,
-			);
-			name = ProgressView;
-			path = "../../../../Dropbox (iOSDA-IT)/Challenges/2nd Mini Challenge - Abusive Designers/KuroiOpenThisDir/SimpleBuzzer/ProgressView";
-			sourceTree = "<group>";
-		};
-		CD8E4F9C203B3FC2008C48AE /* PopUps */ = {
-			isa = PBXGroup;
-			children = (
-				CD8E4F9D203B3FC2008C48AE /* BlowBuzzerPopUp.xib */,
-				CD8E4F9E203B3FC2008C48AE /* TwoBuzzersPopUp.xib */,
-				CD8E4F9F203B3FC2008C48AE /* ShakeBuzzerPopUp.xib */,
-				CD8E4FA0203B3FC2008C48AE /* ShakeBuzzerPopUp.swift */,
-				CD8E4FA1203B3FC2008C48AE /* BlowBuzzerPopUp.swift */,
-				CD8E4FA2203B3FC2008C48AE /* OneBuzzerPopUp.swift */,
-				CD8E4FA3203B3FC2008C48AE /* TwoBuzzersPopUp.swift */,
-				CD8E4FA4203B3FC2008C48AE /* OneBuzzerPopUp.xib */,
-			);
-			name = PopUps;
-			path = "../../../../Dropbox (iOSDA-IT)/Challenges/2nd Mini Challenge - Abusive Designers/KuroiOpenThisDir/SimpleBuzzer/PopUps";
+			path = Answers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,27 +387,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD8E4FAF203B3FC2008C48AE /* BlowBuzzerPopUp.xib in Resources */,
+				CD2E986C203C58BA00CE646E /* TwoBuzzers.xib in Resources */,
 				CD8E4F87203B3DA2008C48AE /* timerTick.m4a in Resources */,
 				CD8E4F88203B3DA2008C48AE /* answerRight.m4a in Resources */,
-				CD8E4FB1203B3FC2008C48AE /* ShakeBuzzerPopUp.xib in Resources */,
-				CD8E4FA5203B3FC2008C48AE /* OneBuzzer.xib in Resources */,
+				CD2E9863203C58AB00CE646E /* ShakeBuzzerPopUp.xib in Resources */,
 				CD8E4F81203B3D0B008C48AE /* swoosh_2.m4a in Resources */,
 				CD8E4F82203B3D0B008C48AE /* swoosh_1.m4a in Resources */,
 				CD8E4F80203B3D0B008C48AE /* buttonClick.m4a in Resources */,
-				CD8E4FA7203B3FC2008C48AE /* TwoBuzzers.xib in Resources */,
-				CD8E4FA8203B3FC2008C48AE /* BlowBuzzer.xib in Resources */,
-				CD8E4FAE203B3FC2008C48AE /* ProgressView.xib in Resources */,
 				253E8E6F203B17A500FE75AD /* LaunchScreen.storyboard in Resources */,
 				253E8E6C203B17A500FE75AD /* Assets.xcassets in Resources */,
 				CD8E4F8A203B3E01008C48AE /* gong.m4a in Resources */,
+				CD2E986E203C58BA00CE646E /* ShakeBuzzer.xib in Resources */,
 				CD8E4F7E203B3D0B008C48AE /* answerWrong.m4a in Resources */,
+				CD2E985F203C58AB00CE646E /* BlowBuzzerPopUp.xib in Resources */,
+				CD2E986F203C58BA00CE646E /* BlowBuzzer.xib in Resources */,
 				CD8E4F7D203B3D0B008C48AE /* timeUp.m4a in Resources */,
-				CD8E4FB6203B3FC2008C48AE /* OneBuzzerPopUp.xib in Resources */,
-				CD8E4FB0203B3FC2008C48AE /* TwoBuzzersPopUp.xib in Resources */,
+				CD2E9860203C58AB00CE646E /* OneBuzzerPopUp.xib in Resources */,
+				CD97F03B203C29310068AA4D /* AnswersView.xib in Resources */,
 				CD8E4F72203B3728008C48AE /* Main.storyboard in Resources */,
-				CD8E4FAC203B3FC2008C48AE /* ShakeBuzzer.xib in Resources */,
 				CD8E4F7F203B3D0B008C48AE /* musicIntro.m4a in Resources */,
+				CD2E986D203C58BA00CE646E /* OneBuzzer.xib in Resources */,
+				CD2E985C203C58AB00CE646E /* TwoBuzzersPopUp.xib in Resources */,
+				CD2E9877203C58C400CE646E /* ProgressView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,29 +420,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD8E4F75203B393D008C48AE /* MainPageViewController.swift in Sources */,
-				CD8E4FA9203B3FC2008C48AE /* BlowBuzzer.swift in Sources */,
-				CD8E4FB3203B3FC2008C48AE /* BlowBuzzerPopUp.swift in Sources */,
 				253490FC203B20E8006A3CEE /* StartViewController.swift in Sources */,
-				CD8E4FA6203B3FC2008C48AE /* OneBuzzer.swift in Sources */,
+				CD2E9870203C58BA00CE646E /* ShakeBuzzer.swift in Sources */,
 				253E8E62203B17A500FE75AD /* AppDelegate.swift in Sources */,
 				253490F8203B1B9A006A3CEE /* CloudKitQuestionsClass.swift in Sources */,
-				CD8E4FB5203B3FC2008C48AE /* TwoBuzzersPopUp.swift in Sources */,
+				CD97F03D203C29410068AA4D /* AnswersView.swift in Sources */,
 				F9614DAA203B3AB2001F4448 /* QuestionViewController.swift in Sources */,
 				253490FE203B20E8006A3CEE /* DownloadingViewController.swift in Sources */,
 				253490FD203B20E8006A3CEE /* MigrationViewController.swift in Sources */,
+				CD2E9872203C58BA00CE646E /* BlowBuzzer.swift in Sources */,
 				253490F6203B1B92006A3CEE /* CoreDataManager.swift in Sources */,
-				CD8E4FAA203B3FC2008C48AE /* TwoBuzzers.swift in Sources */,
 				CD8E4F8F203B3E46008C48AE /* UIButtonExtension.swift in Sources */,
+				CD2E9876203C58C400CE646E /* ProgressView.swift in Sources */,
+				CD2E985E203C58AB00CE646E /* BlowBuzzerPopUp.swift in Sources */,
 				CD8E4FBA203B3FD7008C48AE /* UIImageViewExtension.swift in Sources */,
-				CD8E4FB2203B3FC2008C48AE /* ShakeBuzzerPopUp.swift in Sources */,
+				CD2E9873203C58BA00CE646E /* OneBuzzer.swift in Sources */,
+				CD2E9861203C58AB00CE646E /* ShakeBuzzerPopUp.swift in Sources */,
 				25349102203B2180006A3CEE /* ManageQuestions.swift in Sources */,
+				CD2E985D203C58AB00CE646E /* TwoBuzzersPopUp.swift in Sources */,
 				25349101203B2180006A3CEE /* CheckConnection.swift in Sources */,
-				CD8E4FAB203B3FC2008C48AE /* ShakeBuzzer.swift in Sources */,
 				253E8E6A203B17A500FE75AD /* Party_Quiz_Game.xcdatamodeld in Sources */,
+				CD2E9871203C58BA00CE646E /* TwoBuzzers.swift in Sources */,
 				CD8E4FB9203B3FD7008C48AE /* UIViewExtension.swift in Sources */,
 				CD8E4F8E203B3E46008C48AE /* UIColorExtension.swift in Sources */,
-				CD8E4FAD203B3FC2008C48AE /* ProgressView.swift in Sources */,
-				CD8E4FB4203B3FC2008C48AE /* OneBuzzerPopUp.swift in Sources */,
+				CD2E9862203C58AB00CE646E /* OneBuzzerPopUp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
