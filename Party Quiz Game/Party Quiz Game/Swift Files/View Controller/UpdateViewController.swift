@@ -1,5 +1,5 @@
 //
-//  DownloadingViewController.swift
+//  UpdateViewController.swift
 //  Party Quiz Game
 //
 //  Created by Ernesto De Crecchio on 14/02/18.
@@ -9,7 +9,7 @@
 import UIKit
 import CloudKit
 
-class DownloadingViewController: UIViewController {
+class UpdateViewController: UIViewController {
   
   var cloudKitDatabase = CloudKitQuestions.shared
   
@@ -27,7 +27,7 @@ class DownloadingViewController: UIViewController {
     loadingView!.alpha = 0.2
     loadingView!.backgroundColor = UIColor.black
     self.view.addSubview(loadingView!)
-
+    
     cloudKitDatabase.downloadAllQuestions()
   }
   

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g28-jk-LDH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2CF-gL-tTf">
     <device id="retina4_0" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -15,6 +15,61 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Pre Start View Controller-->
+        <scene sceneID="wDz-PD-DKU">
+            <objects>
+                <viewController id="2CF-gL-tTf" customClass="PreStartViewController" customModule="Party_Quiz_Game" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W0E-QB-MAf">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Abusive Designers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8tg-05-gwO">
+                                <rect key="frame" x="213" y="150" width="143" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="1eM-Gr-byl"/>
+                    </view>
+                    <connections>
+                        <segue destination="gNH-hP-fca" kind="show" identifier="updateDatabase" id="fl6-4g-Kxz"/>
+                        <segue destination="g28-jk-LDH" kind="show" identifier="afterStart" id="1iD-kp-Zoh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YBf-hh-Uwg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="438" y="-324"/>
+        </scene>
+        <!--Update View Controller-->
+        <scene sceneID="n0C-oI-f5Q">
+            <objects>
+                <viewController id="gNH-hP-fca" customClass="UpdateViewController" customModule="Party_Quiz_Game" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0zo-kK-P1p">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Downloading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYq-tZ-UOm">
+                                <rect key="frame" x="234" y="150" width="100" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="TRM-zD-J3h"/>
+                    </view>
+                    <connections>
+                        <segue destination="g28-jk-LDH" kind="show" identifier="afterDownload" id="ccu-NN-0BM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D3Q-cc-vKl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="439" y="645"/>
+        </scene>
         <!--MainPage View Controller-->
         <scene sceneID="b9J-TU-mEs">
             <objects>
@@ -81,7 +136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RKC-Yr-skb" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1375" y="-324"/>
+            <point key="canvasLocation" x="1167" y="-324"/>
         </scene>
         <!--Question View Controller-->
         <scene sceneID="Vp5-uX-eLA">
@@ -176,11 +231,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uq9-7T-8bW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2224.6478873239439" y="-324.375"/>
+            <point key="canvasLocation" x="2029" y="-324"/>
         </scene>
     </scenes>
     <resources>
         <image name="Background(Blue)" width="568" height="320"/>
         <image name="Icon(Infos)" width="36" height="36"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ccu-NN-0BM"/>
+    </inferredMetricsTieBreakers>
 </document>

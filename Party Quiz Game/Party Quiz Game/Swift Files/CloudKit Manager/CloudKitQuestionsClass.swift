@@ -15,7 +15,7 @@ class CloudKitQuestions {
   //let database = CKContainer.default().privateCloudDatabase
   let database = CKContainer.default().publicCloudDatabase
   
-  var questioningDelegate: DownloadingViewController?
+  var questioningDelegate: UpdateViewController?
   
   var localQuestions = [CKRecord]() //Array of records compatible with the database
   

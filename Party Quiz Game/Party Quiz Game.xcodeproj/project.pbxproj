@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		253490F6203B1B92006A3CEE /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253490F5203B1B92006A3CEE /* CoreDataManager.swift */; };
 		253490F8203B1B9A006A3CEE /* CloudKitQuestionsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253490F7203B1B9A006A3CEE /* CloudKitQuestionsClass.swift */; };
-		253490FC203B20E8006A3CEE /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253490F9203B20E8006A3CEE /* StartViewController.swift */; };
 		253490FD203B20E8006A3CEE /* MigrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253490FA203B20E8006A3CEE /* MigrationViewController.swift */; };
-		253490FE203B20E8006A3CEE /* DownloadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253490FB203B20E8006A3CEE /* DownloadingViewController.swift */; };
 		25349101203B2180006A3CEE /* CheckConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253490FF203B2180006A3CEE /* CheckConnection.swift */; };
 		25349102203B2180006A3CEE /* ManageQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25349100203B2180006A3CEE /* ManageQuestions.swift */; };
 		253E8E62203B17A500FE75AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253E8E61203B17A500FE75AD /* AppDelegate.swift */; };
@@ -19,6 +17,8 @@
 		253E8E6C203B17A500FE75AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 253E8E6B203B17A500FE75AD /* Assets.xcassets */; };
 		253E8E6F203B17A500FE75AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 253E8E6D203B17A500FE75AD /* LaunchScreen.storyboard */; };
 		253E8E79203B185300FE75AD /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253E8E78203B185300FE75AD /* CloudKit.framework */; };
+		25A53783203C8017004BCD2D /* PreStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A53782203C8017004BCD2D /* PreStartViewController.swift */; };
+		25A53785203C80B5004BCD2D /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A53784203C80B5004BCD2D /* UpdateViewController.swift */; };
 		CD2E985C203C58AB00CE646E /* TwoBuzzersPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2E9854203C58AB00CE646E /* TwoBuzzersPopUp.xib */; };
 		CD2E985D203C58AB00CE646E /* TwoBuzzersPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E9855203C58AB00CE646E /* TwoBuzzersPopUp.swift */; };
 		CD2E985E203C58AB00CE646E /* BlowBuzzerPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E9856203C58AB00CE646E /* BlowBuzzerPopUp.swift */; };
@@ -63,9 +63,7 @@
 /* Begin PBXFileReference section */
 		253490F5203B1B92006A3CEE /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		253490F7203B1B9A006A3CEE /* CloudKitQuestionsClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitQuestionsClass.swift; sourceTree = "<group>"; };
-		253490F9203B20E8006A3CEE /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		253490FA203B20E8006A3CEE /* MigrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MigrationViewController.swift; sourceTree = "<group>"; };
-		253490FB203B20E8006A3CEE /* DownloadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadingViewController.swift; sourceTree = "<group>"; };
 		253490FF203B2180006A3CEE /* CheckConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckConnection.swift; path = "Party Quiz Game/Swift Files/CheckConnection.swift"; sourceTree = SOURCE_ROOT; };
 		25349100203B2180006A3CEE /* ManageQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManageQuestions.swift; path = "Party Quiz Game/Swift Files/ManageQuestions.swift"; sourceTree = SOURCE_ROOT; };
 		253E8E5E203B17A500FE75AD /* Party Quiz Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Party Quiz Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +74,8 @@
 		253E8E70203B17A500FE75AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		253E8E76203B184C00FE75AD /* Party Quiz Game.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Party Quiz Game.entitlements"; sourceTree = "<group>"; };
 		253E8E78203B185300FE75AD /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		25A53782203C8017004BCD2D /* PreStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreStartViewController.swift; sourceTree = "<group>"; };
+		25A53784203C80B5004BCD2D /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
 		CD2E9854203C58AB00CE646E /* TwoBuzzersPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwoBuzzersPopUp.xib; sourceTree = "<group>"; };
 		CD2E9855203C58AB00CE646E /* TwoBuzzersPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoBuzzersPopUp.swift; sourceTree = "<group>"; };
 		CD2E9856203C58AB00CE646E /* BlowBuzzerPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlowBuzzerPopUp.swift; sourceTree = "<group>"; };
@@ -150,12 +150,7 @@
 		253E8E60203B17A500FE75AD /* Party Quiz Game */ = {
 			isa = PBXGroup;
 			children = (
-				CD2E9851203C57E200CE646E /* PopUps */,
-				CD2E9852203C57EE00CE646E /* Buzzers */,
-				CD2E9853203C581300CE646E /* ProgressView */,
-				CD97F036203C276B0068AA4D /* Answers */,
-				CD8E4F8B203B3E36008C48AE /* Extension & Singlerton */,
-				CD8E4F73203B38B7008C48AE /* ViewController */,
+				25A53781203C7EFE004BCD2D /* Interface */,
 				253E8E7C203B195E00FE75AD /* Storyboard */,
 				253E8E7B203B195500FE75AD /* Swift Files */,
 				253E8E7A203B194300FE75AD /* Core Data Model */,
@@ -189,6 +184,7 @@
 			children = (
 				253490FF203B2180006A3CEE /* CheckConnection.swift */,
 				25349100203B2180006A3CEE /* ManageQuestions.swift */,
+				CD8E4F8B203B3E36008C48AE /* Extension & Singlerton */,
 				253E8E80203B198300FE75AD /* View Controller */,
 				253E8E7F203B197E00FE75AD /* Delegate */,
 				253E8E7E203B197200FE75AD /* CoreData Manager */,
@@ -233,11 +229,24 @@
 		253E8E80203B198300FE75AD /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				253490FB203B20E8006A3CEE /* DownloadingViewController.swift */,
+				25A53784203C80B5004BCD2D /* UpdateViewController.swift */,
+				25A53782203C8017004BCD2D /* PreStartViewController.swift */,
+				CD8E4F74203B393D008C48AE /* MainPageViewController.swift */,
+				F9614DA9203B3AB2001F4448 /* QuestionViewController.swift */,
 				253490FA203B20E8006A3CEE /* MigrationViewController.swift */,
-				253490F9203B20E8006A3CEE /* StartViewController.swift */,
 			);
 			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		25A53781203C7EFE004BCD2D /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				CD97F036203C276B0068AA4D /* Answers */,
+				CD2E9853203C581300CE646E /* ProgressView */,
+				CD2E9852203C57EE00CE646E /* Buzzers */,
+				CD2E9851203C57E200CE646E /* PopUps */,
+			);
+			path = Interface;
 			sourceTree = "<group>";
 		};
 		CD2E9851203C57E200CE646E /* PopUps */ = {
@@ -277,15 +286,6 @@
 				CD2E9875203C58C400CE646E /* ProgressView.xib */,
 			);
 			path = ProgressView;
-			sourceTree = "<group>";
-		};
-		CD8E4F73203B38B7008C48AE /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				CD8E4F74203B393D008C48AE /* MainPageViewController.swift */,
-				F9614DA9203B3AB2001F4448 /* QuestionViewController.swift */,
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 		CD8E4F76203B3D0B008C48AE /* Sounds */ = {
@@ -426,16 +426,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD8E4F75203B393D008C48AE /* MainPageViewController.swift in Sources */,
-				253490FC203B20E8006A3CEE /* StartViewController.swift in Sources */,
 				CD2E9870203C58BA00CE646E /* ShakeBuzzer.swift in Sources */,
 				253E8E62203B17A500FE75AD /* AppDelegate.swift in Sources */,
 				253490F8203B1B9A006A3CEE /* CloudKitQuestionsClass.swift in Sources */,
 				CD97F03D203C29410068AA4D /* AnswersView.swift in Sources */,
 				F9614DAA203B3AB2001F4448 /* QuestionViewController.swift in Sources */,
-				253490FE203B20E8006A3CEE /* DownloadingViewController.swift in Sources */,
 				253490FD203B20E8006A3CEE /* MigrationViewController.swift in Sources */,
 				CD2E9872203C58BA00CE646E /* BlowBuzzer.swift in Sources */,
 				F9646A4A203C73C50071BDA7 /* Singleton.swift in Sources */,
+				25A53783203C8017004BCD2D /* PreStartViewController.swift in Sources */,
 				253490F6203B1B92006A3CEE /* CoreDataManager.swift in Sources */,
 				CD8E4F8F203B3E46008C48AE /* UIButtonExtension.swift in Sources */,
 				F9646A48203C703B0071BDA7 /* UILabelExtension.swift in Sources */,
@@ -444,6 +443,7 @@
 				CD8E4FBA203B3FD7008C48AE /* UIImageViewExtension.swift in Sources */,
 				CD2E9873203C58BA00CE646E /* OneBuzzer.swift in Sources */,
 				CD2E9861203C58AB00CE646E /* ShakeBuzzerPopUp.swift in Sources */,
+				25A53785203C80B5004BCD2D /* UpdateViewController.swift in Sources */,
 				25349102203B2180006A3CEE /* ManageQuestions.swift in Sources */,
 				CD2E985D203C58AB00CE646E /* TwoBuzzersPopUp.swift in Sources */,
 				25349101203B2180006A3CEE /* CheckConnection.swift in Sources */,
