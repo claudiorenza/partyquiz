@@ -12,15 +12,17 @@ class OneBuzzer: UIView {
   
   @IBOutlet weak var buzzer: UIButton!
   var index = 0
+  var total = 10
   
   func setBuzzer() {
-    buzzer.layer.cornerRadius = 50
+    buzzer.layer.cornerRadius = 25.0
   }
   
   @IBAction func pressBuzzer(_ sender: UIButton) {
     if index < 10 {
       index += 1
-      buzzer.setTitle("\(index)", for: .normal)
+      total = total - 1
+      buzzer.setTitle("\(total)", for: .normal)
       buzzer.setTitleColor(UIColor.white, for: .normal)
     } else {
       buzzer.isUserInteractionEnabled = false

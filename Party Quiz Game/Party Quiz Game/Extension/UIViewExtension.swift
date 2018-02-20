@@ -37,9 +37,13 @@ extension UIView {
     layer.add(animation, forKey: nil)
   }
   
-  //questionBoxMoveLeft
-  //buzzersleft
-  //buzzersright
-  
+  func changeBackgroundColor(initColor: UIColor, finalColor: UIColor) {
+    let animation = CABasicAnimation(keyPath: "backgroundColor")
+    animation.fromValue = initColor.cgColor
+    animation.toValue = finalColor.cgColor
+    animation.duration = 2
+    
+    layer.add(animation, forKey: nil)
+  }
   
 }

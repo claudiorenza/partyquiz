@@ -130,6 +130,7 @@
                     <connections>
                         <outlet property="buzzerView" destination="NsG-iv-adX" id="T1S-2V-k5E"/>
                         <outlet property="progressControllerView" destination="N6z-VY-M5z" id="8jC-uG-0cc"/>
+                        <outlet property="questionOutlet" destination="l66-wt-NZV" id="QGL-xY-tdz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uq9-7T-8bW" userLabel="First Responder" sceneMemberID="firstResponder"/>

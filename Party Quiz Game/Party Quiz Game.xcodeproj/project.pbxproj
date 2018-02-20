@@ -146,9 +146,9 @@
 		253E8E60203B17A500FE75AD /* Party Quiz Game */ = {
 			isa = PBXGroup;
 			children = (
-				CD2E9853203C581300CE646E /* ProgressView */,
-				CD2E9852203C57EE00CE646E /* Buzzers */,
 				CD2E9851203C57E200CE646E /* PopUps */,
+				CD2E9852203C57EE00CE646E /* Buzzers */,
+				CD2E9853203C581300CE646E /* ProgressView */,
 				CD97F036203C276B0068AA4D /* Answers */,
 				CD8E4F8B203B3E36008C48AE /* Extension */,
 				CD8E4F73203B38B7008C48AE /* ViewController */,

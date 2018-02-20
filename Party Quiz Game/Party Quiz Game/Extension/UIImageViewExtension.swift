@@ -10,14 +10,36 @@ import UIKit
 import Foundation
 
 extension UIImageView {
-
-  func oneBuzzerTutorial(value: Float) {
+  
+  func oneBuzzerTutorial(value: Float, view: UIView) {
     
     let animation = CABasicAnimation(keyPath: "position")
-//    animation.fromValue = self.center
-//    print ("\(position)")
-    animation.fromValue = CGPoint(x: self.center.x, y: self.center.y)
-    animation.toValue = CGPoint(x: self.center.x, y: (self.center.y * CGFloat(value)))
+    animation.fromValue = CGPoint(x: view.bounds.midX, y: view.bounds.midY)
+    animation.toValue = CGPoint(x: view.bounds.midX, y: (view.bounds.midY * CGFloat(value)))
+    animation.duration = 0.5
+    animation.autoreverses = true
+    animation.repeatCount = Float.infinity
+    
+    layer.add(animation, forKey: nil)
+  }
+  
+  func leftHandBuzzerTutorial(value: Float, view: UIView) {
+    
+    let animation = CABasicAnimation(keyPath: "position")
+    animation.fromValue = CGPoint(x: (view.bounds.width * 0.4), y: (view.bounds.height * 0.55))
+    animation.toValue = CGPoint(x: (view.bounds.width * 0.4), y: ((view.bounds.height * 0.55) * CGFloat(value)))
+    animation.duration = 0.5
+    animation.autoreverses = true
+    animation.repeatCount = Float.infinity
+    
+    layer.add(animation, forKey: nil)
+  }
+  
+  func rightHandBuzzerTutorial(value: Float, view: UIView) {
+    
+    let animation = CABasicAnimation(keyPath: "position")
+    animation.fromValue = CGPoint(x: (view.bounds.midX), y: (view.bounds.height * 0.45))
+    animation.toValue = CGPoint(x: (view.bounds.midX), y: ((view.bounds.height * 0.45) * CGFloat(value)))
     animation.duration = 0.5
     animation.autoreverses = true
     animation.repeatCount = Float.infinity
@@ -47,6 +69,6 @@ extension UIImageView {
     layer.add(animation, forKey: nil)
   }
   
-  //change background color
-
+  
 }
+

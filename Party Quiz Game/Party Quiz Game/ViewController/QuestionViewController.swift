@@ -13,11 +13,24 @@ class QuestionViewController: UIViewController {
   // - MARK: 1: Variables and Outlets declaration
   @IBOutlet weak var buzzerView: UIView!
   @IBOutlet weak var progressControllerView: UIView!
-  var index = 0
+  @IBOutlet var questionOutlet: UILabel!
   
+  let backgoundBase = UIColor(red: 67/255, green: 59/255, blue: 240/255, alpha: 1)
+  let backgoundLilla = UIColor(red: 189/255, green: 16/255, blue: 224/255, alpha: 1)
+  let background2 = UIColor(red: 1, green: 165/255, blue: 0, alpha: 1)
+  let background3 = UIColor(red: 1, green: 165/255, blue: 0, alpha: 1)
+  let background4 = UIColor(red: 1, green: 165/255, blue: 0, alpha: 1)
+  // black is good
+  // orange is good
+  
+  
+  var index = 0
   // - MARK: 2: ViewDidLoad
   override func viewDidLoad() {
     super.viewDidLoad()
+    view.backgroundColor = backgoundBase
+    setQuestion()
+    loadAnswers()
     loadProgressView()
     randomBuzzers()
   }
@@ -33,13 +46,14 @@ class QuestionViewController: UIViewController {
 
   // - MARK: 4: Method that generates random buzzers
   func randomBuzzers() {
-    index = Int(arc4random_uniform(4))
+    index = 0 //Int(arc4random_uniform(4))
     if index == 0 {
       if let oneBuzzer = Bundle.main.loadNibNamed("OneBuzzer", owner: self, options: nil)?.first as? OneBuzzer {
         buzzerView.addSubview(oneBuzzer)
         oneBuzzer.loadPopUp(view: buzzerView)
         oneBuzzer.setBuzzer()
         oneBuzzer.frame = buzzerView.bounds
+        changeBackgroundColor(finalColor: UIColor.orange)
       }
     } else if index == 1 {
       if let twoBuzzers = Bundle.main.loadNibNamed("TwoBuzzers", owner: self, options: nil)?.first as? TwoBuzzers {
@@ -47,6 +61,7 @@ class QuestionViewController: UIViewController {
         twoBuzzers.loadPopUp(view: buzzerView)
         twoBuzzers.setBuzzers()
         twoBuzzers.frame = buzzerView.bounds
+        changeBackgroundColor(finalColor: UIColor.red)
       }
     } else if index == 2 {
       if let shakeBuzzer = Bundle.main.loadNibNamed("ShakeBuzzer", owner: self, options: nil)?.first as? ShakeBuzzer {
@@ -56,6 +71,7 @@ class QuestionViewController: UIViewController {
         shakeBuzzer.setRoundedLabel()
         shakeBuzzer.beginShaking()
         shakeBuzzer.frame = buzzerView.bounds
+        changeBackgroundColor(finalColor: UIColor.black)
       }
     } else {
       if let blowBuzzer = Bundle.main.loadNibNamed("BlowBuzzer", owner: self, options: nil)?.first as? BlowBuzzer {
@@ -64,6 +80,7 @@ class QuestionViewController: UIViewController {
         blowBuzzer.setRoundedView()
         blowBuzzer.startBlowing()
         blowBuzzer.frame = buzzerView.bounds
+        changeBackgroundColor(finalColor: backgoundLilla)
       }
     }
   }
@@ -77,10 +94,27 @@ class QuestionViewController: UIViewController {
     
   }
   
+  func setQuestion()  {
+    questionOutlet.layer.cornerRadius = 25.0
+    questionOutlet.clipsToBounds = true
+  }
   
   @IBAction func buttonAction(_ sender: UIButton) {
     randomBuzzers()
     loadProgressView()
+  }
+  
+  func delayWithSeconds(_ seconds: Double, completion: @escaping () -> ()) {
+    DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+      completion()
+    }
+  }
+  
+  func changeBackgroundColor(finalColor: UIColor) {
+    view.changeBackgroundColor(initColor: view.backgroundColor!, finalColor: finalColor)
+    delayWithSeconds(1.8, completion: {
+      self.view.backgroundColor = finalColor
+    })
   }
   
 }

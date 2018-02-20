@@ -13,7 +13,6 @@ class ShakeBuzzerPopUp: UIView {
   @IBOutlet weak var label: UILabel!
   @IBOutlet weak var okOutlet: UIButton!
   @IBOutlet weak var imageToAnimate: UIImageView!
-//  let prova = ShakeBuzzer()
   
   func setViewElements() {
     label.layer.cornerRadius = 25.0
@@ -28,6 +27,5 @@ class ShakeBuzzerPopUp: UIView {
   
   @IBAction func okAction(_ sender: UIButton) {
     self.removeFromSuperview()
-//    prova.beginShaking()
   }
 }
