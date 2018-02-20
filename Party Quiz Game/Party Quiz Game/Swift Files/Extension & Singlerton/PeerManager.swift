@@ -21,7 +21,8 @@ class PeerManager: NSObject,  MCNearbyServiceBrowserDelegate, MCAdvertiserAssist
   var service = "PartiQuiz"
   var peerArray = [MCPeerID]()
   var browserVC: MCBrowserViewController!
-  
+  var firstGame = 1
+  var question: String!
   override init(){
     peerID = MCPeerID(displayName: UIDevice.current.name)
     
@@ -127,11 +128,8 @@ class PeerManager: NSObject,  MCNearbyServiceBrowserDelegate, MCAdvertiserAssist
     })
   }
   func sendQuestion(question: String){
-    print("settato a false")
-    print(question)
     do{
       try self.session.send(convertData(string: question), toPeers: self.session.connectedPeers, with: .reliable)
-      
     }
     catch let error as NSError{
       let ac = UIAlertController(title: "Connection Error", message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
@@ -143,13 +141,25 @@ class PeerManager: NSObject,  MCNearbyServiceBrowserDelegate, MCAdvertiserAssist
 extension PeerManager:  MCSessionDelegate{
   
   func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
+    print("prima del dispatch \(firstGame)")
+    if firstGame >= 1{
       DispatchQueue.main.async {
-        let msg = String(data: data, encoding: String.Encoding.utf8) as String!
-        self.browserVC.dismiss(animated: true, completion: {
+          let msg = String(data: data, encoding: String.Encoding.utf8) as String!
+         self.browserVC.dismiss(animated: true, completion: {
           self.controllerOrigin?.performSegue(withIdentifier: msg!, sender: nil)
         })
       }
+      firstGame = firstGame - 1
+      print(self.firstGame)
     }
+    else {
+      DispatchQueue.main.async {
+        self.question = String(data: data, encoding: String.Encoding.utf8) as String!
+        print("print \(self.question)")
+      }
+      
+    }
+  }
   
   func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
     switch  state {

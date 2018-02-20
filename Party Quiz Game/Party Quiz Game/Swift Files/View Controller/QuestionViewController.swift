@@ -28,7 +28,6 @@ class QuestionViewController: UIViewController {
   // black is good
   // orange is good
   var index = 0
-
   // - MARK: 2: ViewDidLoad
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -37,7 +36,11 @@ class QuestionViewController: UIViewController {
     setAnswersQuestion()
     loadProgressView()
     randomBuzzers()
+    //PeerManager.shared.sendQuestion(question: "prima domanda")
+   // questionOutlet.text = PeerManager.shared.question
+    
   }
+
   
   // - MARK: 3: Method that loads the progress view
   func loadProgressView() {
