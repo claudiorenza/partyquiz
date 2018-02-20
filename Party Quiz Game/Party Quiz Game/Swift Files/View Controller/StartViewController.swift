@@ -16,14 +16,14 @@ class StartViewController: UIViewController {
   @IBOutlet weak var passedDaysLabel: UILabel!
   @IBOutlet weak var lastUpdateLabel: UILabel!
   @IBOutlet weak var needsUpdateLabel: UILabel!
+  @IBOutlet weak var checkConnectionLabel: UILabel!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-//    setUserDefault()
   }
   
   override func viewDidAppear(_ animated: Bool) {
-    let when = DispatchTime.now() + 10
+    let when = DispatchTime.now() + 7
     
     let notLaunchedBefore = UserDefaults.standard.value(forKey: "launchedBefore") as! Bool
     let lastRuns = UserDefaults.standard.value(forKey: "lastRun") as! Date
@@ -39,9 +39,11 @@ class StartViewController: UIViewController {
       lastStartLabel.text = "\(lastRuns)"
       passedDaysLabel.text = "0"
       needsUpdateLabel.text = "Si"
+      lastUpdateLabel.text = "Mai"
       
       if CheckConnection.shared.isConnectedToNetwork() {
         //C'è connessione
+        checkConnectionLabel.text = "Si"
         
         DispatchQueue.main.asyncAfter(deadline: when) {
           UserDefaults.standard.set(Date() , forKey: "lastUpdate")
@@ -49,6 +51,7 @@ class StartViewController: UIViewController {
         }
       } else {
         //NON c'è connessione
+        checkConnectionLabel.text = "No"
         
         UserDefaults.standard.set(nil, forKey: "launchedBefore")
         lastUpdateLabel.text = "Mai"
@@ -64,30 +67,36 @@ class StartViewController: UIViewController {
       passedDaysLabel.text = "\(Date().interval(ofComponent: .second, fromDate: lastUpdate))"
       lastUpdateLabel.text = "\(lastUpdate)"
       
-      if Date().interval(ofComponent: .second, fromDate: lastUpdate) > 75 {
+      
+      if Date().interval(ofComponent: .second, fromDate: lastUpdate) > 37 {
         //Passati più di 13 giorni
         needsUpdateLabel.text = "Si"
         
         if CheckConnection.shared.isConnectedToNetwork() {
           //C'è la connessione
+          checkConnectionLabel.text = "Si"
           
           DispatchQueue.main.asyncAfter(deadline: when) {
             UserDefaults.standard.set(Date() , forKey: "lastUpdate")
             self.performSegue(withIdentifier: "updateDatabase", sender: nil)
           }
+        } else {
+          checkConnectionLabel.text = "No"
+          
+          DispatchQueue.main.asyncAfter(deadline: when) {
+            self.performSegue(withIdentifier: "afterStart", sender: nil)
+          }
         }
       } else {
+        //Non sono passsati più di 13 giorni
         needsUpdateLabel.text = "No"
+        checkConnectionLabel.text = "Inutile verificare, non deve aggiornare"
         
         DispatchQueue.main.asyncAfter(deadline: when) {
           self.performSegue(withIdentifier: "afterStart", sender: nil)
         }
       }
     }
-  }
-  
-  func setUserDefault() {
-    UserDefaults.standard.set(Date(), forKey: "LastRun")
   }
 }
 

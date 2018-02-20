@@ -53,11 +53,6 @@ class MigrationViewController: UIViewController {
     coreDataLabel.text = CoreDataManager.shared.countRow(nameEntity: entityNameQ, context: context).description
   }
   
-  @IBAction func print2Pressed(_ sender: Any) {
-    CoreDataManager.shared.printValue(nameEntity: entityNameQ, context: context)
-  }
-  
-  
   @IBOutlet weak var questionTextLabel: UILabel!
   @IBOutlet weak var answer1Label: UIButton!
   @IBOutlet weak var answer2Label: UIButton!
