@@ -31,11 +31,11 @@ class TwoBuzzers: UIView {
       rightBuzzer.isUserInteractionEnabled = true
     } else {
       view.buzzerDown(view: view)
-      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "notify"), object: nil)
       leftBuzzer.isUserInteractionEnabled = false
       Singleton.shared.delayWithSeconds(0.4, completion: {
         self.removeFromSuperview()
       })
+      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "twoBuzzersException"), object: nil)
     }
   }
   

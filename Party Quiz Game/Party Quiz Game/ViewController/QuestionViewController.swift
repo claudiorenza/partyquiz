@@ -27,14 +27,16 @@ class QuestionViewController: UIViewController {
   // black is good
   // orange is good
   var index = 0
+  var point = CGPoint()
 
   // - MARK: 2: ViewDidLoad
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = backgoundBase
-    let questionOutletInitPoint = questionOutlet.frame.origin
     setAnswersQuestion()
     loadProgressView()
+    
+    NotificationCenter.default.addObserver(self, selector: #selector(self.moveQuestionBoxToOrigin), name: NSNotification.Name(rawValue: "twoBuzzersException"), object: nil)
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -62,6 +64,8 @@ class QuestionViewController: UIViewController {
         changeBackgroundColor(finalColor: UIColor.orange)
       }
     } else if index == 1 {
+      point.x = questionOutlet.center.x
+      questionOutlet.center.x = view.bounds.width * 0.465
       if let twoBuzzers = Bundle.main.loadNibNamed("TwoBuzzers", owner: self, options: nil)?.first as? TwoBuzzers {
         buzzerView.addSubview(twoBuzzers)
         twoBuzzers.loadPopUp(view: view)
@@ -124,5 +128,12 @@ class QuestionViewController: UIViewController {
     Singleton.shared.delayWithSeconds(1.8, completion: {
       self.view.backgroundColor = finalColor
     })
+  }
+  
+  @objc func moveQuestionBoxToOrigin() {
+    questionOutlet.questionBoxMoveLeft(view: view, initPosition: point)
+    Singleton.shared.delayWithSeconds(0.4) {
+      self.questionOutlet.center.x = self.point.x
+    }
   }
 }

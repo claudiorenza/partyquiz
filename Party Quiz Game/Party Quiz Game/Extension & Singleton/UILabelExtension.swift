@@ -13,7 +13,7 @@ extension UILabel {
   func questionBoxMoveLeft(view: UIView, initPosition: CGPoint) {
     let animation = CABasicAnimation(keyPath: "position")
     animation.fromValue = self.center
-    animation.toValue = initPosition
+    animation.toValue = CGPoint(x: initPosition.x, y: self.center.y)
     animation.duration = 0.5
     
     layer.add(animation, forKey: nil)
