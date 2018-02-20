@@ -10,6 +10,11 @@ import Foundation
 import UIKit
 
 extension UIColor {
+  
+  func borderColor()  -> CGColor  {
+    return UIColor(red: 96.0/255.0, green: 96.0/255.0, blue: 96.0/255.0, alpha: 1.0).cgColor
+  }
+  
     convenience init(hex: String) {
       let scanner = Scanner(string: hex)
       scanner.scanLocation = 0

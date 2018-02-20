@@ -15,6 +15,11 @@ class QuestionViewController: UIViewController {
   @IBOutlet weak var progressControllerView: UIView!
   @IBOutlet var questionOutlet: UILabel!
   
+  @IBOutlet var buttonAnswerOne: UIButton!
+  @IBOutlet var buttonAnswerTwo: UIButton!
+  @IBOutlet var buttonAnswerThree: UIButton!
+  @IBOutlet var buttonAnswerFour: UIButton!
+  
   let backgoundBase = UIColor(red: 67/255, green: 59/255, blue: 240/255, alpha: 1)
   let backgoundLilla = UIColor(red: 189/255, green: 16/255, blue: 224/255, alpha: 1)
   let background2 = UIColor(red: 1, green: 165/255, blue: 0, alpha: 1)
@@ -29,8 +34,7 @@ class QuestionViewController: UIViewController {
     super.viewDidLoad()
     view.backgroundColor = backgoundBase
     let questionOutletInitPoint = questionOutlet.frame.origin
-    setQuestion()
-    loadAnswers()
+    setAnswersQuestion()
     loadProgressView()
     randomBuzzers()
   }
@@ -85,17 +89,21 @@ class QuestionViewController: UIViewController {
     }
   }
   
-  func loadAnswers() {
-    if let answersView = Bundle.main.loadNibNamed("AnswersView", owner: self, options: nil)?.first as? AnswersView {
-      buzzerView.addSubview(answersView)
-      answersView.setAnswers()
-      answersView.frame = buzzerView.bounds
-    }
-  }
-  
-  func setQuestion()  {
+
+  func setAnswersQuestion() {
     questionOutlet.layer.cornerRadius = 25.0
     questionOutlet.clipsToBounds = true
+    questionOutlet.layer.borderWidth = 6.0
+    
+    buttonAnswerOne.layer.cornerRadius = 25
+    buttonAnswerOne.layer.borderWidth = 6.0
+    buttonAnswerTwo.layer.cornerRadius = 25
+    buttonAnswerTwo.layer.borderWidth = 6.0
+    buttonAnswerThree.layer.cornerRadius = 25
+    buttonAnswerThree.layer.borderWidth = 6.0
+    buttonAnswerFour.layer.cornerRadius = 25
+    buttonAnswerFour.layer.borderWidth = 6.0
+    
   }
   
   @IBAction func buttonAction(_ sender: UIButton) {

@@ -15,15 +15,7 @@ class AnswersView: UIView {
   @IBOutlet var buttonThree: UIButton!
   @IBOutlet var buttonFour: UIButton!
   
-  func setAnswers() {
-    buttonOne.layer.cornerRadius = 25
-    buttonTwo.layer.cornerRadius = 25
-    buttonThree.layer.cornerRadius = 25
-    buttonFour.layer.cornerRadius = 25
-    
-    //
-    
-  }
+  
   
   @IBAction func pressButtonOne(_ sender: UIButton) {
     

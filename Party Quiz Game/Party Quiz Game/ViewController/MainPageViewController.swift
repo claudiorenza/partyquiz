@@ -50,7 +50,7 @@ class MainPageViewController: UIViewController {
   func setButton(tempButton: UIButton) {
     tempButton.layer.cornerRadius = 25.0
     tempButton.layer.borderColor = borderColor
-    tempButton.layer.borderWidth = 8.0
+    tempButton.layer.borderWidth = 6.0
   }
   
   @IBAction func pressToCreate(_ sender: UIButton) {
