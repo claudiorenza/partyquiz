@@ -12,6 +12,7 @@ class OneBuzzer: UIView {
   
   @IBOutlet weak var buzzer: UIButton!
   @IBOutlet weak var view: UIView!
+  
   var index = 0
   var total = 10
   
