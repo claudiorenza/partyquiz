@@ -25,6 +25,10 @@ class MainPageViewController: UIViewController {
     setButton(tempButton: createGameOutlet)
     setButton(tempButton: joinGameOutlet)
     
+    PeerManager.shared.controllerOrigin = self
+    PeerManager.shared.setupSession()
+    PeerManager.shared.setupBrowserController()
+    
     let audioButtonClick = Bundle.main.path(forResource: "buttonClick", ofType: "m4a")
     let audioIntroMusic = Bundle.main.path(forResource: "musicIntro", ofType: "m4a")
     
@@ -54,20 +58,19 @@ class MainPageViewController: UIViewController {
   }
   
   @IBAction func pressToCreate(_ sender: UIButton) {
-//    PeerManager.peerShared.stopBrowser()
-//    PeerManager.peerShared.setupAdvertise()
-//    PeerManager.peerShared.startAdvertise()
-//    present(PeerManager.shared.controller, animated: true, completion: nil)
+    PeerManager.shared.stopBrowser()
+    PeerManager.shared.setupAdvertise()
+    PeerManager.shared.startAdvertise()
+    present(PeerManager.shared.browserVC, animated: true, completion: nil)
     
     audioPlayerButtonClick.play()
     audioPlayerMusic.stop()
   }
   
   @IBAction func pressToJoin(_ sender: UIButton) {
-    PeerManager.peerShared.stopAdvertiser()
-    PeerManager.peerShared.setupConnection()
-    PeerManager.peerShared.startBrowser()
-    present(PeerManager.peerShared.browserVC, animated: true, completion: nil)
+    PeerManager.shared.stopAdvertise()
+    PeerManager.shared.startBrowser()
+    present(PeerManager.shared.browserVC, animated: true, completion: nil)
     audioPlayerButtonClick.play()
     audioPlayerMusic.stop()
   }

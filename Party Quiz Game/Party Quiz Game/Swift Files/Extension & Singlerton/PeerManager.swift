@@ -6,89 +6,131 @@
 //  Copyright © 2018 Abusive Designers. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import MultipeerConnectivity
 
-class PeerManager: NSObject, MCSessionDelegate, MCAdvertiserAssistantDelegate, MCNearbyServiceBrowserDelegate, MCBrowserViewControllerDelegate {
+class PeerManager: NSObject,  MCNearbyServiceBrowserDelegate, MCAdvertiserAssistantDelegate, MCBrowserViewControllerDelegate{
   
-  // - MARK: 1: Properties
-  static let peerShared = PeerManager()
-  var session: MCSession!
-  var advertiser: MCAdvertiserAssistant!
+  // - MARK: 1: Outlets and Variables
+  static let shared = PeerManager()
+  var controllerOrigin:UIViewController?
   var peerID: MCPeerID!
-  var browser: MCNearbyServiceBrowser!
+  var session: MCSession!
+  var browser: MCNearbyServiceBrowser?
+  var advertiser: MCAdvertiserAssistant? = nil
+  var service = "PartiQuiz"
+  var peerArray = [MCPeerID]()
   var browserVC: MCBrowserViewController!
-  var service: String = "PartyQuiz"
-  var miaStringa = "Armanto"
-  var viewController: UIViewController!
   
-  // - MARK: 2: Custom functions
-  func setupConnection() {
-    // peerID
+  override init(){
     peerID = MCPeerID(displayName: UIDevice.current.name)
-    // session
-    session = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .none)
+    
+  }
+  func convertData(string: String) -> Data{
+    let data = string.data(using: .utf8)
+    return data!
+  }
+  // - MARK: 2: Funzioni sulla sessione
+  func setupSession(){
+    session = MCSession(peer: peerID!, securityIdentity: nil, encryptionPreference: .none)
     session.delegate = self
-    // advertiser
-    advertiser = MCAdvertiserAssistant(serviceType: service, discoveryInfo: nil, session: self.session)
-    advertiser.delegate = self
-    // browser
-    browser = MCNearbyServiceBrowser(peer: peerID, serviceType: service)
-    browser.delegate = self
-    // browserVC
-    browserVC = MCBrowserViewController(serviceType: service, session: self.session)
-    browserVC.delegate = self
   }
   
-  func startBrowser() {
+  func disconnectSession(){
+    session?.disconnect()
+  }
+  
+  // - MARK: 3: Funzione che trova i peer
+  func setupBrowser(){
+    browser = MCNearbyServiceBrowser(peer: peerID!, serviceType: service)
+    browser?.delegate = self
+  }
+  
+  // - MARK: 4: Funzioni che avviano e stoppano il browser
+  func startBrowser(){
     browser?.startBrowsingForPeers()
   }
   
-  func stopBrowser() {
+  func stopBrowser(){
     browser?.stopBrowsingForPeers()
   }
   
-  func startAdvertiser() {
-    advertiser.start()
+  // - MARK: 5: Funzione che crea la stanza
+  func setupAdvertise(){
+    advertiser = MCAdvertiserAssistant(serviceType: service, discoveryInfo: nil, session: self.session!)
+    advertiser?.delegate = self
   }
   
-  func stopAdvertiser() {
-    advertiser.stop()
+  // - MARK: 6: Funzioni che avviano e stoppano la visibilità del peer
+  func startAdvertise(){
+    advertiser?.start()
   }
   
-  func convertData(temp: String) -> Data {
-    let data = temp.data(using: .utf8)
-    return data!
+  func stopAdvertise(){
+    advertiser?.stop()
   }
   
-  // - MARK: 3: MCBrowserViewControllerDelegate functions
+  // - MARK: 7: Rimuove Peer dall'array quando esco dalla sessione
+  func removePeer(peerID: MCPeerID){
+    var counter = 0
+    for index in peerArray{
+      if index == peerID{
+        peerArray.remove(at: counter)
+      }
+      counter = counter + 1
+    }
+  }
+  
+  // - MARK: 8: Funzioni di delegate del browser
+  // Peer persi
+  func browser(_ browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
+    NSLog("@%", "lostPeer \(peerID)")
+    removePeer(peerID: peerID)
+  }
+  // Browser non riesce ad avviarsi
+  func browser(_ browser: MCNearbyServiceBrowser, didNotStartBrowsingForPeers error: Error) {
+    NSLog("@%", "error \(error)")
+  }
+  // Peer rilevati
+  func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
+    NSLog("@%", "foundPeer \(peerID)")
+    peerArray.append(peerID)
+  }
+  // Schermata browser non customizzabile
+  func setupBrowserController(){
+    browserVC = MCBrowserViewController(serviceType: service, session: self.session!)
+    browserVC.delegate = self
+   }
+  
   func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
-    // Do something when DONE button is pressed
-    browserViewController.dismiss(animated: true, completion: {
-      self.viewController.performSegue(withIdentifier: "segue", sender: nil)
-      do {
-        try self.session.send(self.convertData(temp: "segue"), toPeers: self.session.connectedPeers, with: .reliable)
-      }
-      catch let error as NSError{
-        let ac = UIAlertController(title: "Error connection", message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.browserVC.present(ac, animated: true, completion: nil)
-        print("Error")
-      }
-    })
-    
-  }
-  func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
-    // Do something when CANCEL button is pressed
     browserViewController.dismiss(animated: true, completion: {
       self.stopBrowser()
-      self.stopAdvertiser()
+      self.stopAdvertise()
+      self.controllerOrigin?.performSegue(withIdentifier: "GameController", sender: nil)
+      do{
+        try self.session.send(self.convertData(string: "GameController"), toPeers: self.session.connectedPeers, with: .reliable)
+        
+      }
+      catch let error as NSError{
+        let ac = UIAlertController(title: "Connection Error", message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.browserVC.present(ac,animated: true, completion: nil)
+      }
     })
   }
   
+  func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
+    browserViewController.dismiss(animated: true, completion: {
+      self.disconnectSession()
+      self.stopBrowser()
+      self.stopAdvertise()
+    })
+  }
   func sendQuestion(question: String){
+    print("settato a false")
+    print(question)
     do{
-      try self.session.send(convertData(temp: question), toPeers: self.session.connectedPeers, with: .reliable)
+      try self.session.send(convertData(string: question), toPeers: self.session.connectedPeers, with: .reliable)
       
     }
     catch let error as NSError{
@@ -97,42 +139,38 @@ class PeerManager: NSObject, MCSessionDelegate, MCAdvertiserAssistantDelegate, M
       ac.present(ac,animated: true, completion: nil)        }
   }
   
-  // - MARK: 4: MCSessionDelegate functions
+}
+extension PeerManager:  MCSessionDelegate{
+  
   func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-    let message = String(data: data, encoding: .utf8) as String!
-    browserVC.dismiss(animated: true, completion: {
-      self.viewController.performSegue(withIdentifier: message!, sender: nil)
-    })
-  }
+      DispatchQueue.main.async {
+        let msg = String(data: data, encoding: String.Encoding.utf8) as String!
+        self.browserVC.dismiss(animated: true, completion: {
+          self.controllerOrigin?.performSegue(withIdentifier: msg!, sender: nil)
+        })
+      }
+    }
+  
   func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
+    switch  state {
+    case MCSessionState.notConnected:
+      print("not connected")
+    case MCSessionState.connecting:
+      print("connecting")
+    case MCSessionState.connected:
+      print("\n\nconnected\n\n")
+    }
+  }
+  func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
     
   }
   func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
     
-  }
-  func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
     
   }
   func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
     
   }
   
-  // - MARK: 5: MCAdvertiserAssistantDelegate functions
-  func advertiserAssistantWillPresentInvitation(_ advertiserAssistant: MCAdvertiserAssistant) {
-    
-  }
-  func advertiserAssistantDidDismissInvitation(_ advertiserAssistant: MCAdvertiserAssistant) {
-    
-  }
   
-  // - MARK: 6: MCNearbyServiceBrowserDelegate functions
-  func browser(_ browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
-    
-  }
-  func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
-    
-  }
-  func browser(_ browser: MCNearbyServiceBrowser, didNotStartBrowsingForPeers error: Error) {
-    
-  }
 }
