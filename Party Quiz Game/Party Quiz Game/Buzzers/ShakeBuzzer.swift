@@ -12,18 +12,6 @@ import CoreMotion
 class ShakeBuzzer: UIView {
 
   var index = 0
-//  var colorArray: [UIColor] = [
-//    UIColor.green,
-//    UIColor.red,
-//    UIColor.blue,
-//    UIColor.cyan,
-//    UIColor.magenta,
-//    UIColor.gray,
-//    UIColor.brown,
-//    UIColor.purple,
-//    UIColor.orange,
-//    UIColor.yellow
-//  ]
   var motionManager = CMMotionManager()
   @IBOutlet weak var viewOutlet: UIView!
   @IBOutlet weak var label: UILabel!
@@ -39,16 +27,18 @@ class ShakeBuzzer: UIView {
             self.label.text = "\(self.index)"
           }
         } else {
-          print("ELSE")
-          self.motionManager.stopAccelerometerUpdates()
-          self.removeFromSuperview()
+          self.viewOutlet.buzzerDown(view: self.viewOutlet)
+          Singleton.shared.delayWithSeconds(0.4, completion: {
+            self.motionManager.stopAccelerometerUpdates()
+            self.removeFromSuperview()
+          })
         }
       }
     }
   }
   
   func setRoundedView() {
-    viewOutlet.layer.cornerRadius = 50
+    viewOutlet.layer.cornerRadius = 25
     viewOutlet.layer.borderColor = UIColor.black.cgColor
     viewOutlet.layer.borderWidth = 1
   }

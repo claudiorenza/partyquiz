@@ -11,6 +11,7 @@ import UIKit
 class OneBuzzer: UIView {
   
   @IBOutlet weak var buzzer: UIButton!
+  @IBOutlet weak var view: UIView!
   var index = 0
   var total = 10
   
@@ -25,8 +26,11 @@ class OneBuzzer: UIView {
       buzzer.setTitle("\(total)", for: .normal)
       buzzer.setTitleColor(UIColor.white, for: .normal)
     } else {
+      view.buzzerDown(view: view)
       buzzer.isUserInteractionEnabled = false
-      self.removeFromSuperview()
+      Singleton.shared.delayWithSeconds(0.4, completion: {
+        self.removeFromSuperview()
+      })
     }
   }
   

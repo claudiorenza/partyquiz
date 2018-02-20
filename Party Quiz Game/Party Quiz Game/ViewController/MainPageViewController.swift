@@ -75,4 +75,8 @@ class MainPageViewController: UIViewController {
   @IBAction func pressForInfo(_ sender: UIButton) {
     labelOutlet.text = "Infos..."
   }
+  
+  @IBAction func createGameAction(_ sender: UIButton) {
+    performSegue(withIdentifier: "segue", sender: self)
+  }
 }

@@ -57,15 +57,18 @@ class BlowBuzzer: UIView {
         label.text = ("\(index / 10)")
       }
     } else if index == 1000 {
+      viewOutlet.buzzerDown(view: viewOutlet)
+      Singleton.shared.delayWithSeconds(0.4, completion: {
+        self.removeFromSuperview()
+      })
       label.text = "Done!"
       recorder.stop()
       levelTimer.invalidate()
-      self.removeFromSuperview()
     }
   }
   
   func setRoundedView() {
-    viewOutlet.layer.cornerRadius = 50
+    viewOutlet.layer.cornerRadius = 25
     viewOutlet.layer.borderColor = UIColor.black.cgColor
     viewOutlet.layer.borderWidth = 1
   }

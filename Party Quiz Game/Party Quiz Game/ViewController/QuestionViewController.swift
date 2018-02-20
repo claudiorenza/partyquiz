@@ -36,6 +36,9 @@ class QuestionViewController: UIViewController {
     let questionOutletInitPoint = questionOutlet.frame.origin
     setAnswersQuestion()
     loadProgressView()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
     randomBuzzers()
   }
   
@@ -50,11 +53,11 @@ class QuestionViewController: UIViewController {
 
   // - MARK: 4: Method that generates random buzzers
   func randomBuzzers() {
-    index = 0 //Int(arc4random_uniform(4))
+    index = Int(arc4random_uniform(4))
     if index == 0 {
       if let oneBuzzer = Bundle.main.loadNibNamed("OneBuzzer", owner: self, options: nil)?.first as? OneBuzzer {
         buzzerView.addSubview(oneBuzzer)
-        oneBuzzer.loadPopUp(view: buzzerView)
+        oneBuzzer.loadPopUp(view: view)
         oneBuzzer.setBuzzer()
         oneBuzzer.frame = buzzerView.bounds
         changeBackgroundColor(finalColor: UIColor.orange)
@@ -62,7 +65,7 @@ class QuestionViewController: UIViewController {
     } else if index == 1 {
       if let twoBuzzers = Bundle.main.loadNibNamed("TwoBuzzers", owner: self, options: nil)?.first as? TwoBuzzers {
         buzzerView.addSubview(twoBuzzers)
-        twoBuzzers.loadPopUp(view: buzzerView)
+        twoBuzzers.loadPopUp(view: view)
         twoBuzzers.setBuzzers()
         twoBuzzers.frame = buzzerView.bounds
         changeBackgroundColor(finalColor: UIColor.red)
@@ -89,12 +92,10 @@ class QuestionViewController: UIViewController {
     }
   }
   
-
   func setAnswersQuestion() {
     questionOutlet.layer.cornerRadius = 25.0
     questionOutlet.clipsToBounds = true
     questionOutlet.layer.borderWidth = 6.0
-    
     buttonAnswerOne.layer.cornerRadius = 25
     buttonAnswerOne.layer.borderWidth = 6.0
     buttonAnswerTwo.layer.cornerRadius = 25
@@ -103,7 +104,6 @@ class QuestionViewController: UIViewController {
     buttonAnswerThree.layer.borderWidth = 6.0
     buttonAnswerFour.layer.cornerRadius = 25
     buttonAnswerFour.layer.borderWidth = 6.0
-    
   }
   
   @IBAction func buttonAction(_ sender: UIButton) {

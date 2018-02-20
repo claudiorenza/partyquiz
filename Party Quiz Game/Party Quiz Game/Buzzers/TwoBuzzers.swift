@@ -13,12 +13,13 @@ class TwoBuzzers: UIView {
   @IBOutlet weak var leftBuzzer: UIButton!
   @IBOutlet weak var rightBuzzer: UIButton!
   @IBOutlet weak var label: UILabel!
+  @IBOutlet weak var view: UIView!
   
   var index = 0
   
   func setBuzzers() {
-    leftBuzzer.layer.cornerRadius = 50
-    rightBuzzer.layer.cornerRadius = 50
+    leftBuzzer.layer.cornerRadius = 25
+    rightBuzzer.layer.cornerRadius = 25
     rightBuzzer.isUserInteractionEnabled = false
   }
   
@@ -29,8 +30,11 @@ class TwoBuzzers: UIView {
       leftBuzzer.isUserInteractionEnabled = false
       rightBuzzer.isUserInteractionEnabled = true
     } else {
+      view.buzzerDown(view: view)
       leftBuzzer.isUserInteractionEnabled = false
-      self.removeFromSuperview()
+      Singleton.shared.delayWithSeconds(0.4, completion: {
+        self.removeFromSuperview()
+      })
     }
   }
   
