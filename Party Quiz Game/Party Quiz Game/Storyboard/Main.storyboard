@@ -106,15 +106,52 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQq-LV-IFO">
-                                        <rect key="frame" x="346" y="110" width="125" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZbI-ur-4wB" userLabel="ButtonTwo">
+                                        <rect key="frame" x="278" y="66" width="250" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="44"/>
-                                        <state key="normal" title="Button">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.53333333329999999" green="0.8862745098" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="ButtonTwo">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="buttonAction:" destination="nsp-Qw-qe6" eventType="touchUpInside" id="D8m-8q-RG4"/>
+                                            <action selector="buttonAction:" destination="nsp-Qw-qe6" eventType="touchUpInside" id="UmO-xK-oXn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1j6-lo-jJQ" userLabel="ButtonThree">
+                                        <rect key="frame" x="278" y="132" width="250" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.53333333329999999" green="0.8862745098" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="ButtonThree">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonAction:" destination="nsp-Qw-qe6" eventType="touchUpInside" id="LV7-RW-WjR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Usc-Xx-VWQ" userLabel="ButtonFour">
+                                        <rect key="frame" x="278" y="198" width="250" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.53333333329999999" green="0.8862745098" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="ButtonFour">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonAction:" destination="nsp-Qw-qe6" eventType="touchUpInside" id="4vg-8b-MO1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3J-0H-qoY" userLabel="ButtonOne">
+                                        <rect key="frame" x="278" y="0.0" width="250" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.53333333329999999" green="0.8862745098" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="ButtonOne">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonAction:" destination="nsp-Qw-qe6" eventType="touchUpInside" id="lYz-TS-5ju"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -128,6 +165,10 @@
                         <viewLayoutGuide key="safeArea" id="DY9-kj-R3x"/>
                     </view>
                     <connections>
+                        <outlet property="buttonAnswerFour" destination="Usc-Xx-VWQ" id="2uF-nj-BkA"/>
+                        <outlet property="buttonAnswerOne" destination="h3J-0H-qoY" id="H9t-2I-uIc"/>
+                        <outlet property="buttonAnswerThree" destination="1j6-lo-jJQ" id="wdQ-M2-GQO"/>
+                        <outlet property="buttonAnswerTwo" destination="ZbI-ur-4wB" id="2GB-v9-v2R"/>
                         <outlet property="buzzerView" destination="NsG-iv-adX" id="T1S-2V-k5E"/>
                         <outlet property="progressControllerView" destination="N6z-VY-M5z" id="8jC-uG-0cc"/>
                         <outlet property="questionOutlet" destination="l66-wt-NZV" id="QGL-xY-tdz"/>
