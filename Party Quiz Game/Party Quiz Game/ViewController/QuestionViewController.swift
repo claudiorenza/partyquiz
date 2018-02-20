@@ -14,7 +14,6 @@ class QuestionViewController: UIViewController {
   @IBOutlet weak var buzzerView: UIView!
   @IBOutlet weak var progressControllerView: UIView!
   @IBOutlet var questionOutlet: UILabel!
-  
   @IBOutlet var buttonAnswerOne: UIButton!
   @IBOutlet var buttonAnswerTwo: UIButton!
   @IBOutlet var buttonAnswerThree: UIButton!
@@ -38,7 +37,7 @@ class QuestionViewController: UIViewController {
     loadProgressView()
   }
   
-  override func viewDidAppear(_ animated: Bool) {
+  override func viewWillAppear(_ animated: Bool) {
     randomBuzzers()
   }
   
