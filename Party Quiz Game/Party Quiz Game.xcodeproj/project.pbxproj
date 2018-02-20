@@ -15,7 +15,7 @@
 		25349101203B2180006A3CEE /* CheckConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253490FF203B2180006A3CEE /* CheckConnection.swift */; };
 		25349102203B2180006A3CEE /* ManageQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25349100203B2180006A3CEE /* ManageQuestions.swift */; };
 		253E8E62203B17A500FE75AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253E8E61203B17A500FE75AD /* AppDelegate.swift */; };
-		253E8E67203B17A500FE75AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 253E8E65203B17A500FE75AD /* Main.storyboard */; };
+		253E8E67203B17A500FE75AD /* MainCloudkit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 253E8E65203B17A500FE75AD /* MainCloudkit.storyboard */; };
 		253E8E6A203B17A500FE75AD /* Party_Quiz_Game.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 253E8E68203B17A500FE75AD /* Party_Quiz_Game.xcdatamodeld */; };
 		253E8E6C203B17A500FE75AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 253E8E6B203B17A500FE75AD /* Assets.xcassets */; };
 		253E8E6F203B17A500FE75AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 253E8E6D203B17A500FE75AD /* LaunchScreen.storyboard */; };
@@ -32,7 +32,7 @@
 		25349100203B2180006A3CEE /* ManageQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManageQuestions.swift; path = "Party Quiz Game/Swift Files/ManageQuestions.swift"; sourceTree = SOURCE_ROOT; };
 		253E8E5E203B17A500FE75AD /* Party Quiz Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Party Quiz Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		253E8E61203B17A500FE75AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		253E8E66203B17A500FE75AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		253E8E66203B17A500FE75AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainCloudkit.storyboard; sourceTree = "<group>"; };
 		253E8E69203B17A500FE75AD /* Party_Quiz_Game.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Party_Quiz_Game.xcdatamodel; sourceTree = "<group>"; };
 		253E8E6B203B17A500FE75AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		253E8E6E203B17A500FE75AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 		253E8E7C203B195E00FE75AD /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				253E8E65203B17A500FE75AD /* Main.storyboard */,
+				253E8E65203B17A500FE75AD /* MainCloudkit.storyboard */,
 				253E8E6D203B17A500FE75AD /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
@@ -224,7 +224,7 @@
 			files = (
 				253E8E6F203B17A500FE75AD /* LaunchScreen.storyboard in Resources */,
 				253E8E6C203B17A500FE75AD /* Assets.xcassets in Resources */,
-				253E8E67203B17A500FE75AD /* Main.storyboard in Resources */,
+				253E8E67203B17A500FE75AD /* MainCloudkit.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,12 +250,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		253E8E65203B17A500FE75AD /* Main.storyboard */ = {
+		253E8E65203B17A500FE75AD /* MainCloudkit.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				253E8E66203B17A500FE75AD /* Base */,
 			);
-			name = Main.storyboard;
+			name = MainCloudkit.storyboard;
 			sourceTree = "<group>";
 		};
 		253E8E6D203B17A500FE75AD /* LaunchScreen.storyboard */ = {
