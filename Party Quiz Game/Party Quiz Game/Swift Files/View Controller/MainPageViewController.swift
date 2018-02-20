@@ -54,9 +54,9 @@ class MainPageViewController: UIViewController {
   }
   
   @IBAction func pressToCreate(_ sender: UIButton) {
-//    PeerManager.shared.stopBrowser()
-//    PeerManager.shared.setupAdvertise()
-//    PeerManager.shared.startAdvertise()
+//    PeerManager.peerShared.stopBrowser()
+//    PeerManager.peerShared.setupAdvertise()
+//    PeerManager.peerShared.startAdvertise()
 //    present(PeerManager.shared.controller, animated: true, completion: nil)
     
     audioPlayerButtonClick.play()
@@ -64,10 +64,10 @@ class MainPageViewController: UIViewController {
   }
   
   @IBAction func pressToJoin(_ sender: UIButton) {
-//    PeerManager.shared.stopAdvertise()
-//    PeerManager.shared.setupSession()
-//    PeerManager.shared.setupBrowser()
-//    present(PeerManager.shared.controller, animated: true, completion: nil)
+    PeerManager.peerShared.stopAdvertiser()
+    PeerManager.peerShared.setupConnection()
+    PeerManager.peerShared.startBrowser()
+    present(PeerManager.peerShared.browserVC, animated: true, completion: nil)
     audioPlayerButtonClick.play()
     audioPlayerMusic.stop()
   }

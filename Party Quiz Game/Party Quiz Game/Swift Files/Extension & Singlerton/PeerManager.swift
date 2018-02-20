@@ -18,7 +18,7 @@ class PeerManager: NSObject, MCSessionDelegate, MCAdvertiserAssistantDelegate, M
   var peerID: MCPeerID!
   var browser: MCNearbyServiceBrowser!
   var browserVC: MCBrowserViewController!
-  var service: String = "AbDesigners"
+  var service: String = "PartyQuiz"
   var miaStringa = "Armanto"
   var viewController: UIViewController!
   
