@@ -56,6 +56,8 @@
 		CD97F03B203C29310068AA4D /* AnswersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD97F03A203C29310068AA4D /* AnswersView.xib */; };
 		CD97F03D203C29410068AA4D /* AnswersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD97F03C203C29410068AA4D /* AnswersView.swift */; };
 		F9614DAA203B3AB2001F4448 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9614DA9203B3AB2001F4448 /* QuestionViewController.swift */; };
+		F9646A48203C703B0071BDA7 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9646A47203C703B0071BDA7 /* UILabelExtension.swift */; };
+		F9646A4A203C73C50071BDA7 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9646A49203C73C50071BDA7 /* Singleton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +113,8 @@
 		CD97F03A203C29310068AA4D /* AnswersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswersView.xib; sourceTree = "<group>"; };
 		CD97F03C203C29410068AA4D /* AnswersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersView.swift; sourceTree = "<group>"; };
 		F9614DA9203B3AB2001F4448 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		F9646A47203C703B0071BDA7 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
+		F9646A49203C73C50071BDA7 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +154,7 @@
 				CD2E9852203C57EE00CE646E /* Buzzers */,
 				CD2E9853203C581300CE646E /* ProgressView */,
 				CD97F036203C276B0068AA4D /* Answers */,
-				CD8E4F8B203B3E36008C48AE /* Extension */,
+				CD8E4F8B203B3E36008C48AE /* Extension & Singlerton */,
 				CD8E4F73203B38B7008C48AE /* ViewController */,
 				253E8E7C203B195E00FE75AD /* Storyboard */,
 				253E8E7B203B195500FE75AD /* Swift Files */,
@@ -300,15 +304,17 @@
 			path = Sounds;
 			sourceTree = "<group>";
 		};
-		CD8E4F8B203B3E36008C48AE /* Extension */ = {
+		CD8E4F8B203B3E36008C48AE /* Extension & Singlerton */ = {
 			isa = PBXGroup;
 			children = (
 				CD8E4FB8203B3FD7008C48AE /* UIImageViewExtension.swift */,
 				CD8E4FB7203B3FD7008C48AE /* UIViewExtension.swift */,
 				CD8E4F8D203B3E46008C48AE /* UIButtonExtension.swift */,
 				CD8E4F8C203B3E46008C48AE /* UIColorExtension.swift */,
+				F9646A47203C703B0071BDA7 /* UILabelExtension.swift */,
+				F9646A49203C73C50071BDA7 /* Singleton.swift */,
 			);
-			path = Extension;
+			path = "Extension & Singlerton";
 			sourceTree = "<group>";
 		};
 		CD97F036203C276B0068AA4D /* Answers */ = {
@@ -429,8 +435,10 @@
 				253490FE203B20E8006A3CEE /* DownloadingViewController.swift in Sources */,
 				253490FD203B20E8006A3CEE /* MigrationViewController.swift in Sources */,
 				CD2E9872203C58BA00CE646E /* BlowBuzzer.swift in Sources */,
+				F9646A4A203C73C50071BDA7 /* Singleton.swift in Sources */,
 				253490F6203B1B92006A3CEE /* CoreDataManager.swift in Sources */,
 				CD8E4F8F203B3E46008C48AE /* UIButtonExtension.swift in Sources */,
+				F9646A48203C703B0071BDA7 /* UILabelExtension.swift in Sources */,
 				CD2E9876203C58C400CE646E /* ProgressView.swift in Sources */,
 				CD2E985E203C58AB00CE646E /* BlowBuzzerPopUp.swift in Sources */,
 				CD8E4FBA203B3FD7008C48AE /* UIImageViewExtension.swift in Sources */,

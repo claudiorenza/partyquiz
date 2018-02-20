@@ -22,13 +22,13 @@ class QuestionViewController: UIViewController {
   let background4 = UIColor(red: 1, green: 165/255, blue: 0, alpha: 1)
   // black is good
   // orange is good
-  
-  
   var index = 0
+
   // - MARK: 2: ViewDidLoad
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = backgoundBase
+    let questionOutletInitPoint = questionOutlet.frame.origin
     setQuestion()
     loadAnswers()
     loadProgressView()
@@ -91,7 +91,6 @@ class QuestionViewController: UIViewController {
       answersView.setAnswers()
       answersView.frame = buzzerView.bounds
     }
-    
   }
   
   func setQuestion()  {
@@ -104,15 +103,9 @@ class QuestionViewController: UIViewController {
     loadProgressView()
   }
   
-  func delayWithSeconds(_ seconds: Double, completion: @escaping () -> ()) {
-    DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-      completion()
-    }
-  }
-  
   func changeBackgroundColor(finalColor: UIColor) {
     view.changeBackgroundColor(initColor: view.backgroundColor!, finalColor: finalColor)
-    delayWithSeconds(1.8, completion: {
+    Singleton.shared.delayWithSeconds(1.8, completion: {
       self.view.backgroundColor = finalColor
     })
   }

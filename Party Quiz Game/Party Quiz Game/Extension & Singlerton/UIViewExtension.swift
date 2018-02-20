@@ -28,15 +28,6 @@ extension UIView {
     layer.add(animation, forKey: nil)
   }
   
-  func questionBoxMoveLeft(view: UIView, initPosition: CGPoint) {
-    let animation = CABasicAnimation(keyPath: "position")
-    animation.fromValue = view.center
-    animation.toValue = initPosition
-    animation.duration = 0.5
-    
-    layer.add(animation, forKey: nil)
-  }
-  
   func changeBackgroundColor(initColor: UIColor, finalColor: UIColor) {
     let animation = CABasicAnimation(keyPath: "backgroundColor")
     animation.fromValue = initColor.cgColor

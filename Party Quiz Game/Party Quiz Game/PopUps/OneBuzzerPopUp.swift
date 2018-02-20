@@ -15,12 +15,6 @@ class OneBuzzerPopUp: UIView {
   @IBOutlet weak var hand: UIImageView!
   @IBOutlet weak var oneBuzzer: UIImageView!
   
-  func delayWithSeconds(_ seconds: Double, completion: @escaping () -> ()) {
-    DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-      completion()
-    }
-  }
-  
   func setViewElements(view: UIView) {
     label.layer.cornerRadius = 25.0
     label.layer.borderColor = UIColor.lightGray.cgColor
@@ -34,7 +28,7 @@ class OneBuzzerPopUp: UIView {
   
   @IBAction func okAction(_ sender: UIButton) {
     self.tutorialDismiss(view: self)
-    delayWithSeconds(0.1) {
+    Singleton.shared.delayWithSeconds(0.1) {
       self.removeFromSuperview()
     }
     

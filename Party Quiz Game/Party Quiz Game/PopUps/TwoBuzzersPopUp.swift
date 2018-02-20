@@ -28,7 +28,10 @@ class TwoBuzzersPopUp: UIView {
   }
   
   @IBAction func okAction(_ sender: UIButton) {
-    self.removeFromSuperview()
+    self.tutorialDismiss(view: self)
+    Singleton.shared.delayWithSeconds(0.1) {
+      self.removeFromSuperview()
+    }
   }
   
 }
