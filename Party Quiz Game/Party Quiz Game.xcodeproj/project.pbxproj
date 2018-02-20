@@ -582,7 +582,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Party Quiz Game/Party Quiz Game.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 89LM9XZWA3;
+				DEVELOPMENT_TEAM = 6NHZGWQ43K;
 				INFOPLIST_FILE = "Party Quiz Game/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.abusivedesigners.Party-Quiz-Game";
@@ -598,7 +598,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Party Quiz Game/Party Quiz Game.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 89LM9XZWA3;
+				DEVELOPMENT_TEAM = 6NHZGWQ43K;
 				INFOPLIST_FILE = "Party Quiz Game/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.abusivedesigners.Party-Quiz-Game";

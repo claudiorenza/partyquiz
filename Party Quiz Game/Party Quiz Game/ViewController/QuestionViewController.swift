@@ -96,13 +96,22 @@ class QuestionViewController: UIViewController {
     questionOutlet.layer.cornerRadius = 25.0
     questionOutlet.clipsToBounds = true
     questionOutlet.layer.borderWidth = 6.0
+    questionOutlet.layer.borderColor = UIColor.borderColorGray()
+    
     buttonAnswerOne.layer.cornerRadius = 25
+    buttonAnswerOne.layer.borderColor = UIColor.borderColorGray()
     buttonAnswerOne.layer.borderWidth = 6.0
+    
     buttonAnswerTwo.layer.cornerRadius = 25
+    buttonAnswerTwo.layer.borderColor = UIColor.borderColorGray()
     buttonAnswerTwo.layer.borderWidth = 6.0
+      
     buttonAnswerThree.layer.cornerRadius = 25
+    buttonAnswerThree.layer.borderColor = UIColor.borderColorGray()
     buttonAnswerThree.layer.borderWidth = 6.0
+    
     buttonAnswerFour.layer.cornerRadius = 25
+    buttonAnswerFour.layer.borderColor = UIColor.borderColorGray()
     buttonAnswerFour.layer.borderWidth = 6.0
   }
   

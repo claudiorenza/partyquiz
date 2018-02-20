@@ -11,7 +11,7 @@ import UIKit
 
 extension UIColor {
   
-  func borderColor()  -> CGColor  {
+  class func borderColorGray()  -> CGColor  {
     return UIColor(red: 96.0/255.0, green: 96.0/255.0, blue: 96.0/255.0, alpha: 1.0).cgColor
   }
   
