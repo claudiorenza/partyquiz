@@ -77,6 +77,10 @@ class MainPageViewController: UIViewController {
   }
   
   @IBAction func createGameAction(_ sender: UIButton) {
-    performSegue(withIdentifier: "segue", sender: self)
+    createGameOutlet.exit(directionTo: "left", view: view)
+    joinGameOutlet.exit(directionTo: "right", view: view)
+    Singleton.shared.delayWithSeconds(0.8) {
+      self.performSegue(withIdentifier: "segue", sender: self)
+    }
   }
 }

@@ -10,9 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShakeBuzzerPopUp" customModule="SimpleBuzzer" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShakeBuzzerPopUp" customModule="Party_Quiz_Game" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ShakeBuzzerPopUp" customModule="SimpleBuzzer" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ShakeBuzzerPopUp" customModule="Party_Quiz_Game" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="518" height="250"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -20,7 +20,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="518" height="250"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <string key="text">Shake the phone!
+                    <string key="text">Shake the IPhone!
 
 </string>
                     <fontDescription key="fontDescription" type="system" pointSize="43"/>
