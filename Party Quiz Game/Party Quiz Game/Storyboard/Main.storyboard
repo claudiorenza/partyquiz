@@ -35,13 +35,13 @@
                         <viewLayoutGuide key="safeArea" id="1eM-Gr-byl"/>
                     </view>
                     <connections>
-                        <segue destination="gNH-hP-fca" kind="show" identifier="updateDatabase" id="fl6-4g-Kxz"/>
-                        <segue destination="g28-jk-LDH" kind="show" identifier="afterStart" id="1iD-kp-Zoh"/>
+                        <segue destination="gNH-hP-fca" kind="show" identifier="updateDatabase" animates="NO" id="fl6-4g-Kxz"/>
+                        <segue destination="g28-jk-LDH" kind="show" identifier="afterStart" animates="NO" id="1iD-kp-Zoh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YBf-hh-Uwg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="455" y="-324"/>
+            <point key="canvasLocation" x="269" y="-324"/>
         </scene>
         <!--Update View Controller-->
         <scene sceneID="n0C-oI-f5Q">
@@ -63,12 +63,12 @@
                         <viewLayoutGuide key="safeArea" id="TRM-zD-J3h"/>
                     </view>
                     <connections>
-                        <segue destination="g28-jk-LDH" kind="show" identifier="afterDownload" id="ccu-NN-0BM"/>
+                        <segue destination="g28-jk-LDH" kind="show" identifier="afterDownload" animates="NO" id="ccu-NN-0BM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D3Q-cc-vKl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="454" y="651"/>
+            <point key="canvasLocation" x="269" y="647"/>
         </scene>
         <!--MainPage View Controller-->
         <scene sceneID="b9J-TU-mEs">
@@ -91,8 +91,8 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="createGameAction:" destination="g28-jk-LDH" eventType="touchUpInside" id="G6H-ts-14P"/>
                                     <action selector="pressToCreate:" destination="g28-jk-LDH" eventType="touchUpInside" id="raT-pv-kCg"/>
-                                    <segue destination="gUp-Bt-fDm" kind="show" id="SyZ-Lc-Bzp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GdX-al-lOJ">
@@ -132,6 +132,7 @@
                         <outlet property="createGameOutlet" destination="EpX-uI-O5M" id="X1B-lN-z2N"/>
                         <outlet property="joinGameOutlet" destination="GdX-al-lOJ" id="o9E-9x-whX"/>
                         <outlet property="labelOutlet" destination="WQa-rH-uGx" id="1UI-hh-epd"/>
+                        <segue destination="gUp-Bt-fDm" kind="show" identifier="segue" animates="NO" id="1bF-UN-h9c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RKC-Yr-skb" sceneMemberID="firstResponder"/>
