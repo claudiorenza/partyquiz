@@ -39,8 +39,8 @@ class ShakeBuzzer: UIView {
             self.indicatorView.frame.origin = CGPoint(x: self.indicatorView.frame.origin.x, y: (self.indicatorViewInterval * CGFloat(10-self.index)/10))
           }
         } else {
-          self.viewOutlet.buzzerDown(view: self.viewOutlet)
           self.motionManager.stopAccelerometerUpdates()
+          self.viewOutlet.buzzerDown(view: self.viewOutlet)
           Singleton.shared.delayWithSeconds(0.4, completion: {
             self.removeFromSuperview()
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)

@@ -34,7 +34,6 @@ class QuestionViewController: UIViewController {
     super.viewDidLoad()
     view.backgroundColor = backgoundBase
     setAnswersQuestion()
-
     NotificationCenter.default.addObserver(self, selector: #selector(self.loadProgressView30), name: NSNotification.Name(rawValue: "loadProgressView30"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.loadProgressView10), name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.buzzerSignal), name: NSNotification.Name(rawValue: "buzzer"), object: nil)
@@ -91,7 +90,6 @@ class QuestionViewController: UIViewController {
         shakeBuzzer.setRoundedView()
         shakeBuzzer.setRoundedLabel()
         shakeBuzzer.setIndicatorView()
-        //shakeBuzzer.beginShaking()
         shakeBuzzer.frame = buzzerView.bounds
         changeBackgroundColor(finalColor: UIColor.black)
       }
@@ -101,7 +99,6 @@ class QuestionViewController: UIViewController {
         blowBuzzer.loadPopUp()
         blowBuzzer.setRoundedView()
         blowBuzzer.setIndicatorView()
-        //blowBuzzer.startBlowing()
         blowBuzzer.frame = buzzerView.bounds
         changeBackgroundColor(finalColor: backgoundLilla)
       }
@@ -133,7 +130,6 @@ class QuestionViewController: UIViewController {
   
   @IBAction func buttonAction(_ sender: UIButton) {
     randomBuzzers()
-    //loadProgressView()
   }
   
   func changeBackgroundColor(finalColor: UIColor) {
@@ -145,7 +141,6 @@ class QuestionViewController: UIViewController {
   
   @objc func buzzerSignal() {
     //invio multipeer agli altri giocatori
-    //self.moveQuestionBoxToOrigin()
   }
   
   @objc func moveQuestionBoxToOrigin() {
