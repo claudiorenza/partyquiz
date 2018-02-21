@@ -26,7 +26,7 @@ class PeerManager: NSObject,  MCNearbyServiceBrowserDelegate, MCAdvertiserAssist
   var isQuestion: Bool!
   var question: String = ""
   var msg = ""
-  var a = [NSManagedObject]()
+  
   
   override init(){
     peerID = MCPeerID(displayName: UIDevice.current.name)
@@ -42,10 +42,21 @@ class PeerManager: NSObject,  MCNearbyServiceBrowserDelegate, MCAdvertiserAssist
     return string!
   }
   
+  func convArrayToData(array: [NSManagedObject]){
+    
+  }
+//  func sendArray(array: [NSManagedObject]){
+//        do{
+//          try
+//        }
+//        catch {
+//
+//    }
+//  }
   // - MARK: 2: Funzioni sulla sessione
   func setupSession(){
     session = MCSession(peer: peerID!, securityIdentity: nil, encryptionPreference: .none)
-    session.delegate = self
+    session.delegate = self 
   }
   
   func disconnectSession(){

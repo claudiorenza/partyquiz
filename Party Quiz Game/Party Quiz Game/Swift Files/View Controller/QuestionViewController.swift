@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class QuestionViewController: UIViewController {
   
@@ -19,6 +20,8 @@ class QuestionViewController: UIViewController {
   @IBOutlet var buttonAnswerTwo: UIButton!
   @IBOutlet var buttonAnswerThree: UIButton!
   @IBOutlet var buttonAnswerFour: UIButton!
+  
+  var a = [NSManagedObject]()
   
   let backgoundBase = UIColor(red: 67/255, green: 59/255, blue: 240/255, alpha: 1)
   let backgoundLilla = UIColor(red: 189/255, green: 16/255, blue: 224/255, alpha: 1)
@@ -40,14 +43,11 @@ class QuestionViewController: UIViewController {
   }
   
   override func viewDidAppear(_ animated: Bool) {
-    questionOutlet.text = "Prima Domanda"
-    
-  }
-  
-  override func viewWillAppear(_ animated: Bool) {
     PeerManager.shared.sendQuestion(question: "prima domanda")
     questionOutlet.text = PeerManager.shared.question
-  } 
+    
+  }
+ 
   
   // - MARK: 3: Method that loads the progress view
   func loadProgressView() {
