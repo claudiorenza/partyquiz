@@ -53,6 +53,9 @@
 		CD8E4FBA203B3FD7008C48AE /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E4FB8203B3FD7008C48AE /* UIImageViewExtension.swift */; };
 		CD97F03B203C29310068AA4D /* AnswersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD97F03A203C29310068AA4D /* AnswersView.xib */; };
 		CD97F03D203C29410068AA4D /* AnswersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD97F03C203C29410068AA4D /* AnswersView.swift */; };
+		CDF7E4FE203DC6E9008F7286 /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E4FB203DC6E9008F7286 /* UpdateViewController.swift */; };
+		CDF7E4FF203DC6E9008F7286 /* PreStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E4FC203DC6E9008F7286 /* PreStartViewController.swift */; };
+		CDF7E500203DC6E9008F7286 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E4FD203DC6E9008F7286 /* SettingsViewController.swift */; };
 		F9614DAA203B3AB2001F4448 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9614DA9203B3AB2001F4448 /* QuestionViewController.swift */; };
 		F9646A48203C703B0071BDA7 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9646A47203C703B0071BDA7 /* UILabelExtension.swift */; };
 		F9646A4A203C73C50071BDA7 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9646A49203C73C50071BDA7 /* Singleton.swift */; };
@@ -109,6 +112,9 @@
 		CD8E4FB8203B3FD7008C48AE /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		CD97F03A203C29310068AA4D /* AnswersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswersView.xib; sourceTree = "<group>"; };
 		CD97F03C203C29410068AA4D /* AnswersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersView.swift; sourceTree = "<group>"; };
+		CDF7E4FB203DC6E9008F7286 /* UpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
+		CDF7E4FC203DC6E9008F7286 /* PreStartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreStartViewController.swift; sourceTree = "<group>"; };
+		CDF7E4FD203DC6E9008F7286 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F9614DA9203B3AB2001F4448 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		F9646A47203C703B0071BDA7 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		F9646A49203C73C50071BDA7 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
@@ -229,6 +235,9 @@
 		253E8E80203B198300FE75AD /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CDF7E4FC203DC6E9008F7286 /* PreStartViewController.swift */,
+				CDF7E4FD203DC6E9008F7286 /* SettingsViewController.swift */,
+				CDF7E4FB203DC6E9008F7286 /* UpdateViewController.swift */,
 				F9CE4933203DBD0F00049BE2 /* LaunchScreenViewController.swift */,
 				CD8E4F74203B393D008C48AE /* MainPageViewController.swift */,
 				F9614DA9203B3AB2001F4448 /* QuestionViewController.swift */,
@@ -443,6 +452,7 @@
 				CD2E9872203C58BA00CE646E /* BlowBuzzer.swift in Sources */,
 				F9646A4A203C73C50071BDA7 /* Singleton.swift in Sources */,
 				253490F6203B1B92006A3CEE /* CoreDataManager.swift in Sources */,
+				CDF7E4FF203DC6E9008F7286 /* PreStartViewController.swift in Sources */,
 				CD8E4F8F203B3E46008C48AE /* UIButtonExtension.swift in Sources */,
 				F9646A48203C703B0071BDA7 /* UILabelExtension.swift in Sources */,
 				CD2E9876203C58C400CE646E /* ProgressView.swift in Sources */,
@@ -452,7 +462,9 @@
 				CD2E9861203C58AB00CE646E /* ShakeBuzzerPopUp.swift in Sources */,
 				25349102203B2180006A3CEE /* ManageQuestions.swift in Sources */,
 				CD2E985D203C58AB00CE646E /* TwoBuzzersPopUp.swift in Sources */,
+				CDF7E4FE203DC6E9008F7286 /* UpdateViewController.swift in Sources */,
 				25349101203B2180006A3CEE /* CheckConnection.swift in Sources */,
+				CDF7E500203DC6E9008F7286 /* SettingsViewController.swift in Sources */,
 				253E8E6A203B17A500FE75AD /* Party_Quiz_Game.xcdatamodeld in Sources */,
 				CD2E9871203C58BA00CE646E /* TwoBuzzers.swift in Sources */,
 				CD8E4FB9203B3FD7008C48AE /* UIViewExtension.swift in Sources */,
