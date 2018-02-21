@@ -28,24 +28,27 @@ class PeerManager: NSObject,  MCNearbyServiceBrowserDelegate, MCAdvertiserAssist
   var isQuestion: Bool!
   var question: String = ""
   var msg = ""
+  var arrayQuestion = [Data]()
   
   override init(){
     super.init()
     peerID = MCPeerID(displayName: UIDevice.current.name)
     isQuestion = false
-    self.convArrayToData()
+    arrayQuestion = self.convArrayToData()
   }
+  
   func convertToData(string: String) -> Data{
     let data = string.data(using: .utf8) as Data!
     return data!
   }
   
-  func covertToString(data: Data) -> String{
+  func convertToString(data: Data) -> String{
     let string = String(data: data,encoding: String.Encoding.utf8) as String!
     return string!
   }
   
-  func convArrayToData(){
+  func convArrayToData() -> [Data]{
+    // convert NSManagedObjects to Data type
     var array:[NSManagedObject] = []
     let requestDomanda = NSFetchRequest<NSFetchRequestResult>(entityName: "Question")
     requestDomanda.returnsObjectsAsFaults = false
@@ -60,27 +63,20 @@ class PeerManager: NSObject,  MCNearbyServiceBrowserDelegate, MCAdvertiserAssist
     
     print("ciao: \(array.count)")
     let question = array[0].value(forKey: "text") as! String
+    let dataQuestion = question.data(using: .utf8)
     let wrong1 = array[0].value(forKey: "wrongAnswer1") as! String
+    let dataWrong1 = wrong1.data(using: .utf8)
     let wrong2 = array[0].value(forKey: "wrongAnswer2") as! String
+    let dataWrong2 = wrong2.data(using: .utf8)
     let wrong3 = array[0].value(forKey: "wrongAnswer3") as! String
+    let dataWrong3 = wrong3.data(using: .utf8)
     let correct = array[0].value(forKey: "correctlyAnswer") as! String
+    let dataCorrect = correct.data(using: .utf8)
     
-    print(question)
-    print(correct)
-    
-    let byteQu = question.data(using: .utf8, allowLossyConversion: true)
-    print (byteQu)
+    return [dataQuestion!, dataWrong1!, dataWrong2!, dataWrong3!, dataCorrect!]
     
   }
-  
-//  func sendArray(array: [NSManagedObject]){
-//        do{
-//          try
-//        }
-//        catch {
-//
-//    }
-//  }
+
   // - MARK: 2: Funzioni sulla sessione
   func setupSession(){
     session = MCSession(peer: peerID!, securityIdentity: nil, encryptionPreference: .none)
@@ -188,6 +184,18 @@ class PeerManager: NSObject,  MCNearbyServiceBrowserDelegate, MCAdvertiserAssist
       ac.present(ac,animated: true, completion: nil)        }
   }
   
+  func sendNS(array: [Data]) {
+    for i in array {
+      do {
+        try self.session.send(i, toPeers: self.session.connectedPeers, with: .reliable)
+      }
+      catch {
+        print("Error sending questions array")
+      }
+    }
+    
+  }
+  
 }
 extension PeerManager:  MCSessionDelegate{
   
@@ -197,8 +205,10 @@ extension PeerManager:  MCSessionDelegate{
     if isQuestion{
       print("if \(isQuestion)")
       DispatchQueue.main.async {
-        self.msg = self.covertToString(data: data)
-        self.question = self.msg
+        for index in self.arrayQuestion {
+          self.question = self.convertToString(data: index)
+          
+        }
         print("question is \(self.question)")
       }
     }
@@ -209,7 +219,7 @@ extension PeerManager:  MCSessionDelegate{
        // self.msg = self.covertToString(data: data)
         self.browserVC.dismiss(animated: true, completion: {
           print("perform segue")
-          self.controllerOrigin?.performSegue(withIdentifier: self.covertToString(data: data), sender: nil)
+          self.controllerOrigin?.performSegue(withIdentifier: self.convertToString(data: data), sender: nil)
           self.isQuestion = true
         })
       }
