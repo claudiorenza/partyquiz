@@ -13,8 +13,20 @@ class ShakeBuzzer: UIView {
 
   var index = 0
   var motionManager = CMMotionManager()
+  
+  var indicatorViewInterval: CGFloat = 0.0
+  var indicatorViewInitialPoint: CGFloat = 0.0
+  
   @IBOutlet weak var viewOutlet: UIView!
   @IBOutlet weak var label: UILabel!
+  @IBOutlet var indicatorView: UIView!
+  
+  
+  func setIndicatorView() {
+    indicatorViewInitialPoint = indicatorView.frame.origin.y
+    indicatorViewInterval = indicatorViewInitialPoint + indicatorView.frame.height
+    indicatorView.frame.origin = CGPoint(x: indicatorView.frame.origin.x, y: indicatorViewInterval)
+  }
   
   func beginShaking() {
     motionManager.accelerometerUpdateInterval = 0.1
@@ -25,6 +37,7 @@ class ShakeBuzzer: UIView {
           if (myData.acceleration.x > 1.2 || myData.acceleration.y > 1.2 || myData.acceleration.z > 1.2) {
             self.index += 1
             self.label.text = "\(self.index)"
+            self.indicatorView.frame.origin = CGPoint(x: self.indicatorView.frame.origin.x, y: (self.indicatorViewInterval * CGFloat(10-self.index)/10))
           }
         } else {
           self.viewOutlet.buzzerDown(view: self.viewOutlet)

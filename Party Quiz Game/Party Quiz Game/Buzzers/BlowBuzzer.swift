@@ -16,8 +16,19 @@ class BlowBuzzer: UIView {
   var recorder: AVAudioRecorder!
   var levelTimer = Timer()
   var index = 0
+  var indicatorViewInterval: CGFloat = 0.0
+  var indicatorViewInitialPoint: CGFloat = 0.0
   @IBOutlet weak var label: UILabel!
   @IBOutlet weak var viewOutlet: UIView!
+  @IBOutlet var indicatorView: UIView!
+  
+  
+  func setIndicatorView() {
+    indicatorViewInitialPoint = indicatorView.frame.origin.y
+    indicatorViewInterval = indicatorViewInitialPoint + indicatorView.frame.height
+    indicatorView.frame.origin = CGPoint(x: indicatorView.frame.origin.x, y: indicatorViewInterval)
+  }
+  
   
   func startBlowing() {
     let documents = URL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0])
@@ -55,6 +66,7 @@ class BlowBuzzer: UIView {
       if level > -10 {
         index += 1
         label.text = ("\(index / 10)")
+        indicatorView.frame.origin = CGPoint(x: indicatorView.frame.origin.x, y: (indicatorViewInterval * CGFloat(1000-index)/1000))
       }
     } else if index == 1000 {
       viewOutlet.buzzerDown(view: viewOutlet)

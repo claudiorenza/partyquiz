@@ -54,7 +54,7 @@ class QuestionViewController: UIViewController {
 
   // - MARK: 4: Method that generates random buzzers
   func randomBuzzers() {
-    index = 0 //Int(arc4random_uniform(4))
+    index = 2 //Int(arc4random_uniform(4))
     if index == 0 {
       if let oneBuzzer = Bundle.main.loadNibNamed("OneBuzzer", owner: self, options: nil)?.first as? OneBuzzer {
         buzzerView.addSubview(oneBuzzer)
@@ -88,6 +88,7 @@ class QuestionViewController: UIViewController {
         buzzerView.addSubview(blowBuzzer)
         blowBuzzer.loadPopUp()
         blowBuzzer.setRoundedView()
+        blowBuzzer.setIndicatorView()
         blowBuzzer.startBlowing()
         blowBuzzer.frame = buzzerView.bounds
         changeBackgroundColor(finalColor: backgoundLilla)

@@ -12,29 +12,28 @@ class OneBuzzer: UIView {
   
   @IBOutlet weak var buzzer: UIButton!
   @IBOutlet weak var view: UIView!
+  @IBOutlet var outletCounter: UILabel!
   
-  var index = 0
-  var total = 10
+  var index = 10
   
   func setBuzzer() {
     buzzer.layer.cornerRadius = 25.0
     buzzer.layer.borderWidth = 6.0
     buzzer.layer.borderColor = UIColor.borderColorGray()
+    outletCounter.text = "\(index)"
   }
   
   @IBAction func pressBuzzer(_ sender: UIButton) {
-    if index < 10 {
-      index += 1
-      total = total - 1
-      buzzer.setTitle("\(total)", for: .normal)
-      buzzer.setTitleColor(UIColor.white, for: .normal)
-    } else {
+    index -= 1
+    outletCounter.text = "\(index)"
+    if index == 0 {
       view.buzzerDown(view: view)
       buzzer.isUserInteractionEnabled = false
       Singleton.shared.delayWithSeconds(0.4, completion: {
         self.removeFromSuperview()
       })
     }
+    
   }
   
   func loadPopUp(view: UIView) {

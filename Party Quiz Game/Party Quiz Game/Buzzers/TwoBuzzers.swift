@@ -15,7 +15,7 @@ class TwoBuzzers: UIView {
   @IBOutlet weak var label: UILabel!
   @IBOutlet weak var view: UIView!
   
-  var index = 0
+  var index = 10
   
   func setBuzzers() {
     leftBuzzer.layer.cornerRadius = 25
@@ -26,15 +26,32 @@ class TwoBuzzers: UIView {
     rightBuzzer.layer.borderWidth = 6.0
     rightBuzzer.layer.borderColor = UIColor.borderColorGray()
     
+    label.layer.cornerRadius = 15
+    label.layer.borderWidth = 3.0
+    label.layer.borderColor = UIColor.borderColorGray()
+    label.clipsToBounds = true
+    label.text = "\(index)"
+    
     rightBuzzer.isUserInteractionEnabled = false
   }
   
   @IBAction func pressLeftBuzzer(_ sender: UIButton) {
-    if index < 10 {
-      index += 1
-      label.text = "\(index)"
+    index -= 1
+    label.text = "\(index)"
+    if index > 0 {
       leftBuzzer.isUserInteractionEnabled = false
       rightBuzzer.isUserInteractionEnabled = true
+    } else {
+      rightBuzzer.isUserInteractionEnabled = false
+    }
+  }
+  
+  @IBAction func pressRightBuzzer(_ sender: UIButton) {
+    index -= 1
+    label.text = "\(index)"
+    if index > 0 {
+      leftBuzzer.isUserInteractionEnabled = true
+      rightBuzzer.isUserInteractionEnabled = false
     } else {
       view.buzzerDown(view: view)
       leftBuzzer.isUserInteractionEnabled = false
@@ -42,17 +59,6 @@ class TwoBuzzers: UIView {
         self.removeFromSuperview()
       })
       NotificationCenter.default.post(name: NSNotification.Name(rawValue: "twoBuzzersException"), object: nil)
-    }
-  }
-  
-  @IBAction func pressRightBuzzer(_ sender: UIButton) {
-    if index < 10 {
-      index += 1
-      label.text = "\(index)"
-      leftBuzzer.isUserInteractionEnabled = true
-      rightBuzzer.isUserInteractionEnabled = false
-    } else {
-      leftBuzzer.isUserInteractionEnabled = false
     }
   }
   
