@@ -18,6 +18,8 @@ class QuestionViewController: UIViewController {
   @IBOutlet var buttonAnswerTwo: UIButton!
   @IBOutlet var buttonAnswerThree: UIButton!
   @IBOutlet var buttonAnswerFour: UIButton!
+  @IBOutlet weak var onHoldView: UIView!
+  @IBOutlet weak var onHoldLabel: UILabel!
   
   var timerReceiveBuzz: Timer!
   var timerReceiveWrongAnswer: Timer!
@@ -140,6 +142,9 @@ class QuestionViewController: UIViewController {
     buttonAnswerFour.layer.borderColor = UIColor.borderColorGray()
     buttonAnswerFour.layer.borderWidth = 6.0
     buttonAnswerFour.alpha = 0
+    
+    onHoldLabel.layer.cornerRadius = 25.0
+    onHoldLabel.clipsToBounds = true
   }
   
   @IBAction func buttonAction(_ sender: UIButton) {
