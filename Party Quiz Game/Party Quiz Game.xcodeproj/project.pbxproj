@@ -114,6 +114,7 @@
 		CD8E4FB8203B3FD7008C48AE /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		CD97F03A203C29310068AA4D /* AnswersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswersView.xib; sourceTree = "<group>"; };
 		CD97F03C203C29410068AA4D /* AnswersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersView.swift; sourceTree = "<group>"; };
+		F90C86E0203DC27B00D9E8B9 /* MTF Toast.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MTF Toast.ttf"; sourceTree = "<group>"; };
 		F9614DA9203B3AB2001F4448 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		F9646A47203C703B0071BDA7 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		F9646A49203C73C50071BDA7 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
@@ -160,6 +161,7 @@
 				CD8E4F76203B3D0B008C48AE /* Sounds */,
 				253E8E6B203B17A500FE75AD /* Assets.xcassets */,
 				253E8E70203B17A500FE75AD /* Info.plist */,
+				F90C86DF203DC25D00D9E8B9 /* Font */,
 			);
 			path = "Party Quiz Game";
 			sourceTree = "<group>";
@@ -327,6 +329,14 @@
 				CD97F03C203C29410068AA4D /* AnswersView.swift */,
 			);
 			path = Answers;
+			sourceTree = "<group>";
+		};
+		F90C86DF203DC25D00D9E8B9 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				F90C86E0203DC27B00D9E8B9 /* MTF Toast.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
