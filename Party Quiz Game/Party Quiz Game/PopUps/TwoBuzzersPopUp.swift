@@ -17,9 +17,8 @@ class TwoBuzzersPopUp: UIView {
   
   func setViewElements(view: UIView) {
     self.layer.cornerRadius = 25.0
-    self.layer.borderColor = UIColor.lightGray.cgColor
-    self.layer.borderWidth = 1.0
-    //label.clipsToBounds = true
+    self.layer.borderColor = UIColor.borderColorGray()
+    self.layer.borderWidth = 6.0
     okOutlet.layer.cornerRadius = 15.0
     okOutlet.layer.borderColor = UIColor.black.cgColor
     okOutlet.layer.borderWidth = 1.5

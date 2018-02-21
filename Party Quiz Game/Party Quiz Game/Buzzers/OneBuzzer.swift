@@ -18,6 +18,8 @@ class OneBuzzer: UIView {
   
   func setBuzzer() {
     buzzer.layer.cornerRadius = 25.0
+    buzzer.layer.borderWidth = 6.0
+    buzzer.layer.borderColor = UIColor.borderColorGray()
   }
   
   @IBAction func pressBuzzer(_ sender: UIButton) {

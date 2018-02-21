@@ -19,7 +19,13 @@ class TwoBuzzers: UIView {
   
   func setBuzzers() {
     leftBuzzer.layer.cornerRadius = 25
+    leftBuzzer.layer.borderWidth = 6.0
+    leftBuzzer.layer.borderColor = UIColor.borderColorGray()
+    
     rightBuzzer.layer.cornerRadius = 25
+    rightBuzzer.layer.borderWidth = 6.0
+    rightBuzzer.layer.borderColor = UIColor.borderColorGray()
+    
     rightBuzzer.isUserInteractionEnabled = false
   }
   

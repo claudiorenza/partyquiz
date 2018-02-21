@@ -68,9 +68,9 @@ class BlowBuzzer: UIView {
   }
   
   func setRoundedView() {
-    viewOutlet.layer.cornerRadius = 25
-    viewOutlet.layer.borderColor = UIColor.black.cgColor
-    viewOutlet.layer.borderWidth = 1
+    viewOutlet.layer.cornerRadius = 25.0
+    viewOutlet.layer.borderColor = UIColor.borderColorGray()
+    viewOutlet.layer.borderWidth = 6.0
   }
   
   func loadPopUp() {
