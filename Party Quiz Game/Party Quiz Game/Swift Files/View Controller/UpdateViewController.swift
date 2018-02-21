@@ -38,6 +38,7 @@ class UpdateViewController: UIViewController {
   }
   
   func downloadEnded() {
+    syncronizeDatabases()
     self.loadingView?.removeFromSuperview()
     performSegue(withIdentifier: "afterDownload", sender: nil)
   }
