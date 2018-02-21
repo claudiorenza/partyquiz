@@ -16,10 +16,14 @@ class BlowBuzzer: UIView {
   var recorder: AVAudioRecorder!
   var levelTimer = Timer()
   var index = 0
+  var indicatorViewInterval: CGFloat = 0.0
+  var indicatorViewInitialPoint: CGFloat = 0.0
   @IBOutlet weak var label: UILabel!
   @IBOutlet weak var viewOutlet: UIView!
+  @IBOutlet var indicatorView: UIView!
+
   
-  func startBlowing() {
+  @objc func startBlowing() {
     let documents = URL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0])
     let url = documents.appendingPathComponent("record.caf")
     let recordSettings: [String: Any] = [
@@ -55,22 +59,34 @@ class BlowBuzzer: UIView {
       if level > -10 {
         index += 1
         label.text = ("\(index / 10)")
+        indicatorView.frame = CGRect(x: indicatorView.frame.origin.x, y: indicatorView.frame.origin.y, width: indicatorView.frame.width, height: (indicatorViewInterval * CGFloat(1000-index)/1000))
       }
     } else if index == 1000 {
+      viewOutlet.buzzerDown(view: viewOutlet)
+      Singleton.shared.delayWithSeconds(0.4, completion: {
+        self.removeFromSuperview()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
+      })
       label.text = "Done!"
       recorder.stop()
       levelTimer.invalidate()
-      self.removeFromSuperview()
     }
   }
   
   func setRoundedView() {
-    viewOutlet.layer.cornerRadius = 50
-    viewOutlet.layer.borderColor = UIColor.black.cgColor
-    viewOutlet.layer.borderWidth = 1
+    viewOutlet.layer.cornerRadius = 25.0
+    viewOutlet.layer.borderColor = UIColor.borderColorGray()
+    viewOutlet.layer.borderWidth = 6.0
+  }
+  
+  func setIndicatorView() {
+    indicatorViewInterval = indicatorView.frame.origin.y + indicatorView.frame.height
+    indicatorView.layer.cornerRadius = 25.0
   }
   
   func loadPopUp() {
+    NotificationCenter.default.addObserver(self, selector: #selector(self.startBlowing), name: NSNotification.Name(rawValue: "startBlowing"), object: nil)
     if let blowBuzzerPopUp = Bundle.main.loadNibNamed("BlowBuzzerPopUp", owner: self, options: nil)?.first as? BlowBuzzerPopUp {
       self.addSubview(blowBuzzerPopUp)
       blowBuzzerPopUp.setViewElements()

@@ -49,7 +49,7 @@ class MainPageViewController: UIViewController {
   
   func setButton(tempButton: UIButton) {
     tempButton.layer.cornerRadius = 25.0
-    tempButton.layer.borderColor = borderColor
+    tempButton.layer.borderColor = UIColor.borderColorGray()
     tempButton.layer.borderWidth = 6.0
   }
   
@@ -74,5 +74,13 @@ class MainPageViewController: UIViewController {
   
   @IBAction func pressForInfo(_ sender: UIButton) {
     labelOutlet.text = "Infos..."
+  }
+  
+  @IBAction func createGameAction(_ sender: UIButton) {
+    createGameOutlet.exit(directionTo: "left", view: view)
+    joinGameOutlet.exit(directionTo: "right", view: view)
+    Singleton.shared.delayWithSeconds(0.8) {
+      self.performSegue(withIdentifier: "segue", sender: self)
+    }
   }
 }

@@ -69,6 +69,14 @@ extension UIImageView {
     layer.add(animation, forKey: nil)
   }
   
-  
+  func growIcon() {
+    let animation = CASpringAnimation(keyPath: "transform.scale")
+    animation.duration = 2
+    animation.fromValue = 0
+    animation.toValue = 1.0
+    animation.damping = 5
+    
+    layer.add(animation, forKey: nil)
+  }
 }
 

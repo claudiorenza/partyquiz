@@ -15,10 +15,9 @@ class BlowBuzzerPopUp: UIView {
   @IBOutlet weak var image: UIImageView!
   
   func setViewElements() {
-    label.layer.cornerRadius = 25.0
-    label.layer.borderColor = UIColor.lightGray.cgColor
-    label.layer.borderWidth = 1.0
-    label.clipsToBounds = true
+    self.layer.cornerRadius = 25.0
+    self.layer.borderColor = UIColor.borderColorGray()
+    self.layer.borderWidth = 6.0
     okOutlet.layer.cornerRadius = 15.0
     okOutlet.layer.borderColor = UIColor.black.cgColor
     okOutlet.layer.borderWidth = 1.5
@@ -29,6 +28,8 @@ class BlowBuzzerPopUp: UIView {
     self.tutorialDismiss(view: self)
     Singleton.shared.delayWithSeconds(0.1) {
       self.removeFromSuperview()
+      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "startBlowing"), object: nil)
+      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProgressView30"), object: nil)
     }
   }
   
