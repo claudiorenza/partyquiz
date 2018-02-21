@@ -18,6 +18,8 @@ class QuestionViewController: UIViewController {
   @IBOutlet var buttonAnswerTwo: UIButton!
   @IBOutlet var buttonAnswerThree: UIButton!
   @IBOutlet var buttonAnswerFour: UIButton!
+  @IBOutlet weak var onHoldView: UIView!
+  @IBOutlet weak var onHoldLabel: UILabel!
   
   let backgoundBase = UIColor(red: 67/255, green: 59/255, blue: 240/255, alpha: 1)
   let backgoundLilla = UIColor(red: 189/255, green: 16/255, blue: 224/255, alpha: 1)
@@ -130,6 +132,9 @@ class QuestionViewController: UIViewController {
     buttonAnswerFour.layer.borderColor = UIColor.borderColorGray()
     buttonAnswerFour.layer.borderWidth = 6.0
     buttonAnswerFour.alpha = 0
+    
+    onHoldLabel.layer.cornerRadius = 25.0
+    onHoldLabel.clipsToBounds = true
   }
   
   @IBAction func buttonAction(_ sender: UIButton) {
