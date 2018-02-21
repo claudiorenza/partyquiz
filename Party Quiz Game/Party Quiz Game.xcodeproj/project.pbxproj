@@ -35,6 +35,10 @@
 		CD2E9873203C58BA00CE646E /* OneBuzzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E986B203C58BA00CE646E /* OneBuzzer.swift */; };
 		CD2E9876203C58C400CE646E /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E9874203C58C400CE646E /* ProgressView.swift */; };
 		CD2E9877203C58C400CE646E /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2E9875203C58C400CE646E /* ProgressView.xib */; };
+		CD35ACBF203DBA9100A9703F /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD35ACBE203DBA9100A9703F /* UIButtonExtension.swift */; };
+		CD35ACC3203DBAC800A9703F /* OneBuzzer.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD35ACC0203DBAC800A9703F /* OneBuzzer.xib */; };
+		CD35ACC4203DBAC800A9703F /* TwoBuzzers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD35ACC1203DBAC800A9703F /* TwoBuzzers.swift */; };
+		CD35ACC5203DBAC800A9703F /* TwoBuzzers.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD35ACC2203DBAC800A9703F /* TwoBuzzers.xib */; };
 		CD8E4F72203B3728008C48AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD8E4F71203B3728008C48AE /* Main.storyboard */; };
 		CD8E4F75203B393D008C48AE /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E4F74203B393D008C48AE /* MainPageViewController.swift */; };
 		CD8E4F7D203B3D0B008C48AE /* timeUp.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CD8E4F77203B3D0B008C48AE /* timeUp.m4a */; };
@@ -89,6 +93,10 @@
 		CD2E986B203C58BA00CE646E /* OneBuzzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneBuzzer.swift; sourceTree = "<group>"; };
 		CD2E9874203C58C400CE646E /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		CD2E9875203C58C400CE646E /* ProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
+		CD35ACBE203DBA9100A9703F /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		CD35ACC0203DBAC800A9703F /* OneBuzzer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OneBuzzer.xib; sourceTree = "<group>"; };
+		CD35ACC1203DBAC800A9703F /* TwoBuzzers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoBuzzers.swift; sourceTree = "<group>"; };
+		CD35ACC2203DBAC800A9703F /* TwoBuzzers.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwoBuzzers.xib; sourceTree = "<group>"; };
 		CD8E4F71203B3728008C48AE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CD8E4F74203B393D008C48AE /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		CD8E4F77203B3D0B008C48AE /* timeUp.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeUp.m4a; sourceTree = "<group>"; };
@@ -262,6 +270,9 @@
 		CD2E9852203C57EE00CE646E /* Buzzers */ = {
 			isa = PBXGroup;
 			children = (
+				CD35ACC0203DBAC800A9703F /* OneBuzzer.xib */,
+				CD35ACC1203DBAC800A9703F /* TwoBuzzers.swift */,
+				CD35ACC2203DBAC800A9703F /* TwoBuzzers.xib */,
 				CD2E986B203C58BA00CE646E /* OneBuzzer.swift */,
 				CD2E9866203C58BA00CE646E /* ShakeBuzzer.xib */,
 				CD2E9868203C58BA00CE646E /* ShakeBuzzer.swift */,
@@ -299,6 +310,7 @@
 		CD8E4F8B203B3E36008C48AE /* Extension & Singlerton */ = {
 			isa = PBXGroup;
 			children = (
+				CD35ACBE203DBA9100A9703F /* UIButtonExtension.swift */,
 				CD8E4FB8203B3FD7008C48AE /* UIImageViewExtension.swift */,
 				CD8E4FB7203B3FD7008C48AE /* UIViewExtension.swift */,
 				CD8E4F8C203B3E46008C48AE /* UIColorExtension.swift */,
@@ -394,6 +406,7 @@
 				253E8E6C203B17A500FE75AD /* Assets.xcassets in Resources */,
 				CD8E4F8A203B3E01008C48AE /* gong.m4a in Resources */,
 				CD2E986E203C58BA00CE646E /* ShakeBuzzer.xib in Resources */,
+				CD35ACC5203DBAC800A9703F /* TwoBuzzers.xib in Resources */,
 				CD8E4F7E203B3D0B008C48AE /* answerWrong.m4a in Resources */,
 				CD2E985F203C58AB00CE646E /* BlowBuzzerPopUp.xib in Resources */,
 				CD2E986F203C58BA00CE646E /* BlowBuzzer.xib in Resources */,
@@ -404,6 +417,7 @@
 				CD8E4F7F203B3D0B008C48AE /* musicIntro.m4a in Resources */,
 				CD2E985C203C58AB00CE646E /* TwoBuzzersPopUp.xib in Resources */,
 				CD2E9877203C58C400CE646E /* ProgressView.xib in Resources */,
+				CD35ACC3203DBAC800A9703F /* OneBuzzer.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,8 +451,10 @@
 				25349101203B2180006A3CEE /* CheckConnection.swift in Sources */,
 				253E8E6A203B17A500FE75AD /* Party_Quiz_Game.xcdatamodeld in Sources */,
 				25CD5A17203D6DC800B5D38D /* SettingsViewController.swift in Sources */,
+				CD35ACBF203DBA9100A9703F /* UIButtonExtension.swift in Sources */,
 				CD8E4FB9203B3FD7008C48AE /* UIViewExtension.swift in Sources */,
 				CD8E4F8E203B3E46008C48AE /* UIColorExtension.swift in Sources */,
+				CD35ACC4203DBAC800A9703F /* TwoBuzzers.swift in Sources */,
 				CD2E9862203C58AB00CE646E /* OneBuzzerPopUp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
