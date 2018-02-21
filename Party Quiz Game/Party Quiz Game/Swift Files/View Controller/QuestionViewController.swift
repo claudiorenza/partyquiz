@@ -37,7 +37,7 @@ class QuestionViewController: UIViewController {
     NotificationCenter.default.addObserver(self, selector: #selector(self.loadProgressView30), name: NSNotification.Name(rawValue: "loadProgressView30"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.loadProgressView10), name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.buzzerSignal), name: NSNotification.Name(rawValue: "buzzer"), object: nil)
-
+    NotificationCenter.default.addObserver(self, selector: #selector(self.answersAppear), name: NSNotification.Name(rawValue: "answers"), object: nil)
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -114,18 +114,22 @@ class QuestionViewController: UIViewController {
     buttonAnswerOne.layer.cornerRadius = 25
     buttonAnswerOne.layer.borderColor = UIColor.borderColorGray()
     buttonAnswerOne.layer.borderWidth = 6.0
+    buttonAnswerOne.alpha = 0
     
     buttonAnswerTwo.layer.cornerRadius = 25
     buttonAnswerTwo.layer.borderColor = UIColor.borderColorGray()
     buttonAnswerTwo.layer.borderWidth = 6.0
+    buttonAnswerTwo.alpha = 0
       
     buttonAnswerThree.layer.cornerRadius = 25
     buttonAnswerThree.layer.borderColor = UIColor.borderColorGray()
     buttonAnswerThree.layer.borderWidth = 6.0
+    buttonAnswerThree.alpha = 0
     
     buttonAnswerFour.layer.cornerRadius = 25
     buttonAnswerFour.layer.borderColor = UIColor.borderColorGray()
     buttonAnswerFour.layer.borderWidth = 6.0
+    buttonAnswerFour.alpha = 0
   }
   
   @IBAction func buttonAction(_ sender: UIButton) {
@@ -147,6 +151,25 @@ class QuestionViewController: UIViewController {
     questionOutlet.questionBoxMoveLeft(view: view, initPosition: point)
     Singleton.shared.delayWithSeconds(0.4) {
       self.questionOutlet.center.x = self.point.x
+    }
+  }
+  
+  @objc func answersAppear() {
+    self.buttonAnswerOne.fadeInAnswers()
+    Singleton.shared.delayWithSeconds(0.2) {
+      self.buttonAnswerOne.alpha = 1
+    }
+    self.buttonAnswerTwo.fadeInAnswers()
+    Singleton.shared.delayWithSeconds(0.2) {
+      self.buttonAnswerTwo.alpha = 1
+    }
+    self.buttonAnswerThree.fadeInAnswers()
+    Singleton.shared.delayWithSeconds(0.2) {
+      self.buttonAnswerThree.alpha = 1
+    }
+    self.buttonAnswerFour.fadeInAnswers()
+    Singleton.shared.delayWithSeconds(0.2) {
+      self.buttonAnswerFour.alpha = 1
     }
   }
 }
