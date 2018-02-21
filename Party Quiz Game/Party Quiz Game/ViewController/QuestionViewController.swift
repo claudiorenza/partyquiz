@@ -34,10 +34,11 @@ class QuestionViewController: UIViewController {
     super.viewDidLoad()
     view.backgroundColor = backgoundBase
     setAnswersQuestion()
-    loadProgressView()
-    
-//    NotificationCenter.default.addObserver(self, selector: #selector(self.moveQuestionBoxToOrigin), name: NSNotification.Name(rawValue: "twoBuzzersException"), object: nil)
+
+    NotificationCenter.default.addObserver(self, selector: #selector(self.loadProgressView30), name: NSNotification.Name(rawValue: "loadProgressView30"), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(self.loadProgressView10), name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.buzzerSignal), name: NSNotification.Name(rawValue: "buzzer"), object: nil)
+
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -45,11 +46,19 @@ class QuestionViewController: UIViewController {
   }
   
   // - MARK: 3: Method that loads the progress view
-  func loadProgressView() {
-    if let progressView = Bundle.main.loadNibNamed("ProgressView", owner: self, options: nil)?.first as? ProgressView {
-      progressControllerView.addSubview(progressView)
-      progressView.manageProgress()
-      progressView.frame = progressControllerView.bounds
+  @objc func loadProgressView30() {
+    if let progressView30 = Bundle.main.loadNibNamed("ProgressView", owner: self, options: nil)?.first as? ProgressView {
+      progressControllerView.addSubview(progressView30)
+      progressView30.manageProgress(seconds: 30)
+      progressView30.frame = progressControllerView.bounds
+    }
+  }
+  
+  @objc func loadProgressView10() {
+    if let progressView10 = Bundle.main.loadNibNamed("ProgressView", owner: self, options: nil)?.first as? ProgressView {
+      progressControllerView.addSubview(progressView10)
+      progressView10.manageProgress(seconds: 10)
+      progressView10.frame = progressControllerView.bounds
     }
   }
 
@@ -65,6 +74,7 @@ class QuestionViewController: UIViewController {
         changeBackgroundColor(finalColor: UIColor.orange)
       }
     } else if index == 1 {
+      NotificationCenter.default.addObserver(self, selector: #selector(self.moveQuestionBoxToOrigin), name: NSNotification.Name(rawValue: "twoBuzzersException"), object: nil)
       point.x = questionOutlet.center.x
       questionOutlet.center.x = view.bounds.width * 0.465
       if let twoBuzzers = Bundle.main.loadNibNamed("TwoBuzzers", owner: self, options: nil)?.first as? TwoBuzzers {
@@ -81,7 +91,7 @@ class QuestionViewController: UIViewController {
         shakeBuzzer.setRoundedView()
         shakeBuzzer.setRoundedLabel()
         shakeBuzzer.setIndicatorView()
-        shakeBuzzer.beginShaking()
+        //shakeBuzzer.beginShaking()
         shakeBuzzer.frame = buzzerView.bounds
         changeBackgroundColor(finalColor: UIColor.black)
       }
@@ -91,7 +101,7 @@ class QuestionViewController: UIViewController {
         blowBuzzer.loadPopUp()
         blowBuzzer.setRoundedView()
         blowBuzzer.setIndicatorView()
-        blowBuzzer.startBlowing()
+        //blowBuzzer.startBlowing()
         blowBuzzer.frame = buzzerView.bounds
         changeBackgroundColor(finalColor: backgoundLilla)
       }
@@ -123,7 +133,7 @@ class QuestionViewController: UIViewController {
   
   @IBAction func buttonAction(_ sender: UIButton) {
     randomBuzzers()
-    loadProgressView()
+    //loadProgressView()
   }
   
   func changeBackgroundColor(finalColor: UIColor) {
@@ -135,10 +145,10 @@ class QuestionViewController: UIViewController {
   
   @objc func buzzerSignal() {
     //invio multipeer agli altri giocatori
-    self.moveQuestionBoxToOrigin()
+    //self.moveQuestionBoxToOrigin()
   }
   
-  /*@objc*/ func moveQuestionBoxToOrigin() {
+  @objc func moveQuestionBoxToOrigin() {
     questionOutlet.questionBoxMoveLeft(view: view, initPosition: point)
     Singleton.shared.delayWithSeconds(0.4) {
       self.questionOutlet.center.x = self.point.x

@@ -28,6 +28,8 @@ class BlowBuzzerPopUp: UIView {
     self.tutorialDismiss(view: self)
     Singleton.shared.delayWithSeconds(0.1) {
       self.removeFromSuperview()
+      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "startBlowing"), object: nil)
+      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProgressView30"), object: nil)
     }
   }
   
