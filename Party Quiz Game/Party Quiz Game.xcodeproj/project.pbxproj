@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		253490F6203B1B92006A3CEE /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253490F5203B1B92006A3CEE /* CoreDataManager.swift */; };
 		253490F8203B1B9A006A3CEE /* CloudKitQuestionsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253490F7203B1B9A006A3CEE /* CloudKitQuestionsClass.swift */; };
-		253490FC203B20E8006A3CEE /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253490F9203B20E8006A3CEE /* StartViewController.swift */; };
 		253490FD203B20E8006A3CEE /* MigrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253490FA203B20E8006A3CEE /* MigrationViewController.swift */; };
-		253490FE203B20E8006A3CEE /* DownloadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253490FB203B20E8006A3CEE /* DownloadingViewController.swift */; };
 		25349101203B2180006A3CEE /* CheckConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253490FF203B2180006A3CEE /* CheckConnection.swift */; };
 		25349102203B2180006A3CEE /* ManageQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25349100203B2180006A3CEE /* ManageQuestions.swift */; };
 		253E8E62203B17A500FE75AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253E8E61203B17A500FE75AD /* AppDelegate.swift */; };
@@ -64,9 +62,7 @@
 /* Begin PBXFileReference section */
 		253490F5203B1B92006A3CEE /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		253490F7203B1B9A006A3CEE /* CloudKitQuestionsClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitQuestionsClass.swift; sourceTree = "<group>"; };
-		253490F9203B20E8006A3CEE /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		253490FA203B20E8006A3CEE /* MigrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MigrationViewController.swift; sourceTree = "<group>"; };
-		253490FB203B20E8006A3CEE /* DownloadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadingViewController.swift; sourceTree = "<group>"; };
 		253490FF203B2180006A3CEE /* CheckConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckConnection.swift; path = "Party Quiz Game/Swift Files/CheckConnection.swift"; sourceTree = SOURCE_ROOT; };
 		25349100203B2180006A3CEE /* ManageQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManageQuestions.swift; path = "Party Quiz Game/Swift Files/ManageQuestions.swift"; sourceTree = SOURCE_ROOT; };
 		253E8E5E203B17A500FE75AD /* Party Quiz Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Party Quiz Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -236,9 +232,7 @@
 				F9CE4933203DBD0F00049BE2 /* LaunchScreenViewController.swift */,
 				CD8E4F74203B393D008C48AE /* MainPageViewController.swift */,
 				F9614DA9203B3AB2001F4448 /* QuestionViewController.swift */,
-				253490FB203B20E8006A3CEE /* DownloadingViewController.swift */,
 				253490FA203B20E8006A3CEE /* MigrationViewController.swift */,
-				253490F9203B20E8006A3CEE /* StartViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -439,14 +433,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD8E4F75203B393D008C48AE /* MainPageViewController.swift in Sources */,
-				253490FC203B20E8006A3CEE /* StartViewController.swift in Sources */,
 				CD2E9870203C58BA00CE646E /* ShakeBuzzer.swift in Sources */,
 				253E8E62203B17A500FE75AD /* AppDelegate.swift in Sources */,
 				253490F8203B1B9A006A3CEE /* CloudKitQuestionsClass.swift in Sources */,
 				CD97F03D203C29410068AA4D /* AnswersView.swift in Sources */,
 				F9CE4934203DBD0F00049BE2 /* LaunchScreenViewController.swift in Sources */,
 				F9614DAA203B3AB2001F4448 /* QuestionViewController.swift in Sources */,
-				253490FE203B20E8006A3CEE /* DownloadingViewController.swift in Sources */,
 				253490FD203B20E8006A3CEE /* MigrationViewController.swift in Sources */,
 				CD2E9872203C58BA00CE646E /* BlowBuzzer.swift in Sources */,
 				F9646A4A203C73C50071BDA7 /* Singleton.swift in Sources */,
