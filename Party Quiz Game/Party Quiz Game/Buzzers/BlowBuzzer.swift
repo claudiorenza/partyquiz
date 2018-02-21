@@ -30,7 +30,7 @@ class BlowBuzzer: UIView {
   }
   
   
-  func startBlowing() {
+  @objc func startBlowing() {
     let documents = URL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0])
     let url = documents.appendingPathComponent("record.caf")
     let recordSettings: [String: Any] = [
@@ -72,6 +72,8 @@ class BlowBuzzer: UIView {
       viewOutlet.buzzerDown(view: viewOutlet)
       Singleton.shared.delayWithSeconds(0.4, completion: {
         self.removeFromSuperview()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
       })
       label.text = "Done!"
       recorder.stop()
@@ -86,6 +88,7 @@ class BlowBuzzer: UIView {
   }
   
   func loadPopUp() {
+    NotificationCenter.default.addObserver(self, selector: #selector(self.startBlowing), name: NSNotification.Name(rawValue: "startBlowing"), object: nil)
     if let blowBuzzerPopUp = Bundle.main.loadNibNamed("BlowBuzzerPopUp", owner: self, options: nil)?.first as? BlowBuzzerPopUp {
       self.addSubview(blowBuzzerPopUp)
       blowBuzzerPopUp.setViewElements()

@@ -21,14 +21,13 @@ class ShakeBuzzer: UIView {
   @IBOutlet weak var label: UILabel!
   @IBOutlet var indicatorView: UIView!
   
-  
   func setIndicatorView() {
     indicatorViewInitialPoint = indicatorView.frame.origin.y
     indicatorViewInterval = indicatorViewInitialPoint + indicatorView.frame.height
     indicatorView.frame.origin = CGPoint(x: indicatorView.frame.origin.x, y: indicatorViewInterval)
   }
   
-  func beginShaking() { //TODO: quando arriva al massimo l'indicatore, questa funzione non deve più essere eseguita
+  @objc func beginShaking() {
     motionManager.accelerometerUpdateInterval = 0.1
     motionManager.startAccelerometerUpdates(to: OperationQueue.current!) {
       (data, error) in
@@ -41,9 +40,11 @@ class ShakeBuzzer: UIView {
           }
         } else {
           self.viewOutlet.buzzerDown(view: self.viewOutlet)
+          self.motionManager.stopAccelerometerUpdates()
           Singleton.shared.delayWithSeconds(0.4, completion: {
-            self.motionManager.stopAccelerometerUpdates()
             self.removeFromSuperview()
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
           })
         }
       }
@@ -62,6 +63,7 @@ class ShakeBuzzer: UIView {
   }
   
   func loadPopUp() {
+    NotificationCenter.default.addObserver(self, selector: #selector(self.beginShaking), name: NSNotification.Name(rawValue: "beginShaking"), object: nil)
     if let shakeBuzzerPopUp = Bundle.main.loadNibNamed("ShakeBuzzerPopUp", owner: self, options: nil)?.first as? ShakeBuzzerPopUp {
       self.addSubview(shakeBuzzerPopUp)
       shakeBuzzerPopUp.setViewElements()

@@ -59,6 +59,8 @@ class TwoBuzzers: UIView {
         self.removeFromSuperview()
       })
       NotificationCenter.default.post(name: NSNotification.Name(rawValue: "twoBuzzersException"), object: nil)
+      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
+      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
     }
   }
   

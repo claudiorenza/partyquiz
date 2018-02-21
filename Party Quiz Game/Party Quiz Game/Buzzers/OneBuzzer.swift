@@ -31,9 +31,10 @@ class OneBuzzer: UIView {
       buzzer.isUserInteractionEnabled = false
       Singleton.shared.delayWithSeconds(0.4, completion: {
         self.removeFromSuperview()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
       })
     }
-    
   }
   
   func loadPopUp(view: UIView) {

@@ -34,9 +34,9 @@ class QuestionViewController: UIViewController {
     super.viewDidLoad()
     view.backgroundColor = backgoundBase
     setAnswersQuestion()
-    loadProgressView()
-    
-    NotificationCenter.default.addObserver(self, selector: #selector(self.moveQuestionBoxToOrigin), name: NSNotification.Name(rawValue: "twoBuzzersException"), object: nil)
+    //loadProgressView()
+    NotificationCenter.default.addObserver(self, selector: #selector(self.loadProgressView30), name: NSNotification.Name(rawValue: "loadProgressView30"), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(self.loadProgressView10), name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -44,17 +44,25 @@ class QuestionViewController: UIViewController {
   }
   
   // - MARK: 3: Method that loads the progress view
-  func loadProgressView() {
+  @objc func loadProgressView30() {
     if let progressView = Bundle.main.loadNibNamed("ProgressView", owner: self, options: nil)?.first as? ProgressView {
       progressControllerView.addSubview(progressView)
-      progressView.manageProgress()
+      progressView.manageProgress(seconds: 30)
+      progressView.frame = progressControllerView.bounds
+    }
+  }
+  
+  @objc func loadProgressView10() {
+    if let progressView = Bundle.main.loadNibNamed("ProgressView", owner: self, options: nil)?.first as? ProgressView {
+      progressControllerView.addSubview(progressView)
+      progressView.manageProgress(seconds: 10)
       progressView.frame = progressControllerView.bounds
     }
   }
 
   // - MARK: 4: Method that generates random buzzers
   func randomBuzzers() {
-    index = 2 //Int(arc4random_uniform(4))
+    index = 0 //Int(arc4random_uniform(4))
     if index == 0 {
       if let oneBuzzer = Bundle.main.loadNibNamed("OneBuzzer", owner: self, options: nil)?.first as? OneBuzzer {
         buzzerView.addSubview(oneBuzzer)
@@ -64,6 +72,7 @@ class QuestionViewController: UIViewController {
         changeBackgroundColor(finalColor: UIColor.orange)
       }
     } else if index == 1 {
+      NotificationCenter.default.addObserver(self, selector: #selector(self.moveQuestionBoxToOrigin), name: NSNotification.Name(rawValue: "twoBuzzersException"), object: nil)
       point.x = questionOutlet.center.x
       questionOutlet.center.x = view.bounds.width * 0.465
       if let twoBuzzers = Bundle.main.loadNibNamed("TwoBuzzers", owner: self, options: nil)?.first as? TwoBuzzers {
@@ -80,7 +89,7 @@ class QuestionViewController: UIViewController {
         shakeBuzzer.setRoundedView()
         shakeBuzzer.setRoundedLabel()
         shakeBuzzer.setIndicatorView()
-        shakeBuzzer.beginShaking()
+        //shakeBuzzer.beginShaking()
         shakeBuzzer.frame = buzzerView.bounds
         changeBackgroundColor(finalColor: UIColor.black)
       }
@@ -90,7 +99,7 @@ class QuestionViewController: UIViewController {
         blowBuzzer.loadPopUp()
         blowBuzzer.setRoundedView()
         blowBuzzer.setIndicatorView()
-        blowBuzzer.startBlowing()
+        //blowBuzzer.startBlowing()
         blowBuzzer.frame = buzzerView.bounds
         changeBackgroundColor(finalColor: backgoundLilla)
       }
@@ -122,7 +131,7 @@ class QuestionViewController: UIViewController {
   
   @IBAction func buttonAction(_ sender: UIButton) {
     randomBuzzers()
-    loadProgressView()
+    //loadProgressView()
   }
   
   func changeBackgroundColor(finalColor: UIColor) {
