@@ -139,6 +139,10 @@ class QuestionViewController: UIViewController {
   
   @IBAction func buttonAction(_ sender: UIButton) {
     randomBuzzers()
+//    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
+//    Singleton.shared.delayWithSeconds(4) {
+//      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "startTimer"), object: nil)
+//    }
   }
   
   func changeBackgroundColor(finalColor: UIColor) {
