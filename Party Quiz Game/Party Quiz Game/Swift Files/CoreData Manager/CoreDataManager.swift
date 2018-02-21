@@ -12,7 +12,8 @@ import CoreData
 class CoreDataManager {
     
     static let shared = CoreDataManager()
-    
+    var question:[NSManagedObject] = []
+  
     func createContext() -> NSManagedObjectContext {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         //        l'AppDelegate per essere settato ha bisogno di un container di riferimento
