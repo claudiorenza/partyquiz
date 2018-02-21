@@ -21,8 +21,6 @@ class QuestionViewController: UIViewController {
   @IBOutlet var buttonAnswerThree: UIButton!
   @IBOutlet var buttonAnswerFour: UIButton!
   
-  var a = [NSManagedObject]()
-  
   let backgoundBase = UIColor(red: 67/255, green: 59/255, blue: 240/255, alpha: 1)
   let backgoundLilla = UIColor(red: 189/255, green: 16/255, blue: 224/255, alpha: 1)
   let background2 = UIColor(red: 1, green: 165/255, blue: 0, alpha: 1)
@@ -43,9 +41,10 @@ class QuestionViewController: UIViewController {
   }
   
   override func viewDidAppear(_ animated: Bool) {
-    PeerManager.shared.sendQuestion(question: "prima domanda")
-    questionOutlet.text = PeerManager.shared.question
-    
+    PeerManager.shared.sendQuestion()
+      self.questionOutlet.text = PeerManager.shared.question
+      self.buttonAnswerOne.setTitle(PeerManager.shared.question, for: UIControlState.normal)
+      self.buttonAnswerTwo.setTitle(PeerManager.shared.question, for: UIControlState.normal)
   }
  
   

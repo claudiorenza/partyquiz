@@ -16,7 +16,7 @@ class PeerManager: NSObject,  MCNearbyServiceBrowserDelegate, MCAdvertiserAssist
   static let shared = PeerManager()
   let context = CoreDataManager.shared.createContext()
   let entity = CoreDataManager.shared.createEntity(nameEntity: "Question")
-  
+  let queue = DispatchQueue(label: "queue")
   var controllerOrigin:UIViewController?
   var peerID: MCPeerID!
   var session: MCSession!
@@ -26,7 +26,7 @@ class PeerManager: NSObject,  MCNearbyServiceBrowserDelegate, MCAdvertiserAssist
   var peerArray = [MCPeerID]()
   var browserVC: MCBrowserViewController!
   var isQuestion: Bool!
-  var question: String = ""
+  var question = ""
   var msg = ""
   var arrayQuestion = [Data]()
   
@@ -117,22 +117,10 @@ class PeerManager: NSObject,  MCNearbyServiceBrowserDelegate, MCAdvertiserAssist
     advertiser?.stop()
   }
   
-  // - MARK: 7: Rimuove Peer dall'array quando esco dalla sessione
-  func removePeer(peerID: MCPeerID){
-    var counter = 0
-    for index in peerArray{
-      if index == peerID{
-        peerArray.remove(at: counter)
-      }
-      counter = counter + 1
-    }
-  }
-  
-  // - MARK: 8: Funzioni di delegate del browser
+  // - MARK: 7: Funzioni di delegate del browser
   // Peer persi
   func browser(_ browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
     NSLog("@%", "lostPeer \(peerID)")
-    removePeer(peerID: peerID)
   }
   // Browser non riesce ad avviarsi
   func browser(_ browser: MCNearbyServiceBrowser, didNotStartBrowsingForPeers error: Error) {
@@ -141,7 +129,6 @@ class PeerManager: NSObject,  MCNearbyServiceBrowserDelegate, MCAdvertiserAssist
   // Peer rilevati
   func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
     NSLog("@%", "foundPeer \(peerID)")
-    peerArray.append(peerID)
   }
   // Schermata browser non customizzabile
   func setupBrowserController(){
@@ -156,7 +143,6 @@ class PeerManager: NSObject,  MCNearbyServiceBrowserDelegate, MCAdvertiserAssist
       self.controllerOrigin?.performSegue(withIdentifier: "GameController", sender: nil)
       do{
         try self.session.send(self.convertToData(string: "GameController"), toPeers: self.session.connectedPeers, with: .reliable)
-        
       }
       catch let error as NSError{
         let ac = UIAlertController(title: "Connection Error", message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
@@ -174,25 +160,31 @@ class PeerManager: NSObject,  MCNearbyServiceBrowserDelegate, MCAdvertiserAssist
     })
   }
   
-  func sendQuestion(question: String){
-    do{
-      try self.session.send(convertToData(string: question), toPeers: self.session.connectedPeers, with: .reliable)
-    }
-    catch let error as NSError{
-      let ac = UIAlertController(title: "Connection Error", message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-      ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-      ac.present(ac,animated: true, completion: nil)        }
+  func sendQuestion(){
+   
+      for index in self.arrayQuestion{
+        do{
+          try self.session.send(index, toPeers: self.session.connectedPeers, with: .reliable)
+        }
+        catch let error as NSError{
+          let ac = UIAlertController(title: "Connection Error", message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+          ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+          ac.present(ac,animated: true, completion: nil)}
+      }
+    
+    
   }
   
   func sendNS(array: [Data]) {
-    for i in array {
-      do {
-        try self.session.send(i, toPeers: self.session.connectedPeers, with: .reliable)
+ 
+      for i in array {
+        do {
+          try self.session.send(i, toPeers: self.session.connectedPeers, with: .reliable)
+        }
+        catch {
+          print("Error sending questions array")
+        }
       }
-      catch {
-        print("Error sending questions array")
-      }
-    }
     
   }
   
@@ -200,29 +192,17 @@ class PeerManager: NSObject,  MCNearbyServiceBrowserDelegate, MCAdvertiserAssist
 extension PeerManager:  MCSessionDelegate{
   
   func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-    print("\n\(msg)\n")
-    
     if isQuestion{
-      print("if \(isQuestion)")
-      DispatchQueue.main.async {
         for index in self.arrayQuestion {
           self.question = self.convertToString(data: index)
-          
         }
-        print("question is \(self.question)")
-      }
     }
-      
     else {
-      print("else \(isQuestion)\n")
-      DispatchQueue.main.async {
-       // self.msg = self.covertToString(data: data)
-        self.browserVC.dismiss(animated: true, completion: {
-          print("perform segue")
+          self.browserVC.dismiss(animated: true, completion: {
           self.controllerOrigin?.performSegue(withIdentifier: self.convertToString(data: data), sender: nil)
           self.isQuestion = true
         })
-      }
+      
     }
   }
   
