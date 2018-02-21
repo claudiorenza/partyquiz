@@ -22,6 +22,10 @@ class MainPageViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
     setButton(tempButton: createGameOutlet)
     setButton(tempButton: joinGameOutlet)
     
