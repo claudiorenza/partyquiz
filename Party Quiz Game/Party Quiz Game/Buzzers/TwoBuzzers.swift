@@ -58,7 +58,8 @@ class TwoBuzzers: UIView {
       Singleton.shared.delayWithSeconds(0.4, completion: {
         self.removeFromSuperview()
       })
-      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "twoBuzzersException"), object: nil)
+//      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "twoBuzzersException"), object: nil)
+      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "buzzer"), object: nil)
     }
   }
   

@@ -36,7 +36,8 @@ class QuestionViewController: UIViewController {
     setAnswersQuestion()
     loadProgressView()
     
-    NotificationCenter.default.addObserver(self, selector: #selector(self.moveQuestionBoxToOrigin), name: NSNotification.Name(rawValue: "twoBuzzersException"), object: nil)
+//    NotificationCenter.default.addObserver(self, selector: #selector(self.moveQuestionBoxToOrigin), name: NSNotification.Name(rawValue: "twoBuzzersException"), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(self.buzzerSignal), name: NSNotification.Name(rawValue: "buzzer"), object: nil)
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -132,7 +133,12 @@ class QuestionViewController: UIViewController {
     })
   }
   
-  @objc func moveQuestionBoxToOrigin() {
+  @objc func buzzerSignal() {
+    //invio multipeer agli altri giocatori
+    self.moveQuestionBoxToOrigin()
+  }
+  
+  /*@objc*/ func moveQuestionBoxToOrigin() {
     questionOutlet.questionBoxMoveLeft(view: view, initPosition: point)
     Singleton.shared.delayWithSeconds(0.4) {
       self.questionOutlet.center.x = self.point.x
