@@ -21,14 +21,7 @@ class BlowBuzzer: UIView {
   @IBOutlet weak var label: UILabel!
   @IBOutlet weak var viewOutlet: UIView!
   @IBOutlet var indicatorView: UIView!
-  
-  
-  func setIndicatorView() {
-    indicatorViewInitialPoint = indicatorView.frame.origin.y
-    indicatorViewInterval = indicatorViewInitialPoint + indicatorView.frame.height
-    indicatorView.frame.origin = CGPoint(x: indicatorView.frame.origin.x, y: indicatorViewInterval)
-  }
-  
+
   
   func startBlowing() {
     let documents = URL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0])
@@ -66,7 +59,7 @@ class BlowBuzzer: UIView {
       if level > -10 {
         index += 1
         label.text = ("\(index / 10)")
-        indicatorView.frame.origin = CGPoint(x: indicatorView.frame.origin.x, y: (indicatorViewInterval * CGFloat(1000-index)/1000))
+        indicatorView.frame = CGRect(x: indicatorView.frame.origin.x, y: indicatorView.frame.origin.y, width: indicatorView.frame.width, height: (indicatorViewInterval * CGFloat(1000-index)/1000))
       }
     } else if index == 1000 {
       viewOutlet.buzzerDown(view: viewOutlet)
@@ -83,6 +76,11 @@ class BlowBuzzer: UIView {
     viewOutlet.layer.cornerRadius = 25.0
     viewOutlet.layer.borderColor = UIColor.borderColorGray()
     viewOutlet.layer.borderWidth = 6.0
+  }
+  
+  func setIndicatorView() {
+    indicatorViewInterval = indicatorView.frame.origin.y + indicatorView.frame.height
+    indicatorView.layer.cornerRadius = 25.0
   }
   
   func loadPopUp() {

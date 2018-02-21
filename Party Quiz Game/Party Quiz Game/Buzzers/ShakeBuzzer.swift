@@ -15,18 +15,12 @@ class ShakeBuzzer: UIView {
   var motionManager = CMMotionManager()
   
   var indicatorViewInterval: CGFloat = 0.0
-  var indicatorViewInitialPoint: CGFloat = 0.0
+
   
   @IBOutlet weak var viewOutlet: UIView!
   @IBOutlet weak var label: UILabel!
   @IBOutlet var indicatorView: UIView!
   
-  
-  func setIndicatorView() {
-    indicatorViewInitialPoint = indicatorView.frame.origin.y
-    indicatorViewInterval = indicatorViewInitialPoint + indicatorView.frame.height
-    indicatorView.frame.origin = CGPoint(x: indicatorView.frame.origin.x, y: indicatorViewInterval)
-  }
   
   func beginShaking() { //TODO: quando arriva al massimo l'indicatore, questa funzione non deve più essere eseguita
     motionManager.accelerometerUpdateInterval = 0.1
@@ -37,7 +31,7 @@ class ShakeBuzzer: UIView {
           if (myData.acceleration.x > 1.2 || myData.acceleration.y > 1.2 || myData.acceleration.z > 1.2) {
             self.index += 1
             self.label.text = "\(self.index)"
-            self.indicatorView.frame.origin = CGPoint(x: self.indicatorView.frame.origin.x, y: (self.indicatorViewInterval * CGFloat(10-self.index)/10))
+            self.indicatorView.frame = CGRect(x: self.indicatorView.frame.origin.x, y: self.indicatorView.frame.origin.y, width: self.indicatorView.frame.width, height: (self.indicatorViewInterval * CGFloat(10-self.index)/10))
           }
         } else {
           self.viewOutlet.buzzerDown(view: self.viewOutlet)
@@ -60,6 +54,12 @@ class ShakeBuzzer: UIView {
     label.layer.cornerRadius = 25
     label.clipsToBounds = true
   }
+  
+  func setIndicatorView() {
+    indicatorViewInterval = indicatorView.frame.origin.y + indicatorView.frame.height
+    indicatorView.layer.cornerRadius = 25.0
+  }
+  
   
   func loadPopUp() {
     if let shakeBuzzerPopUp = Bundle.main.loadNibNamed("ShakeBuzzerPopUp", owner: self, options: nil)?.first as? ShakeBuzzerPopUp {

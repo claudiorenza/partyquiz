@@ -55,7 +55,7 @@ class QuestionViewController: UIViewController {
 
   // - MARK: 4: Method that generates random buzzers
   func randomBuzzers() {
-    index = 2 //Int(arc4random_uniform(4))
+    index = Int(arc4random_uniform(4))
     if index == 0 {
       if let oneBuzzer = Bundle.main.loadNibNamed("OneBuzzer", owner: self, options: nil)?.first as? OneBuzzer {
         buzzerView.addSubview(oneBuzzer)
