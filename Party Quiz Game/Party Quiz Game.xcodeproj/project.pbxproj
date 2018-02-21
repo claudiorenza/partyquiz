@@ -19,6 +19,7 @@
 		253E8E79203B185300FE75AD /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253E8E78203B185300FE75AD /* CloudKit.framework */; };
 		25A53783203C8017004BCD2D /* PreStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A53782203C8017004BCD2D /* PreStartViewController.swift */; };
 		25A53785203C80B5004BCD2D /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A53784203C80B5004BCD2D /* UpdateViewController.swift */; };
+		25CD5A17203D6DC800B5D38D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CD5A16203D6DC800B5D38D /* SettingsViewController.swift */; };
 		CD2E985C203C58AB00CE646E /* TwoBuzzersPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2E9854203C58AB00CE646E /* TwoBuzzersPopUp.xib */; };
 		CD2E985D203C58AB00CE646E /* TwoBuzzersPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E9855203C58AB00CE646E /* TwoBuzzersPopUp.swift */; };
 		CD2E985E203C58AB00CE646E /* BlowBuzzerPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E9856203C58AB00CE646E /* BlowBuzzerPopUp.swift */; };
@@ -76,6 +77,7 @@
 		253E8E78203B185300FE75AD /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		25A53782203C8017004BCD2D /* PreStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreStartViewController.swift; sourceTree = "<group>"; };
 		25A53784203C80B5004BCD2D /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
+		25CD5A16203D6DC800B5D38D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CD2E9854203C58AB00CE646E /* TwoBuzzersPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwoBuzzersPopUp.xib; sourceTree = "<group>"; };
 		CD2E9855203C58AB00CE646E /* TwoBuzzersPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoBuzzersPopUp.swift; sourceTree = "<group>"; };
 		CD2E9856203C58AB00CE646E /* BlowBuzzerPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlowBuzzerPopUp.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 		253E8E80203B198300FE75AD /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				25CD5A16203D6DC800B5D38D /* SettingsViewController.swift */,
 				25A53784203C80B5004BCD2D /* UpdateViewController.swift */,
 				25A53782203C8017004BCD2D /* PreStartViewController.swift */,
 				CD8E4F74203B393D008C48AE /* MainPageViewController.swift */,
@@ -448,6 +451,7 @@
 				CD2E985D203C58AB00CE646E /* TwoBuzzersPopUp.swift in Sources */,
 				25349101203B2180006A3CEE /* CheckConnection.swift in Sources */,
 				253E8E6A203B17A500FE75AD /* Party_Quiz_Game.xcdatamodeld in Sources */,
+				25CD5A17203D6DC800B5D38D /* SettingsViewController.swift in Sources */,
 				CD2E9871203C58BA00CE646E /* TwoBuzzers.swift in Sources */,
 				CD8E4FB9203B3FD7008C48AE /* UIViewExtension.swift in Sources */,
 				CD8E4F8E203B3E46008C48AE /* UIColorExtension.swift in Sources */,
@@ -582,7 +586,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Party Quiz Game/Party Quiz Game.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 89LM9XZWA3;
+				DEVELOPMENT_TEAM = 6NHZGWQ43K;
 				INFOPLIST_FILE = "Party Quiz Game/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.abusivedesigners.Party-Quiz-Game";
@@ -598,7 +602,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Party Quiz Game/Party Quiz Game.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 89LM9XZWA3;
+				DEVELOPMENT_TEAM = 6NHZGWQ43K;
 				INFOPLIST_FILE = "Party Quiz Game/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.abusivedesigners.Party-Quiz-Game";
