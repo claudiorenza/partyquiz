@@ -35,7 +35,6 @@ class QuestionViewController: UIViewController {
     view.backgroundColor = backgoundBase
     setAnswersQuestion()
 
-    //loadProgressView()
     NotificationCenter.default.addObserver(self, selector: #selector(self.loadProgressView30), name: NSNotification.Name(rawValue: "loadProgressView30"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.loadProgressView10), name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.buzzerSignal), name: NSNotification.Name(rawValue: "buzzer"), object: nil)
@@ -48,18 +47,18 @@ class QuestionViewController: UIViewController {
   
   // - MARK: 3: Method that loads the progress view
   @objc func loadProgressView30() {
-    if let progressView = Bundle.main.loadNibNamed("ProgressView", owner: self, options: nil)?.first as? ProgressView {
-      progressControllerView.addSubview(progressView)
-      progressView.manageProgress(seconds: 30)
-      progressView.frame = progressControllerView.bounds
+    if let progressView30 = Bundle.main.loadNibNamed("ProgressView", owner: self, options: nil)?.first as? ProgressView {
+      progressControllerView.addSubview(progressView30)
+      progressView30.manageProgress(seconds: 30)
+      progressView30.frame = progressControllerView.bounds
     }
   }
   
   @objc func loadProgressView10() {
-    if let progressView = Bundle.main.loadNibNamed("ProgressView", owner: self, options: nil)?.first as? ProgressView {
-      progressControllerView.addSubview(progressView)
-      progressView.manageProgress(seconds: 10)
-      progressView.frame = progressControllerView.bounds
+    if let progressView10 = Bundle.main.loadNibNamed("ProgressView", owner: self, options: nil)?.first as? ProgressView {
+      progressControllerView.addSubview(progressView10)
+      progressView10.manageProgress(seconds: 10)
+      progressView10.frame = progressControllerView.bounds
     }
   }
 

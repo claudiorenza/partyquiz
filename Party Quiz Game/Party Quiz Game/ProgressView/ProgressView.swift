@@ -12,7 +12,7 @@ class ProgressView: UIView {
   
   @IBOutlet weak var progressView: UIProgressView!
   
-  var totalSeconds = 30
+  var totalSeconds = Int()
   var currentSeconds = 0
   var timer : Timer!
   
@@ -20,20 +20,18 @@ class ProgressView: UIView {
   
   func manageProgress(seconds: Int) {
     NotificationCenter.default.addObserver(self, selector: #selector(self.stopTimer), name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
-    //totalSeconds = seconds
+    totalSeconds = seconds
     currentSeconds = totalSeconds
     // Progress view
-    progressView.progress = 1.0
+    progressView.progress = Float(currentSeconds / totalSeconds)
     progressView.trackTintColor = UIColor.gray
     progressView.progressTintColor = UIColor.green
-    // Set rounded edges for the progress view
+    // Set the rounded edge for the progress view
     progressView.layer.cornerRadius = 5
     progressView.clipsToBounds = true
-    // Set rounded edges for the inner bar
+    // Set the rounded edge for the inner bar
     progressView.layer.sublayers![1].cornerRadius = 5
     progressView.subviews[1].clipsToBounds = true
-    let transform: CGAffineTransform = CGAffineTransform(scaleX: 1.0, y: 20.0)
-    progressView.transform = transform
     timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(decreaseTimer), userInfo: nil, repeats: true)
   }
   
@@ -67,7 +65,5 @@ class ProgressView: UIView {
   
   @objc func stopTimer() {
     timer.invalidate()
-    self.removeFromSuperview()
-    print("stopped")
   }
 }
