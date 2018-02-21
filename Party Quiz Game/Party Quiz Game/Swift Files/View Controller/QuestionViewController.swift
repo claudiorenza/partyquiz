@@ -180,7 +180,7 @@ class QuestionViewController: UIViewController {
     
     //TODO: pause timer 30"
     
-    //.isHidden = false
+    onHoldView.isHidden = false
   }
   
   @objc func signalPeerReceiveWrongAnswer() {
@@ -189,7 +189,7 @@ class QuestionViewController: UIViewController {
     
     //TODO: start timer 30"
     
-    //.isHidden = true
+    onHoldView.isHidden = true
   }
   
   
@@ -199,7 +199,7 @@ class QuestionViewController: UIViewController {
     
     //TODO: start timer 30"
     
-    //.isHidden = true
+    onHoldView.isHidden = true
   }
   
   @objc func moveQuestionBoxToOrigin() {
