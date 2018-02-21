@@ -58,6 +58,7 @@
 		F9614DAA203B3AB2001F4448 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9614DA9203B3AB2001F4448 /* QuestionViewController.swift */; };
 		F9646A48203C703B0071BDA7 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9646A47203C703B0071BDA7 /* UILabelExtension.swift */; };
 		F9646A4A203C73C50071BDA7 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9646A49203C73C50071BDA7 /* Singleton.swift */; };
+		F9CE4934203DBD0F00049BE2 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CE4933203DBD0F00049BE2 /* LaunchScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +116,8 @@
 		F9614DA9203B3AB2001F4448 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		F9646A47203C703B0071BDA7 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		F9646A49203C73C50071BDA7 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
+		F9CE4932203DB92000049BE2 /* MTF Toast.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MTF Toast.ttf"; sourceTree = "<group>"; };
+		F9CE4933203DBD0F00049BE2 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +161,7 @@
 				CD8E4F76203B3D0B008C48AE /* Sounds */,
 				253E8E6B203B17A500FE75AD /* Assets.xcassets */,
 				253E8E70203B17A500FE75AD /* Info.plist */,
+				F9CE4931203DB8EE00049BE2 /* Font */,
 			);
 			path = "Party Quiz Game";
 			sourceTree = "<group>";
@@ -229,6 +233,7 @@
 		253E8E80203B198300FE75AD /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F9CE4933203DBD0F00049BE2 /* LaunchScreenViewController.swift */,
 				CD8E4F74203B393D008C48AE /* MainPageViewController.swift */,
 				F9614DA9203B3AB2001F4448 /* QuestionViewController.swift */,
 				253490FB203B20E8006A3CEE /* DownloadingViewController.swift */,
@@ -324,6 +329,14 @@
 				CD97F03C203C29410068AA4D /* AnswersView.swift */,
 			);
 			path = Answers;
+			sourceTree = "<group>";
+		};
+		F9CE4931203DB8EE00049BE2 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				F9CE4932203DB92000049BE2 /* MTF Toast.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,6 +444,7 @@
 				253E8E62203B17A500FE75AD /* AppDelegate.swift in Sources */,
 				253490F8203B1B9A006A3CEE /* CloudKitQuestionsClass.swift in Sources */,
 				CD97F03D203C29410068AA4D /* AnswersView.swift in Sources */,
+				F9CE4934203DBD0F00049BE2 /* LaunchScreenViewController.swift in Sources */,
 				F9614DAA203B3AB2001F4448 /* QuestionViewController.swift in Sources */,
 				253490FE203B20E8006A3CEE /* DownloadingViewController.swift in Sources */,
 				253490FD203B20E8006A3CEE /* MigrationViewController.swift in Sources */,

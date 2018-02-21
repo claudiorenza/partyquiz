@@ -18,4 +18,20 @@ extension UILabel {
     
     layer.add(animation, forKey: nil)
   }
+  
+  func logoEnter(view: UIView, enter: String) {
+    let animation = CASpringAnimation(keyPath: "position")
+    
+    var startingPoint = CGPoint()
+    if enter == "Up" {
+      startingPoint.y = -view.bounds.midY
+    } else if enter == "Down" {
+      startingPoint.y = view.bounds.height + view.bounds.midY
+    }
+    
+    animation.fromValue = CGPoint(x: view.bounds.midX, y: startingPoint.y)
+    animation.toValue = self.center
+    
+    layer.add(animation, forKey: nil)
+  }
 }
