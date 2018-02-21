@@ -79,6 +79,7 @@ class QuestionViewController: UIViewController {
         shakeBuzzer.loadPopUp()
         shakeBuzzer.setRoundedView()
         shakeBuzzer.setRoundedLabel()
+        shakeBuzzer.setIndicatorView()
         shakeBuzzer.beginShaking()
         shakeBuzzer.frame = buzzerView.bounds
         changeBackgroundColor(finalColor: UIColor.black)

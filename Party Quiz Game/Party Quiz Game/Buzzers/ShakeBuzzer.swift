@@ -28,7 +28,7 @@ class ShakeBuzzer: UIView {
     indicatorView.frame.origin = CGPoint(x: indicatorView.frame.origin.x, y: indicatorViewInterval)
   }
   
-  func beginShaking() {
+  func beginShaking() { //TODO: quando arriva al massimo l'indicatore, questa funzione non deve più essere eseguita
     motionManager.accelerometerUpdateInterval = 0.1
     motionManager.startAccelerometerUpdates(to: OperationQueue.current!) {
       (data, error) in
