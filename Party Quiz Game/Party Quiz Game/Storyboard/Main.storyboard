@@ -47,7 +47,7 @@
         <scene sceneID="n0C-oI-f5Q">
             <objects>
                 <viewController id="gNH-hP-fca" customClass="UpdateViewController" customModule="Party_Quiz_Game" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="0zo-kK-P1p">
+                    <view key="view" contentMode="scaleToFill" id="0zo-kK-P1p">
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -68,7 +68,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D3Q-cc-vKl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="439" y="645"/>
+            <point key="canvasLocation" x="454" y="651"/>
         </scene>
         <!--MainPage View Controller-->
         <scene sceneID="b9J-TU-mEs">
@@ -273,7 +273,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uq9-7T-8bW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2631" y="-324"/>
+            <point key="canvasLocation" x="2730" y="-324"/>
         </scene>
     </scenes>
     <resources>
@@ -281,6 +281,6 @@
         <image name="Icon(Infos)" width="36" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1iD-kp-Zoh"/>
+        <segue reference="ccu-NN-0BM"/>
     </inferredMetricsTieBreakers>
 </document>
