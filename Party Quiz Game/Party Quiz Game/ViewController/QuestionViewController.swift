@@ -34,9 +34,12 @@ class QuestionViewController: UIViewController {
     super.viewDidLoad()
     view.backgroundColor = backgoundBase
     setAnswersQuestion()
+
     //loadProgressView()
     NotificationCenter.default.addObserver(self, selector: #selector(self.loadProgressView30), name: NSNotification.Name(rawValue: "loadProgressView30"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.loadProgressView10), name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(self.buzzerSignal), name: NSNotification.Name(rawValue: "buzzer"), object: nil)
+
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -139,6 +142,11 @@ class QuestionViewController: UIViewController {
     Singleton.shared.delayWithSeconds(1.8, completion: {
       self.view.backgroundColor = finalColor
     })
+  }
+  
+  @objc func buzzerSignal() {
+    //invio multipeer agli altri giocatori
+    //self.moveQuestionBoxToOrigin()
   }
   
   @objc func moveQuestionBoxToOrigin() {
