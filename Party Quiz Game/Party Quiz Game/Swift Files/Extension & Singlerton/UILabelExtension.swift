@@ -29,6 +29,8 @@ extension UILabel {
       startingPoint.y = view.bounds.height + view.bounds.midY
     }
     
+    animation.duration = 2
+    animation.damping = 8
     animation.fromValue = CGPoint(x: view.bounds.midX, y: startingPoint.y)
     animation.toValue = self.center
     

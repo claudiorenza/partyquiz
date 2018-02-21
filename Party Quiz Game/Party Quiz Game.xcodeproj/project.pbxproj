@@ -57,6 +57,7 @@
 		F9614DAA203B3AB2001F4448 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9614DA9203B3AB2001F4448 /* QuestionViewController.swift */; };
 		F9646A48203C703B0071BDA7 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9646A47203C703B0071BDA7 /* UILabelExtension.swift */; };
 		F9646A4A203C73C50071BDA7 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9646A49203C73C50071BDA7 /* Singleton.swift */; };
+		F97532FD203DCBD100A2162D /* MTF Toast.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F97532FC203DCBD000A2162D /* MTF Toast.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,7 +114,7 @@
 		F9614DA9203B3AB2001F4448 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		F9646A47203C703B0071BDA7 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		F9646A49203C73C50071BDA7 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
-		F9CE4932203DB92000049BE2 /* MTF Toast.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MTF Toast.ttf"; sourceTree = "<group>"; };
+		F97532FC203DCBD000A2162D /* MTF Toast.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MTF Toast.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,7 +321,7 @@
 		F9CE4931203DB8EE00049BE2 /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				F9CE4932203DB92000049BE2 /* MTF Toast.ttf */,
+				F97532FC203DCBD000A2162D /* MTF Toast.ttf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -405,6 +406,7 @@
 				CD2E986E203C58BA00CE646E /* ShakeBuzzer.xib in Resources */,
 				CD8E4F7E203B3D0B008C48AE /* answerWrong.m4a in Resources */,
 				CD2E985F203C58AB00CE646E /* BlowBuzzerPopUp.xib in Resources */,
+				F97532FD203DCBD100A2162D /* MTF Toast.ttf in Resources */,
 				CD2E986F203C58BA00CE646E /* BlowBuzzer.xib in Resources */,
 				CD8E4F7D203B3D0B008C48AE /* timeUp.m4a in Resources */,
 				CD2E9860203C58AB00CE646E /* OneBuzzerPopUp.xib in Resources */,

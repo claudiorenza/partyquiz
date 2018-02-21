@@ -16,6 +16,17 @@ class PreStartViewController: UIViewController {
     super.viewDidLoad()
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    for i in abusive {
+      i.logoEnter(view: view, enter: "Up")
+    }
+//    Singleton.shared.delayWithSeconds(0.5) {
+      for i in self.designers {
+        i.logoEnter(view: self.view, enter: "Down")
+      }
+    //}
+  }
+  
   override func viewDidAppear(_ animated: Bool) {
     let when = DispatchTime.now() + 3
     
