@@ -47,5 +47,14 @@ extension UIButton  {
     
     layer.add(animation, forKey: nil)
   }
+  
+  func fadeInAnswers() {
+    let animation = CABasicAnimation(keyPath: "opacity")
+    animation.fromValue = 0
+    animation.toValue = 1
+    animation.duration = 0.3
+    
+    layer.add(animation, forKey: nil)
+  }
 }
 
