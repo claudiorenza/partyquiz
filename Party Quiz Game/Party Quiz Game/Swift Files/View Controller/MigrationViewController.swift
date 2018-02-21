@@ -12,6 +12,7 @@ import CoreData
 
 class MigrationViewController: UIViewController {
   
+  static let singletonMigration = MigrationViewController()
   @IBOutlet weak var localDatabaseLabel: UILabel!
   @IBOutlet weak var coreDataLabel: UILabel!
   

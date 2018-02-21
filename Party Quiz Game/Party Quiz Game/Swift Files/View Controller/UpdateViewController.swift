@@ -13,6 +13,11 @@ class UpdateViewController: UIViewController {
   
   var cloudKitDatabase = CloudKitQuestions.shared
   
+  let entityNameQ = "Question"
+  
+  let context = CoreDataManager.shared.createContext()
+  let entity = CoreDataManager.shared.createEntity(nameEntity: "Question")
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     cloudKitDatabase.questioningDelegate = self
@@ -32,6 +37,27 @@ class UpdateViewController: UIViewController {
   }
   
   func downloadEnded() {
+    
+    if(CloudKitQuestions.shared.localQuestions.count > 0) {
+      CoreDataManager.shared.clearData(nameEntity: entityNameQ , context: context)
+      print("Memorizzo in locale \(CloudKitQuestions.shared.localQuestions.count) domande.\n")
+      for i in 0...CloudKitQuestions.shared.localQuestions.count-1 {
+        let question = CloudKitQuestions.shared.localQuestions[i]
+        let newRecord = CoreDataManager.shared.createRecord(entity: entity, context: context)
+        newRecord.setValue(question.object(forKey: "Record Name"), forKey: "id")
+        newRecord.setValue(question.object(forKey: "QuestionText"), forKey: "text")
+        newRecord.setValue(question.object(forKey: "CorrectAnswer"), forKey: "correctlyAnswer")
+        newRecord.setValue(question.object(forKey: "Answer1"), forKey: "wrongAnswer1")
+        newRecord.setValue(question.object(forKey: "Answer2"), forKey: "wrongAnswer2")
+        newRecord.setValue(question.object(forKey: "Answer3"), forKey: "wrongAnswer3")
+        newRecord.setValue(question.object(forKey: "Category") , forKey: "category")
+        CoreDataManager.shared.saveContext(context: context)
+        CoreDataManager.shared.fetchValue(nameEntity: entityNameQ, context: context)
+      }
+    } else {
+      print("L'app non è stata aggiornata, non memorizzo niente in locale.")
+    }
+    
     self.loadingView?.removeFromSuperview()
     performSegue(withIdentifier: "afterDownload", sender: nil)
   }

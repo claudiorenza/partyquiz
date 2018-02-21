@@ -14,6 +14,8 @@ class PeerManager: NSObject,  MCNearbyServiceBrowserDelegate, MCAdvertiserAssist
   
   // - MARK: 1: Outlets and Variables
   static let shared = PeerManager()
+  let context = CoreDataManager.shared.createContext()
+  let entity = CoreDataManager.shared.createEntity(nameEntity: "Question")
   
   var controllerOrigin:UIViewController?
   var peerID: MCPeerID!
@@ -27,10 +29,11 @@ class PeerManager: NSObject,  MCNearbyServiceBrowserDelegate, MCAdvertiserAssist
   var question: String = ""
   var msg = ""
   
-  
   override init(){
+    super.init()
     peerID = MCPeerID(displayName: UIDevice.current.name)
     isQuestion = false
+    self.convArrayToData()
   }
   func convertToData(string: String) -> Data{
     let data = string.data(using: .utf8) as Data!
@@ -42,9 +45,34 @@ class PeerManager: NSObject,  MCNearbyServiceBrowserDelegate, MCAdvertiserAssist
     return string!
   }
   
-  func convArrayToData(array: [NSManagedObject]){
+  func convArrayToData(){
+    var array:[NSManagedObject] = []
+    let requestDomanda = NSFetchRequest<NSFetchRequestResult>(entityName: "Question")
+    requestDomanda.returnsObjectsAsFaults = false
+    do {
+      let result = try context.fetch(requestDomanda)
+      for data in result as! [NSManagedObject] {
+        array.append(data)
+      }
+    } catch {
+      print("Failed")
+    }
+    
+    print("ciao: \(array.count)")
+    let question = array[0].value(forKey: "text") as! String
+    let wrong1 = array[0].value(forKey: "wrongAnswer1") as! String
+    let wrong2 = array[0].value(forKey: "wrongAnswer2") as! String
+    let wrong3 = array[0].value(forKey: "wrongAnswer3") as! String
+    let correct = array[0].value(forKey: "correctlyAnswer") as! String
+    
+    print(question)
+    print(correct)
+    
+    let byteQu = question.data(using: .utf8, allowLossyConversion: true)
+    print (byteQu)
     
   }
+  
 //  func sendArray(array: [NSManagedObject]){
 //        do{
 //          try
