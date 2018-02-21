@@ -28,7 +28,7 @@
                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pfr-tu-2DG" userLabel="Indicator View">
                             <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.86689231340131612" green="0.52080956275502766" blue="0.1328576324231088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="backgroundColor" red="1" green="0.73787445360000004" blue="0.4820158028" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAv-eD-NCq">
                             <rect key="frame" x="61" y="61" width="128" height="128"/>
@@ -38,7 +38,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="1" green="0.73787445360000004" blue="0.4820158028" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" red="0.86689231339999995" green="0.52080956280000001" blue="0.13285763240000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 </view>
             </subviews>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
