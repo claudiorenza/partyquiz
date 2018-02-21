@@ -8,11 +8,13 @@
 
 import Foundation
 import MultipeerConnectivity
+import CoreData
 
 class PeerManager: NSObject,  MCNearbyServiceBrowserDelegate, MCAdvertiserAssistantDelegate, MCBrowserViewControllerDelegate{
   
   // - MARK: 1: Outlets and Variables
   static let shared = PeerManager()
+  
   var controllerOrigin:UIViewController?
   var peerID: MCPeerID!
   var session: MCSession!
@@ -21,16 +23,25 @@ class PeerManager: NSObject,  MCNearbyServiceBrowserDelegate, MCAdvertiserAssist
   var service = "PartiQuiz"
   var peerArray = [MCPeerID]()
   var browserVC: MCBrowserViewController!
-  var firstGame = 1
-  var question: String!
+  var isQuestion: Bool!
+  var question: String = ""
+  var msg = ""
+  var a = [NSManagedObject]()
+  
   override init(){
     peerID = MCPeerID(displayName: UIDevice.current.name)
-    
+    isQuestion = false
   }
-  func convertData(string: String) -> Data{
-    let data = string.data(using: .utf8)
+  func convertToData(string: String) -> Data{
+    let data = string.data(using: .utf8) as Data!
     return data!
   }
+  
+  func covertToString(data: Data) -> String{
+    let string = String(data: data,encoding: String.Encoding.utf8) as String!
+    return string!
+  }
+  
   // - MARK: 2: Funzioni sulla sessione
   func setupSession(){
     session = MCSession(peer: peerID!, securityIdentity: nil, encryptionPreference: .none)
@@ -109,7 +120,7 @@ class PeerManager: NSObject,  MCNearbyServiceBrowserDelegate, MCAdvertiserAssist
       self.stopAdvertise()
       self.controllerOrigin?.performSegue(withIdentifier: "GameController", sender: nil)
       do{
-        try self.session.send(self.convertData(string: "GameController"), toPeers: self.session.connectedPeers, with: .reliable)
+        try self.session.send(self.convertToData(string: "GameController"), toPeers: self.session.connectedPeers, with: .reliable)
         
       }
       catch let error as NSError{
@@ -127,9 +138,10 @@ class PeerManager: NSObject,  MCNearbyServiceBrowserDelegate, MCAdvertiserAssist
       self.stopAdvertise()
     })
   }
+  
   func sendQuestion(question: String){
     do{
-      try self.session.send(convertData(string: question), toPeers: self.session.connectedPeers, with: .reliable)
+      try self.session.send(convertToData(string: question), toPeers: self.session.connectedPeers, with: .reliable)
     }
     catch let error as NSError{
       let ac = UIAlertController(title: "Connection Error", message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
@@ -141,23 +153,27 @@ class PeerManager: NSObject,  MCNearbyServiceBrowserDelegate, MCAdvertiserAssist
 extension PeerManager:  MCSessionDelegate{
   
   func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-    print("prima del dispatch \(firstGame)")
-    if firstGame >= 1{
+    print("\n\(msg)\n")
+    
+    if isQuestion{
+      print("if \(isQuestion)")
       DispatchQueue.main.async {
-          let msg = String(data: data, encoding: String.Encoding.utf8) as String!
-         self.browserVC.dismiss(animated: true, completion: {
-          self.controllerOrigin?.performSegue(withIdentifier: msg!, sender: nil)
+        self.msg = self.covertToString(data: data)
+        self.question = self.msg
+        print("question is \(self.question)")
+      }
+    }
+      
+    else {
+      print("else \(isQuestion)\n")
+      DispatchQueue.main.async {
+       // self.msg = self.covertToString(data: data)
+        self.browserVC.dismiss(animated: true, completion: {
+          print("perform segue")
+          self.controllerOrigin?.performSegue(withIdentifier: self.covertToString(data: data), sender: nil)
+          self.isQuestion = true
         })
       }
-      firstGame = firstGame - 1
-      print(self.firstGame)
-    }
-    else {
-      DispatchQueue.main.async {
-        self.question = String(data: data, encoding: String.Encoding.utf8) as String!
-        print("print \(self.question)")
-      }
-      
     }
   }
   

@@ -36,11 +36,14 @@ class QuestionViewController: UIViewController {
     setAnswersQuestion()
     loadProgressView()
     randomBuzzers()
-    //PeerManager.shared.sendQuestion(question: "prima domanda")
-   // questionOutlet.text = PeerManager.shared.question
+    
     
   }
-
+  
+  override func viewDidAppear(_ animated: Bool) {
+    PeerManager.shared.sendQuestion(question: "prima domanda")
+    questionOutlet.text = PeerManager.shared.question
+  }
   
   // - MARK: 3: Method that loads the progress view
   func loadProgressView() {
