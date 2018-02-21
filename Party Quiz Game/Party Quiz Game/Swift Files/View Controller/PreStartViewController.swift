@@ -9,6 +9,8 @@
 import UIKit
 
 class PreStartViewController: UIViewController {
+  @IBOutlet var abusive: [UILabel]!
+  @IBOutlet var designers: [UILabel]!
   
   override func viewDidLoad() {
     super.viewDidLoad()

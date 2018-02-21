@@ -147,6 +147,22 @@
                         <viewLayoutGuide key="safeArea" id="1eM-Gr-byl"/>
                     </view>
                     <connections>
+                        <outletCollection property="abusive" destination="fIl-4i-vkq" collectionClass="NSMutableArray" id="972-bN-VFV"/>
+                        <outletCollection property="abusive" destination="G2O-DH-TTd" collectionClass="NSMutableArray" id="Vk9-8G-gSM"/>
+                        <outletCollection property="abusive" destination="KoA-pI-21U" collectionClass="NSMutableArray" id="kx0-AR-9GP"/>
+                        <outletCollection property="abusive" destination="8Ia-wK-r4E" collectionClass="NSMutableArray" id="ocG-Gj-6nB"/>
+                        <outletCollection property="abusive" destination="KJN-bT-MnV" collectionClass="NSMutableArray" id="aNC-PO-KmY"/>
+                        <outletCollection property="abusive" destination="kue-cz-LbO" collectionClass="NSMutableArray" id="fZl-kE-l1y"/>
+                        <outletCollection property="abusive" destination="Th7-CK-cW9" collectionClass="NSMutableArray" id="MWw-Gn-VO9"/>
+                        <outletCollection property="designers" destination="5il-zy-40M" collectionClass="NSMutableArray" id="J5C-g8-XJo"/>
+                        <outletCollection property="designers" destination="DMT-ex-Bp0" collectionClass="NSMutableArray" id="85C-nW-IDJ"/>
+                        <outletCollection property="designers" destination="FRZ-s2-it7" collectionClass="NSMutableArray" id="HuR-0F-w5c"/>
+                        <outletCollection property="designers" destination="kAX-Y7-yd1" collectionClass="NSMutableArray" id="5il-wC-KIq"/>
+                        <outletCollection property="designers" destination="edr-Qj-D2I" collectionClass="NSMutableArray" id="Zlo-5B-tOz"/>
+                        <outletCollection property="designers" destination="aXB-cm-iae" collectionClass="NSMutableArray" id="osP-Eq-9xw"/>
+                        <outletCollection property="designers" destination="FoC-t0-LEQ" collectionClass="NSMutableArray" id="VJ4-hu-a79"/>
+                        <outletCollection property="designers" destination="yt0-eG-4Z6" collectionClass="NSMutableArray" id="ybi-X5-kO8"/>
+                        <outletCollection property="designers" destination="J3e-lD-ru4" collectionClass="NSMutableArray" id="LCx-RK-nRL"/>
                         <segue destination="gNH-hP-fca" kind="show" identifier="updateDatabase" animates="NO" id="fl6-4g-Kxz"/>
                         <segue destination="g28-jk-LDH" kind="show" identifier="afterStart" animates="NO" id="1iD-kp-Zoh"/>
                     </connections>
