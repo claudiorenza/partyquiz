@@ -19,13 +19,14 @@ class QuestionViewController: UIViewController {
   @IBOutlet var buttonAnswerThree: UIButton!
   @IBOutlet var buttonAnswerFour: UIButton!
   
+  var timerReceiveBuzz: Timer!
+  var timerReceiveWrongAnswer: Timer!
+  var timerReceiveRightAnswer: Timer!
+  
   let backgoundBase = UIColor(red: 67/255, green: 59/255, blue: 240/255, alpha: 1)
   let backgoundLilla = UIColor(red: 189/255, green: 16/255, blue: 224/255, alpha: 1)
-  let background2 = UIColor(red: 1, green: 165/255, blue: 0, alpha: 1)
-  let background3 = UIColor(red: 1, green: 165/255, blue: 0, alpha: 1)
-  let background4 = UIColor(red: 1, green: 165/255, blue: 0, alpha: 1)
-  // black is good
-  // orange is good
+
+
   var index = 0
   var point = CGPoint()
 
@@ -36,8 +37,17 @@ class QuestionViewController: UIViewController {
     setAnswersQuestion()
     NotificationCenter.default.addObserver(self, selector: #selector(self.loadProgressView30), name: NSNotification.Name(rawValue: "loadProgressView30"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.loadProgressView10), name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(self.buzzerSignal), name: NSNotification.Name(rawValue: "buzzer"), object: nil)
+
+    
+    
     NotificationCenter.default.addObserver(self, selector: #selector(self.answersAppear), name: NSNotification.Name(rawValue: "answers"), object: nil)
+    
+    
+    //SIMULATION
+    timerReceiveBuzz = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(signalPeerReceiveBuzz), userInfo: nil, repeats: true)
+    
+    timerReceiveWrongAnswer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(signalPeerReceiveWrongAnswer), userInfo: nil, repeats: true)
+    //timerReceiveRightAnswer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(signalPeerReceiveRightAnswer), userInfo: nil, repeats: true)
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -143,8 +153,48 @@ class QuestionViewController: UIViewController {
     })
   }
   
-  @objc func buzzerSignal() {
-    //invio multipeer agli altri giocatori
+  func signalPeerSendBuzz() {
+    //invio multipeer agli altri giocatori della prenotazione
+    
+    
+  }
+  
+  func signalPeerSendWrongAnswer() {
+    //invio multipeer agli altri giocatori della risposta sbagliata
+  }
+
+  func signalPeerSendRightAnswer() {
+    //invio multipeer agli altri giocatori della risposta esatta
+  }
+  
+  
+  
+  @objc func signalPeerReceiveBuzz() {
+    timerReceiveBuzz.invalidate()
+    //ricezione multipeer da altro giocatore
+    
+    //TODO: pause timer 30"
+    
+    //.isHidden = false
+  }
+  
+  @objc func signalPeerReceiveWrongAnswer() {
+    timerReceiveWrongAnswer.invalidate()
+    //ricezione multipeer da altro giocatore
+    
+    //TODO: start timer 30"
+    
+    //.isHidden = true
+  }
+  
+  
+  @objc func signalPeerReceiveRightAnswer() {
+    timerReceiveRightAnswer.invalidate()
+    //ricezione multipeer da altro giocatore
+    
+    //TODO: start timer 30"
+    
+    //.isHidden = true
   }
   
   @objc func moveQuestionBoxToOrigin() {
@@ -155,6 +205,8 @@ class QuestionViewController: UIViewController {
   }
   
   @objc func answersAppear() {
+    signalPeerSendBuzz()  //invio al peer
+    
     self.buttonAnswerOne.fadeInAnswers()
     Singleton.shared.delayWithSeconds(0.2) {
       self.buttonAnswerOne.alpha = 1
