@@ -51,8 +51,6 @@
 		CD8E4F8F203B3E46008C48AE /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E4F8D203B3E46008C48AE /* UIButtonExtension.swift */; };
 		CD8E4FB9203B3FD7008C48AE /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E4FB7203B3FD7008C48AE /* UIViewExtension.swift */; };
 		CD8E4FBA203B3FD7008C48AE /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E4FB8203B3FD7008C48AE /* UIImageViewExtension.swift */; };
-		CD97F03B203C29310068AA4D /* AnswersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD97F03A203C29310068AA4D /* AnswersView.xib */; };
-		CD97F03D203C29410068AA4D /* AnswersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD97F03C203C29410068AA4D /* AnswersView.swift */; };
 		F9614DAA203B3AB2001F4448 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9614DA9203B3AB2001F4448 /* QuestionViewController.swift */; };
 		F9646A48203C703B0071BDA7 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9646A47203C703B0071BDA7 /* UILabelExtension.swift */; };
 		F9646A4A203C73C50071BDA7 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9646A49203C73C50071BDA7 /* Singleton.swift */; };
@@ -107,8 +105,6 @@
 		CD8E4F8D203B3E46008C48AE /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		CD8E4FB7203B3FD7008C48AE /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		CD8E4FB8203B3FD7008C48AE /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
-		CD97F03A203C29310068AA4D /* AnswersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswersView.xib; sourceTree = "<group>"; };
-		CD97F03C203C29410068AA4D /* AnswersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersView.swift; sourceTree = "<group>"; };
 		F9614DA9203B3AB2001F4448 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		F9646A47203C703B0071BDA7 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		F9646A49203C73C50071BDA7 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
@@ -279,7 +275,6 @@
 		CD35ACBD203DB6D500A9703F /* Interface */ = {
 			isa = PBXGroup;
 			children = (
-				CD97F036203C276B0068AA4D /* Answers */,
 				CD2E9853203C581300CE646E /* ProgressView */,
 				CD2E9852203C57EE00CE646E /* Buzzers */,
 				CD2E9851203C57E200CE646E /* PopUps */,
@@ -314,15 +309,6 @@
 				F9646A49203C73C50071BDA7 /* Singleton.swift */,
 			);
 			path = "Extension & Singlerton";
-			sourceTree = "<group>";
-		};
-		CD97F036203C276B0068AA4D /* Answers */ = {
-			isa = PBXGroup;
-			children = (
-				CD97F03A203C29310068AA4D /* AnswersView.xib */,
-				CD97F03C203C29410068AA4D /* AnswersView.swift */,
-			);
-			path = Answers;
 			sourceTree = "<group>";
 		};
 		F9CE4931203DB8EE00049BE2 /* Font */ = {
@@ -416,7 +402,6 @@
 				CD2E986F203C58BA00CE646E /* BlowBuzzer.xib in Resources */,
 				CD8E4F7D203B3D0B008C48AE /* timeUp.m4a in Resources */,
 				CD2E9860203C58AB00CE646E /* OneBuzzerPopUp.xib in Resources */,
-				CD97F03B203C29310068AA4D /* AnswersView.xib in Resources */,
 				CD8E4F72203B3728008C48AE /* Main.storyboard in Resources */,
 				CD8E4F7F203B3D0B008C48AE /* musicIntro.m4a in Resources */,
 				CD2E986D203C58BA00CE646E /* OneBuzzer.xib in Resources */,
@@ -436,7 +421,6 @@
 				CD2E9870203C58BA00CE646E /* ShakeBuzzer.swift in Sources */,
 				253E8E62203B17A500FE75AD /* AppDelegate.swift in Sources */,
 				253490F8203B1B9A006A3CEE /* CloudKitQuestionsClass.swift in Sources */,
-				CD97F03D203C29410068AA4D /* AnswersView.swift in Sources */,
 				F9CE4934203DBD0F00049BE2 /* LaunchScreenViewController.swift in Sources */,
 				F9614DAA203B3AB2001F4448 /* QuestionViewController.swift in Sources */,
 				253490FD203B20E8006A3CEE /* MigrationViewController.swift in Sources */,
