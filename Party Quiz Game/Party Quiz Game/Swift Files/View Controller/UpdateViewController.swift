@@ -38,6 +38,7 @@ class UpdateViewController: UIViewController {
   }
   
   func downloadEnded() {
+    print("Numero domande cloudkit: \(CloudKitQuestions.shared.localQuestions.count)")
     syncronizeDatabases()
     
     self.loadingView?.removeFromSuperview()
@@ -72,7 +73,6 @@ class UpdateViewController: UIViewController {
       } catch {
         print("Failed")
       }
-      
     } else {
       print("L'app non è stata aggiornata, non memorizzo niente in locale.")
     }

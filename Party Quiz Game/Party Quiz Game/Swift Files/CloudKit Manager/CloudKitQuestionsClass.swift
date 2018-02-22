@@ -12,8 +12,8 @@ import CloudKit
 class CloudKitQuestions {
   static let shared = CloudKitQuestions()
   
-  let database = CKContainer.default().privateCloudDatabase
-//  let database = CKContainer.default().publicCloudDatabase
+  //let database = CKContainer.default().privateCloudDatabase
+  let database = CKContainer.default().publicCloudDatabase
   
   var questioningDelegate: UpdateViewController?
   
