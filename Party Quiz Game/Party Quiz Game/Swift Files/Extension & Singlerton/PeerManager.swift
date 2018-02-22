@@ -26,25 +26,30 @@ class PeerManager: NSObject,  MCNearbyServiceBrowserDelegate, MCAdvertiserAssist
   var peerArray = [MCPeerID]()
   var browserVC: MCBrowserViewController!
   var isQuestion: Bool!
-  var question = ""
-  var msg = ""
+  var question = [String]()
   var arrayQuestion = [Data]()
+  var monnezza = ["chi è il monnezzaro","ernesto","pasquale","giovanni","claudio"]
+  var host: Bool!
+  var arrayQ:[NSManagedObject] = []
   
   override init(){
     super.init()
     peerID = MCPeerID(displayName: UIDevice.current.name)
-    isQuestion = false
     arrayQuestion = self.convArrayToData()
+    isQuestion = false
+    host = false
+    print("array \(arrayQuestion.count)")
   }
   
   func convertToData(string: String) -> Data{
-    let data = string.data(using: .utf8) as Data!
-    return data!
+    let string = string as NSString
+    let data = string.data(using: String.Encoding.utf8.rawValue)!
+    return data
   }
   
   func convertToString(data: Data) -> String{
-    let string = String(data: data,encoding: String.Encoding.utf8) as String!
-    return string!
+    let string = NSString(data: data as Data, encoding: String.Encoding.utf8.rawValue)!
+    return string as String
   }
   
   func convArrayToData() -> [Data]{
@@ -60,8 +65,7 @@ class PeerManager: NSObject,  MCNearbyServiceBrowserDelegate, MCAdvertiserAssist
     } catch {
       print("Failed")
     }
-    
-    print("ciao: \(array.count)")
+     print("ciao: \(array.count)")
     let question = array[0].value(forKey: "text") as! String
     let dataQuestion = question.data(using: .utf8)
     let wrong1 = array[0].value(forKey: "wrongAnswer1") as! String
@@ -142,7 +146,9 @@ class PeerManager: NSObject,  MCNearbyServiceBrowserDelegate, MCAdvertiserAssist
       self.stopAdvertise()
       self.controllerOrigin?.performSegue(withIdentifier: "GameController", sender: nil)
       do{
+        
         try self.session.send(self.convertToData(string: "GameController"), toPeers: self.session.connectedPeers, with: .reliable)
+        
       }
       catch let error as NSError{
         let ac = UIAlertController(title: "Connection Error", message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
@@ -161,48 +167,30 @@ class PeerManager: NSObject,  MCNearbyServiceBrowserDelegate, MCAdvertiserAssist
   }
   
   func sendQuestion(){
-   
-      for index in self.arrayQuestion{
+    for index in arrayQuestion{
         do{
           try self.session.send(index, toPeers: self.session.connectedPeers, with: .reliable)
         }
         catch let error as NSError{
           let ac = UIAlertController(title: "Connection Error", message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
           ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-          ac.present(ac,animated: true, completion: nil)}
+          ac.present(ac,animated: true, completion: nil)
       }
-    
-    
-  }
-  
-  func sendNS(array: [Data]) {
- 
-      for i in array {
-        do {
-          try self.session.send(i, toPeers: self.session.connectedPeers, with: .reliable)
-        }
-        catch {
-          print("Error sending questions array")
-        }
-      }
-    
-  }
-  
+     }
+    }
 }
+
 extension PeerManager:  MCSessionDelegate{
   
   func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
     if isQuestion{
-        for index in self.arrayQuestion {
-          self.question = self.convertToString(data: index)
-        }
-    }
+        self.question.append (self.convertToString(data: data))
+     }
     else {
           self.browserVC.dismiss(animated: true, completion: {
           self.controllerOrigin?.performSegue(withIdentifier: self.convertToString(data: data), sender: nil)
+           })
           self.isQuestion = true
-        })
-      
     }
   }
   

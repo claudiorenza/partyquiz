@@ -58,6 +58,7 @@ class MainPageViewController: UIViewController {
   }
   
   @IBAction func pressToCreate(_ sender: UIButton) {
+    PeerManager.shared.host = true
     PeerManager.shared.stopBrowser()
     PeerManager.shared.setupAdvertise()
     PeerManager.shared.startAdvertise()

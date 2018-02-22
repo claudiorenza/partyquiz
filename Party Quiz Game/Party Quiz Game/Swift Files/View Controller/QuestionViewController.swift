@@ -41,12 +41,26 @@ class QuestionViewController: UIViewController {
   }
   
   override func viewDidAppear(_ animated: Bool) {
-    PeerManager.shared.sendQuestion()
-      self.questionOutlet.text = PeerManager.shared.question
-      self.buttonAnswerOne.setTitle(PeerManager.shared.question, for: UIControlState.normal)
-      self.buttonAnswerTwo.setTitle(PeerManager.shared.question, for: UIControlState.normal)
+    if PeerManager.shared.host{
+      PeerManager.shared.sendQuestion()
+      self.questionOutlet.text = PeerManager.shared.convertToString(data: PeerManager.shared.arrayQuestion[0])
+        self.buttonAnswerOne.setTitle(PeerManager.shared.convertToString(data: PeerManager.shared.arrayQuestion[1]), for: UIControlState.normal)
+        self.buttonAnswerTwo.setTitle(PeerManager.shared.convertToString(data: PeerManager.shared.arrayQuestion[2]), for: UIControlState.normal)
+        self.buttonAnswerThree.setTitle(PeerManager.shared.convertToString(data: PeerManager.shared.arrayQuestion[3]), for: UIControlState.normal)
+        self.buttonAnswerFour.setTitle(PeerManager.shared.convertToString(data: PeerManager.shared.arrayQuestion[4]), for: UIControlState.normal)
+      
+    }
+    else{
+      
+      self.questionOutlet.text = PeerManager.shared.question[0]
+      self.buttonAnswerOne.setTitle(PeerManager.shared.question[1], for: UIControlState.normal)
+      self.buttonAnswerTwo.setTitle(PeerManager.shared.question[2], for: UIControlState.normal)
+      self.buttonAnswerThree.setTitle(PeerManager.shared.question[3], for: UIControlState.normal)
+      self.buttonAnswerFour.setTitle(PeerManager.shared.question[4], for: UIControlState.normal)
+    }
+    
   }
- 
+
   
   // - MARK: 3: Method that loads the progress view
   func loadProgressView() {
