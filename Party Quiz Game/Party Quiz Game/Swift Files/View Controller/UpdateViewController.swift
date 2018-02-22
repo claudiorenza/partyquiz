@@ -39,22 +39,44 @@ class UpdateViewController: UIViewController {
   
   func downloadEnded() {
     syncronizeDatabases()
+    
     self.loadingView?.removeFromSuperview()
     performSegue(withIdentifier: "afterDownload", sender: nil)
   }
   
   func syncronizeDatabases() {
-    let requestDomanda = NSFetchRequest<NSFetchRequestResult>(entityName: entityNameQ)
-    requestDomanda.returnsObjectsAsFaults = false
-    do {
-      let result = try context.fetch(requestDomanda)
-      for data in result as! [NSManagedObject] {
-        CoreDataManager.shared.question.append(data)
+    if(CloudKitQuestions.shared.localQuestions.count > 0) {
+      CoreDataManager.shared.clearData(nameEntity: entityNameQ , context: context)
+      print("Memorizzo in locale \(CloudKitQuestions.shared.localQuestions.count) domande.\n")
+      for i in 0...CloudKitQuestions.shared.localQuestions.count-1 {
+        let question = CloudKitQuestions.shared.localQuestions[i]
+        let newRecord = CoreDataManager.shared.createRecord(entity: entity, context: context)
+        newRecord.setValue(question.object(forKey: "Record Name"), forKey: "id")
+        newRecord.setValue(question.object(forKey: "QuestionText"), forKey: "text")
+        newRecord.setValue(question.object(forKey: "CorrectAnswer"), forKey: "correctlyAnswer")
+        newRecord.setValue(question.object(forKey: "Answer1"), forKey: "wrongAnswer1")
+        newRecord.setValue(question.object(forKey: "Answer2"), forKey: "wrongAnswer2")
+        newRecord.setValue(question.object(forKey: "Answer3"), forKey: "wrongAnswer3")
+        newRecord.setValue(question.object(forKey: "Category") , forKey: "category")
+        CoreDataManager.shared.saveContext(context: context)
+        CoreDataManager.shared.fetchValue(nameEntity: entityNameQ, context: context)
       }
-    } catch {
-      print("Failed")
+      
+      let requestDomanda = NSFetchRequest<NSFetchRequestResult>(entityName: entityNameQ)
+      requestDomanda.returnsObjectsAsFaults = false
+      do {
+        let result = try context.fetch(requestDomanda)
+        for data in result as! [NSManagedObject] {
+          CoreDataManager.shared.question.append(data)
+        }
+      } catch {
+        print("Failed")
+      }
+      
+    } else {
+      print("L'app non è stata aggiornata, non memorizzo niente in locale.")
     }
   }
-  
-  
+
 }
+

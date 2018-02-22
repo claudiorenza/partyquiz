@@ -14,6 +14,8 @@ class CoreDataManager {
     static let shared = CoreDataManager()
     var question:[NSManagedObject] = []
   
+    var questionDictionary = [[String:String]]()
+  
     func createContext() -> NSManagedObjectContext {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         //        l'AppDelegate per essere settato ha bisogno di un container di riferimento
@@ -94,6 +96,5 @@ class CoreDataManager {
             print("Failed")
         }
     }
-    
 }
  
