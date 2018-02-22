@@ -28,7 +28,6 @@ class QuestionViewController: UIViewController {
   let backgoundBase = UIColor(red: 67/255, green: 59/255, blue: 240/255, alpha: 1)
   let backgoundLilla = UIColor(red: 189/255, green: 16/255, blue: 224/255, alpha: 1)
 
-
   var index = 0
   var point = CGPoint()
 
@@ -40,16 +39,14 @@ class QuestionViewController: UIViewController {
     NotificationCenter.default.addObserver(self, selector: #selector(self.loadProgressView30), name: NSNotification.Name(rawValue: "loadProgressView30"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.loadProgressView10), name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.timeOut), name: NSNotification.Name(rawValue: "timeOut"), object: nil)
-    
-    
     NotificationCenter.default.addObserver(self, selector: #selector(self.answersAppear), name: NSNotification.Name(rawValue: "answers"), object: nil)
     
     
     //SIMULATION
-    timerReceiveBuzz = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(signalPeerReceiveBuzz), userInfo: nil, repeats: true)
-    
-    timerReceiveWrongAnswer = Timer.scheduledTimer(timeInterval: 8, target: self, selector: #selector(signalPeerReceiveWrongAnswer), userInfo: nil, repeats: true)
-    //timerReceiveRightAnswer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(signalPeerReceiveRightAnswer), userInfo: nil, repeats: true)
+//    timerReceiveBuzz = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(signalPeerReceiveBuzz), userInfo: nil, repeats: true)
+//
+//    timerReceiveWrongAnswer = Timer.scheduledTimer(timeInterval: 8, target: self, selector: #selector(signalPeerReceiveWrongAnswer), userInfo: nil, repeats: true)
+//    //timerReceiveRightAnswer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(signalPeerReceiveRightAnswer), userInfo: nil, repeats: true)
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -75,7 +72,7 @@ class QuestionViewController: UIViewController {
 
   // - MARK: 4: Method that generates random buzzers
   func randomBuzzers() {
-    index = Int(arc4random_uniform(4))
+    index = 3 //Int(arc4random_uniform(4))
     if index == 0 {
       if let oneBuzzer = Bundle.main.loadNibNamed("OneBuzzer", owner: self, options: nil)?.first as? OneBuzzer {
         buzzerView.addSubview(oneBuzzer)
@@ -153,10 +150,10 @@ class QuestionViewController: UIViewController {
     buttonAnswerTwo.alpha = 0
     buttonAnswerThree.alpha = 0
     buttonAnswerFour.alpha = 0
-//    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
-//    Singleton.shared.delayWithSeconds(4) {
-//      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "startTimer"), object: nil)
-//    }
+    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
+    Singleton.shared.delayWithSeconds(4) {
+      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "startTimer"), object: nil)
+    }
   }
   
   func changeBackgroundColor(finalColor: UIColor) {
@@ -190,6 +187,7 @@ class QuestionViewController: UIViewController {
     //TODO: pause timer 30"
     
     onHoldView.isHidden = false
+    onHoldLabel.isHidden = false
   }
   
   @objc func signalPeerReceiveWrongAnswer() {
@@ -200,6 +198,7 @@ class QuestionViewController: UIViewController {
     //TODO: start timer 30"
     
     onHoldView.isHidden = true
+    onHoldLabel.isHidden = true
   }
   
   
@@ -210,6 +209,7 @@ class QuestionViewController: UIViewController {
     //TODO: start timer 30"
     
     onHoldView.isHidden = true
+    onHoldLabel.isHidden = true
   }
   
   @objc func moveQuestionBoxToOrigin() {
@@ -243,10 +243,19 @@ class QuestionViewController: UIViewController {
   @objc func timeOut() {
     onHoldLabel.text = "Time Left!"
     onHoldView.isHidden = false
+    onHoldLabel.isHidden = false
     Singleton.shared.delayWithSeconds(4) {
       self.randomBuzzers()
+      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "startTimer"), object: nil)
       self.onHoldView.isHidden = true
+      self.onHoldLabel.isHidden = true
       self.onHoldLabel.text = "On Hold..."
+    }
+    Singleton.shared.delayWithSeconds(5) {
+      self.buttonAnswerOne.alpha = 0
+      self.buttonAnswerTwo.alpha = 0
+      self.buttonAnswerThree.alpha = 0
+      self.buttonAnswerFour.alpha = 0
     }
   }
 }

@@ -67,6 +67,7 @@ class ProgressView: UIView {
   
   @objc func stopTimer() {
     timer.invalidate()
+    self.removeFromSuperview()
   }
   
   @objc func startTimer() {
