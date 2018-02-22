@@ -61,6 +61,7 @@ class ProgressView: UIView {
       })
     } else {
       stopTimer()
+      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "timeOut"), object: nil)
     }
   }
   
