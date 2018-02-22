@@ -46,9 +46,9 @@ class QuestionViewController: UIViewController {
     
     
     //SIMULATION
-    timerReceiveBuzz = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(signalPeerReceiveBuzz), userInfo: nil, repeats: true)
+    timerReceiveBuzz = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(signalPeerReceiveBuzz), userInfo: nil, repeats: true)
     
-    timerReceiveWrongAnswer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(signalPeerReceiveWrongAnswer), userInfo: nil, repeats: true)
+    timerReceiveWrongAnswer = Timer.scheduledTimer(timeInterval: 8, target: self, selector: #selector(signalPeerReceiveWrongAnswer), userInfo: nil, repeats: true)
     //timerReceiveRightAnswer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(signalPeerReceiveRightAnswer), userInfo: nil, repeats: true)
   }
   
@@ -180,6 +180,7 @@ class QuestionViewController: UIViewController {
   
   @objc func signalPeerReceiveBuzz() {
     timerReceiveBuzz.invalidate()
+    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
     //ricezione multipeer da altro giocatore
     
     //TODO: pause timer 30"
@@ -189,6 +190,7 @@ class QuestionViewController: UIViewController {
   
   @objc func signalPeerReceiveWrongAnswer() {
     timerReceiveWrongAnswer.invalidate()
+    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "startTimer"), object: nil)
     //ricezione multipeer da altro giocatore
     
     //TODO: start timer 30"
