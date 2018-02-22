@@ -147,6 +147,28 @@ class QuestionViewController: UIViewController {
     onHoldLabel.clipsToBounds = true
   }
   
+  @IBAction func buttonAnswerOneAction(_ sender: UIButton) {
+    //if answerOne is right
+      //color green and send to others the signal of rightAnswer
+    //else
+      //color red, hide the view, and send to others signal of wrongAnswer
+  }
+  
+  @IBAction func buttonAnswerTwoAction(_ sender: UIButton) {
+    buttonAnswerTwo.tintColor = UIColor.green
+    
+  }
+  
+  @IBAction func buttonAnswerThreeAction(_ sender: UIButton) {
+    buttonAnswerThree.tintColor = UIColor.red
+    
+  }
+  
+  @IBAction func buttonAnswerFourAction(_ sender: UIButton) {
+  }
+  
+  
+  /*
   @IBAction func buttonAction(_ sender: UIButton) {
     randomBuzzers()
 //    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
@@ -154,7 +176,7 @@ class QuestionViewController: UIViewController {
 //      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "startTimer"), object: nil)
 //    }
   }
-  
+  */
   func changeBackgroundColor(finalColor: UIColor) {
     view.changeBackgroundColor(initColor: view.backgroundColor!, finalColor: finalColor)
     Singleton.shared.delayWithSeconds(1.8, completion: {
@@ -235,4 +257,26 @@ class QuestionViewController: UIViewController {
       self.buttonAnswerFour.alpha = 1
     }
   }
+  
+  @objc func answersBlock() {
+    signalPeerSendWrongAnswer()  //invio al peer
+    
+    self.buttonAnswerOne.fadeOutAnswers()
+    Singleton.shared.delayWithSeconds(0.2) {
+      self.buttonAnswerOne.alpha = 0
+    }
+    self.buttonAnswerTwo.fadeOutAnswers()
+    Singleton.shared.delayWithSeconds(0.2) {
+      self.buttonAnswerTwo.alpha = 0
+    }
+    self.buttonAnswerThree.fadeOutAnswers()
+    Singleton.shared.delayWithSeconds(0.2) {
+      self.buttonAnswerThree.alpha = 0
+    }
+    self.buttonAnswerFour.fadeOutAnswers()
+    Singleton.shared.delayWithSeconds(0.2) {
+      self.buttonAnswerFour.alpha = 0
+    }
+  }
+  
 }
