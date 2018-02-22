@@ -19,7 +19,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
   override func viewDidLoad() {
         super.viewDidLoad()
     
-    startGameButton.isEnabled = false
+//    startGameButton.isEnabled = false
     
       pickerData = ["5", "10", "15", "20", "25", "30"]
       createPicker()
@@ -107,10 +107,10 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
       }
     } while (x < numberOfNumbers)
     
-    print("LISTA:\n")
-    for i in 0...numberOfNumbers-1 {
-      print("- \(randomNumbers[i])")
-    }
+//    print("LISTA:\n")
+//    for i in 0...numberOfNumbers-1 {
+//      print("- \(randomNumbers[i])")
+//    }
     
     return randomNumbers
   }
@@ -136,7 +136,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
   
   @objc func donePressed() {
     self.view.endEditing(true)
-    startGameButton.isEnabled = true
+//    startGameButton.isEnabled = true
   }
   
 }
