@@ -20,11 +20,9 @@ class PreStartViewController: UIViewController {
     for i in abusive {
       i.logoEnter(view: view, enter: "Up")
     }
-//    Singleton.shared.delayWithSeconds(0.5) {
       for i in self.designers {
         i.logoEnter(view: self.view, enter: "Down")
       }
-    //}
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -55,7 +53,7 @@ class PreStartViewController: UIViewController {
     } else {
       //NON primo avvio
 
-      if Date().interval(ofComponent: .second, fromDate: lastUpdate) > 37 {
+      if Date().interval(ofComponent: .second, fromDate: lastUpdate) > 20 {
         //Passati più di 13 giorni
         
         if CheckConnection.shared.isConnectedToNetwork() {

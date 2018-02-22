@@ -14,16 +14,15 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
   var pickerData: [String] = [String]()
   
   @IBOutlet weak var pickedValueTextField: UITextField!
-  
+  @IBOutlet weak var startGameButton: UIButton!
   
   override func viewDidLoad() {
         super.viewDidLoad()
     
-        //self.pickedValueTextField.tintColor = .clear
-        //self.pickedValueTextField.canPerformAction(self, withSender: nil)
+//    startGameButton.isEnabled = false
     
-        pickerData = ["5", "10", "15", "20", "25", "30"]
-        createPicker()
+      pickerData = ["5", "10", "15", "20", "25", "30"]
+      createPicker()
     }
   
   func createPicker() {
@@ -41,6 +40,83 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     pickedValueTextField.inputAccessoryView = toolbar
     pickedValueTextField.inputView = numberOfQuestionsPicker
   }
+  
+  @IBAction func startGamePressed(_ sender: Any) {
+    let selectedNumber = Int(pickedValueTextField.text!)
+    
+    print("Numero Selezionato: \(String(describing: selectedNumber))")
+    
+    convert(numberOfQuestions: selectedNumber!)
+    print("Numero elementi nel dizionario: \(CoreDataManager.shared.questionDictionary.count)")
+    
+    for i in 0...CoreDataManager.shared.questionDictionary.count-1 {
+      let question = CoreDataManager.shared.questionDictionary[i]
+      print(question["text"]!)
+    }
+  }
+  
+  func convert(numberOfQuestions: Int) {
+    let indexSelectedQuestions = generateRandomListNumbers(numberOfNumbers: numberOfQuestions)
+    
+    for i in 0...numberOfQuestions-1 {
+//      print("Inserisco nel dictionary la domanda: \(indexSelectedQuestions[i])")
+      
+      CoreDataManager.shared.questionDictionary.append([/*"id":CoreDataManager.shared.question[i].value(forKey: "id"),*/ "text":CoreDataManager.shared.question[indexSelectedQuestions[i]].value(forKey: "text") as! String, "correctlyAnswer":CoreDataManager.shared.question[indexSelectedQuestions[i]].value(forKey: "correctlyAnswer") as! String, "wrongAnswer1":CoreDataManager.shared.question[indexSelectedQuestions[i]].value(forKey: "wrongAnswer1") as! String, "wrongAnswer2":CoreDataManager.shared.question[indexSelectedQuestions[i]].value(forKey: "wrongAnswer2") as! String, "wrongAnswer3":CoreDataManager.shared.question[indexSelectedQuestions[i]].value(forKey: "wrongAnswer3") as! String, "category":CoreDataManager.shared.question[indexSelectedQuestions[i]].value(forKey: "category") as! String])
+    }
+//    print("QuestionDictionary Popolato")
+  }
+  
+  
+  
+  let entityNameQ = "Question"
+  let context = CoreDataManager.shared.createContext()
+  let entity = CoreDataManager.shared.createEntity(nameEntity: "Question")
+  
+  //Generate a random list of numbers
+  func generateRandomListNumbers(numberOfNumbers: Int) -> [Int] {
+    var randomNumbers = [Int]()
+    var x:Int = 1
+    var i:Int = 0
+    var check:Bool = true
+    
+    print("Numero massimo: \(CoreDataManager.shared.countRow(nameEntity: entityNameQ, context: context))")
+    randomNumbers.append(Int(arc4random_uniform(UInt32(CoreDataManager.shared.question.count))))
+//    print("Inserito \(randomNumbers[0]) in lista\n")
+    
+    repeat {
+      randomNumbers.append(Int(arc4random_uniform(UInt32(CoreDataManager.shared.question.count))))
+//      print("Inserito \(randomNumbers[x]) in lista, controllo se va bene\n")
+      i = 0
+      check = true
+      repeat {
+        if (randomNumbers[i] != randomNumbers[x]) {
+//          print("--\(randomNumbers[i]) diverso da \(randomNumbers[x])\n")
+          i = i+1
+        } else {
+//          print("--\(randomNumbers[i]) uguale a \(randomNumbers[x])\n")
+          check = false
+        }
+      } while (check && (i < x))
+      
+      if(check) {
+//        print("-Numero valido\n")
+        x = x+1
+      } else {
+//        print("-Numero NON valido\n")
+        randomNumbers.removeLast()
+      }
+    } while (x < numberOfNumbers)
+    
+//    print("LISTA:\n")
+//    for i in 0...numberOfNumbers-1 {
+//      print("- \(randomNumbers[i])")
+//    }
+    
+    return randomNumbers
+  }
+  
+  
+  ///////////////////////
   
   func numberOfComponents(in pickerView: UIPickerView) -> Int {
     return 1
@@ -60,6 +136,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
   
   @objc func donePressed() {
     self.view.endEditing(true)
+//    startGameButton.isEnabled = true
   }
   
 }
