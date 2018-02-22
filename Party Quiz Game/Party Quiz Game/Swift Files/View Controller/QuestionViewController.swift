@@ -149,6 +149,10 @@ class QuestionViewController: UIViewController {
   
   @IBAction func buttonAction(_ sender: UIButton) {
     randomBuzzers()
+    buttonAnswerOne.alpha = 0
+    buttonAnswerTwo.alpha = 0
+    buttonAnswerThree.alpha = 0
+    buttonAnswerFour.alpha = 0
 //    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
 //    Singleton.shared.delayWithSeconds(4) {
 //      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "startTimer"), object: nil)
