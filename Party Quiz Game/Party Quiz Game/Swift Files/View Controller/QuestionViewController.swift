@@ -39,7 +39,7 @@ class QuestionViewController: UIViewController {
     setAnswersQuestion()
     NotificationCenter.default.addObserver(self, selector: #selector(self.loadProgressView30), name: NSNotification.Name(rawValue: "loadProgressView30"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.loadProgressView10), name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
-
+    NotificationCenter.default.addObserver(self, selector: #selector(self.timeOut), name: NSNotification.Name(rawValue: "timeOut"), object: nil)
     
     
     NotificationCenter.default.addObserver(self, selector: #selector(self.answersAppear), name: NSNotification.Name(rawValue: "answers"), object: nil)
@@ -171,6 +171,10 @@ class QuestionViewController: UIViewController {
   /*
   @IBAction func buttonAction(_ sender: UIButton) {
     randomBuzzers()
+    buttonAnswerOne.alpha = 0
+    buttonAnswerTwo.alpha = 0
+    buttonAnswerThree.alpha = 0
+    buttonAnswerFour.alpha = 0
 //    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
 //    Singleton.shared.delayWithSeconds(4) {
 //      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "startTimer"), object: nil)
@@ -258,6 +262,7 @@ class QuestionViewController: UIViewController {
     }
   }
   
+
   @objc func answersBlock() {
     signalPeerSendWrongAnswer()  //invio al peer
     
@@ -279,4 +284,14 @@ class QuestionViewController: UIViewController {
     }
   }
   
+
+  @objc func timeOut() {
+    onHoldLabel.text = "Time Left!"
+    onHoldView.isHidden = false
+    Singleton.shared.delayWithSeconds(4) {
+      self.randomBuzzers()
+      self.onHoldView.isHidden = true
+      self.onHoldLabel.text = "On Hold..."
+    }
+  }
 }
