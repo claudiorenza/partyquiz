@@ -266,6 +266,7 @@
                                 </state>
                                 <connections>
                                     <action selector="pressToJoin:" destination="g28-jk-LDH" eventType="touchUpInside" id="uv0-u1-ahm"/>
+                                    <segue destination="411-n7-06Y" kind="show" identifier="fromJoin" id="Kcy-Uu-9ZV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gE-OF-oUO">
@@ -290,7 +291,7 @@
                         <outlet property="createGameOutlet" destination="EpX-uI-O5M" id="X1B-lN-z2N"/>
                         <outlet property="imageLogo" destination="JRW-Sk-K85" id="frz-j2-P5Z"/>
                         <outlet property="joinGameOutlet" destination="GdX-al-lOJ" id="o9E-9x-whX"/>
-                        <segue destination="gUp-Bt-fDm" kind="show" identifier="segue" animates="NO" id="1bF-UN-h9c"/>
+                        <segue destination="gUp-Bt-fDm" kind="show" identifier="fromCreate1" animates="NO" id="1bF-UN-h9c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RKC-Yr-skb" sceneMemberID="firstResponder"/>
@@ -318,7 +319,7 @@
                                 <state key="normal" title="Start Game"/>
                                 <connections>
                                     <action selector="startGamePressed:" destination="gUp-Bt-fDm" eventType="touchUpInside" id="lpT-oc-Yfh"/>
-                                    <segue destination="411-n7-06Y" kind="show" animates="NO" id="bD4-1E-Jrx"/>
+                                    <segue destination="411-n7-06Y" kind="show" identifier="fromCreate2" animates="NO" id="bD4-1E-Jrx"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RVW-mx-cAv">
@@ -339,7 +340,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OZi-0k-mpL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1898.2394366197184" y="-324.375"/>
+            <point key="canvasLocation" x="1957" y="-878"/>
         </scene>
         <!--Question View Controller-->
         <scene sceneID="2UQ-xL-IiB">
@@ -462,6 +463,7 @@
         <image name="Uploadimg_Background" width="568" height="320"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Kcy-Uu-9ZV"/>
         <segue reference="ccu-NN-0BM"/>
     </inferredMetricsTieBreakers>
 </document>
