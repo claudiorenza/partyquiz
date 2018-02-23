@@ -14,7 +14,9 @@ class MainPageViewController: UIViewController {
   
   @IBOutlet weak var createGameOutlet: UIButton!
   @IBOutlet weak var joinGameOutlet: UIButton!
-  @IBOutlet weak var labelOutlet: UILabel!
+  
+  @IBOutlet var imageLogo: UIImageView!
+  
   
   var audioPlayerButtonClick = AVAudioPlayer()
   var audioPlayerMusic = AVAudioPlayer()
@@ -46,8 +48,13 @@ class MainPageViewController: UIViewController {
     
     audioPlayerMusic.play()
     
-    createGameOutlet.entering(directionFrom: "left", view: self.view)
-    joinGameOutlet.entering(directionFrom: "right", view: self.view)
+    imageLogo.entering(directionFrom: "left", view: self.view, duration: 0.5)
+    Singleton.shared.delayWithSeconds(1.0) {
+      self.createGameOutlet.entering(directionFrom: "left", view: self.view, duration: 1.0)
+      self.joinGameOutlet.entering(directionFrom: "right", view: self.view, duration: 1.0)
+    }
+    
+    
   }
   
   
@@ -58,31 +65,20 @@ class MainPageViewController: UIViewController {
   }
   
   @IBAction func pressToCreate(_ sender: UIButton) {
-//    PeerManager.shared.stopBrowser()
-//    PeerManager.shared.setupAdvertise()
-//    PeerManager.shared.startAdvertise()
-//    present(PeerManager.shared.controller, animated: true, completion: nil)
-    
     audioPlayerButtonClick.play()
     audioPlayerMusic.stop()
   }
   
   @IBAction func pressToJoin(_ sender: UIButton) {
-//    PeerManager.shared.stopAdvertise()
-//    PeerManager.shared.setupSession()
-//    PeerManager.shared.setupBrowser()
-//    present(PeerManager.shared.controller, animated: true, completion: nil)
     audioPlayerButtonClick.play()
     audioPlayerMusic.stop()
   }
-  
-  @IBAction func pressForInfo(_ sender: UIButton) {
-    labelOutlet.text = "Infos..."
-  }
+
   
   @IBAction func createGameAction(_ sender: UIButton) {
-    createGameOutlet.exit(directionTo: "left", view: view)
-    joinGameOutlet.exit(directionTo: "right", view: view)
+    createGameOutlet.exit(directionTo: "left", view: view, duration: 1.0)
+    joinGameOutlet.exit(directionTo: "right", view: view, duration: 1.0)
+    imageLogo.exit(directionTo: "left", view: view, duration: 0.5)
     Singleton.shared.delayWithSeconds(0.8) {
       self.performSegue(withIdentifier: "segue", sender: self)
     }
