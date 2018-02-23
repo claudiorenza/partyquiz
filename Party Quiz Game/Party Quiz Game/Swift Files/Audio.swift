@@ -14,6 +14,10 @@ import AVFoundation
 class Audio {
   var audioPlayer = AVAudioPlayer()
   
+  func setPlayer(fileName: String, typeName: String)  {
+    
+    
+  }
   
   
 }
