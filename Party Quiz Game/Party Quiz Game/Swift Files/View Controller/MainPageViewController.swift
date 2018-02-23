@@ -18,8 +18,9 @@ class MainPageViewController: UIViewController {
   @IBOutlet var imageLogo: UIImageView!
   
   
-  var audioPlayerButtonClick = AVAudioPlayer()
-  var audioPlayerMusic = AVAudioPlayer()
+  
+  var audioButtonClick = Audio(fileName: "buttonClick", typeName: "m4a")
+  var audioMusic = Audio(fileName: "musicIntro", typeName: "m4a")
   let borderColor = UIColor(red: 96.0/255.0, green: 96.0/255.0, blue: 96.0/255.0, alpha: 1.0).cgColor
   
   override func viewDidLoad() {
@@ -31,22 +32,9 @@ class MainPageViewController: UIViewController {
     setButton(tempButton: createGameOutlet)
     setButton(tempButton: joinGameOutlet)
     
-    let audioButtonClick = Bundle.main.path(forResource: "buttonClick", ofType: "m4a")
-    let audioIntroMusic = Bundle.main.path(forResource: "musicIntro", ofType: "m4a")
-    
-    
-    // copy this syntax, it tells the compiler what to do when action is received
-    do {
-      audioPlayerButtonClick = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioButtonClick! ))
-      audioPlayerMusic = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioIntroMusic! ))
-      try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
-      try AVAudioSession.sharedInstance().setActive(true)
-    }
-    catch{
-      print(error)
-    }
-    
-    audioPlayerMusic.play()
+    AudioSingleton.shared.setAudioShared()
+  
+    audioMusic.player.play()
     
     imageLogo.entering(directionFrom: "left", view: self.view, duration: 0.5)
     Singleton.shared.delayWithSeconds(1.0) {
@@ -65,13 +53,13 @@ class MainPageViewController: UIViewController {
   }
   
   @IBAction func pressToCreate(_ sender: UIButton) {
-    audioPlayerButtonClick.play()
-    audioPlayerMusic.stop()
+    audioButtonClick.player.play()
+    audioMusic.player.stop()
   }
   
   @IBAction func pressToJoin(_ sender: UIButton) {
-    audioPlayerButtonClick.play()
-    audioPlayerMusic.stop()
+    audioButtonClick.player.play()
+    audioMusic.player.stop()
   }
 
   
