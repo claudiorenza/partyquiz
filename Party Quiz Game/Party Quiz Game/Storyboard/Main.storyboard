@@ -243,13 +243,10 @@
                                     <action selector="pressForInfo:" destination="g28-jk-LDH" eventType="touchUpInside" id="nWh-Vc-ZRU"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQa-rH-uGx">
-                                <rect key="frame" x="100" y="46" width="368" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <color key="textColor" red="0.99668441659999996" green="0.99263709249999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="QuizzerLogo" translatesAutoresizingMaskIntoConstraints="NO" id="JRW-Sk-K85">
+                                <rect key="frame" x="137" y="55" width="294" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="4fF-lN-ZLY"/>
@@ -259,13 +256,12 @@
                     <connections>
                         <outlet property="createGameOutlet" destination="EpX-uI-O5M" id="X1B-lN-z2N"/>
                         <outlet property="joinGameOutlet" destination="GdX-al-lOJ" id="o9E-9x-whX"/>
-                        <outlet property="labelOutlet" destination="WQa-rH-uGx" id="1UI-hh-epd"/>
                         <segue destination="gUp-Bt-fDm" kind="show" identifier="segue" animates="NO" id="1bF-UN-h9c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RKC-Yr-skb" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1167" y="-324"/>
+            <point key="canvasLocation" x="1166.1971830985915" y="-324.375"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="cyx-Rr-9Fh">
@@ -426,6 +422,7 @@
         <image name="Background(Blue)" width="568" height="320"/>
         <image name="Background_alpha" width="1704" height="960"/>
         <image name="Icon(Infos)" width="36" height="36"/>
+        <image name="QuizzerLogo" width="563" height="143"/>
         <image name="Shape" width="229" height="210"/>
     </resources>
     <inferredMetricsTieBreakers>
