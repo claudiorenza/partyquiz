@@ -111,7 +111,6 @@ class QuestionViewController: UIViewController {
     
     buttonAnswerFour.setTitle(question["wrongAnswer1"], for: .normal)
     buttonAnswerFour.backgroundColor = UIColor.bottonColorLightBlue()
-    
   }
   
   
@@ -201,7 +200,7 @@ class QuestionViewController: UIViewController {
     buttonAnswerFour.layer.borderWidth = 6.0
     buttonAnswerFour.alpha = 0
     
-    onHoldLabel.layer.cornerRadius = 25.0
+    onHoldLabel.layer.cornerRadius = 15.0
     onHoldLabel.clipsToBounds = true
   }
   
@@ -211,6 +210,7 @@ class QuestionViewController: UIViewController {
     signalPeerSendRightAnswer()
     Singleton.shared.delayWithSeconds(3) {
       self.syncQuestionBuzzer()
+      self.answersBlock()
     }
     
   }
@@ -221,7 +221,7 @@ class QuestionViewController: UIViewController {
     signalPeerSendWrongAnswer()
     Singleton.shared.delayWithSeconds(1.5) {
       self.answersBlock()
-      self.onHoldLabel.text = "Waiting for other players"
+      self.onHoldLabel.text = "Waiting"
       self.onHoldLabel.isHidden = false
       self.onHoldView.isHidden = false
     }
@@ -295,10 +295,6 @@ class QuestionViewController: UIViewController {
     
   }
   
-  
-  
-  
-  
   func signalPeerSendBuzz() {
     //TODO: invio multipeer agli altri giocatori della prenotazione
     
@@ -311,10 +307,7 @@ class QuestionViewController: UIViewController {
   func signalPeerSendRightAnswer() {
     //TODO: invio multipeer agli altri giocatori della risposta esatta
     
-    
   }
-  
-  
   
   @objc func signalPeerReceiveBuzz() {
     timerReceiveBuzz.invalidate()
@@ -340,6 +333,7 @@ class QuestionViewController: UIViewController {
     //TODO: ricezione multipeer da altro giocatore
     Singleton.shared.delayWithSeconds(3) {
       self.syncQuestionBuzzer()
+      self.answersBlock()
     }
     onHoldView.isHidden = true
     onHoldLabel.isHidden = true
@@ -373,7 +367,6 @@ class QuestionViewController: UIViewController {
     }
   }
   
-
   @objc func answersBlock() {
     self.buttonAnswerOne.fadeOutAnswers()
     Singleton.shared.delayWithSeconds(0.2) {
@@ -392,7 +385,6 @@ class QuestionViewController: UIViewController {
       self.buttonAnswerFour.alpha = 0
     }
   }
-  
 
   @objc func timeOut() {
     onHoldLabel.text = "Time is Up!"
