@@ -20,6 +20,10 @@ class MainPageViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    PeerManager.peerShared.mainVC = self
+    PeerManager.peerShared.viewController = self
+    PeerManager.peerShared.setupConnection()
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -59,13 +63,23 @@ class MainPageViewController: UIViewController {
       self.imageLogo.isHidden = true
     }
     Singleton.shared.delayWithSeconds(0.8) {
-      self.performSegue(withIdentifier: "segue", sender: self)
+      self.performSegue(withIdentifier: "fromCreate1", sender: self)
     }
   }
   
   @IBAction func pressToJoin(_ sender: UIButton) {
     AudioSingleton.shared.audioButtonClick.player.play()
-
+    createGameOutlet.exit(directionTo: "left", view: view, duration: 1.0)
+    joinGameOutlet.exit(directionTo: "right", view: view, duration: 1.0)
+    imageLogo.exit(directionTo: "left", view: view, duration: 0.5)
+    
+    PeerManager.peerShared.stopAdvertiser()
+    PeerManager.peerShared.startBrowser()
+    PeerManager.peerShared.setupBrowserVC()
+    present(PeerManager.peerShared.browserVC, animated: true, completion: nil)
   }
-
+  
+  @IBAction func pressForInfo(_ sender: UIButton) {
+    //labelOutlet.text = "Infos..."
+  }
 }
