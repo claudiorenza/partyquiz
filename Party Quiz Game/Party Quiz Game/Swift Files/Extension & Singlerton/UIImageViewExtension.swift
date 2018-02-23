@@ -128,6 +128,7 @@ extension UIImageView {
     layer.add(animation, forKey: nil)
   }
   
+
   func growBar() {
     let animation = CABasicAnimation(keyPath: "transform.scale.x")
     animation.fromValue = 1
@@ -138,5 +139,6 @@ extension UIImageView {
     
     layer.add(animation, forKey: nil)
   }
+
 }
 

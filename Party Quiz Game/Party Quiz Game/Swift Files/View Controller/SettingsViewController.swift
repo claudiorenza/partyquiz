@@ -17,7 +17,8 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
   @IBOutlet weak var startGameButton: UIButton!
   
   override func viewDidLoad() {
-        super.viewDidLoad()
+    super.viewDidLoad()
+    PeerManager.peerShared.viewController = self
     
 //    startGameButton.isEnabled = false
     
@@ -54,6 +55,10 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
       let question = CoreDataManager.shared.questionDictionary[i]
       print(question["text"]!)
     }
+    PeerManager.peerShared.stopBrowser()
+    PeerManager.peerShared.startAdvertiser()
+    PeerManager.peerShared.setupBrowserVC()
+    present(PeerManager.peerShared.browserVC, animated: true, completion: nil)
   }
   
   func convert(numberOfQuestions: Int) {
