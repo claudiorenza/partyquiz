@@ -15,6 +15,11 @@ extension UIColor {
     return UIColor(red: 96.0/255.0, green: 96.0/255.0, blue: 96.0/255.0, alpha: 1.0).cgColor
   }
   
+  class func bottonColorLightBlue()  -> UIColor  {
+    return UIColor(red: 136/255, green: 226/255, blue: 243/255, alpha: 1.0)
+  }
+ 
+  
     convenience init(hex: String) {
       let scanner = Scanner(string: hex)
       scanner.scanLocation = 0

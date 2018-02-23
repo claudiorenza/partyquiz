@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class QuestionViewController: UIViewController {
   
@@ -21,14 +22,20 @@ class QuestionViewController: UIViewController {
   @IBOutlet weak var onHoldView: UIView!
   @IBOutlet weak var onHoldLabel: UILabel!
   
-  var timerReceiveBuzz: Timer!
-  var timerReceiveWrongAnswer: Timer!
-  var timerReceiveRightAnswer: Timer!
+  //var audioPlayerBuzz = AVAudioPlayer()
+  var audioPlayerRightAnswer = AVAudioPlayer()
+  var audioPlayerWrongAnswer = AVAudioPlayer()
+  
+  var question: [String:String] = ["text":"Capitale dell'Italia", "correctlyAnswer":"Roma", "wrongAnswer1":"Torino", "wrongAnswer2":"Napoli", "wrongAnswer3":"Firenze", "category":"Geografia"]
+  
+  var timerReceiveBuzz: Timer!        //SIMULATION
+  var timerReceiveWrongAnswer: Timer! //SIMULATION
+  var timerReceiveRightAnswer: Timer! //SIMULATION
   
   let backgoundBase = UIColor(red: 67/255, green: 59/255, blue: 240/255, alpha: 1)
   let backgoundLilla = UIColor(red: 189/255, green: 16/255, blue: 224/255, alpha: 1)
 
-  var index = 0
+  var indexBuzzer = 0
   var point = CGPoint()
 
   // - MARK: 2: ViewDidLoad
@@ -42,6 +49,7 @@ class QuestionViewController: UIViewController {
     NotificationCenter.default.addObserver(self, selector: #selector(self.answersAppear), name: NSNotification.Name(rawValue: "answers"), object: nil)
     
     
+    
     //SIMULATION
 //    timerReceiveBuzz = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(signalPeerReceiveBuzz), userInfo: nil, repeats: true)
 //
@@ -50,8 +58,62 @@ class QuestionViewController: UIViewController {
   }
   
   override func viewWillAppear(_ animated: Bool) {
-    randomBuzzers()
+    syncQuestionBuzzer()  //qui è chiamata solo la prima volta
+    // copy this syntax, it tells the compiler what to do when action is received
+    
+    //let audioBuzz = Bundle.main.path(forResource: "buttonClick", ofType: "m4a")
+    let audioRightAnswer = Bundle.main.path(forResource: "answerRight", ofType: "m4a")
+    let audioWrongAnswer = Bundle.main.path(forResource: "answerWrong", ofType: "m4a")
+    
+    do {
+      //audioPlayerBuzz = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioBuzz! ))
+      audioPlayerRightAnswer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioRightAnswer! ))
+      audioPlayerWrongAnswer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioWrongAnswer! ))
+      
+      try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+      try AVAudioSession.sharedInstance().setActive(true)
+    }
+    catch{
+      print(error)
+    }
   }
+  
+  func syncQuestionBuzzer() {
+    
+    
+//    for subUIView in buzzerView.subviews as [UIView] {
+//      if subUIView != questionOutlet  {
+//        subUIView.removeFromSuperview()
+//      }
+//    }
+    
+    
+    //if "sono host"
+      //preparo e invio la domanda, e il buzzer scelto casualmente
+      indexBuzzer = Int(arc4random_uniform(4))  //buzzer random
+    //else "sono guest"
+      //attendo di ricevere la domanda e il buzzer
+    
+    setQuestion()
+    setBuzzer()
+  }
+  
+  func setQuestion()  {
+    questionOutlet.text = question["text"]
+    buttonAnswerOne.setTitle(question["wrongAnswer2"], for: .normal)  //TODO: sistemazione casuale delle risposte
+    buttonAnswerOne.backgroundColor = UIColor.bottonColorLightBlue()
+    
+    buttonAnswerTwo.setTitle(question["wrongAnswer3"], for: .normal)
+    buttonAnswerTwo.backgroundColor = UIColor.bottonColorLightBlue()
+    
+    buttonAnswerThree.setTitle(question["correctlyAnswer"], for: .normal)
+    buttonAnswerThree.backgroundColor = UIColor.bottonColorLightBlue()
+    
+    buttonAnswerFour.setTitle(question["wrongAnswer1"], for: .normal)
+    buttonAnswerFour.backgroundColor = UIColor.bottonColorLightBlue()
+    
+  }
+  
   
   // - MARK: 3: Method that loads the progress view
   @objc func loadProgressView30() {
@@ -71,9 +133,8 @@ class QuestionViewController: UIViewController {
   }
 
   // - MARK: 4: Method that generates random buzzers
-  func randomBuzzers() {
-    index = 3 //Int(arc4random_uniform(4))
-    if index == 0 {
+  func setBuzzer() {
+    if indexBuzzer == 0 {
       if let oneBuzzer = Bundle.main.loadNibNamed("OneBuzzer", owner: self, options: nil)?.first as? OneBuzzer {
         buzzerView.addSubview(oneBuzzer)
         oneBuzzer.loadPopUp(view: view)
@@ -81,7 +142,7 @@ class QuestionViewController: UIViewController {
         oneBuzzer.frame = buzzerView.bounds
         changeBackgroundColor(finalColor: UIColor.orange)
       }
-    } else if index == 1 {
+    } else if indexBuzzer == 1 {
       NotificationCenter.default.addObserver(self, selector: #selector(self.moveQuestionBoxToOrigin), name: NSNotification.Name(rawValue: "twoBuzzersException"), object: nil)
       point.x = questionOutlet.center.x
       questionOutlet.center.x = view.bounds.width * 0.465
@@ -92,7 +153,7 @@ class QuestionViewController: UIViewController {
         twoBuzzers.frame = buzzerView.bounds
         changeBackgroundColor(finalColor: UIColor.red)
       }
-    } else if index == 2 {
+    } else if indexBuzzer == 2 {
       if let shakeBuzzer = Bundle.main.loadNibNamed("ShakeBuzzer", owner: self, options: nil)?.first as? ShakeBuzzer {
         buzzerView.addSubview(shakeBuzzer)
         shakeBuzzer.loadPopUp()
@@ -144,24 +205,54 @@ class QuestionViewController: UIViewController {
     onHoldLabel.clipsToBounds = true
   }
   
+  func rightAnswer(button: UIButton)  {
+    button.backgroundColor = .green
+    //TODO: Suono vittoria
+    signalPeerSendRightAnswer()
+    
+  }
+  
+  func wrongAnswer(button: UIButton)  {
+    button.backgroundColor = .red
+    //TODO: Suono errore
+    signalPeerSendWrongAnswer()
+    answersBlock()
+  }
+  
   @IBAction func buttonAnswerOneAction(_ sender: UIButton) {
-    //if answerOne is right
-      //color green and send to others the signal of rightAnswer
-    //else
-      //color red, hide the view, and send to others signal of wrongAnswer
+    if buttonAnswerOne.titleLabel?.text == question["correctlyAnswer"] {
+      rightAnswer(button: buttonAnswerOne)
+    } else  {
+      wrongAnswer(button: buttonAnswerOne)
+    }
+    syncQuestionBuzzer()
   }
   
   @IBAction func buttonAnswerTwoAction(_ sender: UIButton) {
-    buttonAnswerTwo.tintColor = UIColor.green
-    
+    if buttonAnswerTwo.titleLabel?.text == question["correctlyAnswer"] {
+      rightAnswer(button: buttonAnswerTwo)
+    } else  {
+      wrongAnswer(button: buttonAnswerTwo)
+    }
+    syncQuestionBuzzer()
   }
   
   @IBAction func buttonAnswerThreeAction(_ sender: UIButton) {
-    buttonAnswerThree.tintColor = UIColor.red
-    
+    if buttonAnswerThree.titleLabel?.text == question["correctlyAnswer"] {
+      rightAnswer(button: buttonAnswerThree)
+    } else  {
+      wrongAnswer(button: buttonAnswerThree)
+    }
+    syncQuestionBuzzer()
   }
   
   @IBAction func buttonAnswerFourAction(_ sender: UIButton) {
+    if buttonAnswerFour.titleLabel?.text == question["correctlyAnswer"] {
+      rightAnswer(button: buttonAnswerFour)
+    } else  {
+      wrongAnswer(button: buttonAnswerFour)
+    }
+    syncQuestionBuzzer()
   }
   
   
@@ -174,7 +265,7 @@ class QuestionViewController: UIViewController {
     buttonAnswerFour.alpha = 0
     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
     Singleton.shared.delayWithSeconds(4) {
-      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "startTimer"), object: nil)
+    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "startTimer"), object: nil)
     }
   }
   */
@@ -185,18 +276,32 @@ class QuestionViewController: UIViewController {
     })
   }
   
-  func signalPeerSendBuzz() {
-    //invio multipeer agli altri giocatori della prenotazione
+  
+  func peerSendQuestionBuzzer() {
+    //TODO: invio domanda e buzzer da parte dell'host
+  
+  }
+  
+  func peerReceiveQuestionBuzzer() {
+    //TODO: ricezione domanda e buzzer da parte del guest
     
+  }
+  
+  
+  
+  
+  
+  func signalPeerSendBuzz() {
+    //TODO: invio multipeer agli altri giocatori della prenotazione
     
   }
   
   func signalPeerSendWrongAnswer() {
-    //invio multipeer agli altri giocatori della risposta sbagliata
+    //TODO: invio multipeer agli altri giocatori della risposta sbagliata
   }
 
   func signalPeerSendRightAnswer() {
-    //invio multipeer agli altri giocatori della risposta esatta
+    //TODO: invio multipeer agli altri giocatori della risposta esatta
   }
   
   
@@ -204,9 +309,7 @@ class QuestionViewController: UIViewController {
   @objc func signalPeerReceiveBuzz() {
     timerReceiveBuzz.invalidate()
     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
-    //ricezione multipeer da altro giocatore
-    
-    //TODO: pause timer 30"
+    //TODO: ricezione multipeer da altro giocatore
     
     onHoldView.isHidden = false
     onHoldLabel.isHidden = false
@@ -215,9 +318,7 @@ class QuestionViewController: UIViewController {
   @objc func signalPeerReceiveWrongAnswer() {
     timerReceiveWrongAnswer.invalidate()
     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "startTimer"), object: nil)
-    //ricezione multipeer da altro giocatore
-    
-    //TODO: start timer 30"
+    //TODO: ricezione multipeer da altro giocatore
     
     onHoldView.isHidden = true
     onHoldLabel.isHidden = true
@@ -226,9 +327,8 @@ class QuestionViewController: UIViewController {
   
   @objc func signalPeerReceiveRightAnswer() {
     timerReceiveRightAnswer.invalidate()
-    //ricezione multipeer da altro giocatore
+    //TODO: ricezione multipeer da altro giocatore
     
-    //TODO: start timer 30"
     
     onHoldView.isHidden = true
     onHoldLabel.isHidden = true
@@ -264,8 +364,6 @@ class QuestionViewController: UIViewController {
   
 
   @objc func answersBlock() {
-    signalPeerSendWrongAnswer()  //invio al peer
-    
     self.buttonAnswerOne.fadeOutAnswers()
     Singleton.shared.delayWithSeconds(0.2) {
       self.buttonAnswerOne.alpha = 0
@@ -286,11 +384,11 @@ class QuestionViewController: UIViewController {
   
 
   @objc func timeOut() {
-    onHoldLabel.text = "Time Left!"
+    onHoldLabel.text = "Time is Up!"
     onHoldView.isHidden = false
     onHoldLabel.isHidden = false
     Singleton.shared.delayWithSeconds(4) {
-      self.randomBuzzers()
+      self.syncQuestionBuzzer()
       NotificationCenter.default.post(name: NSNotification.Name(rawValue: "startTimer"), object: nil)
       self.onHoldView.isHidden = true
       self.onHoldLabel.isHidden = true

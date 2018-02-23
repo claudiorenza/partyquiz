@@ -65,6 +65,5 @@ extension UIButton  {
     
     layer.add(animation, forKey: nil)
   }
-  
 }
 

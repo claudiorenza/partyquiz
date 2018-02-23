@@ -230,11 +230,11 @@
 		253E8E80203B198300FE75AD /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F9614DA9203B3AB2001F4448 /* QuestionViewController.swift */,
 				CDF7E4FC203DC6E9008F7286 /* PreStartViewController.swift */,
 				CDF7E4FD203DC6E9008F7286 /* SettingsViewController.swift */,
 				CDF7E4FB203DC6E9008F7286 /* UpdateViewController.swift */,
 				CD8E4F74203B393D008C48AE /* MainPageViewController.swift */,
-				F9614DA9203B3AB2001F4448 /* QuestionViewController.swift */,
 				253490FA203B20E8006A3CEE /* MigrationViewController.swift */,
 			);
 			path = "View Controller";

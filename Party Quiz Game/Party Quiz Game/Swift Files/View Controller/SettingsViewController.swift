@@ -79,6 +79,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     var i:Int = 0
     var check:Bool = true
     
+    print("Numero domande CloudKit: \(CloudKitQuestions.shared.localQuestions.count)")
     print("Numero massimo: \(CoreDataManager.shared.countRow(nameEntity: entityNameQ, context: context))")
     randomNumbers.append(Int(arc4random_uniform(UInt32(CoreDataManager.shared.question.count))))
 //    print("Inserito \(randomNumbers[0]) in lista\n")
