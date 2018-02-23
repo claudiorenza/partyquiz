@@ -117,11 +117,22 @@ extension UIImageView {
     layer.add(animation, forKey: nil)
   }
   
-  func moveRightSpiral(view: UIView) {
+  func moveSpiral(view: UIView) {
     let animation = CABasicAnimation(keyPath: "position")
     animation.fromValue = self.center
-    animation.toValue = view.bounds.width * 0.9
+    animation.toValue = CGPoint(x: view.bounds.width, y: self.center.y)
     animation.duration = 3
+    animation.autoreverses = true
+    animation.repeatCount = Float.infinity
+    
+    layer.add(animation, forKey: nil)
+  }
+  
+  func growBar() {
+    let animation = CABasicAnimation(keyPath: "transform.scale.x")
+    animation.fromValue = 1
+    animation.toValue = 28
+    animation.duration = 2.9
     animation.autoreverses = true
     animation.repeatCount = Float.infinity
     

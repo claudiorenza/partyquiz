@@ -22,6 +22,10 @@ extension UIColor {
   class func spiralColor() -> UIColor {
     return UIColor(red: 45/255, green: 145/255, blue: 123/255, alpha: 1.0)
   }
+  
+  class func spiralLabelColor() -> UIColor {
+    return UIColor(red: 35/255, green: 113/255, blue: 96/255, alpha: 1.0)
+  }
  
   
     convenience init(hex: String) {
