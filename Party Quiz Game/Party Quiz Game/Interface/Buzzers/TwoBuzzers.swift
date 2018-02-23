@@ -32,6 +32,7 @@ class TwoBuzzers: UIView {
     label.clipsToBounds = true
     label.text = "\(index)"
     
+    leftBuzzer.isUserInteractionEnabled = true
     rightBuzzer.isUserInteractionEnabled = false
   }
   
@@ -55,6 +56,7 @@ class TwoBuzzers: UIView {
     } else {
       view.buzzerDown(view: view)
       leftBuzzer.isUserInteractionEnabled = false
+      rightBuzzer.isUserInteractionEnabled = false
       Singleton.shared.delayWithSeconds(0.4, completion: {
         self.removeFromSuperview()
       })
@@ -62,7 +64,6 @@ class TwoBuzzers: UIView {
       NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
       NotificationCenter.default.post(name: NSNotification.Name(rawValue: "twoBuzzersException"), object: nil)
       NotificationCenter.default.post(name: NSNotification.Name(rawValue: "answers"), object: nil)
-      //NotificationCenter.default.post(name: NSNotification.Name(rawValue: "buzzer"), object: nil)
     }
   }
   

@@ -41,7 +41,6 @@ class ShakeBuzzer: UIView {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "answers"), object: nil)
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "buzzer"), object: nil)
           })
         }
       }
