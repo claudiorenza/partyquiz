@@ -16,6 +16,7 @@ class TwoBuzzers: UIView {
   @IBOutlet weak var view: UIView!
   
   var index = 10
+  var audioBuzz = Audio(fileName: "buzz", typeName: "m4a")
   
   func setBuzzers() {
     leftBuzzer.layer.cornerRadius = 25
@@ -37,6 +38,7 @@ class TwoBuzzers: UIView {
   }
   
   @IBAction func pressLeftBuzzer(_ sender: UIButton) {
+    AudioSingleton.shared.audioButtonClick.player.play()
     index -= 1
     label.text = "\(index)"
     if index > 0 {
@@ -48,12 +50,14 @@ class TwoBuzzers: UIView {
   }
   
   @IBAction func pressRightBuzzer(_ sender: UIButton) {
+    AudioSingleton.shared.audioButtonClick.player.play()
     index -= 1
     label.text = "\(index)"
     if index > 0 {
       leftBuzzer.isUserInteractionEnabled = true
       rightBuzzer.isUserInteractionEnabled = false
     } else {
+      audioBuzz.player.play()
       view.buzzerDown(view: view)
       leftBuzzer.isUserInteractionEnabled = false
       rightBuzzer.isUserInteractionEnabled = false

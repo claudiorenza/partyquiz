@@ -13,12 +13,14 @@ class ShakeBuzzer: UIView {
 
   var index = 0
   var motionManager = CMMotionManager()
+  var audioBuzz = Audio(fileName: "buzz", typeName: "m4a")
   
   var indicatorViewInterval: CGFloat = 0.0
 
   @IBOutlet weak var viewOutlet: UIView!
   @IBOutlet weak var label: UILabel!
   @IBOutlet var indicatorView: UIView!
+  
 
   @objc func beginShaking() {
     motionManager.accelerometerUpdateInterval = 0.1
@@ -34,6 +36,7 @@ class ShakeBuzzer: UIView {
             })
           }
         } else {
+          self.audioBuzz.player.play()
           self.stopShaking()
           self.viewOutlet.buzzerDown(view: self.viewOutlet)
           Singleton.shared.delayWithSeconds(0.4, completion: {

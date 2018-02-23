@@ -12,6 +12,9 @@ import AVFoundation
 class AudioSingleton  {
   static let shared = AudioSingleton()
   
+  var audioButtonClick = Audio(fileName: "buttonClick", typeName: "m4a")
+  var audioMusic = Audio(fileName: "musicIntro", typeName: "m4a")
+  
   func setAudioShared()  {
     do {
       try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)

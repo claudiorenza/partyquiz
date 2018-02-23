@@ -2,7 +2,7 @@
 //  MainViewController.swift
 //  Party Quiz Game
 //
-//  Created by Giovanni Frate on 12/02/18.
+//  Created by Claudio Renza on 12/02/18.
 //  Copyright © 2018 Abusive Designers. All rights reserved.
 //
 
@@ -22,9 +22,8 @@ class QuestionViewController: UIViewController {
   @IBOutlet weak var onHoldView: UIView!
   @IBOutlet weak var onHoldLabel: UILabel!
   
-  //var audioPlayerBuzz = AVAudioPlayer()
-  var audioPlayerRightAnswer = AVAudioPlayer()
-  var audioPlayerWrongAnswer = AVAudioPlayer()
+  var audioAnswerRight = Audio(fileName: "answerRight", typeName: "m4a")
+  var audioAnswerWrong = Audio(fileName: "answerWrong", typeName: "m4a")
   
   var question: [String:String] = ["text":"Capitale dell'Italia", "correctlyAnswer":"Roma", "wrongAnswer1":"Torino", "wrongAnswer2":"Napoli", "wrongAnswer3":"Firenze", "category":"Geografia"]
   
@@ -60,23 +59,7 @@ class QuestionViewController: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     syncQuestionBuzzer()  //qui è chiamata solo la prima volta
-    // copy this syntax, it tells the compiler what to do when action is received
-    
-    //let audioBuzz = Bundle.main.path(forResource: "buttonClick", ofType: "m4a")
-    let audioRightAnswer = Bundle.main.path(forResource: "answerRight", ofType: "m4a")
-    let audioWrongAnswer = Bundle.main.path(forResource: "answerWrong", ofType: "m4a")
-    
-    do {
-      //audioPlayerBuzz = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioBuzz! ))
-      audioPlayerRightAnswer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioRightAnswer! ))
-      audioPlayerWrongAnswer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioWrongAnswer! ))
-      
-      try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
-      try AVAudioSession.sharedInstance().setActive(true)
-    }
-    catch{
-      print(error)
-    }
+    AudioSingleton.shared.setAudioShared()
   }
   
   func syncQuestionBuzzer() {
@@ -207,8 +190,8 @@ class QuestionViewController: UIViewController {
   
   func rightAnswer(button: UIButton)  {
     disableAnswersInteractions()
+    audioAnswerRight.player.play()
     button.backgroundColor = .green
-    //TODO: Suono vittoria
     signalPeerSendRightAnswer()
     Singleton.shared.delayWithSeconds(3) {
       self.enableAnswersInteraction()
@@ -219,8 +202,8 @@ class QuestionViewController: UIViewController {
   
   func wrongAnswer(button: UIButton)  {
     disableAnswersInteractions()
+    audioAnswerWrong.player.play()
     button.backgroundColor = .red
-    //TODO: Suono errore
     signalPeerSendWrongAnswer()
     Singleton.shared.delayWithSeconds(1.5) {
       self.answersBlock()

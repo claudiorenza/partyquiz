@@ -3,7 +3,7 @@
 //  SimpleBuzzer
 //
 //  Created by Giovanni Frate on 15/02/18.
-//  Copyright © 2018 Giovanni Frate. All rights reserved.
+//  Copyright © 2018 Abusive Designers. All rights reserved.
 //
 
 import Foundation
@@ -15,6 +15,8 @@ class BlowBuzzer: UIView {
 
   var recorder: AVAudioRecorder!
   var levelTimer = Timer()
+  var audioBuzz = Audio(fileName: "buzz", typeName: "m4a")
+  
   var index = 0
   var indicatorViewInterval: CGFloat = 0.0
   var indicatorViewInitialPoint: CGFloat = 0.0
@@ -63,6 +65,7 @@ class BlowBuzzer: UIView {
         })
       }
     } else if index == 1000 {
+      audioBuzz.player.play()
       viewOutlet.buzzerDown(view: viewOutlet)
       Singleton.shared.delayWithSeconds(0.4, completion: {
         self.removeFromSuperview()
