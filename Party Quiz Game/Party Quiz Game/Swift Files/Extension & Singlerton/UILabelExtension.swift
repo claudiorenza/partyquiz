@@ -36,4 +36,15 @@ extension UILabel {
     
     layer.add(animation, forKey: nil)
   }
+  
+  func blink() {
+    let animation = CABasicAnimation(keyPath: "opacity")
+    animation.fromValue = 1
+    animation.toValue = 0
+    animation.duration = 0.3
+    animation.autoreverses = true
+    animation.repeatCount = Float.infinity
+    
+    layer.add(animation, forKey: nil)
+  }
 }
