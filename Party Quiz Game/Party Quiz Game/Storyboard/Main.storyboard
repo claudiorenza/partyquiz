@@ -219,7 +219,6 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="createGameAction:" destination="g28-jk-LDH" eventType="touchUpInside" id="G6H-ts-14P"/>
                                     <action selector="pressToCreate:" destination="g28-jk-LDH" eventType="touchUpInside" id="raT-pv-kCg"/>
                                 </connections>
                             </button>
