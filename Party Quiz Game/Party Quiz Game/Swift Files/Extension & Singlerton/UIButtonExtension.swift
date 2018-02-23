@@ -11,20 +11,12 @@ import UIKit
 
 extension UIButton  {
   
-  func entering(directionFrom: String, view: UIView, duration: Double) {
+  func entering(view: UIView) {
     let animation = CABasicAnimation(keyPath: "position")
-    var cgPointButtonInit = self.center
-    let cgPointButtonFinal = cgPointButtonInit
     
-    if(directionFrom == "left") {
-      cgPointButtonInit.x = -self.frame.width
-    } else if (directionFrom == "right")    {
-      cgPointButtonInit.x = view.bounds.width + self.frame.width
-    }
-    
-    animation.fromValue = NSValue(cgPoint: cgPointButtonInit)
-    animation.toValue = NSValue(cgPoint: cgPointButtonFinal)
-    animation.duration = duration
+    animation.fromValue = self.center
+    animation.toValue = CGPoint(x: view.frame.midX, y: self.center.y)
+    animation.duration = 1
     animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
     
     layer.add(animation, forKey: nil)
