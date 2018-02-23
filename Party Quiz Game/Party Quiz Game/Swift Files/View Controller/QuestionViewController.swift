@@ -26,8 +26,6 @@ class QuestionViewController: UIViewController {
   var audioAnswerRight = Audio(fileName: "answerRight", typeName: "m4a")
   var audioAnswerWrong = Audio(fileName: "answerWrong", typeName: "m4a")
   
-  var question: [String:String] = ["text":"Capitale dell'Italia", "correctlyAnswer":"Roma", "wrongAnswer1":"Torino", "wrongAnswer2":"Napoli", "wrongAnswer3":"Firenze", "category":"Geografia"]
-  
   var timerReceiveBuzz: Timer!        //SIMULATION
   var timerReceiveWrongAnswer: Timer! //SIMULATION
   var timerReceiveRightAnswer: Timer! //SIMULATION
