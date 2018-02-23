@@ -120,8 +120,8 @@ extension UIImageView {
   func moveSpiral(view: UIView) {
     let animation = CABasicAnimation(keyPath: "position")
     animation.fromValue = self.center
-    animation.toValue = CGPoint(x: view.bounds.width, y: self.center.y)
-    animation.duration = 3
+    animation.toValue = CGPoint(x: view.bounds.width * 0.5, y: self.center.y)
+    animation.duration = 2
     animation.autoreverses = true
     animation.repeatCount = Float.infinity
     
