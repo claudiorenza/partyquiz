@@ -11,6 +11,7 @@ import UIKit
 class QuestionViewController: UIViewController {
   
   // - MARK: 1: Variables and Outlets declaration
+  static let shared = QuestionViewController()
   @IBOutlet weak var buzzerView: UIView!
   @IBOutlet weak var progressControllerView: UIView!
   @IBOutlet var questionOutlet: UILabel!
@@ -28,6 +29,13 @@ class QuestionViewController: UIViewController {
   // orange is good
   var index = 0
   var point = CGPoint()
+  
+  
+  // JOHNNY'S ZONE
+  var question: [String:String] = ["text": PeerManager.peerShared.question, "correctlyAnswer": PeerManager.peerShared.correct, "wrongAnswer1": PeerManager.peerShared.wrong1, "wrongAnswer2": PeerManager.peerShared.wrong2, "wrongAnswer3": PeerManager.peerShared.wrong3]
+  
+  // END OF JOHNNY'S ZONE
+  
 
   // - MARK: 2: ViewDidLoad
   override func viewDidLoad() {
@@ -38,6 +46,12 @@ class QuestionViewController: UIViewController {
     NotificationCenter.default.addObserver(self, selector: #selector(self.loadProgressView10), name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.buzzerSignal), name: NSNotification.Name(rawValue: "buzzer"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.answersAppear), name: NSNotification.Name(rawValue: "answers"), object: nil)
+    let currentQuestion = CoreDataManager.shared.questionDictionary[0]
+    questionOutlet.text = currentQuestion["text"]
+    buttonAnswerOne.setTitle(currentQuestion["wrongAnswer1"], for: .normal)
+    buttonAnswerTwo.setTitle(currentQuestion["wrongAnswer2"], for: .normal)
+    buttonAnswerThree.setTitle(currentQuestion["correctlyAnswer"], for: .normal)
+    buttonAnswerFour.setTitle(currentQuestion["wrongAnswer3"], for: .normal)
   }
   
   override func viewWillAppear(_ animated: Bool) {

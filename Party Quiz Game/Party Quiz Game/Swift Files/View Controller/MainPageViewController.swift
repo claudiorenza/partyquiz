@@ -22,7 +22,9 @@ class MainPageViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    PeerManager.peerShared.mainVC = self
+    PeerManager.peerShared.viewController = self
+    PeerManager.peerShared.setupConnection()
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -58,20 +60,15 @@ class MainPageViewController: UIViewController {
   }
   
   @IBAction func pressToCreate(_ sender: UIButton) {
-//    PeerManager.shared.stopBrowser()
-//    PeerManager.shared.setupAdvertise()
-//    PeerManager.shared.startAdvertise()
-//    present(PeerManager.shared.controller, animated: true, completion: nil)
-    
     audioPlayerButtonClick.play()
     audioPlayerMusic.stop()
   }
   
   @IBAction func pressToJoin(_ sender: UIButton) {
-//    PeerManager.shared.stopAdvertise()
-//    PeerManager.shared.setupSession()
-//    PeerManager.shared.setupBrowser()
-//    present(PeerManager.shared.controller, animated: true, completion: nil)
+    PeerManager.peerShared.stopAdvertiser()
+    PeerManager.peerShared.startBrowser()
+    PeerManager.peerShared.setupBrowserVC()
+    present(PeerManager.peerShared.browserVC, animated: true, completion: nil)
     audioPlayerButtonClick.play()
     audioPlayerMusic.stop()
   }
@@ -84,7 +81,7 @@ class MainPageViewController: UIViewController {
     createGameOutlet.exit(directionTo: "left", view: view)
     joinGameOutlet.exit(directionTo: "right", view: view)
     Singleton.shared.delayWithSeconds(0.8) {
-      self.performSegue(withIdentifier: "segue", sender: self)
+      self.performSegue(withIdentifier: "fromCreate1", sender: self)
     }
   }
 }

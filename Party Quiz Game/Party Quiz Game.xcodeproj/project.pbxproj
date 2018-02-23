@@ -17,6 +17,7 @@
 		253E8E6C203B17A500FE75AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 253E8E6B203B17A500FE75AD /* Assets.xcassets */; };
 		253E8E6F203B17A500FE75AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 253E8E6D203B17A500FE75AD /* LaunchScreen.storyboard */; };
 		253E8E79203B185300FE75AD /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253E8E78203B185300FE75AD /* CloudKit.framework */; };
+		AC6CF7C1203F1725006E0E73 /* PeerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6CF7C0203F1725006E0E73 /* PeerManager.swift */; };
 		CD2E985C203C58AB00CE646E /* TwoBuzzersPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2E9854203C58AB00CE646E /* TwoBuzzersPopUp.xib */; };
 		CD2E985D203C58AB00CE646E /* TwoBuzzersPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E9855203C58AB00CE646E /* TwoBuzzersPopUp.swift */; };
 		CD2E985E203C58AB00CE646E /* BlowBuzzerPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E9856203C58AB00CE646E /* BlowBuzzerPopUp.swift */; };
@@ -74,6 +75,7 @@
 		253E8E70203B17A500FE75AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		253E8E76203B184C00FE75AD /* Party Quiz Game.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Party Quiz Game.entitlements"; sourceTree = "<group>"; };
 		253E8E78203B185300FE75AD /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		AC6CF7C0203F1725006E0E73 /* PeerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerManager.swift; sourceTree = "<group>"; };
 		CD2E9854203C58AB00CE646E /* TwoBuzzersPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwoBuzzersPopUp.xib; sourceTree = "<group>"; };
 		CD2E9855203C58AB00CE646E /* TwoBuzzersPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoBuzzersPopUp.swift; sourceTree = "<group>"; };
 		CD2E9856203C58AB00CE646E /* BlowBuzzerPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlowBuzzerPopUp.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 				CD8E4F8C203B3E46008C48AE /* UIColorExtension.swift */,
 				F9646A47203C703B0071BDA7 /* UILabelExtension.swift */,
 				F9646A49203C73C50071BDA7 /* Singleton.swift */,
+				AC6CF7C0203F1725006E0E73 /* PeerManager.swift */,
 			);
 			path = "Extension & Singlerton";
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				25349101203B2180006A3CEE /* CheckConnection.swift in Sources */,
 				CDF7E500203DC6E9008F7286 /* SettingsViewController.swift in Sources */,
 				253E8E6A203B17A500FE75AD /* Party_Quiz_Game.xcdatamodeld in Sources */,
+				AC6CF7C1203F1725006E0E73 /* PeerManager.swift in Sources */,
 				CD2E9871203C58BA00CE646E /* TwoBuzzers.swift in Sources */,
 				CD8E4FB9203B3FD7008C48AE /* UIViewExtension.swift in Sources */,
 				CD8E4F8E203B3E46008C48AE /* UIColorExtension.swift in Sources */,
