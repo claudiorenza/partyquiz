@@ -12,13 +12,16 @@ import AVFoundation
 
 
 class Audio {
-  var audioPlayer = AVAudioPlayer()
+  var player: AVAudioPlayer!
   
-  func setPlayer(fileName: String, typeName: String)  {
-    
-    
+  init(fileName: String, typeName: String)  {
+    let audioURL = Bundle.main.path(forResource: fileName, ofType: typeName)
+    do {
+      player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioURL!))
+    }
+    catch{
+      print(error)
+    }
   }
-  
-  
 }
 

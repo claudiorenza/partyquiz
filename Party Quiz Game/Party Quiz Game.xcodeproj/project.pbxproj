@@ -52,6 +52,7 @@
 		CD8E4FB9203B3FD7008C48AE /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E4FB7203B3FD7008C48AE /* UIViewExtension.swift */; };
 		CD8E4FBA203B3FD7008C48AE /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E4FB8203B3FD7008C48AE /* UIImageViewExtension.swift */; };
 		CDE0A63D204031E0000FD481 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE0A63C204031E0000FD481 /* Audio.swift */; };
+		CDE0A642204055FB000FD481 /* AudioSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE0A641204055FB000FD481 /* AudioSingleton.swift */; };
 		CDF7E4FE203DC6E9008F7286 /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E4FB203DC6E9008F7286 /* UpdateViewController.swift */; };
 		CDF7E4FF203DC6E9008F7286 /* PreStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E4FC203DC6E9008F7286 /* PreStartViewController.swift */; };
 		CDF7E500203DC6E9008F7286 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E4FD203DC6E9008F7286 /* SettingsViewController.swift */; };
@@ -110,6 +111,7 @@
 		CD8E4FB7203B3FD7008C48AE /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		CD8E4FB8203B3FD7008C48AE /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		CDE0A63C204031E0000FD481 /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
+		CDE0A641204055FB000FD481 /* AudioSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSingleton.swift; sourceTree = "<group>"; };
 		CDF7E4FB203DC6E9008F7286 /* UpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
 		CDF7E4FC203DC6E9008F7286 /* PreStartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreStartViewController.swift; sourceTree = "<group>"; };
 		CDF7E4FD203DC6E9008F7286 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				253490FF203B2180006A3CEE /* CheckConnection.swift */,
 				25349100203B2180006A3CEE /* ManageQuestions.swift */,
 				CDE0A63C204031E0000FD481 /* Audio.swift */,
+				CDE0A641204055FB000FD481 /* AudioSingleton.swift */,
 				CD8E4F8B203B3E36008C48AE /* Extension & Singlerton */,
 				253E8E80203B198300FE75AD /* View Controller */,
 				253E8E7F203B197E00FE75AD /* Delegate */,
@@ -433,6 +436,7 @@
 				253E8E62203B17A500FE75AD /* AppDelegate.swift in Sources */,
 				253490F8203B1B9A006A3CEE /* CloudKitQuestionsClass.swift in Sources */,
 				F9614DAA203B3AB2001F4448 /* QuestionViewController.swift in Sources */,
+				CDE0A642204055FB000FD481 /* AudioSingleton.swift in Sources */,
 				253490FD203B20E8006A3CEE /* MigrationViewController.swift in Sources */,
 				CD2E9872203C58BA00CE646E /* BlowBuzzer.swift in Sources */,
 				F9646A4A203C73C50071BDA7 /* Singleton.swift in Sources */,
