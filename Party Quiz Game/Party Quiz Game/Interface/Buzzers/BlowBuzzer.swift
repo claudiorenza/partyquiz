@@ -22,7 +22,6 @@ class BlowBuzzer: UIView {
   @IBOutlet weak var viewOutlet: UIView!
   @IBOutlet var indicatorView: UIView!
 
-  
   @objc func startBlowing() {
     let documents = URL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0])
     let url = documents.appendingPathComponent("record.caf")
@@ -59,7 +58,9 @@ class BlowBuzzer: UIView {
       if level > -10 {
         index += 1
         label.text = ("\(index / 10)")
-        indicatorView.frame = CGRect(x: indicatorView.frame.origin.x, y: indicatorView.frame.origin.y, width: indicatorView.frame.width, height: (indicatorViewInterval * CGFloat(1000-index)/1000))
+        UIView.animate(withDuration: 0.2, animations: {
+          self.indicatorView.frame = CGRect(x: self.indicatorView.frame.origin.x, y: self.indicatorView.frame.origin.y, width: self.indicatorView.frame.width, height: (self.indicatorViewInterval * CGFloat(1000-self.index)/1000))
+        })
       }
     } else if index == 1000 {
       viewOutlet.buzzerDown(view: viewOutlet)
@@ -71,8 +72,7 @@ class BlowBuzzer: UIView {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "buzzer"), object: nil)
       })
       label.text = "Done!"
-      recorder.stop()
-      levelTimer.invalidate()
+      stopBlowing()
     }
   }
   
@@ -89,11 +89,17 @@ class BlowBuzzer: UIView {
   
   func loadPopUp() {
     NotificationCenter.default.addObserver(self, selector: #selector(self.startBlowing), name: NSNotification.Name(rawValue: "startBlowing"), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(self.stopBlowing), name: NSNotification.Name(rawValue: "stopBlowing"), object: nil)
     if let blowBuzzerPopUp = Bundle.main.loadNibNamed("BlowBuzzerPopUp", owner: self, options: nil)?.first as? BlowBuzzerPopUp {
       self.addSubview(blowBuzzerPopUp)
       blowBuzzerPopUp.setViewElements()
       blowBuzzerPopUp.frame = self.bounds
     }
+  }
+  
+  @objc func stopBlowing() {
+    recorder.stop()
+    levelTimer.invalidate()
   }
 
 }
