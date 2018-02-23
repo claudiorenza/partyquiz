@@ -90,7 +90,7 @@ class QuestionViewController: UIViewController {
     
     //if "sono host"
       //preparo e invio la domanda, e il buzzer scelto casualmente
-      indexBuzzer = Int(arc4random_uniform(4))  //buzzer random
+    indexBuzzer = Int(arc4random_uniform(4))  //buzzer random
     //else "sono guest"
       //attendo di ricevere la domanda e il buzzer
     
@@ -311,9 +311,7 @@ class QuestionViewController: UIViewController {
   func signalPeerSendRightAnswer() {
     //TODO: invio multipeer agli altri giocatori della risposta esatta
     
-    Singleton.shared.delayWithSeconds(3) {
-      self.syncQuestionBuzzer()
-    }
+    
   }
   
   
@@ -340,7 +338,9 @@ class QuestionViewController: UIViewController {
   @objc func signalPeerReceiveRightAnswer() {
     timerReceiveRightAnswer.invalidate()
     //TODO: ricezione multipeer da altro giocatore
-    
+    Singleton.shared.delayWithSeconds(3) {
+      self.syncQuestionBuzzer()
+    }
     onHoldView.isHidden = true
     onHoldLabel.isHidden = true
   }
