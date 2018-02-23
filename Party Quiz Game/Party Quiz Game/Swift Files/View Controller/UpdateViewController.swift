@@ -13,7 +13,6 @@ import CoreData
 class UpdateViewController: UIViewController {
   
   @IBOutlet weak var spiral: UIImageView!
-  @IBOutlet weak var bar: UIImageView!
   @IBOutlet weak var label: UILabel!
   @IBOutlet var dots: [UILabel]!
   
@@ -25,10 +24,8 @@ class UpdateViewController: UIViewController {
   let entity = CoreDataManager.shared.createEntity(nameEntity: "Question")
   
   override func viewWillAppear(_ animated: Bool) {
-    bar.backgroundColor = UIColor.spiralColor()
     label.textColor = UIColor.spiralLabelColor()
     spiral.moveSpiral(view: view)
-    bar.growBar()
     dotBlinking()
   }
   

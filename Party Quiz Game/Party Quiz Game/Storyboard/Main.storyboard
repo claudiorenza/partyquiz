@@ -183,10 +183,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tNM-Ni-qPT">
-                                <rect key="frame" x="0.0" y="277" width="38" height="4"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Spiral" translatesAutoresizingMaskIntoConstraints="NO" id="agC-4z-xXv">
                                 <rect key="frame" x="10" y="225" width="59" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -224,7 +220,6 @@
                         <viewLayoutGuide key="safeArea" id="TRM-zD-J3h"/>
                     </view>
                     <connections>
-                        <outlet property="bar" destination="tNM-Ni-qPT" id="CfF-XE-79F"/>
                         <outlet property="label" destination="ITt-wd-2Xl" id="kZd-H0-HUT"/>
                         <outlet property="spiral" destination="agC-4z-xXv" id="LHA-WL-p68"/>
                         <outletCollection property="dots" destination="eXh-YU-FAt" collectionClass="NSMutableArray" id="XIw-14-co3"/>
