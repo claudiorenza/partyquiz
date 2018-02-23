@@ -12,12 +12,25 @@ import CoreData
 
 class UpdateViewController: UIViewController {
   
+  @IBOutlet weak var spiral: UIImageView!
+  @IBOutlet weak var bar: UIImageView!
+  @IBOutlet weak var label: UILabel!
+  @IBOutlet var dots: [UILabel]!
+  
   var cloudKitDatabase = CloudKitQuestions.shared
   
   let entityNameQ = "Question"
   
   let context = CoreDataManager.shared.createContext()
   let entity = CoreDataManager.shared.createEntity(nameEntity: "Question")
+  
+  override func viewWillAppear(_ animated: Bool) {
+    bar.backgroundColor = UIColor.spiralColor()
+    label.textColor = UIColor.spiralLabelColor()
+    spiral.moveSpiral(view: view)
+    bar.growBar()
+    dotBlinking()
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -78,5 +91,33 @@ class UpdateViewController: UIViewController {
     }
   }
 
+  func dot1Blink() {
+    dots[0].blink()
+  }
+  
+  func dot2Blink() {
+    dots[0].blink()
+    dots[1].blink()
+  }
+  
+  func dot3Blink() {
+    dots[0].blink()
+    dots[1].blink()
+    dots[2].blink()
+  }
+  
+  func dotBlinking() {
+    dot1Blink()
+    Singleton.shared.delayWithSeconds(0.3) {
+      self.dot2Blink()
+    }
+    Singleton.shared.delayWithSeconds(0.6) {
+      self.dot3Blink()
+    }
+    Singleton.shared.delayWithSeconds(0.9) {
+      self.dotBlinking()
+    }
+  }
+  
 }
 
