@@ -209,6 +209,9 @@ class QuestionViewController: UIViewController {
     button.backgroundColor = .green
     //TODO: Suono vittoria
     signalPeerSendRightAnswer()
+    Singleton.shared.delayWithSeconds(3) {
+      self.syncQuestionBuzzer()
+    }
     
   }
   
@@ -216,43 +219,48 @@ class QuestionViewController: UIViewController {
     button.backgroundColor = .red
     //TODO: Suono errore
     signalPeerSendWrongAnswer()
-    answersBlock()
+    Singleton.shared.delayWithSeconds(1.5) {
+      self.answersBlock()
+      self.onHoldLabel.text = "Waiting for other players"
+      self.onHoldLabel.isHidden = false
+      self.onHoldView.isHidden = false
+    }
   }
   
   @IBAction func buttonAnswerOneAction(_ sender: UIButton) {
+    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
     if buttonAnswerOne.titleLabel?.text == question["correctlyAnswer"] {
       rightAnswer(button: buttonAnswerOne)
     } else  {
       wrongAnswer(button: buttonAnswerOne)
     }
-    //syncQuestionBuzzer()
   }
   
   @IBAction func buttonAnswerTwoAction(_ sender: UIButton) {
+    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
     if buttonAnswerTwo.titleLabel?.text == question["correctlyAnswer"] {
       rightAnswer(button: buttonAnswerTwo)
     } else  {
       wrongAnswer(button: buttonAnswerTwo)
     }
-    //syncQuestionBuzzer()
   }
   
   @IBAction func buttonAnswerThreeAction(_ sender: UIButton) {
+    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
     if buttonAnswerThree.titleLabel?.text == question["correctlyAnswer"] {
       rightAnswer(button: buttonAnswerThree)
     } else  {
       wrongAnswer(button: buttonAnswerThree)
     }
-    //syncQuestionBuzzer()
   }
   
   @IBAction func buttonAnswerFourAction(_ sender: UIButton) {
+    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
     if buttonAnswerFour.titleLabel?.text == question["correctlyAnswer"] {
       rightAnswer(button: buttonAnswerFour)
     } else  {
       wrongAnswer(button: buttonAnswerFour)
     }
-    //syncQuestionBuzzer()
   }
   
   
@@ -302,6 +310,10 @@ class QuestionViewController: UIViewController {
 
   func signalPeerSendRightAnswer() {
     //TODO: invio multipeer agli altri giocatori della risposta esatta
+    
+    Singleton.shared.delayWithSeconds(3) {
+      self.syncQuestionBuzzer()
+    }
   }
   
   
@@ -328,7 +340,6 @@ class QuestionViewController: UIViewController {
   @objc func signalPeerReceiveRightAnswer() {
     timerReceiveRightAnswer.invalidate()
     //TODO: ricezione multipeer da altro giocatore
-    
     
     onHoldView.isHidden = true
     onHoldLabel.isHidden = true
