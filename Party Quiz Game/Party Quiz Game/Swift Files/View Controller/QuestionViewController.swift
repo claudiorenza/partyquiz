@@ -225,7 +225,7 @@ class QuestionViewController: UIViewController {
     } else  {
       wrongAnswer(button: buttonAnswerOne)
     }
-    syncQuestionBuzzer()
+    //syncQuestionBuzzer()
   }
   
   @IBAction func buttonAnswerTwoAction(_ sender: UIButton) {
@@ -234,7 +234,7 @@ class QuestionViewController: UIViewController {
     } else  {
       wrongAnswer(button: buttonAnswerTwo)
     }
-    syncQuestionBuzzer()
+    //syncQuestionBuzzer()
   }
   
   @IBAction func buttonAnswerThreeAction(_ sender: UIButton) {
@@ -243,7 +243,7 @@ class QuestionViewController: UIViewController {
     } else  {
       wrongAnswer(button: buttonAnswerThree)
     }
-    syncQuestionBuzzer()
+    //syncQuestionBuzzer()
   }
   
   @IBAction func buttonAnswerFourAction(_ sender: UIButton) {
@@ -252,7 +252,7 @@ class QuestionViewController: UIViewController {
     } else  {
       wrongAnswer(button: buttonAnswerFour)
     }
-    syncQuestionBuzzer()
+    //syncQuestionBuzzer()
   }
   
   
