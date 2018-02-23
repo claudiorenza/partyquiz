@@ -32,7 +32,7 @@ class QuestionViewController: UIViewController {
   var timerReceiveWrongAnswer: Timer! //SIMULATION
   var timerReceiveRightAnswer: Timer! //SIMULATION
   
-  let backgoundBase = UIColor(red: 67/255, green: 59/255, blue: 240/255, alpha: 1)
+  let backgoundBlueOcean = UIColor(red: 67/255, green: 59/255, blue: 240/255, alpha: 1)
   let backgoundLilla = UIColor(red: 189/255, green: 16/255, blue: 224/255, alpha: 1)
 
   var indexBuzzer = 0
@@ -41,7 +41,7 @@ class QuestionViewController: UIViewController {
   // - MARK: 2: ViewDidLoad
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = backgoundBase
+    view.backgroundColor = backgoundBlueOcean
     setAnswersQuestion()
     NotificationCenter.default.addObserver(self, selector: #selector(self.loadProgressView30), name: NSNotification.Name(rawValue: "loadProgressView30"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.loadProgressView10), name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
@@ -205,22 +205,25 @@ class QuestionViewController: UIViewController {
   }
   
   func rightAnswer(button: UIButton)  {
+    disableAnswersInteractions()
     button.backgroundColor = .green
     //TODO: Suono vittoria
     signalPeerSendRightAnswer()
     Singleton.shared.delayWithSeconds(3) {
+      self.enableAnswersInteraction()
       self.syncQuestionBuzzer()
       self.answersBlock()
     }
-    
   }
   
   func wrongAnswer(button: UIButton)  {
+    disableAnswersInteractions()
     button.backgroundColor = .red
     //TODO: Suono errore
     signalPeerSendWrongAnswer()
     Singleton.shared.delayWithSeconds(1.5) {
       self.answersBlock()
+      self.enableAnswersInteraction()
       self.onHoldLabel.text = "Waiting"
       self.onHoldLabel.isHidden = false
       self.onHoldView.isHidden = false
@@ -312,6 +315,8 @@ class QuestionViewController: UIViewController {
   @objc func signalPeerReceiveBuzz() {
     timerReceiveBuzz.invalidate()
     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
+    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopBlowing"), object: nil)
+    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopShaking"), object: nil)
     //TODO: ricezione multipeer da altro giocatore
     
     onHoldView.isHidden = false
@@ -403,5 +408,19 @@ class QuestionViewController: UIViewController {
       self.buttonAnswerThree.alpha = 0
       self.buttonAnswerFour.alpha = 0
     }
+  }
+  
+  func disableAnswersInteractions() {
+    buttonAnswerOne.isUserInteractionEnabled = false
+    buttonAnswerTwo.isUserInteractionEnabled = false
+    buttonAnswerThree.isUserInteractionEnabled = false
+    buttonAnswerFour.isUserInteractionEnabled = false
+  }
+  
+  func enableAnswersInteraction() {
+    buttonAnswerOne.isUserInteractionEnabled = true
+    buttonAnswerTwo.isUserInteractionEnabled = true
+    buttonAnswerThree.isUserInteractionEnabled = true
+    buttonAnswerFour.isUserInteractionEnabled = true
   }
 }

@@ -16,12 +16,10 @@ class ShakeBuzzer: UIView {
   
   var indicatorViewInterval: CGFloat = 0.0
 
-  
   @IBOutlet weak var viewOutlet: UIView!
   @IBOutlet weak var label: UILabel!
   @IBOutlet var indicatorView: UIView!
 
-  
   @objc func beginShaking() {
     motionManager.accelerometerUpdateInterval = 0.1
     motionManager.startAccelerometerUpdates(to: OperationQueue.current!) {
@@ -31,10 +29,12 @@ class ShakeBuzzer: UIView {
           if (myData.acceleration.x > 1.2 || myData.acceleration.y > 1.2 || myData.acceleration.z > 1.2) {
             self.index += 1
             self.label.text = "\(self.index)"
-            self.indicatorView.frame = CGRect(x: self.indicatorView.frame.origin.x, y: self.indicatorView.frame.origin.y, width: self.indicatorView.frame.width, height: (self.indicatorViewInterval * CGFloat(10-self.index)/10))
+            UIView.animate(withDuration: 0.2, animations: {
+              self.indicatorView.frame = CGRect(x: self.indicatorView.frame.origin.x, y: self.indicatorView.frame.origin.y, width: self.indicatorView.frame.width, height: (self.indicatorViewInterval * CGFloat(10-self.index)/10))
+            })
           }
         } else {
-          self.motionManager.stopAccelerometerUpdates()
+          self.stopShaking()
           self.viewOutlet.buzzerDown(view: self.viewOutlet)
           Singleton.shared.delayWithSeconds(0.4, completion: {
             self.removeFromSuperview()
@@ -67,11 +67,16 @@ class ShakeBuzzer: UIView {
   
   func loadPopUp() {
     NotificationCenter.default.addObserver(self, selector: #selector(self.beginShaking), name: NSNotification.Name(rawValue: "beginShaking"), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(self.stopShaking), name: NSNotification.Name(rawValue: "stopShaking"), object: nil)
     if let shakeBuzzerPopUp = Bundle.main.loadNibNamed("ShakeBuzzerPopUp", owner: self, options: nil)?.first as? ShakeBuzzerPopUp {
       self.addSubview(shakeBuzzerPopUp)
       shakeBuzzerPopUp.setViewElements()
       shakeBuzzerPopUp.frame = self.bounds
     }
+  }
+  
+  @objc func stopShaking() {
+    motionManager.stopAccelerometerUpdates()
   }
 
 }
