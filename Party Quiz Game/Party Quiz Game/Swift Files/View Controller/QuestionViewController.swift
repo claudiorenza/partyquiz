@@ -34,6 +34,7 @@ class QuestionViewController: UIViewController {
   
   let backgoundBlueOcean = UIColor(red: 67/255, green: 59/255, blue: 240/255, alpha: 1)
   let backgoundLilla = UIColor(red: 189/255, green: 16/255, blue: 224/255, alpha: 1)
+  let backgroundRed = UIColor(red: 243/255, green: 75/255, blue: 75/255, alpha: 1)
 
   var indexBuzzer = 0
   var point = CGPoint()
@@ -150,7 +151,7 @@ class QuestionViewController: UIViewController {
         twoBuzzers.loadPopUp(view: view)
         twoBuzzers.setBuzzers()
         twoBuzzers.frame = buzzerView.bounds
-        changeBackgroundColor(finalColor: UIColor.red)
+        changeBackgroundColor(finalColor: backgroundRed)
       }
     } else if indexBuzzer == 2 {
       if let shakeBuzzer = Bundle.main.loadNibNamed("ShakeBuzzer", owner: self, options: nil)?.first as? ShakeBuzzer {
