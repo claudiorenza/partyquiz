@@ -11,12 +11,16 @@ import UIKit
 
 extension UIColor {
   
-  class func borderColorGray()  -> CGColor  {
-    return UIColor(red: 96.0/255.0, green: 96.0/255.0, blue: 96.0/255.0, alpha: 1.0).cgColor
+  class func colorGray()  -> UIColor  {
+    return UIColor(red: 96.0/255.0, green: 96.0/255.0, blue: 96.0/255.0, alpha: 1.0)
   }
   
-  class func bottonColorLightBlue()  -> UIColor  {
+  class func colorLightBlue()  -> UIColor  {
     return UIColor(red: 136/255, green: 226/255, blue: 243/255, alpha: 1.0)
+  }
+  
+  class func colorGreen()  -> UIColor  {
+    return UIColor(red: 33/255, green: 165/255, blue: 21/255, alpha: 1.0)
   }
   
   class func spiralColor() -> UIColor {

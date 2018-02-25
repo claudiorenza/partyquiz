@@ -24,15 +24,15 @@ class TwoBuzzers: UIView {
   func setBuzzers() {
     leftBuzzer.layer.cornerRadius = 25
     leftBuzzer.layer.borderWidth = 6.0
-    leftBuzzer.layer.borderColor = UIColor.borderColorGray()
+    leftBuzzer.layer.borderColor = UIColor.colorGray().cgColor
     
     rightBuzzer.layer.cornerRadius = 25
     rightBuzzer.layer.borderWidth = 6.0
-    rightBuzzer.layer.borderColor = UIColor.borderColorGray()
+    rightBuzzer.layer.borderColor = UIColor.colorGray().cgColor
     
     label.layer.cornerRadius = 15
     label.layer.borderWidth = 3.0
-    label.layer.borderColor = UIColor.borderColorGray()
+    label.layer.borderColor = UIColor.colorGray().cgColor
     label.clipsToBounds = true
     label.text = "\(index)"
     
@@ -84,8 +84,13 @@ class TwoBuzzers: UIView {
     })
   }
   
+  @objc func hideBuzzer() {
+    self.removeFromSuperview()
+  }
+  
   func loadPopUp(view: UIView) {
     NotificationCenter.default.addObserver(self, selector: #selector(self.timerWinner), name: NSNotification.Name(rawValue: "winnerTimer"), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(self.hideBuzzer), name: NSNotification.Name(rawValue: "hideBuzzer"), object: nil)
     if let twoBuzzersPopUp = Bundle.main.loadNibNamed("TwoBuzzersPopUp", owner: self, options: nil)?.first as? TwoBuzzersPopUp {
       self.addSubview(twoBuzzersPopUp)
       twoBuzzersPopUp.setViewElements(view: view)

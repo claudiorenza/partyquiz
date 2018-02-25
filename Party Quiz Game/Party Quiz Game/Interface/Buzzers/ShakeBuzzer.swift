@@ -67,7 +67,7 @@ class ShakeBuzzer: UIView {
   
   func setRoundedView() {
     viewOutlet.layer.cornerRadius = 25.0
-    viewOutlet.layer.borderColor = UIColor.borderColorGray()
+    viewOutlet.layer.borderColor = UIColor.colorGray().cgColor
     viewOutlet.layer.borderWidth = 6.0
   }
   
@@ -81,11 +81,16 @@ class ShakeBuzzer: UIView {
     indicatorView.layer.cornerRadius = 25.0
   }
   
+  @objc func hideBuzzer() {
+    self.stopShaking()
+    self.removeFromSuperview()
+  }
   
   func loadPopUp() {
     NotificationCenter.default.addObserver(self, selector: #selector(self.beginShaking), name: NSNotification.Name(rawValue: "beginShaking"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.stopShaking), name: NSNotification.Name(rawValue: "stopShaking"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.timerWinner), name: NSNotification.Name(rawValue: "winnerTimer"), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(self.hideBuzzer), name: NSNotification.Name(rawValue: "hideBuzzer"), object: nil)
     if let shakeBuzzerPopUp = Bundle.main.loadNibNamed("ShakeBuzzerPopUp", owner: self, options: nil)?.first as? ShakeBuzzerPopUp {
       self.addSubview(shakeBuzzerPopUp)
       shakeBuzzerPopUp.setViewElements()

@@ -19,7 +19,7 @@ class ShakeBuzzerPopUp: UIView {
   
   func setViewElements() {
     self.layer.cornerRadius = 25.0
-    self.layer.borderColor = UIColor.borderColorGray()
+    self.layer.borderColor = UIColor.colorGray().cgColor
     self.layer.borderWidth = 6.0
     okOutlet.layer.cornerRadius = 15.0
     okOutlet.layer.borderColor = UIColor.black.cgColor

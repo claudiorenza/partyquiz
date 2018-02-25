@@ -98,6 +98,12 @@ class QuestionViewController: UIViewController {
   }
   
   func syncQuestionBuzzer() {
+    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "hideBuzzer"), object: nil)
+    onHoldLabel.backgroundColor = UIColor.colorGreen()
+    if indexBuzzer == 1 { //nel caso non è stato premuto il doppio buzzer, ripristino la posizione originale
+      self.questionOutlet.center.x = self.point.x
+      self.displayTimeLabel.center.x = self.pointTimer.x
+    }
     timerReceiveWinnerTimer = Timer.scheduledTimer(timeInterval: 13, target: self, selector: #selector(signalPeerReceiveWinnerTimer), userInfo: nil, repeats: true) //SIMULATION
     
     //if "sono host"
@@ -117,16 +123,16 @@ class QuestionViewController: UIViewController {
   func setQuestion()  {
     questionOutlet.text = questionLocal["text"]
     answerOneButton.setTitle(questionLocal["wrongAnswer2"], for: .normal)
-    answerOneButton.backgroundColor = UIColor.bottonColorLightBlue()
+    answerOneButton.backgroundColor = UIColor.colorLightBlue()
     
     answerTwoButton.setTitle(questionLocal["wrongAnswer3"], for: .normal)
-    answerTwoButton.backgroundColor = UIColor.bottonColorLightBlue()
+    answerTwoButton.backgroundColor = UIColor.colorLightBlue()
     
     answerThreeButton.setTitle(questionLocal["correctlyAnswer"], for: .normal)
-    answerThreeButton.backgroundColor = UIColor.bottonColorLightBlue()
+    answerThreeButton.backgroundColor = UIColor.colorLightBlue()
     
     answerFourButton.setTitle(questionLocal["wrongAnswer1"], for: .normal)
-    answerFourButton.backgroundColor = UIColor.bottonColorLightBlue()
+    answerFourButton.backgroundColor = UIColor.colorLightBlue()
   }
   
   
@@ -202,25 +208,25 @@ class QuestionViewController: UIViewController {
     questionOutlet.layer.cornerRadius = 25.0
     questionOutlet.clipsToBounds = true
     questionOutlet.layer.borderWidth = 6.0
-    questionOutlet.layer.borderColor = UIColor.borderColorGray()
+    questionOutlet.layer.borderColor = UIColor.colorGray().cgColor
     
     answerOneButton.layer.cornerRadius = 25
-    answerOneButton.layer.borderColor = UIColor.borderColorGray()
+    answerOneButton.layer.borderColor = UIColor.colorGray().cgColor
     answerOneButton.layer.borderWidth = 6.0
     answerOneButton.alpha = 0
     
     answerTwoButton.layer.cornerRadius = 25
-    answerTwoButton.layer.borderColor = UIColor.borderColorGray()
+    answerTwoButton.layer.borderColor = UIColor.colorGray().cgColor
     answerTwoButton.layer.borderWidth = 6.0
     answerTwoButton.alpha = 0
       
     answerThreeButton.layer.cornerRadius = 25
-    answerThreeButton.layer.borderColor = UIColor.borderColorGray()
+    answerThreeButton.layer.borderColor = UIColor.colorGray().cgColor
     answerThreeButton.layer.borderWidth = 6.0
     answerThreeButton.alpha = 0
     
     answerFourButton.layer.cornerRadius = 25
-    answerFourButton.layer.borderColor = UIColor.borderColorGray()
+    answerFourButton.layer.borderColor = UIColor.colorGray().cgColor
     answerFourButton.layer.borderWidth = 6.0
     answerFourButton.alpha = 0
     
@@ -467,13 +473,13 @@ class QuestionViewController: UIViewController {
     onHoldWaiting.isHidden = false
     Singleton.shared.delayWithSeconds(4) {
       self.syncQuestionBuzzer()
-      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "startTimer"), object: nil)
+      //NotificationCenter.default.post(name: NSNotification.Name(rawValue: "startTimer"), object: nil)
       self.onHoldView.isHidden = true
       self.onHoldLabel.isHidden = true
       self.onHoldWaiting.isHidden = true
       //self.onHoldLabel.text = "On Hold..."
     }
-    Singleton.shared.delayWithSeconds(5) {  //TODO: forse non c'è bisogno
+    Singleton.shared.delayWithSeconds(5) {  //TODO: forse non c'è più bisogno
       self.answerOneButton.alpha = 0
       self.answerTwoButton.alpha = 0
       self.answerThreeButton.alpha = 0

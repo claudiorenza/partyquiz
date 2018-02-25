@@ -96,7 +96,7 @@ class BlowBuzzer: UIView {
   
   func setRoundedView() {
     viewOutlet.layer.cornerRadius = 25.0
-    viewOutlet.layer.borderColor = UIColor.borderColorGray()
+    viewOutlet.layer.borderColor = UIColor.colorGray().cgColor
     viewOutlet.layer.borderWidth = 6.0
   }
   
@@ -105,10 +105,16 @@ class BlowBuzzer: UIView {
     indicatorView.layer.cornerRadius = 25.0
   }
   
+  @objc func hideBuzzer() {
+    stopBlowing()
+    self.removeFromSuperview()
+  }
+  
   func loadPopUp() {
     NotificationCenter.default.addObserver(self, selector: #selector(self.startBlowing), name: NSNotification.Name(rawValue: "startBlowing"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.stopBlowing), name: NSNotification.Name(rawValue: "stopBlowing"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.timerWinner), name: NSNotification.Name(rawValue: "winnerTimer"), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(self.hideBuzzer), name: NSNotification.Name(rawValue: "hideBuzzer"), object: nil)
     if let blowBuzzerPopUp = Bundle.main.loadNibNamed("BlowBuzzerPopUp", owner: self, options: nil)?.first as? BlowBuzzerPopUp {
       self.addSubview(blowBuzzerPopUp)
       blowBuzzerPopUp.setViewElements()

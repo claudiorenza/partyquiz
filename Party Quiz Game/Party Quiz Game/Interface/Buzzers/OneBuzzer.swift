@@ -24,7 +24,7 @@ class OneBuzzer: UIView {
   func setBuzzer() {
     buzzer.layer.cornerRadius = 25.0
     buzzer.layer.borderWidth = 6.0
-    buzzer.layer.borderColor = UIColor.borderColorGray()
+    buzzer.layer.borderColor = UIColor.colorGray().cgColor
     outletCounter.text = "\(index)"
   }
   
@@ -55,8 +55,13 @@ class OneBuzzer: UIView {
     })
   }
   
+  @objc func hideBuzzer() {
+    self.removeFromSuperview()
+  }
+  
   func loadPopUp(view: UIView) {
     NotificationCenter.default.addObserver(self, selector: #selector(self.timerWinner), name: NSNotification.Name(rawValue: "winnerTimer"), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(self.hideBuzzer), name: NSNotification.Name(rawValue: "hideBuzzer"), object: nil)
     if let oneBuzzerPopUp = Bundle.main.loadNibNamed("OneBuzzerPopUp", owner: self, options: nil)?.first as? OneBuzzerPopUp {
       self.addSubview(oneBuzzerPopUp)
       oneBuzzerPopUp.setViewElements(view: view)
