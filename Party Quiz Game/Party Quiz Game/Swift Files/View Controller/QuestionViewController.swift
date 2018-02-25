@@ -465,8 +465,8 @@ class QuestionViewController: UIViewController {
     signalPeerSendBuzz()
     
     //SIMULATION MULTIPEER
-    //timerReceiveWinnerTimer.invalidate()  //SIMULATION MULTIPEER
-    timerReceiveLoserTimer.invalidate()   //SIMULATION MULTIPEER
+    timerReceiveWinnerTimer.invalidate()  //SIMULATION MULTIPEER
+    //timerReceiveLoserTimer.invalidate()   //SIMULATION MULTIPEER
     
     audioTimeUp.player.play()
     onHoldLabel.text = "Time is Up!"
