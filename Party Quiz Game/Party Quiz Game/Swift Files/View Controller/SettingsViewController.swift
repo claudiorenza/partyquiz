@@ -15,10 +15,21 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
   
   @IBOutlet weak var pickedValueTextField: UITextField!
   @IBOutlet weak var startGameButton: UIButton!
+  @IBOutlet var numberQuestionLabel: UILabel!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     PeerManager.peerShared.viewController = self
+    
+    numberQuestionLabel.clipsToBounds = true
+    numberQuestionLabel.layer.cornerRadius = 15.0
+    numberQuestionLabel.layer.borderColor = UIColor.colorGray().cgColor
+    numberQuestionLabel.layer.borderWidth = 4.0
+    
+    startGameButton.layer.cornerRadius = 25.0
+    startGameButton.layer.borderColor = UIColor.colorGray().cgColor
+    startGameButton.layer.borderWidth = 6.0
+    
     
 //    startGameButton.isEnabled = false
     
