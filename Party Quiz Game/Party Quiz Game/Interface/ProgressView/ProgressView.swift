@@ -23,7 +23,7 @@ class ProgressView: UIView {
   func manageProgress(seconds: Int) {
     NotificationCenter.default.addObserver(self, selector: #selector(self.stopTimer), name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.startTimer), name: NSNotification.Name(rawValue: "startTimer"), object: nil)
-    totalSeconds = seconds
+    totalSeconds = seconds-1
     currentSeconds = totalSeconds
     // Progress view
     progressView.progress = Float(currentSeconds / totalSeconds)
@@ -41,14 +41,17 @@ class ProgressView: UIView {
   @objc func decreaseTimer() {
     if currentSeconds > 0 {
       currentSeconds -= 1
+      if (currentSeconds < 5) {
+        audioTimerTick.player.play()
+      }
       if totalSeconds >= 20 {
-        if (currentSeconds < 6) {
+        if (currentSeconds < ((totalSeconds/3) + 1)) {
           audioTimerTick.player.play()
-          progressView.progressTintColor = UIColor.red
-        } else if (currentSeconds < ((totalSeconds/3) + 1)) {
           progressView.progressTintColor = myOrange
         } else if (currentSeconds < ((totalSeconds/2) + 1)) {
           progressView.progressTintColor = UIColor.yellow
+        } else  {
+          progressView.progressTintColor = UIColor.red
         }
       } else {
         if (currentSeconds < ((totalSeconds/4) + 1)) {

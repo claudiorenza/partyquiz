@@ -16,12 +16,14 @@ class QuestionViewController: UIViewController {
   @IBOutlet weak var buzzerView: UIView!
   @IBOutlet weak var progressControllerView: UIView!
   @IBOutlet var questionOutlet: UILabel!
-  @IBOutlet var buttonAnswerOne: UIButton!
-  @IBOutlet var buttonAnswerTwo: UIButton!
-  @IBOutlet var buttonAnswerThree: UIButton!
-  @IBOutlet var buttonAnswerFour: UIButton!
+  @IBOutlet var answerOneButton: UIButton!
+  @IBOutlet var answerTwoButton: UIButton!
+  @IBOutlet var answerThreeButton: UIButton!
+  @IBOutlet var answerFourButton: UIButton!
   @IBOutlet weak var onHoldView: UIView!
   @IBOutlet weak var onHoldLabel: UILabel!
+  @IBOutlet var displayTimeLabel: UILabel!
+  
   
   var audioAnswerRight = Audio(fileName: "answerRight", typeName: "m4a")
   var audioAnswerWrong = Audio(fileName: "answerWrong", typeName: "m4a")
@@ -61,18 +63,18 @@ class QuestionViewController: UIViewController {
     /*
     let currentQuestion = CoreDataManager.shared.questionDictionary[0]
     questionOutlet.text = currentQuestion["text"]
-    buttonAnswerOne.setTitle(currentQuestion["wrongAnswer1"], for: .normal)
-    buttonAnswerTwo.setTitle(currentQuestion["wrongAnswer2"], for: .normal)
-    buttonAnswerThree.setTitle(currentQuestion["correctlyAnswer"], for: .normal)
-    buttonAnswerFour.setTitle(currentQuestion["wrongAnswer3"], for: .normal)
+    answerOneButton.setTitle(currentQuestion["wrongAnswer1"], for: .normal)
+    answerTwoButton.setTitle(currentQuestion["wrongAnswer2"], for: .normal)
+    answerThreeButton.setTitle(currentQuestion["correctlyAnswer"], for: .normal)
+    answerFourButton.setTitle(currentQuestion["wrongAnswer3"], for: .normal)
     */
     
     
     questionOutlet.text = questionLocal["text"]
-    buttonAnswerOne.setTitle(questionLocal["wrongAnswer1"], for: .normal)
-    buttonAnswerTwo.setTitle(questionLocal["wrongAnswer2"], for: .normal)
-    buttonAnswerThree.setTitle(questionLocal["correctlyAnswer"], for: .normal)
-    buttonAnswerFour.setTitle(questionLocal["wrongAnswer3"], for: .normal)
+    answerOneButton.setTitle(questionLocal["wrongAnswer1"], for: .normal)
+    answerTwoButton.setTitle(questionLocal["wrongAnswer2"], for: .normal)
+    answerThreeButton.setTitle(questionLocal["correctlyAnswer"], for: .normal)
+    answerFourButton.setTitle(questionLocal["wrongAnswer3"], for: .normal)
     
     //SIMULATION
 //    timerReceiveBuzz = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(signalPeerReceiveBuzz), userInfo: nil, repeats: true)
@@ -108,17 +110,17 @@ class QuestionViewController: UIViewController {
   
   func setQuestion()  {
     questionOutlet.text = questionLocal["text"]
-    buttonAnswerOne.setTitle(questionLocal["wrongAnswer2"], for: .normal)  //TODO: sistemazione casuale delle risposte
-    buttonAnswerOne.backgroundColor = UIColor.bottonColorLightBlue()
+    answerOneButton.setTitle(questionLocal["wrongAnswer2"], for: .normal)  //TODO: sistemazione casuale delle risposte
+    answerOneButton.backgroundColor = UIColor.bottonColorLightBlue()
     
-    buttonAnswerTwo.setTitle(questionLocal["wrongAnswer3"], for: .normal)
-    buttonAnswerTwo.backgroundColor = UIColor.bottonColorLightBlue()
+    answerTwoButton.setTitle(questionLocal["wrongAnswer3"], for: .normal)
+    answerTwoButton.backgroundColor = UIColor.bottonColorLightBlue()
     
-    buttonAnswerThree.setTitle(questionLocal["correctlyAnswer"], for: .normal)
-    buttonAnswerThree.backgroundColor = UIColor.bottonColorLightBlue()
+    answerThreeButton.setTitle(questionLocal["correctlyAnswer"], for: .normal)
+    answerThreeButton.backgroundColor = UIColor.bottonColorLightBlue()
     
-    buttonAnswerFour.setTitle(questionLocal["wrongAnswer1"], for: .normal)
-    buttonAnswerFour.backgroundColor = UIColor.bottonColorLightBlue()
+    answerFourButton.setTitle(questionLocal["wrongAnswer1"], for: .normal)
+    answerFourButton.backgroundColor = UIColor.bottonColorLightBlue()
   }
   
   
@@ -132,6 +134,7 @@ class QuestionViewController: UIViewController {
   }
   
   @objc func loadProgressView10() {
+    buzzerTimerStart()
     if let progressView10 = Bundle.main.loadNibNamed("ProgressView", owner: self, options: nil)?.first as? ProgressView {
       progressControllerView.addSubview(progressView10)
       progressView10.manageProgress(seconds: 10)
@@ -152,7 +155,9 @@ class QuestionViewController: UIViewController {
     } else if indexBuzzer == 1 {
       NotificationCenter.default.addObserver(self, selector: #selector(self.moveQuestionBoxToOrigin), name: NSNotification.Name(rawValue: "twoBuzzersException"), object: nil)
       point.x = questionOutlet.center.x
+      displayTimeLabel.center.x = view.bounds.width * 0.465
       questionOutlet.center.x = view.bounds.width * 0.465
+      
       if let twoBuzzers = Bundle.main.loadNibNamed("TwoBuzzers", owner: self, options: nil)?.first as? TwoBuzzers {
         buzzerView.addSubview(twoBuzzers)
         twoBuzzers.loadPopUp(view: view)
@@ -188,25 +193,25 @@ class QuestionViewController: UIViewController {
     questionOutlet.layer.borderWidth = 6.0
     questionOutlet.layer.borderColor = UIColor.borderColorGray()
     
-    buttonAnswerOne.layer.cornerRadius = 25
-    buttonAnswerOne.layer.borderColor = UIColor.borderColorGray()
-    buttonAnswerOne.layer.borderWidth = 6.0
-    buttonAnswerOne.alpha = 0
+    answerOneButton.layer.cornerRadius = 25
+    answerOneButton.layer.borderColor = UIColor.borderColorGray()
+    answerOneButton.layer.borderWidth = 6.0
+    answerOneButton.alpha = 0
     
-    buttonAnswerTwo.layer.cornerRadius = 25
-    buttonAnswerTwo.layer.borderColor = UIColor.borderColorGray()
-    buttonAnswerTwo.layer.borderWidth = 6.0
-    buttonAnswerTwo.alpha = 0
+    answerTwoButton.layer.cornerRadius = 25
+    answerTwoButton.layer.borderColor = UIColor.borderColorGray()
+    answerTwoButton.layer.borderWidth = 6.0
+    answerTwoButton.alpha = 0
       
-    buttonAnswerThree.layer.cornerRadius = 25
-    buttonAnswerThree.layer.borderColor = UIColor.borderColorGray()
-    buttonAnswerThree.layer.borderWidth = 6.0
-    buttonAnswerThree.alpha = 0
+    answerThreeButton.layer.cornerRadius = 25
+    answerThreeButton.layer.borderColor = UIColor.borderColorGray()
+    answerThreeButton.layer.borderWidth = 6.0
+    answerThreeButton.alpha = 0
     
-    buttonAnswerFour.layer.cornerRadius = 25
-    buttonAnswerFour.layer.borderColor = UIColor.borderColorGray()
-    buttonAnswerFour.layer.borderWidth = 6.0
-    buttonAnswerFour.alpha = 0
+    answerFourButton.layer.cornerRadius = 25
+    answerFourButton.layer.borderColor = UIColor.borderColorGray()
+    answerFourButton.layer.borderWidth = 6.0
+    answerFourButton.alpha = 0
     
     onHoldLabel.layer.cornerRadius = 15.0
     onHoldLabel.clipsToBounds = true
@@ -238,39 +243,39 @@ class QuestionViewController: UIViewController {
     }
   }
   
-  @IBAction func buttonAnswerOneAction(_ sender: UIButton) {
+  @IBAction func answerOneButtonAction(_ sender: UIButton) {
     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
-    if buttonAnswerOne.titleLabel?.text == questionLocal["correctlyAnswer"] {
-      rightAnswer(button: buttonAnswerOne)
+    if answerOneButton.titleLabel?.text == questionLocal["correctlyAnswer"] {
+      rightAnswer(button: answerOneButton)
     } else  {
-      wrongAnswer(button: buttonAnswerOne)
+      wrongAnswer(button: answerOneButton)
     }
   }
   
-  @IBAction func buttonAnswerTwoAction(_ sender: UIButton) {
+  @IBAction func answerTwoButtonAction(_ sender: UIButton) {
     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
-    if buttonAnswerTwo.titleLabel?.text == questionLocal["correctlyAnswer"] {
-      rightAnswer(button: buttonAnswerTwo)
+    if answerTwoButton.titleLabel?.text == questionLocal["correctlyAnswer"] {
+      rightAnswer(button: answerTwoButton)
     } else  {
-      wrongAnswer(button: buttonAnswerTwo)
+      wrongAnswer(button: answerTwoButton)
     }
   }
   
-  @IBAction func buttonAnswerThreeAction(_ sender: UIButton) {
+  @IBAction func answerThreeButtonAction(_ sender: UIButton) {
     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
-    if buttonAnswerThree.titleLabel?.text == questionLocal["correctlyAnswer"] {
-      rightAnswer(button: buttonAnswerThree)
+    if answerThreeButton.titleLabel?.text == questionLocal["correctlyAnswer"] {
+      rightAnswer(button: answerThreeButton)
     } else  {
-      wrongAnswer(button: buttonAnswerThree)
+      wrongAnswer(button: answerThreeButton)
     }
   }
   
-  @IBAction func buttonAnswerFourAction(_ sender: UIButton) {
+  @IBAction func answerFourButtonAction(_ sender: UIButton) {
     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
-    if buttonAnswerFour.titleLabel?.text == questionLocal["correctlyAnswer"] {
-      rightAnswer(button: buttonAnswerFour)
+    if answerFourButton.titleLabel?.text == questionLocal["correctlyAnswer"] {
+      rightAnswer(button: answerFourButton)
     } else  {
-      wrongAnswer(button: buttonAnswerFour)
+      wrongAnswer(button: answerFourButton)
     }
   }
   
@@ -278,10 +283,10 @@ class QuestionViewController: UIViewController {
   /*
   @IBAction func buttonAction(_ sender: UIButton) {
     randomBuzzers()
-    buttonAnswerOne.alpha = 0
-    buttonAnswerTwo.alpha = 0
-    buttonAnswerThree.alpha = 0
-    buttonAnswerFour.alpha = 0
+    answerOneButton.alpha = 0
+    answerTwoButton.alpha = 0
+    answerThreeButton.alpha = 0
+    answerFourButton.alpha = 0
     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
     Singleton.shared.delayWithSeconds(4) {
     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "startTimer"), object: nil)
@@ -360,47 +365,49 @@ class QuestionViewController: UIViewController {
   }
   
   @objc func answersAppear() {
+    buzzerTimerStop()
     signalPeerSendBuzz()  //invio al peer
     
-    self.buttonAnswerOne.fadeInAnswers()
+    self.answerOneButton.fadeInAnswers()
     Singleton.shared.delayWithSeconds(0.2) {
-      self.buttonAnswerOne.alpha = 1
+      self.answerOneButton.alpha = 1
     }
-    self.buttonAnswerTwo.fadeInAnswers()
+    self.answerTwoButton.fadeInAnswers()
     Singleton.shared.delayWithSeconds(0.2) {
-      self.buttonAnswerTwo.alpha = 1
+      self.answerTwoButton.alpha = 1
     }
-    self.buttonAnswerThree.fadeInAnswers()
+    self.answerThreeButton.fadeInAnswers()
     Singleton.shared.delayWithSeconds(0.2) {
-      self.buttonAnswerThree.alpha = 1
+      self.answerThreeButton.alpha = 1
     }
-    self.buttonAnswerFour.fadeInAnswers()
+    self.answerFourButton.fadeInAnswers()
     Singleton.shared.delayWithSeconds(0.2) {
-      self.buttonAnswerFour.alpha = 1
+      self.answerFourButton.alpha = 1
     }
   }
   
   @objc func answersBlock() {
-    self.buttonAnswerOne.fadeOutAnswers()
+    self.answerOneButton.fadeOutAnswers()
     Singleton.shared.delayWithSeconds(0.2) {
-      self.buttonAnswerOne.alpha = 0
+      self.answerOneButton.alpha = 0
     }
-    self.buttonAnswerTwo.fadeOutAnswers()
+    self.answerTwoButton.fadeOutAnswers()
     Singleton.shared.delayWithSeconds(0.2) {
-      self.buttonAnswerTwo.alpha = 0
+      self.answerTwoButton.alpha = 0
     }
-    self.buttonAnswerThree.fadeOutAnswers()
+    self.answerThreeButton.fadeOutAnswers()
     Singleton.shared.delayWithSeconds(0.2) {
-      self.buttonAnswerThree.alpha = 0
+      self.answerThreeButton.alpha = 0
     }
-    self.buttonAnswerFour.fadeOutAnswers()
+    self.answerFourButton.fadeOutAnswers()
     Singleton.shared.delayWithSeconds(0.2) {
-      self.buttonAnswerFour.alpha = 0
+      self.answerFourButton.alpha = 0
     }
   }
 
   @objc func timeOut() {
     audioTimeUp.player.play()
+    buzzerTimerStop()
     onHoldLabel.text = "Time is Up!"
     onHoldView.isHidden = false
     onHoldLabel.isHidden = false
@@ -412,24 +419,67 @@ class QuestionViewController: UIViewController {
       self.onHoldLabel.text = "On Hold..."
     }
     Singleton.shared.delayWithSeconds(5) {
-      self.buttonAnswerOne.alpha = 0
-      self.buttonAnswerTwo.alpha = 0
-      self.buttonAnswerThree.alpha = 0
-      self.buttonAnswerFour.alpha = 0
+      self.answerOneButton.alpha = 0
+      self.answerTwoButton.alpha = 0
+      self.answerThreeButton.alpha = 0
+      self.answerFourButton.alpha = 0
     }
   }
   
   func disableAnswersInteractions() {
-    buttonAnswerOne.isUserInteractionEnabled = false
-    buttonAnswerTwo.isUserInteractionEnabled = false
-    buttonAnswerThree.isUserInteractionEnabled = false
-    buttonAnswerFour.isUserInteractionEnabled = false
+    answerOneButton.isUserInteractionEnabled = false
+    answerTwoButton.isUserInteractionEnabled = false
+    answerThreeButton.isUserInteractionEnabled = false
+    answerFourButton.isUserInteractionEnabled = false
   }
   
   func enableAnswersInteraction() {
-    buttonAnswerOne.isUserInteractionEnabled = true
-    buttonAnswerTwo.isUserInteractionEnabled = true
-    buttonAnswerThree.isUserInteractionEnabled = true
-    buttonAnswerFour.isUserInteractionEnabled = true
+    answerOneButton.isUserInteractionEnabled = true
+    answerTwoButton.isUserInteractionEnabled = true
+    answerThreeButton.isUserInteractionEnabled = true
+    answerFourButton.isUserInteractionEnabled = true
+  }
+  
+  
+  
+  
+  
+  
+  var startTime = TimeInterval()
+  
+  var timer:Timer = Timer()
+  
+  
+  func buzzerTimerStart() {
+    if (!timer.isValid) {
+      let aSelector : Selector = #selector(QuestionViewController.buzzerUpdateTime)
+      timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
+      startTime = NSDate.timeIntervalSinceReferenceDate
+    }
+  }
+  
+  func buzzerTimerStop() {
+      timer.invalidate()
+    }
+  
+  @objc func buzzerUpdateTime() {
+    let currentTime = NSDate.timeIntervalSinceReferenceDate
+    
+    //find the difference between current time and start time
+    var elapsedTime: TimeInterval = currentTime - startTime
+    
+    //calculate the seconds in elapsed time
+    let seconds = UInt8(elapsedTime)
+    elapsedTime -= TimeInterval(seconds)
+    
+    //find out the fraction of milliseconds to be displayed
+    let fraction = UInt8(elapsedTime * 100)
+    
+    //add the leading zero for minutes, seconds and millseconds and store them as string constants
+    let strSeconds = String(format: "%02d", seconds)
+    let strFraction = String(format: "%02d", fraction)
+    
+    //concatenate minuets, seconds and milliseconds as assign it to the UILabel
+    displayTimeLabel.text = "\(strSeconds):\(strFraction)"
   }
 }

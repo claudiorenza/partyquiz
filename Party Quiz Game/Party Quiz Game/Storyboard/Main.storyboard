@@ -367,7 +367,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="buttonAnswerOneAction:" destination="411-n7-06Y" eventType="touchUpInside" id="B8B-n7-xW1"/>
+                                            <action selector="answerOneButtonAction:" destination="411-n7-06Y" eventType="touchUpInside" id="4GH-Ig-Wws"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jH-he-70h" userLabel="ButtonTwo">
@@ -379,7 +379,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="buttonAnswerTwoAction:" destination="411-n7-06Y" eventType="touchUpInside" id="dxo-uh-Ne9"/>
+                                            <action selector="answerTwoButtonAction:" destination="411-n7-06Y" eventType="touchUpInside" id="J0x-dX-TUe"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMp-FS-eQB" userLabel="ButtonThree">
@@ -391,7 +391,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="buttonAnswerThreeAction:" destination="411-n7-06Y" eventType="touchUpInside" id="iKr-kB-QZr"/>
+                                            <action selector="answerThreeButtonAction:" destination="411-n7-06Y" eventType="touchUpInside" id="jTu-RX-nBy"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2n-FD-vzh" userLabel="ButtonFour">
@@ -403,7 +403,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="buttonAnswerFourAction:" destination="411-n7-06Y" eventType="touchUpInside" id="mkY-f7-flm"/>
+                                            <action selector="answerFourButtonAction:" destination="411-n7-06Y" eventType="touchUpInside" id="CE9-jq-0xC"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xM4-HX-fV8">
@@ -411,6 +411,14 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66x-Ba-x6T">
+                                        <rect key="frame" x="84" y="199" width="96" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.83761066319999999" green="0.83761066319999999" blue="0.83761066319999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -437,11 +445,12 @@
                         <viewLayoutGuide key="safeArea" id="M0C-ue-drF"/>
                     </view>
                     <connections>
-                        <outlet property="buttonAnswerFour" destination="e2n-FD-vzh" id="Aqd-kL-Rko"/>
-                        <outlet property="buttonAnswerOne" destination="OUq-c4-MOh" id="gGC-Vn-wfC"/>
-                        <outlet property="buttonAnswerThree" destination="jMp-FS-eQB" id="de0-vn-XsQ"/>
-                        <outlet property="buttonAnswerTwo" destination="1jH-he-70h" id="3qt-1w-ryO"/>
+                        <outlet property="answerFourButton" destination="e2n-FD-vzh" id="Tib-Uc-TIK"/>
+                        <outlet property="answerOneButton" destination="OUq-c4-MOh" id="CGg-UJ-SRt"/>
+                        <outlet property="answerThreeButton" destination="jMp-FS-eQB" id="HSe-I1-xfW"/>
+                        <outlet property="answerTwoButton" destination="1jH-he-70h" id="6pN-sH-Pte"/>
                         <outlet property="buzzerView" destination="Sdk-kC-f4A" id="qii-cN-kpD"/>
+                        <outlet property="displayTimeLabel" destination="66x-Ba-x6T" id="AWl-7D-Ndi"/>
                         <outlet property="onHoldLabel" destination="2Mv-9z-ECm" id="IYu-ra-0lu"/>
                         <outlet property="onHoldView" destination="KSa-qO-Q9F" id="nl5-sV-TOV"/>
                         <outlet property="progressControllerView" destination="KRT-nY-7yh" id="ikD-tV-nfB"/>
