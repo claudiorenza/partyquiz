@@ -38,12 +38,15 @@ class QuestionViewController: UIViewController {
   var point = CGPoint()
   
   
+  /*
   // JOHNNY'S ZONE
   var question: [String:String] = ["text": PeerManager.peerShared.question, "correctlyAnswer": PeerManager.peerShared.correct, "wrongAnswer1": PeerManager.peerShared.wrong1, "wrongAnswer2": PeerManager.peerShared.wrong2, "wrongAnswer3": PeerManager.peerShared.wrong3]
   
   // END OF JOHNNY'S ZONE
+   */
   
-
+  var questionLocal: [String:String] = ["text": "Italy's Capital", "correctlyAnswer": "Rome", "wrongAnswer1": "Florence", "wrongAnswer2": "Turin", "wrongAnswer3": "Naples"]
+  
   // - MARK: 2: ViewDidLoad
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -53,14 +56,21 @@ class QuestionViewController: UIViewController {
     NotificationCenter.default.addObserver(self, selector: #selector(self.loadProgressView10), name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.timeOut), name: NSNotification.Name(rawValue: "timeOut"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.answersAppear), name: NSNotification.Name(rawValue: "answers"), object: nil)
+    /*
     let currentQuestion = CoreDataManager.shared.questionDictionary[0]
     questionOutlet.text = currentQuestion["text"]
     buttonAnswerOne.setTitle(currentQuestion["wrongAnswer1"], for: .normal)
     buttonAnswerTwo.setTitle(currentQuestion["wrongAnswer2"], for: .normal)
     buttonAnswerThree.setTitle(currentQuestion["correctlyAnswer"], for: .normal)
     buttonAnswerFour.setTitle(currentQuestion["wrongAnswer3"], for: .normal)
+    */
     
     
+    questionOutlet.text = questionLocal["text"]
+    buttonAnswerOne.setTitle(questionLocal["wrongAnswer1"], for: .normal)
+    buttonAnswerTwo.setTitle(questionLocal["wrongAnswer2"], for: .normal)
+    buttonAnswerThree.setTitle(questionLocal["correctlyAnswer"], for: .normal)
+    buttonAnswerFour.setTitle(questionLocal["wrongAnswer3"], for: .normal)
     
     //SIMULATION
 //    timerReceiveBuzz = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(signalPeerReceiveBuzz), userInfo: nil, repeats: true)
@@ -95,17 +105,17 @@ class QuestionViewController: UIViewController {
   }
   
   func setQuestion()  {
-    questionOutlet.text = question["text"]
-    buttonAnswerOne.setTitle(question["wrongAnswer2"], for: .normal)  //TODO: sistemazione casuale delle risposte
+    questionOutlet.text = questionLocal["text"]
+    buttonAnswerOne.setTitle(questionLocal["wrongAnswer2"], for: .normal)  //TODO: sistemazione casuale delle risposte
     buttonAnswerOne.backgroundColor = UIColor.bottonColorLightBlue()
     
-    buttonAnswerTwo.setTitle(question["wrongAnswer3"], for: .normal)
+    buttonAnswerTwo.setTitle(questionLocal["wrongAnswer3"], for: .normal)
     buttonAnswerTwo.backgroundColor = UIColor.bottonColorLightBlue()
     
-    buttonAnswerThree.setTitle(question["correctlyAnswer"], for: .normal)
+    buttonAnswerThree.setTitle(questionLocal["correctlyAnswer"], for: .normal)
     buttonAnswerThree.backgroundColor = UIColor.bottonColorLightBlue()
     
-    buttonAnswerFour.setTitle(question["wrongAnswer1"], for: .normal)
+    buttonAnswerFour.setTitle(questionLocal["wrongAnswer1"], for: .normal)
     buttonAnswerFour.backgroundColor = UIColor.bottonColorLightBlue()
   }
   
@@ -228,7 +238,7 @@ class QuestionViewController: UIViewController {
   
   @IBAction func buttonAnswerOneAction(_ sender: UIButton) {
     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
-    if buttonAnswerOne.titleLabel?.text == question["correctlyAnswer"] {
+    if buttonAnswerOne.titleLabel?.text == questionLocal["correctlyAnswer"] {
       rightAnswer(button: buttonAnswerOne)
     } else  {
       wrongAnswer(button: buttonAnswerOne)
@@ -237,7 +247,7 @@ class QuestionViewController: UIViewController {
   
   @IBAction func buttonAnswerTwoAction(_ sender: UIButton) {
     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
-    if buttonAnswerTwo.titleLabel?.text == question["correctlyAnswer"] {
+    if buttonAnswerTwo.titleLabel?.text == questionLocal["correctlyAnswer"] {
       rightAnswer(button: buttonAnswerTwo)
     } else  {
       wrongAnswer(button: buttonAnswerTwo)
@@ -246,7 +256,7 @@ class QuestionViewController: UIViewController {
   
   @IBAction func buttonAnswerThreeAction(_ sender: UIButton) {
     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
-    if buttonAnswerThree.titleLabel?.text == question["correctlyAnswer"] {
+    if buttonAnswerThree.titleLabel?.text == questionLocal["correctlyAnswer"] {
       rightAnswer(button: buttonAnswerThree)
     } else  {
       wrongAnswer(button: buttonAnswerThree)
@@ -255,7 +265,7 @@ class QuestionViewController: UIViewController {
   
   @IBAction func buttonAnswerFourAction(_ sender: UIButton) {
     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
-    if buttonAnswerFour.titleLabel?.text == question["correctlyAnswer"] {
+    if buttonAnswerFour.titleLabel?.text == questionLocal["correctlyAnswer"] {
       rightAnswer(button: buttonAnswerFour)
     } else  {
       wrongAnswer(button: buttonAnswerFour)
@@ -388,6 +398,7 @@ class QuestionViewController: UIViewController {
   }
 
   @objc func timeOut() {
+    
     onHoldLabel.text = "Time is Up!"
     onHoldView.isHidden = false
     onHoldLabel.isHidden = false
