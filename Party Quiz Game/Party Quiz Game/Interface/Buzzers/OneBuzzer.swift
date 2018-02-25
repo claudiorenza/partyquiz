@@ -15,7 +15,9 @@ class OneBuzzer: UIView {
   @IBOutlet var outletCounter: UILabel!
   
   var index = 10
+  
   var audioBuzz = Audio(fileName: "buzz", typeName: "m4a")
+  var audioButtonClick = Audio(fileName: "buttonClick", typeName: "m4a")
   
   func setBuzzer() {
     buzzer.layer.cornerRadius = 25.0
@@ -25,7 +27,7 @@ class OneBuzzer: UIView {
   }
   
   @IBAction func pressBuzzer(_ sender: UIButton) {
-    AudioSingleton.shared.audioButtonClick.player.play()
+    audioButtonClick.player.play()
     index -= 1
     outletCounter.text = "\(index)"
     if index == 0 {

@@ -25,6 +25,8 @@ class QuestionViewController: UIViewController {
   
   var audioAnswerRight = Audio(fileName: "answerRight", typeName: "m4a")
   var audioAnswerWrong = Audio(fileName: "answerWrong", typeName: "m4a")
+  var audioTimeUp = Audio(fileName: "timeUp", typeName: "m4a")
+  
   
   var timerReceiveBuzz: Timer!        //SIMULATION
   var timerReceiveWrongAnswer: Timer! //SIMULATION
@@ -398,7 +400,7 @@ class QuestionViewController: UIViewController {
   }
 
   @objc func timeOut() {
-    
+    audioTimeUp.player.play()
     onHoldLabel.text = "Time is Up!"
     onHoldView.isHidden = false
     onHoldLabel.isHidden = false

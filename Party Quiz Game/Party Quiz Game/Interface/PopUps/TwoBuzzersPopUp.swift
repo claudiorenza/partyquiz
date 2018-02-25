@@ -15,6 +15,8 @@ class TwoBuzzersPopUp: UIView {
   @IBOutlet weak var leftHand: UIImageView!
   @IBOutlet weak var rightHand: UIImageView!
   
+  var audioButtonClick = Audio(fileName: "buttonClick", typeName: "m4a")
+  
   func setViewElements(view: UIView) {
     self.layer.cornerRadius = 25.0
     self.layer.borderColor = UIColor.borderColorGray()
@@ -27,10 +29,11 @@ class TwoBuzzersPopUp: UIView {
   }
   
   @IBAction func okAction(_ sender: UIButton) {
+    audioButtonClick.player.play()
     self.tutorialDismiss(view: self)
     Singleton.shared.delayWithSeconds(0.1) {
       self.removeFromSuperview()
-      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProgressView30"), object: nil)
+      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
     }
   }
   

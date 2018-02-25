@@ -16,6 +16,8 @@ class ProgressView: UIView {
   var currentSeconds = 0
   var timer : Timer!
   
+  var audioTimerTick = Audio(fileName: "timerTick", typeName: "m4a")
+  
   let myOrange = UIColor(red: 1.00, green: 0.67, blue: 0.00, alpha: 1.0)
   
   func manageProgress(seconds: Int) {
@@ -41,6 +43,7 @@ class ProgressView: UIView {
       currentSeconds -= 1
       if totalSeconds >= 20 {
         if (currentSeconds < 6) {
+          audioTimerTick.player.play()
           progressView.progressTintColor = UIColor.red
         } else if (currentSeconds < ((totalSeconds/3) + 1)) {
           progressView.progressTintColor = myOrange
@@ -49,8 +52,10 @@ class ProgressView: UIView {
         }
       } else {
         if (currentSeconds < ((totalSeconds/4) + 1)) {
+          audioTimerTick.player.play()
           progressView.progressTintColor = UIColor.red
         } else if (currentSeconds < ((totalSeconds/3) + 1)) {
+          audioTimerTick.player.play()
           progressView.progressTintColor = myOrange
         } else if (currentSeconds < ((totalSeconds/2) + 1)) {
           progressView.progressTintColor = UIColor.yellow

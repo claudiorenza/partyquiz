@@ -15,7 +15,9 @@ class BlowBuzzer: UIView {
 
   var recorder: AVAudioRecorder!
   var levelTimer = Timer()
+  
   var audioBuzz = Audio(fileName: "buzz", typeName: "m4a")
+  var audioButtonClick = Audio(fileName: "buttonClick", typeName: "m4a")
   
   var index = 0
   var indicatorViewInterval: CGFloat = 0.0
@@ -63,6 +65,9 @@ class BlowBuzzer: UIView {
         UIView.animate(withDuration: 0.2, animations: {
           self.indicatorView.frame = CGRect(x: self.indicatorView.frame.origin.x, y: self.indicatorView.frame.origin.y, width: self.indicatorView.frame.width, height: (self.indicatorViewInterval * CGFloat(1000-self.index)/1000))
         })
+      }
+      if level.truncatingRemainder(dividingBy: 100) == 0 {  //level % 100 == 0
+        audioButtonClick.player.play()
       }
     } else if index == 1000 {
       audioBuzz.player.play()

@@ -13,7 +13,10 @@ class ShakeBuzzer: UIView {
 
   var index = 0
   var motionManager = CMMotionManager()
+  
   var audioBuzz = Audio(fileName: "buzz", typeName: "m4a")
+  var audioButtonClick = Audio(fileName: "buttonClick", typeName: "m4a")
+  
   
   var indicatorViewInterval: CGFloat = 0.0
 
@@ -29,6 +32,7 @@ class ShakeBuzzer: UIView {
       if let myData = data {
         if self.index < 10 {
           if (myData.acceleration.x > 1.2 || myData.acceleration.y > 1.2 || myData.acceleration.z > 1.2) {
+            self.audioButtonClick.player.play()
             self.index += 1
             self.label.text = "\(self.index)"
             UIView.animate(withDuration: 0.2, animations: {

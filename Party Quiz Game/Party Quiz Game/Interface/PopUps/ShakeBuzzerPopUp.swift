@@ -14,6 +14,9 @@ class ShakeBuzzerPopUp: UIView {
   @IBOutlet weak var okOutlet: UIButton!
   @IBOutlet weak var imageToAnimate: UIImageView!
   
+  var audioButtonClick = Audio(fileName: "buttonClick", typeName: "m4a")
+  
+  
   func setViewElements() {
     self.layer.cornerRadius = 25.0
     self.layer.borderColor = UIColor.borderColorGray()
@@ -25,11 +28,12 @@ class ShakeBuzzerPopUp: UIView {
   }
   
   @IBAction func okAction(_ sender: UIButton) {
+    audioButtonClick.player.play()
     self.tutorialDismiss(view: self)
     Singleton.shared.delayWithSeconds(0.1) {
       self.removeFromSuperview()
       NotificationCenter.default.post(name: NSNotification.Name(rawValue: "beginShaking"), object: nil)
-      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProgressView30"), object: nil)
+      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
     }
   }
 }

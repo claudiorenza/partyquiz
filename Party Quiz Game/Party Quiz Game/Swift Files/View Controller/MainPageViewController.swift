@@ -18,6 +18,9 @@ class MainPageViewController: UIViewController {
   
   let borderColor = UIColor(red: 96.0/255.0, green: 96.0/255.0, blue: 96.0/255.0, alpha: 1.0).cgColor
   
+  var audioButtonClick = Audio(fileName: "buttonClick", typeName: "m4a")
+
+  
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -54,7 +57,7 @@ class MainPageViewController: UIViewController {
   }
   
   @IBAction func pressToCreate(_ sender: UIButton) {
-    AudioSingleton.shared.audioButtonClick.player.play()
+    audioButtonClick.player.play()
 
     createGameOutlet.exit(directionTo: "left", view: view, duration: 1.0)
     joinGameOutlet.exit(directionTo: "right", view: view, duration: 1.0)
@@ -68,7 +71,7 @@ class MainPageViewController: UIViewController {
   }
   
   @IBAction func pressToJoin(_ sender: UIButton) {
-    AudioSingleton.shared.audioButtonClick.player.play()
+    audioButtonClick.player.play()
     createGameOutlet.exit(directionTo: "left", view: view, duration: 1.0)
     joinGameOutlet.exit(directionTo: "right", view: view, duration: 1.0)
     imageLogo.exit(directionTo: "left", view: view, duration: 0.5)
