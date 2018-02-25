@@ -25,15 +25,17 @@ class QuestionViewController: UIViewController {
   @IBOutlet var onHoldWaiting: UILabel!
   @IBOutlet var displayTimeLabel: UILabel!
   
+  var players = [String:Int]()        //[idSession:Score] l'host carica tutti i peers in questo dizionario con punteggio 100
+  var playersTimers = [String:Int]()  //[idSession:Timer]
   
   var audioAnswerRight = Audio(fileName: "answerRight", typeName: "m4a")
   var audioAnswerWrong = Audio(fileName: "answerWrong", typeName: "m4a")
   var audioTimeUp = Audio(fileName: "timeUp", typeName: "m4a")
   
   
-  var timerReceiveWinnerTimer: Timer!        //SIMULATION
-  var timerReceiveWrongAnswer: Timer! //SIMULATION
-  var timerReceiveRightAnswer: Timer! //SIMULATION
+  var timerReceiveWinnerTimer: Timer! //SIMULATION MULTIPEER: host said to me I was the fastest to buzz
+  var timerReceiveLoserTimer: Timer! //SIMULATION MULTIPEER: host said to me I was one of the slowest to buzz
+  var timerReceivePlayerAnswered: Timer!  //SIMULATION MULTIPEER: other player answered
   
   let backgoundBlueOcean = UIColor(red: 67/255, green: 59/255, blue: 240/255, alpha: 1)
   let backgoundLilla = UIColor(red: 189/255, green: 16/255, blue: 224/255, alpha: 1)
@@ -50,7 +52,7 @@ class QuestionViewController: UIViewController {
   var question: [String:String] = ["text": PeerManager.peerShared.question, "correctlyAnswer": PeerManager.peerShared.correct, "wrongAnswer1": PeerManager.peerShared.wrong1, "wrongAnswer2": PeerManager.peerShared.wrong2, "wrongAnswer3": PeerManager.peerShared.wrong3]
   
   // END OF JOHNNY'S ZONE
-   */
+  */
   
   var questionLocal: [String:String] = ["text": "Italy's Capital", "correctlyAnswer": "Rome", "wrongAnswer1": "Florence", "wrongAnswer2": "Turin", "wrongAnswer3": "Naples"]
   
@@ -63,6 +65,15 @@ class QuestionViewController: UIViewController {
     NotificationCenter.default.addObserver(self, selector: #selector(self.loadProgressView10), name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.timeOut), name: NSNotification.Name(rawValue: "timeOut"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.buzzerPressed), name: NSNotification.Name(rawValue: "buzzer"), object: nil)
+    
+    
+    //CARICAMENTO LISTA GIOCATORI
+    /*
+     for player in players  {
+        initPlayer(player: player)
+     }
+     */
+    
     
     
     /*
@@ -79,22 +90,22 @@ class QuestionViewController: UIViewController {
     */
     
     
+    //DOMANDA LOCALE
     questionOutlet.text = questionLocal["text"]
     answerOneButton.setTitle(questionLocal["wrongAnswer1"], for: .normal)
     answerTwoButton.setTitle(questionLocal["wrongAnswer2"], for: .normal)
     answerThreeButton.setTitle(questionLocal["correctlyAnswer"], for: .normal)
     answerFourButton.setTitle(questionLocal["wrongAnswer3"], for: .normal)
     
-    //SIMULATION
-//    timerReceiveWinnerTimer = Timer.scheduledTimer(timeInterval: 13, target: self, selector: #selector(signalPeerReceiveWinnerTimer), userInfo: nil, repeats: true)
-//
-//    timerReceiveWrongAnswer = Timer.scheduledTimer(timeInterval: 8, target: self, selector: #selector(signalPeerReceiveWrongAnswer), userInfo: nil, repeats: true)
-//    //timerReceiveRightAnswer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(signalPeerReceiveRightAnswer), userInfo: nil, repeats: true)
   }
   
   override func viewWillAppear(_ animated: Bool) {
     syncQuestionBuzzer()  //qui è chiamata solo la prima volta
     AudioSingleton.shared.setAudioShared()
+  }
+  
+  func initPlayer(player: String) {
+    players[player] = 100
   }
   
   func syncQuestionBuzzer() {
@@ -104,7 +115,6 @@ class QuestionViewController: UIViewController {
       self.questionOutlet.center.x = self.point.x
       self.displayTimeLabel.center.x = self.pointTimer.x
     }
-    timerReceiveWinnerTimer = Timer.scheduledTimer(timeInterval: 13, target: self, selector: #selector(signalPeerReceiveWinnerTimer), userInfo: nil, repeats: true) //SIMULATION
     
     //if "sono host"
       //preparo e invio la domanda, e il buzzer scelto casualmente
@@ -158,7 +168,7 @@ class QuestionViewController: UIViewController {
     }
   }
 
-  // - MARK: 4: Method that generates random buzzers
+  // - MARK: 4: Method that sets buzzer
   func setBuzzer() {
     if indexBuzzer == 0 {
       if let oneBuzzer = Bundle.main.loadNibNamed("OneBuzzer", owner: self, options: nil)?.first as? OneBuzzer {
@@ -241,27 +251,14 @@ class QuestionViewController: UIViewController {
     disableAnswersInteractions()
     audioAnswerRight.player.play()
     button.backgroundColor = .green
-    //signalPeerSendRightAnswer()
-    Singleton.shared.delayWithSeconds(3) {
-      self.enableAnswersInteraction()
-      self.syncQuestionBuzzer()
-      //self.answersDisappear()
-    }
+    signalPeerSendPlayerAnswered()
   }
   
   func wrongAnswer(button: UIButton)  {
     disableAnswersInteractions()
     audioAnswerWrong.player.play()
     button.backgroundColor = .red
-    //signalPeerSendWrongAnswer()
-    Singleton.shared.delayWithSeconds(1.5) {
-      //self.answersDisappear()
-      self.enableAnswersInteraction()
-      self.syncQuestionBuzzer()
-      //self.onHoldLabel.text = "Waiting"
-      //self.onHoldLabel.isHidden = false
-      
-    }
+    signalPeerSendPlayerAnswered()
   }
   
   @IBAction func answerOneButtonAction(_ sender: UIButton) {
@@ -304,20 +301,6 @@ class QuestionViewController: UIViewController {
     }
   }
   
-  
-  /*
-  @IBAction func buttonAction(_ sender: UIButton) {
-    randomBuzzers()
-    answerOneButton.alpha = 0
-    answerTwoButton.alpha = 0
-    answerThreeButton.alpha = 0
-    answerFourButton.alpha = 0
-    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
-    Singleton.shared.delayWithSeconds(4) {
-    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "startTimer"), object: nil)
-    }
-  }
-  */
   func changeBackgroundColor(finalColor: UIColor) {
     view.changeBackgroundColor(initColor: view.backgroundColor!, finalColor: finalColor)
     Singleton.shared.delayWithSeconds(1.8, completion: {
@@ -336,30 +319,49 @@ class QuestionViewController: UIViewController {
     
   }
   
-  
-  
-  func signalPeerSendBuzz() {
+  /////*** MANAGING PLAYERS' TIMER BUZZER ***/////
+  // - MARK: 5: Method that send timer score to host for comparison
+  @objc func signalPeerSendBuzz() {
     //TODO: invio all'host del tempo di risposta
     let timer = (seconds * 100) + fraction
     print("TIMER: \(timer)")
-  }
-  
-  /*
-  func signalPeerSendWrongAnswer() {
-    //TODO: invio multipeer agli altri giocatori della risposta sbagliata
-  }
-
-  func signalPeerSendRightAnswer() {
-    //TODO: invio multipeer agli altri giocatori della risposta esatta
+    
+    //SIMULATION MULTIPEER WINNER: dopo 3 secondi l'host mi dice che sono stato il più VELOCE
+    timerReceiveWinnerTimer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(signalPeerReceiveWinnerTimer), userInfo: nil, repeats: true)
+    
+    //SIMULATION MULTIPEER LOSER: dopo 3 secondi l'host mi dice che sono stato il più LENTO
+    //timerReceiveLoserTimer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(signalPeerReceiveLoserTimer), userInfo: nil, repeats: true)
+    
     
   }
-  */
   
+  // - MARK: 6: Host's method that receive timer score from players to compare
+  @objc func signalPeerReceiveBuzz()  {
+    //TODO: ricezione nell'host dei timer dei giocatori
+    
+    //ricevuti tutti i timer dei giocatori, avviso il giocatore con il timer più basso con "signalPeerSendWinnerTimer()"
+    
+    /*
+     playersTimers[idSession] = timer
+     if playersTimers.count == players.count {
+        //cerca il giocatore col timer più basso
+        signalPeerSendResults()
+     }
+ 
+     */
+  }
   
+  /////*** WARNING PLAYERS ***///
+  // - MARK: 7: The host warns fastest player, and the slowers
+  @objc func signalPeerSendResults()  {
+    //TODO: invio segnale al giocatore più veloce per la comparsa delle risposte, mentre agli altri dico che sono stati troppo lenti...
+    
+  }
   
+  // - MARK: 8: Method that works when I receive signal from host. He said to me that I was the fastest to buzz
   @objc func signalPeerReceiveWinnerTimer() {
-    timerReceiveWinnerTimer.invalidate()
     //TODO: ricezione multipeer vincitore miglior timer da host
+    timerReceiveWinnerTimer.invalidate()  //SIMULAZIONE MULTIPEER: disattivazione timer Winner
     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "winnerTimer"), object: nil)
     
     answersAppear()
@@ -369,39 +371,36 @@ class QuestionViewController: UIViewController {
     onHoldWaiting.isHidden = true
   }
   
-  /*
-   @objc func signalPeerReceiveBuzz() {
-     timerReceiveBuzz.invalidate()
-     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
-     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopBlowing"), object: nil)
-     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopShaking"), object: nil)
-     //TODO: ricezione multipeer da altro giocatore
-   
-     onHoldView.isHidden = false
-     onHoldLabel.isHidden = false
-   }
-   
-  @objc func signalPeerReceiveWrongAnswer() {
-    timerReceiveWrongAnswer.invalidate()
-    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "startTimer"), object: nil)
-    //TODO: ricezione multipeer da altro giocatore
+  // - MARK: 9: Method that works when I receive signal from host. He said to me that I was one of the slowest players
+  @objc func signalPeerReceiveLoserTimer() {
+    //TODO: ricezione multipeer vincitore miglior timer da host
+    timerReceiveLoserTimer.invalidate()  //SIMULAZIONE MULTIPEER
     
-    onHoldView.isHidden = true
-    onHoldLabel.isHidden = true
+    onHoldLabel.text = "Too slow..."
+    onHoldLabel.backgroundColor = .red
+    
+    timerReceivePlayerAnswered = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(signalPeerReceivePlayerAnswered), userInfo: nil, repeats: true) //SIMULATION MULTIPEER: dopo 3 secondi l'altro giocatore ha risposto alla domanda
   }
   
   
-  @objc func signalPeerReceiveRightAnswer() {
-    timerReceiveRightAnswer.invalidate()
-    //TODO: ricezione multipeer da altro giocatore
+  //////*** PLAYER ANSWERED ***//////
+  // - MARK: 10: Method that warns others that I answered, and let's go on
+  @objc func signalPeerSendPlayerAnswered() {
+    //TODO: dico a tutti che ho risposto
     Singleton.shared.delayWithSeconds(3) {
+      self.enableAnswersInteraction()
       self.syncQuestionBuzzer()
-      self.answersDisappear()
     }
-    onHoldView.isHidden = true
-    onHoldLabel.isHidden = true
   }
-  */
+  
+  // - MARK: 11: Method that warns me that other player has answered
+  @objc func signalPeerReceivePlayerAnswered() {
+    timerReceivePlayerAnswered.invalidate() //SIMULATION MULTIPEER
+    self.syncQuestionBuzzer()
+    self.onHoldView.isHidden = true
+    self.onHoldLabel.isHidden = true
+    self.onHoldWaiting.isHidden = true
+  }
   
   @objc func moveQuestionBoxToOrigin() {
     questionOutlet.questionBoxMoveLeft(view: view, initPosition: point)
@@ -464,7 +463,11 @@ class QuestionViewController: UIViewController {
   @objc func timeOut() {
     buzzerTimerStop()
     signalPeerSendBuzz()
-    timerReceiveWinnerTimer.invalidate()  //SIMULATION
+    
+    //SIMULATION MULTIPEER
+    //timerReceiveWinnerTimer.invalidate()  //SIMULATION MULTIPEER
+    timerReceiveLoserTimer.invalidate()   //SIMULATION MULTIPEER
+    
     audioTimeUp.player.play()
     onHoldLabel.text = "Time is Up!"
     onHoldLabel.backgroundColor = .red
@@ -542,6 +545,5 @@ class QuestionViewController: UIViewController {
     //concatenate minuets, seconds and milliseconds as assign it to the UILabel
     displayTimeLabel.text = "\(strSeconds):\(strFraction)"
   }
-  
   //END OF TIMER ZONE
 }
