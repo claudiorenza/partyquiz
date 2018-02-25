@@ -18,6 +18,7 @@ class BlowBuzzer: UIView {
   
   var audioBuzz = Audio(fileName: "buzz", typeName: "m4a")
   var audioButtonClick = Audio(fileName: "buttonClick", typeName: "m4a")
+  var audioSignalReactive = Audio(fileName: "signalReactive", typeName: "m4a")
   
   var index = 0
   var indicatorViewInterval: CGFloat = 0.0
@@ -71,16 +72,26 @@ class BlowBuzzer: UIView {
       }
     } else if index == 1000 {
       audioBuzz.player.play()
-      viewOutlet.buzzerDown(view: viewOutlet)
+      stopBlowing()
+      //viewOutlet.buzzerDown(view: viewOutlet)
+      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
+      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "buzzer"), object: nil)
+      
       Singleton.shared.delayWithSeconds(0.4, completion: {
-        self.removeFromSuperview()
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "answers"), object: nil)
+        //self.removeFromSuperview()
+        //NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
       })
       label.text = "Done!"
-      stopBlowing()
     }
+  }
+  
+  @objc func timerWinner() {
+    audioSignalReactive.player.play()
+    viewOutlet.buzzerDown(view: viewOutlet)
+    Singleton.shared.delayWithSeconds(0.4, completion: {
+      self.removeFromSuperview()
+      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
+    })
   }
   
   func setRoundedView() {
@@ -97,6 +108,7 @@ class BlowBuzzer: UIView {
   func loadPopUp() {
     NotificationCenter.default.addObserver(self, selector: #selector(self.startBlowing), name: NSNotification.Name(rawValue: "startBlowing"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.stopBlowing), name: NSNotification.Name(rawValue: "stopBlowing"), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(self.timerWinner), name: NSNotification.Name(rawValue: "winnerTimer"), object: nil)
     if let blowBuzzerPopUp = Bundle.main.loadNibNamed("BlowBuzzerPopUp", owner: self, options: nil)?.first as? BlowBuzzerPopUp {
       self.addSubview(blowBuzzerPopUp)
       blowBuzzerPopUp.setViewElements()

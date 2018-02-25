@@ -16,6 +16,7 @@ class ShakeBuzzer: UIView {
   
   var audioBuzz = Audio(fileName: "buzz", typeName: "m4a")
   var audioButtonClick = Audio(fileName: "buttonClick", typeName: "m4a")
+  var audioSignalReactive = Audio(fileName: "signalReactive", typeName: "m4a")
   
   
   var indicatorViewInterval: CGFloat = 0.0
@@ -42,16 +43,26 @@ class ShakeBuzzer: UIView {
         } else {
           self.audioBuzz.player.play()
           self.stopShaking()
-          self.viewOutlet.buzzerDown(view: self.viewOutlet)
+          //self.viewOutlet.buzzerDown(view: self.viewOutlet)
+          NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
+          NotificationCenter.default.post(name: NSNotification.Name(rawValue: "buzzer"), object: nil)
           Singleton.shared.delayWithSeconds(0.4, completion: {
-            self.removeFromSuperview()
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "answers"), object: nil)
-          })
+            //self.removeFromSuperview()
+            //NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
+            })
+          self.label.text = "Done!"
         }
       }
     }
+  }
+  
+  @objc func timerWinner() {
+    audioSignalReactive.player.play()
+    viewOutlet.buzzerDown(view: viewOutlet)
+    Singleton.shared.delayWithSeconds(0.4, completion: {
+      self.removeFromSuperview()
+      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
+    })
   }
   
   func setRoundedView() {
@@ -74,6 +85,7 @@ class ShakeBuzzer: UIView {
   func loadPopUp() {
     NotificationCenter.default.addObserver(self, selector: #selector(self.beginShaking), name: NSNotification.Name(rawValue: "beginShaking"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.stopShaking), name: NSNotification.Name(rawValue: "stopShaking"), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(self.timerWinner), name: NSNotification.Name(rawValue: "winnerTimer"), object: nil)
     if let shakeBuzzerPopUp = Bundle.main.loadNibNamed("ShakeBuzzerPopUp", owner: self, options: nil)?.first as? ShakeBuzzerPopUp {
       self.addSubview(shakeBuzzerPopUp)
       shakeBuzzerPopUp.setViewElements()

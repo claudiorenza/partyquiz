@@ -18,6 +18,8 @@ class OneBuzzer: UIView {
   
   var audioBuzz = Audio(fileName: "buzz", typeName: "m4a")
   var audioButtonClick = Audio(fileName: "buttonClick", typeName: "m4a")
+  var audioSignalReactive = Audio(fileName: "signalReactive", typeName: "m4a")
+  
   
   func setBuzzer() {
     buzzer.layer.cornerRadius = 25.0
@@ -32,18 +34,29 @@ class OneBuzzer: UIView {
     outletCounter.text = "\(index)"
     if index == 0 {
       audioBuzz.player.play()
-      view.buzzerDown(view: view)
+      //view.buzzerDown(view: view)
       buzzer.isUserInteractionEnabled = false
+      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
+      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "buzzer"), object: nil)
       Singleton.shared.delayWithSeconds(0.4, completion: {
-        self.removeFromSuperview()
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "answers"), object: nil)
-      })
+        //self.removeFromSuperview()
+        //NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
+        })
+      outletCounter.text = "Done!"
     }
   }
   
+  @objc func timerWinner() {
+    audioSignalReactive.player.play()
+    view.buzzerDown(view: view)
+    Singleton.shared.delayWithSeconds(0.4, completion: {
+      self.removeFromSuperview()
+      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
+    })
+  }
+  
   func loadPopUp(view: UIView) {
+    NotificationCenter.default.addObserver(self, selector: #selector(self.timerWinner), name: NSNotification.Name(rawValue: "winnerTimer"), object: nil)
     if let oneBuzzerPopUp = Bundle.main.loadNibNamed("OneBuzzerPopUp", owner: self, options: nil)?.first as? OneBuzzerPopUp {
       self.addSubview(oneBuzzerPopUp)
       oneBuzzerPopUp.setViewElements(view: view)
