@@ -33,8 +33,8 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     pickerData = ["5", "10", "15", "20", "25", "30"]
     createPicker()
     
-    let labelPosition = labelOutlet.center
-    let textFieldPosition = pickedValueTextField.center
+    let labelPosition: CGPoint = labelOutlet.center
+    let textFieldPosition: CGPoint = pickedValueTextField.center
   }
   
   func createPicker() {
