@@ -53,6 +53,8 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
   }
   
   @IBAction func startGamePressed(_ sender: Any) {
+    AudioSingleton.shared.audioMusic.player.stop()
+    
     let selectedNumber = Int(pickedValueTextField.text!)
     
     print("Numero Selezionato: \(String(describing: selectedNumber))")
