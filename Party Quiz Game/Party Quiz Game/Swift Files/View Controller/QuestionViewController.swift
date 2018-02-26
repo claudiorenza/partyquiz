@@ -34,7 +34,7 @@ class QuestionViewController: UIViewController {
   
   
   // JOHNNY'S ZONE
-  var question: [String:String] = ["text": PeerManager.peerShared.question, "correctlyAnswer": PeerManager.peerShared.correct, "wrongAnswer1": PeerManager.peerShared.wrong1, "wrongAnswer2": PeerManager.peerShared.wrong2, "wrongAnswer3": PeerManager.peerShared.wrong3]
+//  var question: [String:String] = ["text": PeerManager.peerShared.question, "correctlyAnswer": PeerManager.peerShared.correct, "wrongAnswer1": PeerManager.peerShared.wrong1, "wrongAnswer2": PeerManager.peerShared.wrong2, "wrongAnswer3": PeerManager.peerShared.wrong3]
   
   // END OF JOHNNY'S ZONE
   
@@ -48,12 +48,12 @@ class QuestionViewController: UIViewController {
     NotificationCenter.default.addObserver(self, selector: #selector(self.loadProgressView10), name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.timeOut), name: NSNotification.Name(rawValue: "timeOut"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.answersAppear), name: NSNotification.Name(rawValue: "answers"), object: nil)
-    let currentQuestion = CoreDataManager.shared.questionDictionary[0]
-    questionOutlet.text = currentQuestion["text"]
-    buttonAnswerOne.setTitle(currentQuestion["wrongAnswer1"], for: .normal)
-    buttonAnswerTwo.setTitle(currentQuestion["wrongAnswer2"], for: .normal)
-    buttonAnswerThree.setTitle(currentQuestion["correctlyAnswer"], for: .normal)
-    buttonAnswerFour.setTitle(currentQuestion["wrongAnswer3"], for: .normal)
+//    let currentQuestion = CoreDataManager.shared.questionDictionary[0]
+//    questionOutlet.text = currentQuestion["text"]
+//    buttonAnswerOne.setTitle(currentQuestion["wrongAnswer1"], for: .normal)
+//    buttonAnswerTwo.setTitle(currentQuestion["wrongAnswer2"], for: .normal)
+//    buttonAnswerThree.setTitle(currentQuestion["correctlyAnswer"], for: .normal)
+//    buttonAnswerFour.setTitle(currentQuestion["wrongAnswer3"], for: .normal)
     
     
     //SIMULATION

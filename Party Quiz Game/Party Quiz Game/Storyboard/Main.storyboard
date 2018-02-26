@@ -289,7 +289,6 @@
                                 <state key="normal" title="Start Game"/>
                                 <connections>
                                     <action selector="startGamePressed:" destination="gUp-Bt-fDm" eventType="touchUpInside" id="lpT-oc-Yfh"/>
-                                    <segue destination="411-n7-06Y" kind="show" animates="NO" id="bD4-1E-Jrx"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RVW-mx-cAv">
@@ -306,6 +305,7 @@
                     <connections>
                         <outlet property="pickedValueTextField" destination="RVW-mx-cAv" id="roe-vJ-QSJ"/>
                         <outlet property="startGameButton" destination="gVx-iG-juz" id="MxY-3w-ia7"/>
+                        <segue destination="411-n7-06Y" kind="show" identifier="fromCreate2" id="Jkg-6h-m0J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OZi-0k-mpL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -430,7 +430,7 @@
         <image name="Shape" width="229" height="210"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bD4-1E-Jrx"/>
+        <segue reference="Jkg-6h-m0J"/>
         <segue reference="ccu-NN-0BM"/>
     </inferredMetricsTieBreakers>
 </document>
