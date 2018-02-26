@@ -124,7 +124,7 @@ extension UIImageView {
     animation.duration = 2
     animation.autoreverses = true
     animation.repeatCount = Float.infinity
-    
+
     layer.add(animation, forKey: nil)
   }
   
@@ -136,7 +136,7 @@ extension UIImageView {
     animation.duration = 2.9
     animation.autoreverses = true
     animation.repeatCount = Float.infinity
-    
+
     layer.add(animation, forKey: nil)
   }
 

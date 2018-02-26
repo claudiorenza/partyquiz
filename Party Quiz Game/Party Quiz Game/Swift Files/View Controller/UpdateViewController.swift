@@ -13,8 +13,8 @@ import CoreData
 class UpdateViewController: UIViewController {
   
   @IBOutlet weak var spiral: UIImageView!
-  @IBOutlet weak var label: UILabel!
   @IBOutlet var dots: [UILabel]!
+  @IBOutlet weak var label: UILabel!
   
   var cloudKitDatabase = CloudKitQuestions.shared
   
@@ -33,16 +33,17 @@ class UpdateViewController: UIViewController {
     super.viewDidLoad()
     cloudKitDatabase.questioningDelegate = self
   }
+
   
   var loadingView: UIView?
   
   override func viewDidAppear(_ animated: Bool) {
     cloudKitDatabase.resetLocalArray()
     //Make loading view
-    self.loadingView = UIView(frame: self.view.frame)
-    loadingView!.alpha = 0.2
-    loadingView!.backgroundColor = UIColor.black
-    self.view.addSubview(loadingView!)
+//    self.loadingView = UIView(frame: self.view.frame)
+//    loadingView!.alpha = 0.2
+//    loadingView!.backgroundColor = UIColor.black
+//    self.view.addSubview(loadingView!)
     
     cloudKitDatabase.downloadAllQuestions()
   }
@@ -87,7 +88,7 @@ class UpdateViewController: UIViewController {
       print("L'app non è stata aggiornata, non memorizzo niente in locale.")
     }
   }
-
+  
   func dot1Blink() {
     dots[0].blink()
   }
@@ -115,6 +116,5 @@ class UpdateViewController: UIViewController {
       self.dotBlinking()
     }
   }
-  
 }
 

@@ -9,7 +9,7 @@
 import UIKit
 
 class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
-
+  
   let numberOfQuestionsPicker = UIPickerView()
   var pickerData: [String] = [String]()
   
@@ -21,6 +21,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     super.viewDidLoad()
     PeerManager.peerShared.viewController = self
     
+
     numberQuestionLabel.clipsToBounds = true
     numberQuestionLabel.layer.cornerRadius = 15.0
     numberQuestionLabel.layer.borderColor = UIColor.colorGray().cgColor
@@ -66,6 +67,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
       let question = CoreDataManager.shared.questionDictionary[i]
       print(question["text"]!)
     }
+    
     PeerManager.peerShared.stopBrowser()
     PeerManager.peerShared.startAdvertiser()
     PeerManager.peerShared.setupBrowserVC()
@@ -76,11 +78,11 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     let indexSelectedQuestions = generateRandomListNumbers(numberOfNumbers: numberOfQuestions)
     
     for i in 0...numberOfQuestions-1 {
-//      print("Inserisco nel dictionary la domanda: \(indexSelectedQuestions[i])")
+      //      print("Inserisco nel dictionary la domanda: \(indexSelectedQuestions[i])")
       
       CoreDataManager.shared.questionDictionary.append([/*"id":CoreDataManager.shared.question[i].value(forKey: "id"),*/ "text":CoreDataManager.shared.question[indexSelectedQuestions[i]].value(forKey: "text") as! String, "correctlyAnswer":CoreDataManager.shared.question[indexSelectedQuestions[i]].value(forKey: "correctlyAnswer") as! String, "wrongAnswer1":CoreDataManager.shared.question[indexSelectedQuestions[i]].value(forKey: "wrongAnswer1") as! String, "wrongAnswer2":CoreDataManager.shared.question[indexSelectedQuestions[i]].value(forKey: "wrongAnswer2") as! String, "wrongAnswer3":CoreDataManager.shared.question[indexSelectedQuestions[i]].value(forKey: "wrongAnswer3") as! String, "category":CoreDataManager.shared.question[indexSelectedQuestions[i]].value(forKey: "category") as! String])
     }
-//    print("QuestionDictionary Popolato")
+    //    print("QuestionDictionary Popolato")
   }
   
   
@@ -99,36 +101,36 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     print("Numero domande CloudKit: \(CloudKitQuestions.shared.localQuestions.count)")
     print("Numero massimo: \(CoreDataManager.shared.countRow(nameEntity: entityNameQ, context: context))")
     randomNumbers.append(Int(arc4random_uniform(UInt32(CoreDataManager.shared.question.count))))
-//    print("Inserito \(randomNumbers[0]) in lista\n")
+    //    print("Inserito \(randomNumbers[0]) in lista\n")
     
     repeat {
       randomNumbers.append(Int(arc4random_uniform(UInt32(CoreDataManager.shared.question.count))))
-//      print("Inserito \(randomNumbers[x]) in lista, controllo se va bene\n")
+      //      print("Inserito \(randomNumbers[x]) in lista, controllo se va bene\n")
       i = 0
       check = true
       repeat {
         if (randomNumbers[i] != randomNumbers[x]) {
-//          print("--\(randomNumbers[i]) diverso da \(randomNumbers[x])\n")
+          //          print("--\(randomNumbers[i]) diverso da \(randomNumbers[x])\n")
           i = i+1
         } else {
-//          print("--\(randomNumbers[i]) uguale a \(randomNumbers[x])\n")
+          //          print("--\(randomNumbers[i]) uguale a \(randomNumbers[x])\n")
           check = false
         }
       } while (check && (i < x))
       
       if(check) {
-//        print("-Numero valido\n")
+        //        print("-Numero valido\n")
         x = x+1
       } else {
-//        print("-Numero NON valido\n")
+        //        print("-Numero NON valido\n")
         randomNumbers.removeLast()
       }
     } while (x < numberOfNumbers)
     
-//    print("LISTA:\n")
-//    for i in 0...numberOfNumbers-1 {
-//      print("- \(randomNumbers[i])")
-//    }
+    //    print("LISTA:\n")
+    //    for i in 0...numberOfNumbers-1 {
+    //      print("- \(randomNumbers[i])")
+    //    }
     
     return randomNumbers
   }
@@ -154,7 +156,6 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
   
   @objc func donePressed() {
     self.view.endEditing(true)
-//    startGameButton.isEnabled = true
   }
   
 }
