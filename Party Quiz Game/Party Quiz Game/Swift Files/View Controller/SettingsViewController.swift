@@ -21,6 +21,15 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     super.viewDidLoad()
     PeerManager.peerShared.viewController = self
     
+    labelOutlet.clipsToBounds = true
+    labelOutlet.layer.cornerRadius = 15.0
+    labelOutlet.layer.borderColor = UIColor.colorGray().cgColor
+    labelOutlet.layer.borderWidth = 4.0
+    
+    startGameButton.layer.cornerRadius = 25.0
+    startGameButton.layer.borderColor = UIColor.colorGray().cgColor
+    startGameButton.layer.borderWidth = 6.0
+    
     pickerData = ["5", "10", "15", "20", "25", "30"]
     createPicker()
     
@@ -45,6 +54,8 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
   }
   
   @IBAction func startGamePressed(_ sender: Any) {
+    AudioSingleton.shared.audioMusic.player.stop()
+    
     let selectedNumber = Int(pickedValueTextField.text!)
     
     print("Numero Selezionato: \(String(describing: selectedNumber))")

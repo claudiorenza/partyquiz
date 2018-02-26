@@ -60,7 +60,6 @@ class MainPageViewController: UIViewController {
   
   @IBAction func pressToCreate(_ sender: UIButton) {
     audioPlayerButtonClick.play()
-    audioPlayerMusic.stop()
   }
   
   @IBAction func pressToJoin(_ sender: UIButton) {
@@ -69,7 +68,6 @@ class MainPageViewController: UIViewController {
     PeerManager.peerShared.setupBrowserVC()
     present(PeerManager.peerShared.browserVC, animated: true, completion: nil)
     audioPlayerButtonClick.play()
-    audioPlayerMusic.stop()
   }
   
   @IBAction func pressForInfo(_ sender: UIButton) {
