@@ -11,12 +11,28 @@ import UIKit
 
 extension UIColor {
   
-  class func borderColorGray()  -> CGColor  {
-    return UIColor(red: 96.0/255.0, green: 96.0/255.0, blue: 96.0/255.0, alpha: 1.0).cgColor
+  class func colorGray()  -> UIColor  {
+    return UIColor(red: 96.0/255.0, green: 96.0/255.0, blue: 96.0/255.0, alpha: 1.0)
+  }
+  
+  class func colorLightBlue()  -> UIColor  {
+    return UIColor(red: 136/255, green: 226/255, blue: 243/255, alpha: 1.0)
+  }
+  
+  class func colorGreen()  -> UIColor  {
+    return UIColor(red: 33/255, green: 165/255, blue: 21/255, alpha: 1.0)
+  }
+  
+  class func spiralColor() -> UIColor {
+    return UIColor(red: 45/255, green: 145/255, blue: 123/255, alpha: 1.0)
   }
   
   class func spiralLabelColor() -> UIColor {
     return UIColor(red: 35/255, green: 113/255, blue: 96/255, alpha: 1.0)
+  }
+  
+  class func borderColorGray()  -> CGColor  {
+    return UIColor(red: 96.0/255.0, green: 96.0/255.0, blue: 96.0/255.0, alpha: 1.0).cgColor
   }
   
     convenience init(hex: String) {

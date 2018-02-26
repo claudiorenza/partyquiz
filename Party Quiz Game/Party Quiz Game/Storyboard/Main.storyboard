@@ -380,7 +380,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="buttonAnswerOneAction:" destination="411-n7-06Y" eventType="touchUpInside" id="B8B-n7-xW1"/>
+                                            <action selector="answerOneButtonAction:" destination="411-n7-06Y" eventType="touchUpInside" id="ELy-Xm-7Rv"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jH-he-70h" userLabel="ButtonTwo">
@@ -392,7 +392,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="buttonAnswerTwoAction:" destination="411-n7-06Y" eventType="touchUpInside" id="dxo-uh-Ne9"/>
+                                            <action selector="answerTwoButtonAction:" destination="411-n7-06Y" eventType="touchUpInside" id="kmC-Cs-y62"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMp-FS-eQB" userLabel="ButtonThree">
@@ -404,7 +404,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="buttonAnswerThreeAction:" destination="411-n7-06Y" eventType="touchUpInside" id="iKr-kB-QZr"/>
+                                            <action selector="answerThreeButtonAction:" destination="411-n7-06Y" eventType="touchUpInside" id="bC1-2u-e0c"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2n-FD-vzh" userLabel="ButtonFour">
@@ -416,7 +416,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="buttonAnswerFourAction:" destination="411-n7-06Y" eventType="touchUpInside" id="mkY-f7-flm"/>
+                                            <action selector="answerFourButtonAction:" destination="411-n7-06Y" eventType="touchUpInside" id="baJ-Zr-Gnp"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xM4-HX-fV8">
@@ -466,10 +466,11 @@
                         <viewLayoutGuide key="safeArea" id="M0C-ue-drF"/>
                     </view>
                     <connections>
-                        <outlet property="buttonAnswerFour" destination="e2n-FD-vzh" id="Aqd-kL-Rko"/>
-                        <outlet property="buttonAnswerOne" destination="OUq-c4-MOh" id="gGC-Vn-wfC"/>
+                        <outlet property="answerFourButton" destination="e2n-FD-vzh" id="Vqv-Ud-Vgx"/>
+                        <outlet property="answerOneButton" destination="OUq-c4-MOh" id="Ti9-fJ-72I"/>
+                        <outlet property="answerThreeButton" destination="jMp-FS-eQB" id="qjQ-Oc-C1G"/>
+                        <outlet property="answerTwoButton" destination="1jH-he-70h" id="362-9v-97q"/>
                         <outlet property="buttonAnswerThree" destination="jMp-FS-eQB" id="de0-vn-XsQ"/>
-                        <outlet property="buttonAnswerTwo" destination="1jH-he-70h" id="3qt-1w-ryO"/>
                         <outlet property="buzzerView" destination="Sdk-kC-f4A" id="qii-cN-kpD"/>
                         <outlet property="progressControllerView" destination="KRT-nY-7yh" id="ikD-tV-nfB"/>
                         <outlet property="questionOutlet" destination="xM4-HX-fV8" id="tWo-wd-NBg"/>
