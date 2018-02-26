@@ -15,6 +15,10 @@ extension UIColor {
     return UIColor(red: 96.0/255.0, green: 96.0/255.0, blue: 96.0/255.0, alpha: 1.0).cgColor
   }
   
+  class func spiralLabelColor() -> UIColor {
+    return UIColor(red: 35/255, green: 113/255, blue: 96/255, alpha: 1.0)
+  }
+  
     convenience init(hex: String) {
       let scanner = Scanner(string: hex)
       scanner.scanLocation = 0
