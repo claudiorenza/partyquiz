@@ -17,6 +17,9 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
   @IBOutlet weak var startGameButton: UIButton!
   @IBOutlet weak var labelOutlet: UILabel!
   
+  var labelPosition = CGPoint()
+  var textFieldPosition = CGPoint()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     PeerManager.peerShared.viewController = self
@@ -32,9 +35,9 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     pickerData = ["5", "10", "15", "20", "25", "30"]
     createPicker()
-    
-    let labelPosition: CGPoint = labelOutlet.center
-    let textFieldPosition: CGPoint = pickedValueTextField.center
+  
+    labelPosition = labelOutlet.center
+    textFieldPosition = pickedValueTextField.center
   }
   
   func createPicker() {
@@ -153,22 +156,22 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     pickedValueTextField.text = pickerData[row]
   }
   
-  @objc func donePressed() {
-    self.view.endEditing(true)
-    labelOutlet.moveDown(view: view, point: labelPosition)
-    pickedValueTextField.moveDown(view: view, point: textFieldPosition)
-    Singleton.shared.delayWithSeconds(0.3) {
-      self.labelOutlet.center.y = self.view.bounds.height * 0.1
-      self.pickedValueTextField.center.y = self.view.bounds.height * 0.3
-    }
-  }
-  
   @IBAction func textFieldAction(_ sender: UITextField) {
     labelOutlet.moveUp(view: view)
     pickedValueTextField.moveUp(view: view)
     Singleton.shared.delayWithSeconds(0.3) {
       self.labelOutlet.center.y = self.view.bounds.height * 0.1
       self.pickedValueTextField.center.y = self.view.bounds.height * 0.3
+    }
+  }
+  
+  @objc func donePressed() {
+    self.view.endEditing(true)
+    labelOutlet.moveDown(view: view, point: labelPosition)
+    pickedValueTextField.moveDown(view: view, point: textFieldPosition)
+    Singleton.shared.delayWithSeconds(0.3) {
+      self.labelOutlet.center.y = self.labelPosition.y
+      self.pickedValueTextField.center.y = self.textFieldPosition.y
     }
   }
 }
