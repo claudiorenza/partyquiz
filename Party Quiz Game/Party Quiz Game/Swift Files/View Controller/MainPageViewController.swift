@@ -75,6 +75,8 @@ class MainPageViewController: UIViewController {
   
   @IBAction func pressForInfo(_ sender: UIButton) {
     labelOutlet.text = "Infos..."
+    
+//    let infoAlert: UIAlertView = UIAlertView(title: "Credits", message: "Quizzer created by Pasquale Bruno, Ernesto De Crecchio, Armando Feniello, Giovanni Frate, Michele Golino, Claudio Renza", delegate: self, cancelButtonTitle: "Ok", otherButtonTitles: nil)
   }
   
   @IBAction func createGameAction(_ sender: UIButton) {

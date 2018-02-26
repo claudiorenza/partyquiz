@@ -169,7 +169,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YBf-hh-Uwg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="269" y="-324"/>
+            <point key="canvasLocation" x="307" y="-1159"/>
         </scene>
         <!--Update View Controller-->
         <scene sceneID="n0C-oI-f5Q">
@@ -230,7 +230,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D3Q-cc-vKl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="269" y="647"/>
+            <point key="canvasLocation" x="306" y="124"/>
         </scene>
         <!--MainPage View Controller-->
         <scene sceneID="b9J-TU-mEs">
@@ -255,6 +255,7 @@
                                 <connections>
                                     <action selector="createGameAction:" destination="g28-jk-LDH" eventType="touchUpInside" id="G6H-ts-14P"/>
                                     <action selector="pressToCreate:" destination="g28-jk-LDH" eventType="touchUpInside" id="raT-pv-kCg"/>
+                                    <segue destination="gUp-Bt-fDm" kind="show" identifier="fromCreate1" id="UUY-kq-sdt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GdX-al-lOJ">
@@ -290,13 +291,12 @@
                     <connections>
                         <outlet property="createGameOutlet" destination="EpX-uI-O5M" id="X1B-lN-z2N"/>
                         <outlet property="joinGameOutlet" destination="GdX-al-lOJ" id="o9E-9x-whX"/>
-                        <segue destination="gUp-Bt-fDm" kind="show" identifier="fromCreate1" animates="NO" id="1bF-UN-h9c"/>
                         <segue destination="411-n7-06Y" kind="show" identifier="fromJoin" id="iiK-GW-4Ch"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RKC-Yr-skb" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1167" y="-324"/>
+            <point key="canvasLocation" x="1114" y="-212"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="cyx-Rr-9Fh">
@@ -333,12 +333,17 @@
                                 <state key="normal" title="Start Game">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="startGamePressed:" destination="gUp-Bt-fDm" eventType="touchUpInside" id="8ic-Dr-6Kd"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8gO-gL-L39"/>
                     </view>
                     <connections>
+                        <outlet property="pickedValueTextField" destination="woU-Ww-Meo" id="BCV-46-hZM"/>
+                        <outlet property="startGameButton" destination="aDH-xW-IlU" id="Qgc-5R-edw"/>
                         <segue destination="411-n7-06Y" kind="show" identifier="fromCreate2" id="Jkg-6h-m0J"/>
                     </connections>
                 </viewController>
@@ -481,7 +486,7 @@
         <image name="Uploadimg_Background" width="568" height="320"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iiK-GW-4Ch"/>
+        <segue reference="Jkg-6h-m0J"/>
         <segue reference="ccu-NN-0BM"/>
     </inferredMetricsTieBreakers>
 </document>
