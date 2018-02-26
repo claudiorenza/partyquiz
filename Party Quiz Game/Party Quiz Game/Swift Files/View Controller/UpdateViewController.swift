@@ -39,10 +39,10 @@ class UpdateViewController: UIViewController {
   override func viewDidAppear(_ animated: Bool) {
     cloudKitDatabase.resetLocalArray()
     //Make loading view
-    self.loadingView = UIView(frame: self.view.frame)
-    loadingView!.alpha = 0.2
-    loadingView!.backgroundColor = UIColor.black
-    self.view.addSubview(loadingView!)
+//    self.loadingView = UIView(frame: self.view.frame)
+//    loadingView!.alpha = 0.2
+//    loadingView!.backgroundColor = UIColor.black
+//    self.view.addSubview(loadingView!)
     
     cloudKitDatabase.downloadAllQuestions()
   }
