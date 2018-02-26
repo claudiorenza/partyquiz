@@ -409,8 +409,6 @@ class QuestionViewController: UIViewController {
   }
   
   @objc func answersAppear() {
-    signalPeerSendBuzz()  //invio al peer
-    
     self.answerOneButton.fadeInAnswers()
     Singleton.shared.delayWithSeconds(0.2) {
       self.answerOneButton.alpha = 1
