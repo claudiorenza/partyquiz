@@ -43,7 +43,7 @@ class MainPageViewController: UIViewController {
       self.createGameOutlet.entering(view: self.view)
       self.joinGameOutlet.entering(view: self.view)
     }
-    Singleton.shared.delayWithSeconds(1.4) {
+    Singleton.shared.delayWithSeconds(1.3) {
       self.createGameOutlet.center.x = self.view.frame.midX
       self.joinGameOutlet.center.x = self.view.frame.midX
     }

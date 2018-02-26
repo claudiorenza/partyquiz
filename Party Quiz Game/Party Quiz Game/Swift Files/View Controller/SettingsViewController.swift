@@ -40,6 +40,14 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     textFieldPosition = pickedValueTextField.center
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    startGameButton.center.x = -startGameButton.frame.width
+    
+    self.startGameButton.entering(view: self.view)
+    self.startGameButton.center.x = self.view.frame.midX
+  }
+  
+  
   func createPicker() {
     //toolbar
     let toolbar = UIToolbar()
@@ -57,6 +65,8 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
   }
   
   @IBAction func startGamePressed(_ sender: Any) {
+    startGameButton.exit(directionTo: "left", view: view, duration: 1.0)
+    
     let selectedNumber = Int(pickedValueTextField.text!)
     
     print("Numero Selezionato: \(String(describing: selectedNumber))")
