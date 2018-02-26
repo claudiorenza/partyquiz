@@ -54,6 +54,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
       let question = CoreDataManager.shared.questionDictionary[i]
       print(question["text"]!)
     }
+    
     PeerManager.peerShared.stopBrowser()
     PeerManager.peerShared.startAdvertiser()
     PeerManager.peerShared.setupBrowserVC()
