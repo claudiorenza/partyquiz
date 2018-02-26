@@ -155,8 +155,8 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
   
   @objc func donePressed() {
     self.view.endEditing(true)
-    labelOutlet.moveDown(view: view, point: labelPosition)
-    pickedValueTextField.moveDown(view: view, point: textFieldPosition)
+   // labelOutlet.moveDown(view: view, point: labelPosition)
+    //pickedValueTextField.moveDown(view: view, point: textFieldPosition)
     Singleton.shared.delayWithSeconds(0.3) {
       self.labelOutlet.center.y = self.view.bounds.height * 0.1
       self.pickedValueTextField.center.y = self.view.bounds.height * 0.3
