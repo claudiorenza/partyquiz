@@ -31,7 +31,9 @@ class ShakeBuzzer: UIView {
           if (myData.acceleration.x > 1.2 || myData.acceleration.y > 1.2 || myData.acceleration.z > 1.2) {
             self.index += 1
             self.label.text = "\(self.index)"
-            self.indicatorView.frame = CGRect(x: self.indicatorView.frame.origin.x, y: self.indicatorView.frame.origin.y, width: self.indicatorView.frame.width, height: (self.indicatorViewInterval * CGFloat(10-self.index)/10))
+            UIView.animate(withDuration: 0.2, animations: {
+              self.indicatorView.frame = CGRect(x: self.indicatorView.frame.origin.x, y: self.indicatorView.frame.origin.y, width: self.indicatorView.frame.width, height: (self.indicatorViewInterval * CGFloat(10-self.index)/10))
+            })
           }
         } else {
           self.motionManager.stopAccelerometerUpdates()

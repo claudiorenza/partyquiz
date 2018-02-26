@@ -59,7 +59,9 @@ class BlowBuzzer: UIView {
       if level > -10 {
         index += 1
         label.text = ("\(index / 10)")
-        indicatorView.frame = CGRect(x: indicatorView.frame.origin.x, y: indicatorView.frame.origin.y, width: indicatorView.frame.width, height: (indicatorViewInterval * CGFloat(1000-index)/1000))
+        UIView.animate(withDuration: 0.2, animations: {
+          self.indicatorView.frame = CGRect(x: self.indicatorView.frame.origin.x, y: self.indicatorView.frame.origin.y, width: self.indicatorView.frame.width, height: (self.indicatorViewInterval * CGFloat(1000-self.index)/1000))
+        })
       }
     } else if index == 1000 {
       viewOutlet.buzzerDown(view: viewOutlet)
