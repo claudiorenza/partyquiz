@@ -38,20 +38,21 @@
 		CD2E9877203C58C400CE646E /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2E9875203C58C400CE646E /* ProgressView.xib */; };
 		CD8E4F72203B3728008C48AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD8E4F71203B3728008C48AE /* Main.storyboard */; };
 		CD8E4F75203B393D008C48AE /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E4F74203B393D008C48AE /* MainPageViewController.swift */; };
-		CD8E4F7D203B3D0B008C48AE /* timeUp.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CD8E4F77203B3D0B008C48AE /* timeUp.m4a */; };
-		CD8E4F7E203B3D0B008C48AE /* answerWrong.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CD8E4F78203B3D0B008C48AE /* answerWrong.m4a */; };
-		CD8E4F7F203B3D0B008C48AE /* musicIntro.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CD8E4F79203B3D0B008C48AE /* musicIntro.m4a */; };
-		CD8E4F80203B3D0B008C48AE /* buttonClick.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CD8E4F7A203B3D0B008C48AE /* buttonClick.m4a */; };
-		CD8E4F81203B3D0B008C48AE /* swoosh_2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CD8E4F7B203B3D0B008C48AE /* swoosh_2.m4a */; };
-		CD8E4F82203B3D0B008C48AE /* swoosh_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CD8E4F7C203B3D0B008C48AE /* swoosh_1.m4a */; };
 		CD8E4F86203B3D95008C48AE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8E4F85203B3D95008C48AE /* AVFoundation.framework */; };
-		CD8E4F87203B3DA2008C48AE /* timerTick.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CD8E4F84203B3D5D008C48AE /* timerTick.m4a */; };
-		CD8E4F88203B3DA2008C48AE /* answerRight.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CD8E4F83203B3D46008C48AE /* answerRight.m4a */; };
-		CD8E4F8A203B3E01008C48AE /* gong.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CD8E4F89203B3E01008C48AE /* gong.m4a */; };
 		CD8E4F8E203B3E46008C48AE /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E4F8C203B3E46008C48AE /* UIColorExtension.swift */; };
 		CD8E4F8F203B3E46008C48AE /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E4F8D203B3E46008C48AE /* UIButtonExtension.swift */; };
 		CD8E4FB9203B3FD7008C48AE /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E4FB7203B3FD7008C48AE /* UIViewExtension.swift */; };
 		CD8E4FBA203B3FD7008C48AE /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E4FB8203B3FD7008C48AE /* UIImageViewExtension.swift */; };
+		CDDC6A9C20445607007C4C2E /* timeUp.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CDDC6A9B20445606007C4C2E /* timeUp.m4a */; };
+		CDDC6A9E20445610007C4C2E /* timerTick.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CDDC6A9D20445610007C4C2E /* timerTick.m4a */; };
+		CDDC6AA02044561A007C4C2E /* answerWrong.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CDDC6A9F20445619007C4C2E /* answerWrong.m4a */; };
+		CDDC6AA220445620007C4C2E /* answerRight.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CDDC6AA120445620007C4C2E /* answerRight.m4a */; };
+		CDDC6AA420445627007C4C2E /* buttonClick.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CDDC6AA320445627007C4C2E /* buttonClick.m4a */; };
+		CDDC6AA62044562E007C4C2E /* musicIntro.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CDDC6AA52044562E007C4C2E /* musicIntro.m4a */; };
+		CDDC6AA820445638007C4C2E /* buzz.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CDDC6AA720445638007C4C2E /* buzz.m4a */; };
+		CDDC6AAA20445641007C4C2E /* signalReactive.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CDDC6AA920445641007C4C2E /* signalReactive.m4a */; };
+		CDDC6AAC20445649007C4C2E /* swoosh_2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CDDC6AAB20445648007C4C2E /* swoosh_2.m4a */; };
+		CDDC6AAE20445651007C4C2E /* swoosh_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CDDC6AAD20445650007C4C2E /* swoosh_1.m4a */; };
 		CDF7E4FE203DC6E9008F7286 /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E4FB203DC6E9008F7286 /* UpdateViewController.swift */; };
 		CDF7E4FF203DC6E9008F7286 /* PreStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E4FC203DC6E9008F7286 /* PreStartViewController.swift */; };
 		CDF7E500203DC6E9008F7286 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E4FD203DC6E9008F7286 /* SettingsViewController.swift */; };
@@ -96,20 +97,21 @@
 		CD2E9875203C58C400CE646E /* ProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
 		CD8E4F71203B3728008C48AE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CD8E4F74203B393D008C48AE /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
-		CD8E4F77203B3D0B008C48AE /* timeUp.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeUp.m4a; sourceTree = "<group>"; };
-		CD8E4F78203B3D0B008C48AE /* answerWrong.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = answerWrong.m4a; sourceTree = "<group>"; };
-		CD8E4F79203B3D0B008C48AE /* musicIntro.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = musicIntro.m4a; sourceTree = "<group>"; };
-		CD8E4F7A203B3D0B008C48AE /* buttonClick.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = buttonClick.m4a; sourceTree = "<group>"; };
-		CD8E4F7B203B3D0B008C48AE /* swoosh_2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = swoosh_2.m4a; sourceTree = "<group>"; };
-		CD8E4F7C203B3D0B008C48AE /* swoosh_1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = swoosh_1.m4a; sourceTree = "<group>"; };
-		CD8E4F83203B3D46008C48AE /* answerRight.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = answerRight.m4a; sourceTree = "<group>"; };
-		CD8E4F84203B3D5D008C48AE /* timerTick.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = timerTick.m4a; sourceTree = "<group>"; };
 		CD8E4F85203B3D95008C48AE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		CD8E4F89203B3E01008C48AE /* gong.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = gong.m4a; sourceTree = "<group>"; };
 		CD8E4F8C203B3E46008C48AE /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		CD8E4F8D203B3E46008C48AE /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		CD8E4FB7203B3FD7008C48AE /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		CD8E4FB8203B3FD7008C48AE /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		CDDC6A9B20445606007C4C2E /* timeUp.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeUp.m4a; sourceTree = "<group>"; };
+		CDDC6A9D20445610007C4C2E /* timerTick.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = timerTick.m4a; sourceTree = "<group>"; };
+		CDDC6A9F20445619007C4C2E /* answerWrong.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = answerWrong.m4a; sourceTree = "<group>"; };
+		CDDC6AA120445620007C4C2E /* answerRight.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = answerRight.m4a; sourceTree = "<group>"; };
+		CDDC6AA320445627007C4C2E /* buttonClick.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = buttonClick.m4a; sourceTree = "<group>"; };
+		CDDC6AA52044562E007C4C2E /* musicIntro.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = musicIntro.m4a; sourceTree = "<group>"; };
+		CDDC6AA720445638007C4C2E /* buzz.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = buzz.m4a; sourceTree = "<group>"; };
+		CDDC6AA920445641007C4C2E /* signalReactive.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = signalReactive.m4a; sourceTree = "<group>"; };
+		CDDC6AAB20445648007C4C2E /* swoosh_2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = swoosh_2.m4a; sourceTree = "<group>"; };
+		CDDC6AAD20445650007C4C2E /* swoosh_1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = swoosh_1.m4a; sourceTree = "<group>"; };
 		CDF7E4FB203DC6E9008F7286 /* UpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
 		CDF7E4FC203DC6E9008F7286 /* PreStartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreStartViewController.swift; sourceTree = "<group>"; };
 		CDF7E4FD203DC6E9008F7286 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -294,15 +296,16 @@
 		CD8E4F76203B3D0B008C48AE /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				CD8E4F77203B3D0B008C48AE /* timeUp.m4a */,
-				CD8E4F84203B3D5D008C48AE /* timerTick.m4a */,
-				CD8E4F78203B3D0B008C48AE /* answerWrong.m4a */,
-				CD8E4F83203B3D46008C48AE /* answerRight.m4a */,
-				CD8E4F79203B3D0B008C48AE /* musicIntro.m4a */,
-				CD8E4F89203B3E01008C48AE /* gong.m4a */,
-				CD8E4F7A203B3D0B008C48AE /* buttonClick.m4a */,
-				CD8E4F7B203B3D0B008C48AE /* swoosh_2.m4a */,
-				CD8E4F7C203B3D0B008C48AE /* swoosh_1.m4a */,
+				CDDC6A9B20445606007C4C2E /* timeUp.m4a */,
+				CDDC6A9D20445610007C4C2E /* timerTick.m4a */,
+				CDDC6A9F20445619007C4C2E /* answerWrong.m4a */,
+				CDDC6AA120445620007C4C2E /* answerRight.m4a */,
+				CDDC6AA320445627007C4C2E /* buttonClick.m4a */,
+				CDDC6AA52044562E007C4C2E /* musicIntro.m4a */,
+				CDDC6AA720445638007C4C2E /* buzz.m4a */,
+				CDDC6AA920445641007C4C2E /* signalReactive.m4a */,
+				CDDC6AAB20445648007C4C2E /* swoosh_2.m4a */,
+				CDDC6AAD20445650007C4C2E /* swoosh_1.m4a */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -397,27 +400,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD2E986C203C58BA00CE646E /* TwoBuzzers.xib in Resources */,
-				CD8E4F87203B3DA2008C48AE /* timerTick.m4a in Resources */,
-				CD8E4F88203B3DA2008C48AE /* answerRight.m4a in Resources */,
 				CD2E9863203C58AB00CE646E /* ShakeBuzzerPopUp.xib in Resources */,
-				CD8E4F81203B3D0B008C48AE /* swoosh_2.m4a in Resources */,
-				CD8E4F82203B3D0B008C48AE /* swoosh_1.m4a in Resources */,
-				CD8E4F80203B3D0B008C48AE /* buttonClick.m4a in Resources */,
 				253E8E6F203B17A500FE75AD /* LaunchScreen.storyboard in Resources */,
+				CDDC6AA820445638007C4C2E /* buzz.m4a in Resources */,
+				CDDC6A9E20445610007C4C2E /* timerTick.m4a in Resources */,
+				CDDC6AAE20445651007C4C2E /* swoosh_1.m4a in Resources */,
 				253E8E6C203B17A500FE75AD /* Assets.xcassets in Resources */,
-				CD8E4F8A203B3E01008C48AE /* gong.m4a in Resources */,
 				CD2E986E203C58BA00CE646E /* ShakeBuzzer.xib in Resources */,
-				CD8E4F7E203B3D0B008C48AE /* answerWrong.m4a in Resources */,
 				CD2E985F203C58AB00CE646E /* BlowBuzzerPopUp.xib in Resources */,
 				F97532FD203DCBD100A2162D /* MTF Toast.ttf in Resources */,
+				CDDC6AA220445620007C4C2E /* answerRight.m4a in Resources */,
 				CD2E986F203C58BA00CE646E /* BlowBuzzer.xib in Resources */,
-				CD8E4F7D203B3D0B008C48AE /* timeUp.m4a in Resources */,
+				CDDC6A9C20445607007C4C2E /* timeUp.m4a in Resources */,
+				CDDC6AAA20445641007C4C2E /* signalReactive.m4a in Resources */,
+				CDDC6AA62044562E007C4C2E /* musicIntro.m4a in Resources */,
 				CD2E9860203C58AB00CE646E /* OneBuzzerPopUp.xib in Resources */,
 				CD8E4F72203B3728008C48AE /* Main.storyboard in Resources */,
-				CD8E4F7F203B3D0B008C48AE /* musicIntro.m4a in Resources */,
+				CDDC6AA02044561A007C4C2E /* answerWrong.m4a in Resources */,
 				CD2E986D203C58BA00CE646E /* OneBuzzer.xib in Resources */,
+				CDDC6AAC20445649007C4C2E /* swoosh_2.m4a in Resources */,
 				CD2E985C203C58AB00CE646E /* TwoBuzzersPopUp.xib in Resources */,
 				CD2E9877203C58C400CE646E /* ProgressView.xib in Resources */,
+				CDDC6AA420445627007C4C2E /* buttonClick.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
