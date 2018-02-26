@@ -53,6 +53,8 @@
 		CDDC6AAA20445641007C4C2E /* signalReactive.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CDDC6AA920445641007C4C2E /* signalReactive.m4a */; };
 		CDDC6AAC20445649007C4C2E /* swoosh_2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CDDC6AAB20445648007C4C2E /* swoosh_2.m4a */; };
 		CDDC6AAE20445651007C4C2E /* swoosh_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CDDC6AAD20445650007C4C2E /* swoosh_1.m4a */; };
+		CDDC6AB120445672007C4C2E /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDC6AAF20445671007C4C2E /* Audio.swift */; };
+		CDDC6AB220445672007C4C2E /* AudioSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDC6AB020445672007C4C2E /* AudioSingleton.swift */; };
 		CDF7E4FE203DC6E9008F7286 /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E4FB203DC6E9008F7286 /* UpdateViewController.swift */; };
 		CDF7E4FF203DC6E9008F7286 /* PreStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E4FC203DC6E9008F7286 /* PreStartViewController.swift */; };
 		CDF7E500203DC6E9008F7286 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E4FD203DC6E9008F7286 /* SettingsViewController.swift */; };
@@ -112,6 +114,8 @@
 		CDDC6AA920445641007C4C2E /* signalReactive.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = signalReactive.m4a; sourceTree = "<group>"; };
 		CDDC6AAB20445648007C4C2E /* swoosh_2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = swoosh_2.m4a; sourceTree = "<group>"; };
 		CDDC6AAD20445650007C4C2E /* swoosh_1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = swoosh_1.m4a; sourceTree = "<group>"; };
+		CDDC6AAF20445671007C4C2E /* Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
+		CDDC6AB020445672007C4C2E /* AudioSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioSingleton.swift; sourceTree = "<group>"; };
 		CDF7E4FB203DC6E9008F7286 /* UpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
 		CDF7E4FC203DC6E9008F7286 /* PreStartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreStartViewController.swift; sourceTree = "<group>"; };
 		CDF7E4FD203DC6E9008F7286 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +193,8 @@
 			children = (
 				253490FF203B2180006A3CEE /* CheckConnection.swift */,
 				25349100203B2180006A3CEE /* ManageQuestions.swift */,
+				CDDC6AAF20445671007C4C2E /* Audio.swift */,
+				CDDC6AB020445672007C4C2E /* AudioSingleton.swift */,
 				CD8E4F8B203B3E36008C48AE /* Extension & Singlerton */,
 				253E8E80203B198300FE75AD /* View Controller */,
 				253E8E7F203B197E00FE75AD /* Delegate */,
@@ -432,11 +438,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDDC6AB220445672007C4C2E /* AudioSingleton.swift in Sources */,
 				CD8E4F75203B393D008C48AE /* MainPageViewController.swift in Sources */,
 				CD2E9870203C58BA00CE646E /* ShakeBuzzer.swift in Sources */,
 				253E8E62203B17A500FE75AD /* AppDelegate.swift in Sources */,
 				253490F8203B1B9A006A3CEE /* CloudKitQuestionsClass.swift in Sources */,
 				F9614DAA203B3AB2001F4448 /* QuestionViewController.swift in Sources */,
+				CDDC6AB120445672007C4C2E /* Audio.swift in Sources */,
 				253490FD203B20E8006A3CEE /* MigrationViewController.swift in Sources */,
 				CD2E9872203C58BA00CE646E /* BlowBuzzer.swift in Sources */,
 				F9646A4A203C73C50071BDA7 /* Singleton.swift in Sources */,
