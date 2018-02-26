@@ -53,8 +53,6 @@
 		CDDC6AAA20445641007C4C2E /* signalReactive.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CDDC6AA920445641007C4C2E /* signalReactive.m4a */; };
 		CDDC6AAC20445649007C4C2E /* swoosh_2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CDDC6AAB20445648007C4C2E /* swoosh_2.m4a */; };
 		CDDC6AAE20445651007C4C2E /* swoosh_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CDDC6AAD20445650007C4C2E /* swoosh_1.m4a */; };
-		CDDC6AB520445F5A007C4C2E /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDC6AB320445F5A007C4C2E /* Audio.swift */; };
-		CDDC6AB620445F5A007C4C2E /* AudioSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDC6AB420445F5A007C4C2E /* AudioSingleton.swift */; };
 		CDF7E4FE203DC6E9008F7286 /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E4FB203DC6E9008F7286 /* UpdateViewController.swift */; };
 		CDF7E4FF203DC6E9008F7286 /* PreStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E4FC203DC6E9008F7286 /* PreStartViewController.swift */; };
 		CDF7E500203DC6E9008F7286 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E4FD203DC6E9008F7286 /* SettingsViewController.swift */; };
@@ -62,6 +60,8 @@
 		F9646A48203C703B0071BDA7 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9646A47203C703B0071BDA7 /* UILabelExtension.swift */; };
 		F9646A4A203C73C50071BDA7 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9646A49203C73C50071BDA7 /* Singleton.swift */; };
 		F966DE2020445C0A00F856F2 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F966DE1F20445C0A00F856F2 /* UITextFieldExtension.swift */; };
+		F966DE2220445FA600F856F2 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = F966DE2120445FA600F856F2 /* Audio.swift */; };
+		F966DE2420445FAF00F856F2 /* AudioSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F966DE2320445FAF00F856F2 /* AudioSingleton.swift */; };
 		F97532FD203DCBD100A2162D /* MTF Toast.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F97532FC203DCBD000A2162D /* MTF Toast.ttf */; };
 /* End PBXBuildFile section */
 
@@ -115,8 +115,6 @@
 		CDDC6AA920445641007C4C2E /* signalReactive.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = signalReactive.m4a; sourceTree = "<group>"; };
 		CDDC6AAB20445648007C4C2E /* swoosh_2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = swoosh_2.m4a; sourceTree = "<group>"; };
 		CDDC6AAD20445650007C4C2E /* swoosh_1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = swoosh_1.m4a; sourceTree = "<group>"; };
-		CDDC6AB320445F5A007C4C2E /* Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Audio.swift; path = "../../../../../Dropbox (iOSDA-IT)/Challenges/2nd Mini Challenge - Abusive Designers/Xcode Project/BACKUPS/partyquiz_2018-02-26/Party Quiz Game/Party Quiz Game/Swift Files/Audio.swift"; sourceTree = "<group>"; };
-		CDDC6AB420445F5A007C4C2E /* AudioSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioSingleton.swift; path = "../../../../../Dropbox (iOSDA-IT)/Challenges/2nd Mini Challenge - Abusive Designers/Xcode Project/BACKUPS/partyquiz_2018-02-26/Party Quiz Game/Party Quiz Game/Swift Files/AudioSingleton.swift"; sourceTree = "<group>"; };
 		CDF7E4FB203DC6E9008F7286 /* UpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
 		CDF7E4FC203DC6E9008F7286 /* PreStartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreStartViewController.swift; sourceTree = "<group>"; };
 		CDF7E4FD203DC6E9008F7286 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +122,8 @@
 		F9646A47203C703B0071BDA7 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		F9646A49203C73C50071BDA7 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		F966DE1F20445C0A00F856F2 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		F966DE2120445FA600F856F2 /* Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
+		F966DE2320445FAF00F856F2 /* AudioSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioSingleton.swift; sourceTree = "<group>"; };
 		F97532FC203DCBD000A2162D /* MTF Toast.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MTF Toast.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -193,8 +193,8 @@
 		253E8E7B203B195500FE75AD /* Swift Files */ = {
 			isa = PBXGroup;
 			children = (
-				CDDC6AB320445F5A007C4C2E /* Audio.swift */,
-				CDDC6AB420445F5A007C4C2E /* AudioSingleton.swift */,
+				F966DE2120445FA600F856F2 /* Audio.swift */,
+				F966DE2320445FAF00F856F2 /* AudioSingleton.swift */,
 				253490FF203B2180006A3CEE /* CheckConnection.swift */,
 				25349100203B2180006A3CEE /* ManageQuestions.swift */,
 				CD8E4F8B203B3E36008C48AE /* Extension & Singleton */,
@@ -451,7 +451,6 @@
 				F9646A4A203C73C50071BDA7 /* Singleton.swift in Sources */,
 				253490F6203B1B92006A3CEE /* CoreDataManager.swift in Sources */,
 				CDF7E4FF203DC6E9008F7286 /* PreStartViewController.swift in Sources */,
-				CDDC6AB620445F5A007C4C2E /* AudioSingleton.swift in Sources */,
 				CD8E4F8F203B3E46008C48AE /* UIButtonExtension.swift in Sources */,
 				F9646A48203C703B0071BDA7 /* UILabelExtension.swift in Sources */,
 				CD2E9876203C58C400CE646E /* ProgressView.swift in Sources */,
@@ -465,8 +464,9 @@
 				CDF7E4FE203DC6E9008F7286 /* UpdateViewController.swift in Sources */,
 				25349101203B2180006A3CEE /* CheckConnection.swift in Sources */,
 				CDF7E500203DC6E9008F7286 /* SettingsViewController.swift in Sources */,
+				F966DE2420445FAF00F856F2 /* AudioSingleton.swift in Sources */,
+				F966DE2220445FA600F856F2 /* Audio.swift in Sources */,
 				253E8E6A203B17A500FE75AD /* Party_Quiz_Game.xcdatamodeld in Sources */,
-				CDDC6AB520445F5A007C4C2E /* Audio.swift in Sources */,
 				AC6CF7C1203F1725006E0E73 /* PeerManager.swift in Sources */,
 				CD2E9871203C58BA00CE646E /* TwoBuzzers.swift in Sources */,
 				CD8E4FB9203B3FD7008C48AE /* UIViewExtension.swift in Sources */,

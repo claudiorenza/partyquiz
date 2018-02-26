@@ -24,7 +24,8 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     pickerData = ["5", "10", "15", "20", "25", "30"]
     createPicker()
     
-    
+    let labelPosition = labelOutlet.center
+    let textFieldPosition = pickedValueTextField.center
   }
   
   func createPicker() {
@@ -143,12 +144,21 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
   
   @objc func donePressed() {
     self.view.endEditing(true)
-    print ("ended")
+    labelOutlet.moveDown(view: view, point: labelPosition)
+    pickedValueTextField.moveDown(view: view, point: textFieldPosition)
+    Singleton.shared.delayWithSeconds(0.3) {
+      self.labelOutlet.center.y = self.view.bounds.height * 0.1
+      self.pickedValueTextField.center.y = self.view.bounds.height * 0.3
+    }
   }
   
   @IBAction func textFieldAction(_ sender: UITextField) {
     labelOutlet.moveUp(view: view)
     pickedValueTextField.moveUp(view: view)
+    Singleton.shared.delayWithSeconds(0.3) {
+      self.labelOutlet.center.y = self.view.bounds.height * 0.1
+      self.pickedValueTextField.center.y = self.view.bounds.height * 0.3
+    }
   }
 }
 

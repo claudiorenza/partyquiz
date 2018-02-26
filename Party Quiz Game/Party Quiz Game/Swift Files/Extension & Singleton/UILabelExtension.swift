@@ -51,7 +51,16 @@ extension UILabel {
   func moveUp(view: UIView) {
     let animation = CABasicAnimation(keyPath: "position")
     animation.fromValue = self.center
-    animation.toValue = CGPoint(x: self.center.x, y: (view.bounds.height * 0.8))
+    animation.toValue = CGPoint(x: self.center.x, y: (view.bounds.height * 0.1))
+    animation.duration = 0.4
+    
+    layer.add(animation, forKey: nil)
+  }
+  
+  func moveDown(view: UIView, point: CGPoint) {
+    let animation = CABasicAnimation(keyPath: "position")
+    animation.fromValue = self.center
+    animation.toValue = point
     animation.duration = 0.4
     
     layer.add(animation, forKey: nil)
