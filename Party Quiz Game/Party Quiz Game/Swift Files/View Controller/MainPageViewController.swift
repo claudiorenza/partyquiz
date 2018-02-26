@@ -40,8 +40,8 @@ class MainPageViewController: UIViewController {
     
     imageLogo.entering(directionFrom: "left", view: self.view, duration: 0.5)
     Singleton.shared.delayWithSeconds(0.5) {
-      self.createGameOutlet.entering(directionFrom: "right", view: self.view)
-      self.joinGameOutlet.entering(directionFrom: "left", view: self.view)
+      self.createGameOutlet.entering(view: self.view)
+      self.joinGameOutlet.entering(view: self.view)
     }
     Singleton.shared.delayWithSeconds(1.4) {
       self.createGameOutlet.center.x = self.view.frame.midX
@@ -59,8 +59,8 @@ class MainPageViewController: UIViewController {
   @IBAction func pressToCreate(_ sender: UIButton) {
     audioButtonClick.player.play()
     
-    createGameOutlet.exit(directionTo: "left", view: view)
-    joinGameOutlet.exit(directionTo: "right", view: view)
+    createGameOutlet.exit(directionTo: "left", view: view, duration: 1.0)
+    joinGameOutlet.exit(directionTo: "right", view: view, duration: 1.0)
     imageLogo.exit(directionTo: "left", view: view, duration: 0.5)
     Singleton.shared.delayWithSeconds(0.4) {
       self.imageLogo.isHidden = true
@@ -71,8 +71,8 @@ class MainPageViewController: UIViewController {
   
   @IBAction func pressToJoin(_ sender: UIButton) {
     audioButtonClick.player.play()
-    createGameOutlet.exit(directionTo: "left", view: view)
-    joinGameOutlet.exit(directionTo: "right", view: view)
+    createGameOutlet.exit(directionTo: "left", view: view, duration: 1.0)
+    joinGameOutlet.exit(directionTo: "right", view: view, duration: 1.0)
     imageLogo.exit(directionTo: "left", view: view, duration: 0.5)
     
     
@@ -95,11 +95,11 @@ class MainPageViewController: UIViewController {
     self.present(alertController, animated: true, completion: nil)
   }
   
-  @IBAction func createGameAction(_ sender: UIButton) {
-    createGameOutlet.exit(directionTo: "left", view: view)
-    joinGameOutlet.exit(directionTo: "right", view: view)
-    Singleton.shared.delayWithSeconds(0.8) {
-      self.performSegue(withIdentifier: "fromCreate1", sender: self)
-    }
-  }
+//  @IBAction func createGameAction(_ sender: UIButton) {
+//    createGameOutlet.exit(directionTo: "left", view: view)
+//    joinGameOutlet.exit(directionTo: "right", view: view)
+//    Singleton.shared.delayWithSeconds(0.8) {
+//      self.performSegue(withIdentifier: "fromCreate1", sender: self)
+//    }
+//  }
 }

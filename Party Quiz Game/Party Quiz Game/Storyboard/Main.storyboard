@@ -253,8 +253,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="createGameAction:" destination="g28-jk-LDH" eventType="touchUpInside" id="G6H-ts-14P"/>
-                                    <action selector="pressToCreate:" destination="g28-jk-LDH" eventType="touchUpInside" id="raT-pv-kCg"/>
+                                    <action selector="pressToCreate:" destination="g28-jk-LDH" eventType="touchUpInside" id="kBo-Oz-Yxx"/>
                                     <segue destination="gUp-Bt-fDm" kind="show" identifier="fromCreate1" animates="NO" id="UUY-kq-sdt"/>
                                 </connections>
                             </button>
@@ -339,7 +338,6 @@
                                 </state>
                                 <connections>
                                     <action selector="startGamePressed:" destination="gUp-Bt-fDm" eventType="touchUpInside" id="8ic-Dr-6Kd"/>
-                                    <segue destination="411-n7-06Y" kind="show" id="VVR-LR-oSG"/>
                                 </connections>
                             </button>
                         </subviews>
