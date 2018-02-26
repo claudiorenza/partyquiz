@@ -58,9 +58,11 @@ class QuestionViewController: UIViewController {
   // - MARK: 2: ViewDidLoad
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    AudioSingleton.shared.audioMusic.player.stop()
     view.backgroundColor = backgoundBase
     setAnswersQuestion()
-    NotificationCenter.default.addObserver(self, selector: #selector(self.loadProgressView30), name: NSNotification.Name(rawValue: "loadProgressView30"), object: nil)
+    //NotificationCenter.default.addObserver(self, selector: #selector(self.loadProgressView30), name: NSNotification.Name(rawValue: "loadProgressView30"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.loadProgressView10), name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.timeOut), name: NSNotification.Name(rawValue: "timeOut"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.buzzerPressed), name: NSNotification.Name(rawValue: "buzzer"), object: nil)
@@ -134,6 +136,7 @@ class QuestionViewController: UIViewController {
   
   
   // - MARK: 3: Method that loads the progress view
+  /*
   @objc func loadProgressView30() {
     if let progressView30 = Bundle.main.loadNibNamed("ProgressView", owner: self, options: nil)?.first as? ProgressView {
       progressControllerView.addSubview(progressView30)
@@ -141,8 +144,11 @@ class QuestionViewController: UIViewController {
       progressView30.frame = progressControllerView.bounds
     }
   }
-  
+  */
   @objc func loadProgressView10() {
+    seconds = 0
+    fraction = 0
+    buzzerTimerStart()
     if let progressView10 = Bundle.main.loadNibNamed("ProgressView", owner: self, options: nil)?.first as? ProgressView {
       progressControllerView.addSubview(progressView10)
       progressView10.manageProgress(seconds: 10)
@@ -305,8 +311,8 @@ class QuestionViewController: UIViewController {
   // - MARK: 5: Method that send timer score to host for comparison
   @objc func signalPeerSendBuzz() {
     //TODO: invio all'host del tempo di risposta
-    let timer = (seconds * 100) + fraction
-    print("TIMER: \(timer)")
+    let timerStamp = (seconds * 100) + fraction
+    print("TIMER: \(timerStamp)")
     
     //SIMULATION MULTIPEER WINNER: dopo 3 secondi l'host mi dice che sono stato il più VELOCE
     timerReceiveWinnerTimer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(signalPeerReceiveWinnerTimer), userInfo: nil, repeats: true)
