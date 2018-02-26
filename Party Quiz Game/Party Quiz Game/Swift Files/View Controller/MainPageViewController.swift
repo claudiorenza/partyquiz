@@ -14,7 +14,6 @@ class MainPageViewController: UIViewController {
   
   @IBOutlet weak var createGameOutlet: UIButton!
   @IBOutlet weak var joinGameOutlet: UIButton!
-  @IBOutlet weak var labelOutlet: UILabel!
   
   var audioPlayerButtonClick = AVAudioPlayer()
   var audioPlayerMusic = AVAudioPlayer()
@@ -74,9 +73,15 @@ class MainPageViewController: UIViewController {
   }
   
   @IBAction func pressForInfo(_ sender: UIButton) {
-    labelOutlet.text = "Infos..."
+    let alertController = UIAlertController(title: "About Us", message: "Quizzer created by Abusive Designers (27/02/2018)\n\nPasquale Bruno\nErnesto De Crecchio\nArmando Feniello\nGiovanni Frate\nMichele Golino\nClaudio Renza", preferredStyle: UIAlertControllerStyle.alert)
     
-//    let infoAlert: UIAlertView = UIAlertView(title: "Credits", message: "Quizzer created by Pasquale Bruno, Ernesto De Crecchio, Armando Feniello, Giovanni Frate, Michele Golino, Claudio Renza", delegate: self, cancelButtonTitle: "Ok", otherButtonTitles: nil)
+    let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
+    {
+      (result : UIAlertAction) -> Void in
+      print("You pressed OK")
+    }
+    alertController.addAction(okAction)
+    self.present(alertController, animated: true, completion: nil)
   }
   
   @IBAction func createGameAction(_ sender: UIButton) {
