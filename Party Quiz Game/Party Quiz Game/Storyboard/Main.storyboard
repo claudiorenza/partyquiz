@@ -220,6 +220,11 @@
                         <viewLayoutGuide key="safeArea" id="TRM-zD-J3h"/>
                     </view>
                     <connections>
+                        <outlet property="label" destination="WRH-9h-0uG" id="nsk-Hn-QxR"/>
+                        <outlet property="spiral" destination="XBh-9I-09q" id="4kc-nx-BR3"/>
+                        <outletCollection property="dots" destination="5QP-rF-m7S" collectionClass="NSMutableArray" id="jHQ-Um-6KV"/>
+                        <outletCollection property="dots" destination="pdm-u9-qYI" collectionClass="NSMutableArray" id="I4q-LC-13v"/>
+                        <outletCollection property="dots" destination="8jx-nv-hiC" collectionClass="NSMutableArray" id="RHn-3M-rKU"/>
                         <segue destination="g28-jk-LDH" kind="show" identifier="afterDownload" animates="NO" id="ccu-NN-0BM"/>
                     </connections>
                 </viewController>

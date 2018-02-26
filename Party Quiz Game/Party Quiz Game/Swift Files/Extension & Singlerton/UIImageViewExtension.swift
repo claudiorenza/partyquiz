@@ -79,20 +79,13 @@ extension UIImageView {
     layer.add(animation, forKey: nil)
   }
   
-  func moveRightSpiral(view: UIView) {
+  func moveSpiral(view: UIView) {
     let animation = CABasicAnimation(keyPath: "position")
     animation.fromValue = self.center
-    animation.toValue = view.bounds.width * 0.9
-    animation.duration = 3
-    
-    layer.add(animation, forKey: nil)
-  }
-  
-  func moveLeftSpiral(view: UIView, initPosition: CGPoint) {
-    let animation = CABasicAnimation(keyPath: "position")
-    animation.fromValue = view.bounds.width * 0.9
-    animation.toValue = CGPoint(x: initPosition.x, y: self.center.y)
-    animation.duration = 3
+    animation.toValue = CGPoint(x: view.bounds.width * 0.5, y: self.center.y)
+    animation.duration = 2
+    animation.autoreverses = true
+    animation.repeatCount = Float.infinity
     
     layer.add(animation, forKey: nil)
   }
