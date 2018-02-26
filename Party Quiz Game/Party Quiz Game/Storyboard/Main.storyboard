@@ -338,6 +338,7 @@
                                 </state>
                                 <connections>
                                     <action selector="startGamePressed:" destination="gUp-Bt-fDm" eventType="touchUpInside" id="8ic-Dr-6Kd"/>
+                                    <segue destination="411-n7-06Y" kind="show" id="VVR-LR-oSG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -348,7 +349,7 @@
                         <outlet property="labelOutlet" destination="wIU-KP-wda" id="Hgf-zw-gF2"/>
                         <outlet property="pickedValueTextField" destination="woU-Ww-Meo" id="BCV-46-hZM"/>
                         <outlet property="startGameButton" destination="aDH-xW-IlU" id="Qgc-5R-edw"/>
-                        <segue destination="411-n7-06Y" kind="show" identifier="fromCreate2" id="Jkg-6h-m0J"/>
+                        <segue destination="411-n7-06Y" kind="show" identifier="fromCreate2" animates="NO" id="Jkg-6h-m0J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OZi-0k-mpL" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -15,8 +15,8 @@ class MainPageViewController: UIViewController {
   @IBOutlet weak var createGameOutlet: UIButton!
   @IBOutlet weak var joinGameOutlet: UIButton!
   
-  var audioPlayerButtonClick = AVAudioPlayer()
-  var audioPlayerMusic = AVAudioPlayer()
+  var audioButtonClick = Audio(fileName: "buttonClick", typeName: "m4a")
+
   let borderColor = UIColor(red: 96.0/255.0, green: 96.0/255.0, blue: 96.0/255.0, alpha: 1.0).cgColor
   
   override func viewDidLoad() {
@@ -29,26 +29,22 @@ class MainPageViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     setButton(tempButton: createGameOutlet)
     setButton(tempButton: joinGameOutlet)
+    createGameOutlet.center.x = -createGameOutlet.frame.width
+    joinGameOutlet.center.x = joinGameOutlet.frame.width + view.frame.width
     
-    let audioButtonClick = Bundle.main.path(forResource: "buttonClick", ofType: "m4a")
-    let audioIntroMusic = Bundle.main.path(forResource: "musicIntro", ofType: "m4a")
+    AudioSingleton.shared.setAudioShared()
     
+    AudioSingleton.shared.audioMusic.player.play()
     
-    // copy this syntax, it tells the compiler what to do when action is received
-    do {
-      audioPlayerButtonClick = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioButtonClick! ))
-      audioPlayerMusic = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioIntroMusic! ))
-      try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
-      try AVAudioSession.sharedInstance().setActive(true)
+    imageLogo.entering(directionFrom: "left", view: self.view, duration: 0.5)
+    Singleton.shared.delayWithSeconds(0.5) {
+      self.createGameOutlet.entering(view: self.view)
+      self.joinGameOutlet.entering(view: self.view)
     }
-    catch{
-      print(error)
+    Singleton.shared.delayWithSeconds(1.4) {
+      self.createGameOutlet.center.x = self.view.frame.midX
+      self.joinGameOutlet.center.x = self.view.frame.midX
     }
-    
-    audioPlayerMusic.play()
-    
-    createGameOutlet.entering(directionFrom: "left", view: self.view)
-    joinGameOutlet.entering(directionFrom: "right", view: self.view)
   }
   
   
@@ -59,15 +55,30 @@ class MainPageViewController: UIViewController {
   }
   
   @IBAction func pressToCreate(_ sender: UIButton) {
-    audioPlayerButtonClick.play()
-  }
+    audioButtonClick.player.play()
+    
+    createGameOutlet.exit(directionTo: "left", view: view, duration: 1.0)
+    joinGameOutlet.exit(directionTo: "right", view: view, duration: 1.0)
+    imageLogo.exit(directionTo: "left", view: view, duration: 0.5)
+    Singleton.shared.delayWithSeconds(0.4) {
+      self.imageLogo.isHidden = true
+    }
+    Singleton.shared.delayWithSeconds(0.8) {
+      self.performSegue(withIdentifier: "fromCreate1", sender: self)
+    }}
   
   @IBAction func pressToJoin(_ sender: UIButton) {
+    audioButtonClick.player.play()
+    createGameOutlet.exit(directionTo: "left", view: view, duration: 1.0)
+    joinGameOutlet.exit(directionTo: "right", view: view, duration: 1.0)
+    imageLogo.exit(directionTo: "left", view: view, duration: 0.5)
+    
+    
+    
     PeerManager.peerShared.stopAdvertiser()
     PeerManager.peerShared.startBrowser()
     PeerManager.peerShared.setupBrowserVC()
     present(PeerManager.peerShared.browserVC, animated: true, completion: nil)
-    audioPlayerButtonClick.play()
   }
   
   @IBAction func pressForInfo(_ sender: UIButton) {

@@ -57,8 +57,6 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
   }
   
   @IBAction func startGamePressed(_ sender: Any) {
-    AudioSingleton.shared.audioMusic.player.stop()
-    
     let selectedNumber = Int(pickedValueTextField.text!)
     
     print("Numero Selezionato: \(String(describing: selectedNumber))")
@@ -71,10 +69,10 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
       print(question["text"]!)
     }
     
-    PeerManager.peerShared.stopBrowser()
-    PeerManager.peerShared.startAdvertiser()
-    PeerManager.peerShared.setupBrowserVC()
-    present(PeerManager.peerShared.browserVC, animated: true, completion: nil)
+//    PeerManager.peerShared.stopBrowser()
+//    PeerManager.peerShared.startAdvertiser()
+//    PeerManager.peerShared.setupBrowserVC()
+//    present(PeerManager.peerShared.browserVC, animated: true, completion: nil)
   }
   
   func convert(numberOfQuestions: Int) {
