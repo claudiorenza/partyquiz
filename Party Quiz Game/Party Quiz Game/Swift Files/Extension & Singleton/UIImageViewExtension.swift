@@ -3,7 +3,7 @@
 //  SimpleBuzzer
 //
 //  Created by Pasquale Bruno on 17/02/2018.
-//  Copyright © 2018 Giovanni Frate. All rights reserved.
+//  Copyright © 2018 Abusive Designers. All rights reserved.
 //
 
 import UIKit
