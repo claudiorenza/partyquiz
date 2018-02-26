@@ -472,6 +472,10 @@
                         <outlet property="answerTwoButton" destination="1jH-he-70h" id="362-9v-97q"/>
                         <outlet property="buttonAnswerThree" destination="jMp-FS-eQB" id="de0-vn-XsQ"/>
                         <outlet property="buzzerView" destination="Sdk-kC-f4A" id="qii-cN-kpD"/>
+                        <outlet property="displayTimeLabel" destination="Bh4-VL-5Qg" id="s8d-J5-IEa"/>
+                        <outlet property="onHoldLabel" destination="5jt-vl-kj3" id="PPO-Lp-vJN"/>
+                        <outlet property="onHoldView" destination="1rg-o8-tNd" id="FFH-Ke-KWU"/>
+                        <outlet property="onHoldWaiting" destination="Vs1-0I-Hch" id="wPf-A7-0co"/>
                         <outlet property="progressControllerView" destination="KRT-nY-7yh" id="ikD-tV-nfB"/>
                         <outlet property="questionOutlet" destination="xM4-HX-fV8" id="tWo-wd-NBg"/>
                     </connections>
