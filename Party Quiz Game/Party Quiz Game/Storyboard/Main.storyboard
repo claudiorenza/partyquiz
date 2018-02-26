@@ -255,7 +255,7 @@
                                 <connections>
                                     <action selector="createGameAction:" destination="g28-jk-LDH" eventType="touchUpInside" id="G6H-ts-14P"/>
                                     <action selector="pressToCreate:" destination="g28-jk-LDH" eventType="touchUpInside" id="raT-pv-kCg"/>
-                                    <segue destination="gUp-Bt-fDm" kind="show" identifier="fromCreate1" id="UUY-kq-sdt"/>
+                                    <segue destination="gUp-Bt-fDm" kind="show" identifier="fromCreate1" animates="NO" id="UUY-kq-sdt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GdX-al-lOJ">
@@ -316,6 +316,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="62"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldAction:" destination="gUp-Bt-fDm" eventType="editingDidBegin" id="58y-j0-4YD"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of Questions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIU-KP-wda">
                                 <rect key="frame" x="184" y="84" width="198" height="29"/>
@@ -342,6 +345,7 @@
                         <viewLayoutGuide key="safeArea" id="8gO-gL-L39"/>
                     </view>
                     <connections>
+                        <outlet property="labelOutlet" destination="wIU-KP-wda" id="Hgf-zw-gF2"/>
                         <outlet property="pickedValueTextField" destination="woU-Ww-Meo" id="BCV-46-hZM"/>
                         <outlet property="startGameButton" destination="aDH-xW-IlU" id="Qgc-5R-edw"/>
                         <segue destination="411-n7-06Y" kind="show" identifier="fromCreate2" id="Jkg-6h-m0J"/>
@@ -486,7 +490,7 @@
         <image name="Uploadimg_Background" width="568" height="320"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iiK-GW-4Ch"/>
+        <segue reference="Jkg-6h-m0J"/>
         <segue reference="ccu-NN-0BM"/>
     </inferredMetricsTieBreakers>
 </document>

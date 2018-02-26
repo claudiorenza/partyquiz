@@ -15,6 +15,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
   
   @IBOutlet weak var pickedValueTextField: UITextField!
   @IBOutlet weak var startGameButton: UIButton!
+  @IBOutlet weak var labelOutlet: UILabel!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -22,6 +23,8 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     pickerData = ["5", "10", "15", "20", "25", "30"]
     createPicker()
+    
+    
   }
   
   func createPicker() {
@@ -140,8 +143,13 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
   
   @objc func donePressed() {
     self.view.endEditing(true)
+    print ("ended")
   }
   
+  @IBAction func textFieldAction(_ sender: UITextField) {
+    labelOutlet.moveUp(view: view)
+    pickedValueTextField.moveUp(view: view)
+  }
 }
 
 extension UITextField {
