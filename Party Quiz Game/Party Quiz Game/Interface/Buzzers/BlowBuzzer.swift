@@ -12,16 +12,19 @@ import AVFoundation
 import CoreAudio
 
 class BlowBuzzer: UIView {
-
   var recorder: AVAudioRecorder!
   var levelTimer = Timer()
+  
+  var audioBuzz = Audio(fileName: "buzz", typeName: "m4a")
+  var audioButtonClick = Audio(fileName: "buttonClick", typeName: "m4a")
+  var audioSignalReactive = Audio(fileName: "signalReactive", typeName: "m4a")
+  
   var index = 0
   var indicatorViewInterval: CGFloat = 0.0
   var indicatorViewInitialPoint: CGFloat = 0.0
   @IBOutlet weak var label: UILabel!
   @IBOutlet weak var viewOutlet: UIView!
   @IBOutlet var indicatorView: UIView!
-
   
   @objc func startBlowing() {
     let documents = URL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0])
@@ -63,23 +66,36 @@ class BlowBuzzer: UIView {
           self.indicatorView.frame = CGRect(x: self.indicatorView.frame.origin.x, y: self.indicatorView.frame.origin.y, width: self.indicatorView.frame.width, height: (self.indicatorViewInterval * CGFloat(1000-self.index)/1000))
         })
       }
+      if level.truncatingRemainder(dividingBy: 100) == 0 {  //level % 100 == 0
+        audioButtonClick.player.play()
+      }
     } else if index == 1000 {
-      viewOutlet.buzzerDown(view: viewOutlet)
+      audioBuzz.player.play()
+      stopBlowing()
+      //viewOutlet.buzzerDown(view: viewOutlet)
+      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
+      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "buzzer"), object: nil)
+      
       Singleton.shared.delayWithSeconds(0.4, completion: {
-        self.removeFromSuperview()
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "buzzer"), object: nil)
+        //self.removeFromSuperview()
+        //NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
       })
       label.text = "Done!"
-      recorder.stop()
-      levelTimer.invalidate()
     }
+  }
+  
+  @objc func timerWinner() {
+    audioSignalReactive.player.play()
+    viewOutlet.buzzerDown(view: viewOutlet)
+    Singleton.shared.delayWithSeconds(0.4, completion: {
+      self.removeFromSuperview()
+      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
+    })
   }
   
   func setRoundedView() {
     viewOutlet.layer.cornerRadius = 25.0
-    viewOutlet.layer.borderColor = UIColor.borderColorGray()
+    viewOutlet.layer.borderColor = UIColor.colorGray().cgColor
     viewOutlet.layer.borderWidth = 6.0
   }
   
@@ -88,13 +104,26 @@ class BlowBuzzer: UIView {
     indicatorView.layer.cornerRadius = 25.0
   }
   
+  @objc func hideBuzzer() {
+    stopBlowing()
+    self.removeFromSuperview()
+  }
+  
   func loadPopUp() {
     NotificationCenter.default.addObserver(self, selector: #selector(self.startBlowing), name: NSNotification.Name(rawValue: "startBlowing"), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(self.stopBlowing), name: NSNotification.Name(rawValue: "stopBlowing"), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(self.timerWinner), name: NSNotification.Name(rawValue: "winnerTimer"), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(self.hideBuzzer), name: NSNotification.Name(rawValue: "hideBuzzer"), object: nil)
     if let blowBuzzerPopUp = Bundle.main.loadNibNamed("BlowBuzzerPopUp", owner: self, options: nil)?.first as? BlowBuzzerPopUp {
       self.addSubview(blowBuzzerPopUp)
       blowBuzzerPopUp.setViewElements()
       blowBuzzerPopUp.frame = self.bounds
     }
+  }
+  
+  @objc func stopBlowing() {
+    recorder.stop()
+    levelTimer.invalidate()
   }
 
 }

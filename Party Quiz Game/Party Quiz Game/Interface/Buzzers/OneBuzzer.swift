@@ -16,29 +16,52 @@ class OneBuzzer: UIView {
   
   var index = 10
   
+  var audioBuzz = Audio(fileName: "buzz", typeName: "m4a")
+  var audioButtonClick = Audio(fileName: "buttonClick", typeName: "m4a")
+  var audioSignalReactive = Audio(fileName: "signalReactive", typeName: "m4a")
+  
+  
   func setBuzzer() {
     buzzer.layer.cornerRadius = 25.0
     buzzer.layer.borderWidth = 6.0
-    buzzer.layer.borderColor = UIColor.borderColorGray()
+    buzzer.layer.borderColor = UIColor.colorGray().cgColor
     outletCounter.text = "\(index)"
   }
   
   @IBAction func pressBuzzer(_ sender: UIButton) {
+    audioButtonClick.player.play()
     index -= 1
     outletCounter.text = "\(index)"
     if index == 0 {
-      view.buzzerDown(view: view)
+      audioBuzz.player.play()
+      //view.buzzerDown(view: view)
       buzzer.isUserInteractionEnabled = false
+      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
+      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "buzzer"), object: nil)
       Singleton.shared.delayWithSeconds(0.4, completion: {
-        self.removeFromSuperview()
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "buzzer"), object: nil)
+        //self.removeFromSuperview()
+        //NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
       })
+      outletCounter.text = "Done!"
     }
   }
   
+  @objc func timerWinner() {
+    audioSignalReactive.player.play()
+    view.buzzerDown(view: view)
+    Singleton.shared.delayWithSeconds(0.4, completion: {
+      self.removeFromSuperview()
+      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProgressView10"), object: nil)
+    })
+  }
+  
+  @objc func hideBuzzer() {
+    self.removeFromSuperview()
+  }
+  
   func loadPopUp(view: UIView) {
+    NotificationCenter.default.addObserver(self, selector: #selector(self.timerWinner), name: NSNotification.Name(rawValue: "winnerTimer"), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(self.hideBuzzer), name: NSNotification.Name(rawValue: "hideBuzzer"), object: nil)
     if let oneBuzzerPopUp = Bundle.main.loadNibNamed("OneBuzzerPopUp", owner: self, options: nil)?.first as? OneBuzzerPopUp {
       self.addSubview(oneBuzzerPopUp)
       oneBuzzerPopUp.setViewElements(view: view)

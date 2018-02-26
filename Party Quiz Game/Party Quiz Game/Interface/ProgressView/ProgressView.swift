@@ -3,7 +3,7 @@
 //  SimpleBuzzer
 //
 //  Created by Giovanni Frate on 16/02/18.
-//  Copyright © 2018 Giovanni Frate. All rights reserved.
+//  Copyright © 2018 Abusive Designers. All rights reserved.
 //
 
 import UIKit
@@ -16,12 +16,14 @@ class ProgressView: UIView {
   var currentSeconds = 0
   var timer : Timer!
   
+  var audioTimerTick = Audio(fileName: "timerTick", typeName: "m4a")
+  
   let myOrange = UIColor(red: 1.00, green: 0.67, blue: 0.00, alpha: 1.0)
   
   func manageProgress(seconds: Int) {
     NotificationCenter.default.addObserver(self, selector: #selector(self.stopTimer), name: NSNotification.Name(rawValue: "stopTimer"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.startTimer), name: NSNotification.Name(rawValue: "startTimer"), object: nil)
-    totalSeconds = seconds
+    totalSeconds = seconds-1
     currentSeconds = totalSeconds
     // Progress view
     progressView.progress = Float(currentSeconds / totalSeconds)
@@ -39,18 +41,24 @@ class ProgressView: UIView {
   @objc func decreaseTimer() {
     if currentSeconds > 0 {
       currentSeconds -= 1
+      if (currentSeconds < 5) {
+        audioTimerTick.player.play()
+      }
       if totalSeconds >= 20 {
-        if (currentSeconds < 6) {
-          progressView.progressTintColor = UIColor.red
-        } else if (currentSeconds < ((totalSeconds/3) + 1)) {
+        if (currentSeconds < ((totalSeconds/3) + 1)) {
+          audioTimerTick.player.play()
           progressView.progressTintColor = myOrange
         } else if (currentSeconds < ((totalSeconds/2) + 1)) {
           progressView.progressTintColor = UIColor.yellow
+        } else  {
+          progressView.progressTintColor = UIColor.red
         }
       } else {
         if (currentSeconds < ((totalSeconds/4) + 1)) {
+          audioTimerTick.player.play()
           progressView.progressTintColor = UIColor.red
         } else if (currentSeconds < ((totalSeconds/3) + 1)) {
+          audioTimerTick.player.play()
           progressView.progressTintColor = myOrange
         } else if (currentSeconds < ((totalSeconds/2) + 1)) {
           progressView.progressTintColor = UIColor.yellow
