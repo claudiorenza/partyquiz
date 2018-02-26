@@ -470,7 +470,6 @@
                         <outlet property="answerOneButton" destination="OUq-c4-MOh" id="Ti9-fJ-72I"/>
                         <outlet property="answerThreeButton" destination="jMp-FS-eQB" id="qjQ-Oc-C1G"/>
                         <outlet property="answerTwoButton" destination="1jH-he-70h" id="362-9v-97q"/>
-                        <outlet property="buttonAnswerThree" destination="jMp-FS-eQB" id="de0-vn-XsQ"/>
                         <outlet property="buzzerView" destination="Sdk-kC-f4A" id="qii-cN-kpD"/>
                         <outlet property="displayTimeLabel" destination="Bh4-VL-5Qg" id="s8d-J5-IEa"/>
                         <outlet property="onHoldLabel" destination="5jt-vl-kj3" id="PPO-Lp-vJN"/>
