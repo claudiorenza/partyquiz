@@ -290,6 +290,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="createGameOutlet" destination="EpX-uI-O5M" id="X1B-lN-z2N"/>
+                        <outlet property="imageLogo" destination="9tB-Fs-G4x" id="xae-xB-nhC"/>
                         <outlet property="joinGameOutlet" destination="GdX-al-lOJ" id="o9E-9x-whX"/>
                         <segue destination="411-n7-06Y" kind="show" identifier="fromJoin" id="iiK-GW-4Ch"/>
                     </connections>
@@ -495,7 +496,7 @@
         <image name="Uploadimg_Background" width="568" height="320"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Jkg-6h-m0J"/>
+        <segue reference="iiK-GW-4Ch"/>
         <segue reference="ccu-NN-0BM"/>
     </inferredMetricsTieBreakers>
 </document>

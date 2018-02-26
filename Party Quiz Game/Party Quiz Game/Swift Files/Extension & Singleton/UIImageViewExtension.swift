@@ -11,8 +11,46 @@ import Foundation
 
 extension UIImageView {
   
-  func oneBuzzerTutorial(value: Float, view: UIView) {
+  func entering(directionFrom: String, view: UIView, duration: Double) {
+    let animation = CABasicAnimation(keyPath: "position")
+    var cgPointImageInit = self.center
+    let cgPointImageFinal = cgPointImageInit
     
+    if(directionFrom == "left") {
+      cgPointImageInit.x = -self.frame.width
+    } else if (directionFrom == "right")    {
+      cgPointImageInit.x = view.bounds.width + self.frame.width
+    }
+    
+    animation.fromValue = NSValue(cgPoint: cgPointImageInit)
+    animation.toValue = NSValue(cgPoint: cgPointImageFinal)
+    animation.duration = duration
+    animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+    
+    layer.add(animation, forKey: nil)
+  }
+  
+  func exit(directionTo: String, view: UIView, duration: Double) {
+    let animation = CABasicAnimation(keyPath: "position")
+    var finalPosition = CGPoint()
+    
+    if(directionTo == "left") {
+      finalPosition.x = view.bounds.width + self.frame.width
+    } else if (directionTo == "right") {
+      finalPosition.x = -self.frame.width
+    }
+    
+    animation.fromValue = self.center
+    animation.toValue = CGPoint(x: finalPosition.x, y: self.center.y)
+    animation.duration = duration
+    animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+    
+    layer.add(animation, forKey: nil)
+  }
+  
+  
+  
+  func oneBuzzerTutorial(value: Float, view: UIView) {
     let animation = CABasicAnimation(keyPath: "position")
     animation.fromValue = CGPoint(x: view.bounds.midX, y: view.bounds.midY)
     animation.toValue = CGPoint(x: view.bounds.midX, y: (view.bounds.midY * CGFloat(value)))

@@ -14,6 +14,8 @@ class MainPageViewController: UIViewController {
   
   @IBOutlet weak var createGameOutlet: UIButton!
   @IBOutlet weak var joinGameOutlet: UIButton!
+  @IBOutlet var imageLogo: UIImageView!
+  
   
   var audioButtonClick = Audio(fileName: "buttonClick", typeName: "m4a")
 
@@ -38,8 +40,8 @@ class MainPageViewController: UIViewController {
     
     imageLogo.entering(directionFrom: "left", view: self.view, duration: 0.5)
     Singleton.shared.delayWithSeconds(0.5) {
-      self.createGameOutlet.entering(view: self.view)
-      self.joinGameOutlet.entering(view: self.view)
+      self.createGameOutlet.entering(directionFrom: "right", view: self.view)
+      self.joinGameOutlet.entering(directionFrom: "left", view: self.view)
     }
     Singleton.shared.delayWithSeconds(1.4) {
       self.createGameOutlet.center.x = self.view.frame.midX
@@ -57,8 +59,8 @@ class MainPageViewController: UIViewController {
   @IBAction func pressToCreate(_ sender: UIButton) {
     audioButtonClick.player.play()
     
-    createGameOutlet.exit(directionTo: "left", view: view, duration: 1.0)
-    joinGameOutlet.exit(directionTo: "right", view: view, duration: 1.0)
+    createGameOutlet.exit(directionTo: "left", view: view)
+    joinGameOutlet.exit(directionTo: "right", view: view)
     imageLogo.exit(directionTo: "left", view: view, duration: 0.5)
     Singleton.shared.delayWithSeconds(0.4) {
       self.imageLogo.isHidden = true
@@ -69,8 +71,8 @@ class MainPageViewController: UIViewController {
   
   @IBAction func pressToJoin(_ sender: UIButton) {
     audioButtonClick.player.play()
-    createGameOutlet.exit(directionTo: "left", view: view, duration: 1.0)
-    joinGameOutlet.exit(directionTo: "right", view: view, duration: 1.0)
+    createGameOutlet.exit(directionTo: "left", view: view)
+    joinGameOutlet.exit(directionTo: "right", view: view)
     imageLogo.exit(directionTo: "left", view: view, duration: 0.5)
     
     
