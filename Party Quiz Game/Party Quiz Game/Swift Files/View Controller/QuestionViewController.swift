@@ -454,6 +454,9 @@ class QuestionViewController: UIViewController {
   }
 
   @objc func timeOut() {
+    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopBlowing"), object: nil)
+    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopShaking"), object: nil)
+    
     buzzerTimerStop()
     signalPeerSendBuzz()
     

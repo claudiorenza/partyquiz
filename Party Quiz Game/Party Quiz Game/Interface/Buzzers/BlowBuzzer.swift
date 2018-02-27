@@ -39,7 +39,10 @@ class BlowBuzzer: UIView {
     ]
     let audioSession = AVAudioSession.sharedInstance()
     do {
-      try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
+      try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord, with: AVAudioSessionCategoryOptions.defaultToSpeaker)
+      //try audioSession.overrideOutputAudioPort(AVAudioSessionPortOverride.speaker)
+      //try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord, withOptions:AVAudioSessionCategoryOptions.DefaultToSpeaker, error: nil)
+      //try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
       try audioSession.setActive(true)
       try recorder = AVAudioRecorder(url:url, settings: recordSettings)
     } catch {
