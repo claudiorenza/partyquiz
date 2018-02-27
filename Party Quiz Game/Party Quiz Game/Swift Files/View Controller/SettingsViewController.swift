@@ -18,6 +18,8 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
   @IBOutlet weak var labelOutlet: UILabel!
   @IBOutlet var pickerView: UIView!
   
+  var audioButtonClick = Audio(fileName: "buttonClick", typeName: "m4a")
+  
   var labelPosition = CGPoint()
   var textFieldPosition = CGPoint()
   
@@ -70,6 +72,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
   }
   
   @IBAction func startGamePressed(_ sender: Any) {
+    audioButtonClick.player.play()
     startGameButton.exit(directionTo: "left", view: view, duration: 1.0)
     pickerView.exitView(directionTo: "right", view: view, duration: 1.0)
     
@@ -84,11 +87,11 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
       let question = CoreDataManager.shared.questionDictionary[i]
       print(question["text"]!)
     }
-//    
-//    PeerManager.peerShared.stopBrowser()
-//    PeerManager.peerShared.startAdvertiser()
-//    PeerManager.peerShared.setupBrowserVC()
-//    present(PeerManager.peerShared.browserVC, animated: true, completion: nil)
+
+    PeerManager.peerShared.stopBrowser()
+    PeerManager.peerShared.startAdvertiser()
+    PeerManager.peerShared.setupBrowserVC()
+    present(PeerManager.peerShared.browserVC, animated: true, completion: nil)
   }
   
   func convert(numberOfQuestions: Int) {
