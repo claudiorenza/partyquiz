@@ -16,6 +16,8 @@ class ProgressView: UIView {
   var currentSeconds = 0
   var timer : Timer!
   
+  let hapticFeedbackBuzz = UIImpactFeedbackGenerator(style: .heavy)
+  
   var audioTimerTick = Audio(fileName: "timerTick", typeName: "m4a")
   
   let myOrange = UIColor(red: 1.00, green: 0.67, blue: 0.00, alpha: 1.0)
@@ -43,6 +45,7 @@ class ProgressView: UIView {
       currentSeconds -= 1
       if (currentSeconds < 5) {
         audioTimerTick.player.play()
+        hapticFeedbackBuzz.impactOccurred()
       }
       if totalSeconds >= 20 {
         if (currentSeconds < ((totalSeconds/3) + 1)) {
