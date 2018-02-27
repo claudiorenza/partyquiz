@@ -62,7 +62,7 @@ class QuestionViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    AudioSingleton.shared.audioMusic.player.stop()
+    AudioSingleton.shared.fadeOutMusic()
     view.backgroundColor = backgoundBase
     setAnswersQuestion()
     //NotificationCenter.default.addObserver(self, selector: #selector(self.loadProgressView30), name: NSNotification.Name(rawValue: "loadProgressView30"), object: nil)

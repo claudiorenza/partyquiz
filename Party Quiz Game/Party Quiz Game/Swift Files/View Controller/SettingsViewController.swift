@@ -16,6 +16,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
   @IBOutlet weak var pickedValueTextField: UITextField!
   @IBOutlet weak var startGameButton: UIButton!
   @IBOutlet weak var labelOutlet: UILabel!
+  @IBOutlet var pickerView: UIView!
   
   var labelPosition = CGPoint()
   var textFieldPosition = CGPoint()
@@ -45,6 +46,10 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     self.startGameButton.entering(view: self.view)
     self.startGameButton.center.x = self.view.frame.midX
+    
+    self.pickerView.enteringView(directionFrom: "right", view: self.view, duration: 1.0)
+    self.pickerView.center.x = self.view.frame.midX
+    
   }
   
   
@@ -66,6 +71,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
   
   @IBAction func startGamePressed(_ sender: Any) {
     startGameButton.exit(directionTo: "left", view: view, duration: 1.0)
+    pickerView.exitView(directionTo: "right", view: view, duration: 1.0)
     
     let selectedNumber = Int(pickedValueTextField.text!)
     
@@ -78,11 +84,11 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
       let question = CoreDataManager.shared.questionDictionary[i]
       print(question["text"]!)
     }
-    
-    PeerManager.peerShared.stopBrowser()
-    PeerManager.peerShared.startAdvertiser()
-    PeerManager.peerShared.setupBrowserVC()
-    present(PeerManager.peerShared.browserVC, animated: true, completion: nil)
+//    
+//    PeerManager.peerShared.stopBrowser()
+//    PeerManager.peerShared.startAdvertiser()
+//    PeerManager.peerShared.setupBrowserVC()
+//    present(PeerManager.peerShared.browserVC, animated: true, completion: nil)
   }
   
   func convert(numberOfQuestions: Int) {

@@ -10,6 +10,44 @@ import Foundation
 import UIKit
 
 extension UIView {
+  func enteringView(directionFrom: String, view: UIView, duration: Double) {
+    let animation = CABasicAnimation(keyPath: "position")
+    var cgPointImageInit = self.center
+    let cgPointImageFinal = cgPointImageInit
+    
+    if(directionFrom == "left") {
+      cgPointImageInit.x = -self.frame.width
+    } else if (directionFrom == "right")    {
+      cgPointImageInit.x = view.bounds.width + self.frame.width
+    }
+    
+    animation.fromValue = NSValue(cgPoint: cgPointImageInit)
+    animation.toValue = NSValue(cgPoint: cgPointImageFinal)
+    animation.duration = duration
+    animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+    
+    layer.add(animation, forKey: nil)
+  }
+  
+  func exitView(directionTo: String, view: UIView, duration: Double) {
+    let animation = CABasicAnimation(keyPath: "position")
+    var finalPosition = CGPoint()
+    
+    if(directionTo == "left") {
+      finalPosition.x = view.bounds.width + self.frame.width
+    } else if (directionTo == "right") {
+      finalPosition.x = -self.frame.width
+    }
+    
+    animation.fromValue = self.center
+    animation.toValue = CGPoint(x: finalPosition.x, y: self.center.y)
+    animation.duration = duration
+    animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+    
+    layer.add(animation, forKey: nil)
+  }
+  
+  
   func tutorialDismiss(view: UIView) {
     let animation = CABasicAnimation(keyPath: "opacity")
     animation.fromValue = 1

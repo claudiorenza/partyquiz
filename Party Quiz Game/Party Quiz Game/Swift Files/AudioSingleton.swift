@@ -24,5 +24,11 @@ class AudioSingleton  {
     }
   }
   
+  func fadeOutMusic() {
+    audioMusic.player.setVolume(0, fadeDuration: 1.5)
+    Singleton.shared.delayWithSeconds(2) {
+      self.audioMusic.player.stop()
+    }
+  }
   
 }
