@@ -141,6 +141,8 @@ class QuestionViewController: UIViewController {
   // - MARK: 3: Method that loads the progress view
   /*
   @objc func loadProgressView30() {
+   buzzerTimerReset()
+   buzzerTimerStart()
     if let progressView30 = Bundle.main.loadNibNamed("ProgressView", owner: self, options: nil)?.first as? ProgressView {
       progressControllerView.addSubview(progressView30)
       progressView30.manageProgress(seconds: 30)
@@ -149,8 +151,7 @@ class QuestionViewController: UIViewController {
   }
   */
   @objc func loadProgressView10() {
-    seconds = 0
-    fraction = 0
+    buzzerTimerReset()
     buzzerTimerStart()
     if let progressView10 = Bundle.main.loadNibNamed("ProgressView", owner: self, options: nil)?.first as? ProgressView {
       progressControllerView.addSubview(progressView10)
@@ -505,7 +506,7 @@ class QuestionViewController: UIViewController {
   
   func buzzerTimerStart() {
     if (!timer.isValid) {
-      let aSelector : Selector = #selector(QuestionViewController.buzzerUpdateTime)
+      let aSelector : Selector = #selector(QuestionViewController.buzzerTimerUpdate)
       timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
       startTime = NSDate.timeIntervalSinceReferenceDate
     }
@@ -517,7 +518,7 @@ class QuestionViewController: UIViewController {
     onHoldLabel.text = displayTimeLabel.text
   }
   
-  @objc func buzzerUpdateTime() {
+  @objc func buzzerTimerUpdate() {
     let currentTime = NSDate.timeIntervalSinceReferenceDate
     
     //find the difference between current time and start time
@@ -537,5 +538,11 @@ class QuestionViewController: UIViewController {
     //concatenate minuets, seconds and milliseconds as assign it to the UILabel
     displayTimeLabel.text = "\(strSeconds):\(strFraction)"
   }
+  
+  func buzzerTimerReset() {
+    seconds = 0
+    fraction = 0
+  }
+  
   //END OF TIMER ZONE
 }
