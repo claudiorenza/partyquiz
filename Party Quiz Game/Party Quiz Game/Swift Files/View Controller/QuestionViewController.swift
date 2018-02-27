@@ -34,6 +34,8 @@ class QuestionViewController: UIViewController {
   var audioAnswerRight = Audio(fileName: "answerRight", typeName: "m4a")
   var audioAnswerWrong = Audio(fileName: "answerWrong", typeName: "m4a")
   var audioTimeUp = Audio(fileName: "timeUp", typeName: "m4a")
+  var audioSignalReactive = Audio(fileName: "signalReactive", typeName: "m4a")
+  
   
   var timerReceiveWinnerTimer: Timer! //SIMULATION MULTIPEER: host said to me I was the fastest to buzz
   var timerReceiveLoserTimer: Timer! //SIMULATION MULTIPEER: host said to me I was one of the slowest to buzz
@@ -319,12 +321,12 @@ class QuestionViewController: UIViewController {
     print("TIMER: \(timerStamp)")
     
     //SIMULATION MULTIPEER WINNER: dopo 3 secondi l'host mi dice che sono stato il più VELOCE
-    timerReceiveWinnerTimer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(signalPeerReceiveWinnerTimer), userInfo: nil, repeats: true)
+    //[SINGLE PLAYER] timerReceiveWinnerTimer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(signalPeerReceiveWinnerTimer), userInfo: nil, repeats: true)
     
     //SIMULATION MULTIPEER LOSER: dopo 3 secondi l'host mi dice che sono stato il più LENTO
     //timerReceiveLoserTimer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(signalPeerReceiveLoserTimer), userInfo: nil, repeats: true)
     
-    
+    /*[SINGLE PLAYER]*/signalPeerReceiveWinnerTimer()
   }
   
   // - MARK: 6: Host's method that receive timer score from players to compare
@@ -353,8 +355,8 @@ class QuestionViewController: UIViewController {
   // - MARK: 8: Method that works when I receive signal from host. He said to me that I was the fastest to buzz
   @objc func signalPeerReceiveWinnerTimer() {
     //TODO: ricezione multipeer vincitore miglior timer da host
-    hapticFeedbackWarning.notificationOccurred(.error)
-    timerReceiveWinnerTimer.invalidate()  //SIMULAZIONE MULTIPEER: disattivazione timer Winner
+    //hapticFeedbackWarning.notificationOccurred(.error)
+    //timerReceiveWinnerTimer.invalidate()  //SIMULAZIONE MULTIPEER: disattivazione timer Winner
     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "winnerTimer"), object: nil)
     
     answersAppear()
@@ -407,10 +409,10 @@ class QuestionViewController: UIViewController {
   @objc func buzzerPressed()  {
     hapticFeedbackBuzz.impactOccurred()
     buzzerTimerStop()
-    onHoldView.isHidden = false
-    onHoldLabel.isHidden = false
-    onHoldWaiting.isHidden = false
-    displayTimeLabel.isHidden = true
+//[SINGLE PLAYER]    onHoldView.isHidden = false
+//[SINGLE PLAYER]    onHoldLabel.isHidden = false
+//[SINGLE PLAYER]    onHoldWaiting.isHidden = false
+//[SINGLE PLAYER]    displayTimeLabel.isHidden = true
     signalPeerSendBuzz()  //invio al peer
   }
   
@@ -458,10 +460,10 @@ class QuestionViewController: UIViewController {
     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stopShaking"), object: nil)
     
     buzzerTimerStop()
-    signalPeerSendBuzz()
+    //[SINGLE PLAYER]signalPeerSendBuzz()
     
     //SIMULATION MULTIPEER
-    timerReceiveWinnerTimer.invalidate()  //SIMULATION MULTIPEER
+    //[SINGLE PLAYER]timerReceiveWinnerTimer.invalidate()  //SIMULATION MULTIPEER
     //timerReceiveLoserTimer.invalidate()   //SIMULATION MULTIPEER
     
     audioTimeUp.player.play()

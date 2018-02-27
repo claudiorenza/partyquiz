@@ -79,10 +79,10 @@ class MainPageViewController: UIViewController {
     
 
     
-    PeerManager.peerShared.stopAdvertiser()
-    PeerManager.peerShared.startBrowser()
-    PeerManager.peerShared.setupBrowserVC()
-    present(PeerManager.peerShared.browserVC, animated: true, completion: nil)
+//[SINGLE PLAYER]    PeerManager.peerShared.stopAdvertiser()
+//[SINGLE PLAYER]    PeerManager.peerShared.startBrowser()
+//[SINGLE PLAYER]    PeerManager.peerShared.setupBrowserVC()
+//[SINGLE PLAYER]    present(PeerManager.peerShared.browserVC, animated: true, completion: nil)
   }
   
   @IBAction func pressForInfo(_ sender: UIButton) {

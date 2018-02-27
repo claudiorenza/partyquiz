@@ -19,7 +19,6 @@ class ShakeBuzzer: UIView {
   
   var audioBuzz = Audio(fileName: "buzz", typeName: "m4a")
   var audioButtonClick = Audio(fileName: "buttonClick", typeName: "m4a")
-  var audioSignalReactive = Audio(fileName: "signalReactive", typeName: "m4a")
   
   
   var indicatorViewInterval: CGFloat = 0.0
@@ -57,7 +56,6 @@ class ShakeBuzzer: UIView {
   }
   
   @objc func timerWinner() {
-    audioSignalReactive.player.play()
     viewOutlet.buzzerDown(view: viewOutlet)
     Singleton.shared.delayWithSeconds(0.4, completion: {
       self.removeFromSuperview()

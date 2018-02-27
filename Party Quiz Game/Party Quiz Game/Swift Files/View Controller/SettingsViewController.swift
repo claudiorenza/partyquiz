@@ -96,10 +96,10 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
       print(question["text"]!)
     }
 
-    PeerManager.peerShared.stopBrowser()
-    PeerManager.peerShared.startAdvertiser()
-    PeerManager.peerShared.setupBrowserVC()
-    present(PeerManager.peerShared.browserVC, animated: true, completion: nil)
+//[SINGLE PLAYER]    PeerManager.peerShared.stopBrowser()
+//[SINGLE PLAYER]    PeerManager.peerShared.startAdvertiser()
+//[SINGLE PLAYER]    PeerManager.peerShared.setupBrowserVC()
+//[SINGLE PLAYER]    present(PeerManager.peerShared.browserVC, animated: true, completion: nil)
   }
   
   @IBAction func backButtonAction(_ sender: UIButton) {

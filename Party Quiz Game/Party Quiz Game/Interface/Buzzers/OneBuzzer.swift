@@ -18,7 +18,6 @@ class OneBuzzer: UIView {
   
   var audioBuzz = Audio(fileName: "buzz", typeName: "m4a")
   var audioButtonClick = Audio(fileName: "buttonClick", typeName: "m4a")
-  var audioSignalReactive = Audio(fileName: "signalReactive", typeName: "m4a")
   
   
   func setBuzzer() {
@@ -47,7 +46,6 @@ class OneBuzzer: UIView {
   }
   
   @objc func timerWinner() {
-    audioSignalReactive.player.play()
     view.buzzerDown(view: view)
     Singleton.shared.delayWithSeconds(0.4, completion: {
       self.removeFromSuperview()

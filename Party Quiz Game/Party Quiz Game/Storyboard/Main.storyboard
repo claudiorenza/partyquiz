@@ -344,6 +344,7 @@
                                 </state>
                                 <connections>
                                     <action selector="startGamePressed:" destination="gUp-Bt-fDm" eventType="touchUpInside" id="8ic-Dr-6Kd"/>
+                                    <segue destination="411-n7-06Y" kind="show" animates="NO" id="6RC-dp-VU9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6E-md-6Ef">
@@ -514,7 +515,7 @@
         <image name="Uploadimg_Background" width="568" height="320"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Jkg-6h-m0J"/>
+        <segue reference="6RC-dp-VU9"/>
         <segue reference="ccu-NN-0BM"/>
     </inferredMetricsTieBreakers>
 </document>

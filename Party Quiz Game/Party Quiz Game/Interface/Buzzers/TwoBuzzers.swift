@@ -18,7 +18,6 @@ class TwoBuzzers: UIView {
   var index = 10
   var audioBuzz = Audio(fileName: "buzz", typeName: "m4a")
   var audioButtonClick = Audio(fileName: "buttonClick", typeName: "m4a")
-  var audioSignalReactive = Audio(fileName: "signalReactive", typeName: "m4a")
   
   
   func setBuzzers() {
@@ -75,7 +74,6 @@ class TwoBuzzers: UIView {
   }
   
   @objc func timerWinner() {
-    audioSignalReactive.player.play()
     view.buzzerDown(view: view)
     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "twoBuzzersException"), object: nil)
     Singleton.shared.delayWithSeconds(0.4, completion: {
