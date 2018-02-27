@@ -39,7 +39,8 @@ extension UIButton  {
     
     layer.add(animation, forKey: nil)
   }
-  func fadeInAnswers() {
+  
+  func fadeIn() {
     let animation = CABasicAnimation(keyPath: "opacity")
     animation.fromValue = 0
     animation.toValue = 1
@@ -48,7 +49,7 @@ extension UIButton  {
     layer.add(animation, forKey: nil)
   }
   
-  func fadeOutAnswers() {
+  func fadeOut() {
     let animation = CABasicAnimation(keyPath: "opacity")
     animation.fromValue = 1
     animation.toValue = 0

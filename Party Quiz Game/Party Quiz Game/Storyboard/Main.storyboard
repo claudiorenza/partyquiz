@@ -346,11 +346,24 @@
                                     <action selector="startGamePressed:" destination="gUp-Bt-fDm" eventType="touchUpInside" id="8ic-Dr-6Kd"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6E-md-6Ef">
+                                <rect key="frame" x="20" y="20" width="60" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonAction:" destination="gUp-Bt-fDm" eventType="touchUpInside" id="3Nt-mR-aOB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8gO-gL-L39"/>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="c6E-md-6Ef" id="eYm-lA-MrG"/>
                         <outlet property="labelOutlet" destination="wIU-KP-wda" id="Hgf-zw-gF2"/>
                         <outlet property="pickedValueTextField" destination="woU-Ww-Meo" id="BCV-46-hZM"/>
                         <outlet property="pickerView" destination="e0t-Gw-6NM" id="oFQ-8d-e24"/>

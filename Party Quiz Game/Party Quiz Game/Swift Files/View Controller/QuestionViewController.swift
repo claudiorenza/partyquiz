@@ -415,19 +415,19 @@ class QuestionViewController: UIViewController {
   }
   
   @objc func answersAppear() {
-    self.answerOneButton.fadeInAnswers()
+    self.answerOneButton.fadeIn()
     Singleton.shared.delayWithSeconds(0.2) {
       self.answerOneButton.alpha = 1
     }
-    self.answerTwoButton.fadeInAnswers()
+    self.answerTwoButton.fadeIn()
     Singleton.shared.delayWithSeconds(0.2) {
       self.answerTwoButton.alpha = 1
     }
-    self.answerThreeButton.fadeInAnswers()
+    self.answerThreeButton.fadeIn()
     Singleton.shared.delayWithSeconds(0.2) {
       self.answerThreeButton.alpha = 1
     }
-    self.answerFourButton.fadeInAnswers()
+    self.answerFourButton.fadeIn()
     Singleton.shared.delayWithSeconds(0.2) {
       self.answerFourButton.alpha = 1
     }
@@ -435,19 +435,19 @@ class QuestionViewController: UIViewController {
   
   
   @objc func answersDisappear() {
-    self.answerOneButton.fadeOutAnswers()
+    self.answerOneButton.fadeOut()
     Singleton.shared.delayWithSeconds(0.2) {
       self.answerOneButton.alpha = 0
     }
-    self.answerTwoButton.fadeOutAnswers()
+    self.answerTwoButton.fadeOut()
     Singleton.shared.delayWithSeconds(0.2) {
       self.answerTwoButton.alpha = 0
     }
-    self.answerThreeButton.fadeOutAnswers()
+    self.answerThreeButton.fadeOut()
     Singleton.shared.delayWithSeconds(0.2) {
       self.answerThreeButton.alpha = 0
     }
-    self.answerFourButton.fadeOutAnswers()
+    self.answerFourButton.fadeOut()
     Singleton.shared.delayWithSeconds(0.2) {
       self.answerFourButton.alpha = 0
     }

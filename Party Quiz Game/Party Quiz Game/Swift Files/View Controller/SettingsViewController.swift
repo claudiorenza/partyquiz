@@ -17,6 +17,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
   @IBOutlet weak var startGameButton: UIButton!
   @IBOutlet weak var labelOutlet: UILabel!
   @IBOutlet var pickerView: UIView!
+  @IBOutlet var backButton: UIButton!
   
   var audioButtonClick = Audio(fileName: "buttonClick", typeName: "m4a")
   
@@ -36,6 +37,10 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     startGameButton.layer.borderColor = UIColor.colorGray().cgColor
     startGameButton.layer.borderWidth = 6.0
     
+    backButton.layer.cornerRadius = 12.5
+    backButton.layer.borderColor = UIColor.colorGray().cgColor
+    backButton.layer.borderWidth = 3.0
+    
     pickerData = ["5", "10", "15", "20", "25", "30"]
     createPicker()
   
@@ -45,6 +50,8 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
   
   override func viewWillAppear(_ animated: Bool) {
     startGameButton.center.x = -startGameButton.frame.width
+    
+    self.backButton.fadeIn()
     
     self.startGameButton.entering(view: self.view)
     self.startGameButton.center.x = self.view.frame.midX
@@ -71,10 +78,11 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     pickedValueTextField.inputView = numberOfQuestionsPicker
   }
   
-  @IBAction func startGamePressed(_ sender: Any) {
+  @IBAction func startGamePressed(_ sender: UIButton) {
     audioButtonClick.player.play()
     startGameButton.exit(directionTo: "left", view: view, duration: 1.0)
     pickerView.exitView(directionTo: "right", view: view, duration: 1.0)
+    backButton.fadeOut()
     
     let selectedNumber = Int(pickedValueTextField.text!)
     
@@ -92,6 +100,17 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     PeerManager.peerShared.startAdvertiser()
     PeerManager.peerShared.setupBrowserVC()
     present(PeerManager.peerShared.browserVC, animated: true, completion: nil)
+  }
+  
+  @IBAction func backButtonAction(_ sender: UIButton) {
+    audioButtonClick.player.play()
+    startGameButton.exit(directionTo: "left", view: view, duration: 0.5)
+    pickerView.exitView(directionTo: "right", view: view, duration: 0.5)
+    backButton.fadeOut()
+
+    Singleton.shared.delayWithSeconds(0.2 , completion: {
+      self.dismiss(animated: false, completion: nil)
+    })
   }
   
   func convert(numberOfQuestions: Int) {

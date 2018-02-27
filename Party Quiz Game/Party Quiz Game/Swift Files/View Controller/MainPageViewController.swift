@@ -29,6 +29,7 @@ class MainPageViewController: UIViewController {
   }
   
   override func viewWillAppear(_ animated: Bool) {
+    imageLogo.isHidden = false
     setButton(tempButton: createGameOutlet)
     setButton(tempButton: joinGameOutlet)
     createGameOutlet.center.x = -createGameOutlet.frame.width
