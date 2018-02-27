@@ -24,7 +24,9 @@ class QuestionViewController: UIViewController {
   @IBOutlet var onHoldWaiting: UILabel!
   @IBOutlet var displayTimeLabel: UILabel!
   
-  let hapticFeedback = UIImpactFeedbackGenerator(style: .heavy)
+  let hapticFeedbackBuzz = UIImpactFeedbackGenerator(style: .heavy)
+  let hapticFeedbackWarning = UINotificationFeedbackGenerator()
+  
   
   var players = [String:Int]()        //[idSession:Score] l'host carica tutti i peers in questo dizionario con punteggio 100
   var playersTimers = [String:Int]()  //[idSession:Timer]
@@ -350,7 +352,7 @@ class QuestionViewController: UIViewController {
   // - MARK: 8: Method that works when I receive signal from host. He said to me that I was the fastest to buzz
   @objc func signalPeerReceiveWinnerTimer() {
     //TODO: ricezione multipeer vincitore miglior timer da host
-    hapticFeedback.impactOccurred()
+    hapticFeedbackWarning.notificationOccurred(.error)
     timerReceiveWinnerTimer.invalidate()  //SIMULAZIONE MULTIPEER: disattivazione timer Winner
     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "winnerTimer"), object: nil)
     
@@ -402,6 +404,7 @@ class QuestionViewController: UIViewController {
   }
   
   @objc func buzzerPressed()  {
+    hapticFeedbackBuzz.impactOccurred()
     buzzerTimerStop()
     onHoldView.isHidden = false
     onHoldLabel.isHidden = false
