@@ -18,7 +18,7 @@ class MainPageViewController: UIViewController {
   
   
   var audioButtonClick = Audio(fileName: "buttonClick", typeName: "m4a")
-
+  
   let borderColor = UIColor(red: 96.0/255.0, green: 96.0/255.0, blue: 96.0/255.0, alpha: 1.0).cgColor
   
   override func viewDidLoad() {
@@ -65,17 +65,18 @@ class MainPageViewController: UIViewController {
     Singleton.shared.delayWithSeconds(0.4) {
       self.imageLogo.isHidden = true
     }
-    Singleton.shared.delayWithSeconds(0.8) {
+    Singleton.shared.delayWithSeconds(0.7) {
       self.performSegue(withIdentifier: "fromCreate1", sender: self)
     }}
   
   @IBAction func pressToJoin(_ sender: UIButton) {
     audioButtonClick.player.play()
+    
     createGameOutlet.exit(directionTo: "left", view: view, duration: 1.0)
     joinGameOutlet.exit(directionTo: "right", view: view, duration: 1.0)
     imageLogo.exit(directionTo: "left", view: view, duration: 0.5)
     
-    
+
     
     PeerManager.peerShared.stopAdvertiser()
     PeerManager.peerShared.startBrowser()

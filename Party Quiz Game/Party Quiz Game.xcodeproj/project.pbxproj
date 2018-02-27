@@ -51,8 +51,8 @@
 		CDDC6AA62044562E007C4C2E /* musicIntro.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CDDC6AA52044562E007C4C2E /* musicIntro.m4a */; };
 		CDDC6AA820445638007C4C2E /* buzz.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CDDC6AA720445638007C4C2E /* buzz.m4a */; };
 		CDDC6AAA20445641007C4C2E /* signalReactive.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CDDC6AA920445641007C4C2E /* signalReactive.m4a */; };
-		CDDC6AAC20445649007C4C2E /* swoosh_2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CDDC6AAB20445648007C4C2E /* swoosh_2.m4a */; };
-		CDDC6AAE20445651007C4C2E /* swoosh_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CDDC6AAD20445650007C4C2E /* swoosh_1.m4a */; };
+		CDDC6AAC20445649007C4C2E /* swooshTwo.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CDDC6AAB20445648007C4C2E /* swooshTwo.m4a */; };
+		CDDC6AAE20445651007C4C2E /* swooshOne.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CDDC6AAD20445650007C4C2E /* swooshOne.m4a */; };
 		CDF7E4FE203DC6E9008F7286 /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E4FB203DC6E9008F7286 /* UpdateViewController.swift */; };
 		CDF7E4FF203DC6E9008F7286 /* PreStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E4FC203DC6E9008F7286 /* PreStartViewController.swift */; };
 		CDF7E500203DC6E9008F7286 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E4FD203DC6E9008F7286 /* SettingsViewController.swift */; };
@@ -113,8 +113,8 @@
 		CDDC6AA52044562E007C4C2E /* musicIntro.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = musicIntro.m4a; sourceTree = "<group>"; };
 		CDDC6AA720445638007C4C2E /* buzz.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = buzz.m4a; sourceTree = "<group>"; };
 		CDDC6AA920445641007C4C2E /* signalReactive.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = signalReactive.m4a; sourceTree = "<group>"; };
-		CDDC6AAB20445648007C4C2E /* swoosh_2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = swoosh_2.m4a; sourceTree = "<group>"; };
-		CDDC6AAD20445650007C4C2E /* swoosh_1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = swoosh_1.m4a; sourceTree = "<group>"; };
+		CDDC6AAB20445648007C4C2E /* swooshTwo.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = swooshTwo.m4a; sourceTree = "<group>"; };
+		CDDC6AAD20445650007C4C2E /* swooshOne.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = swooshOne.m4a; sourceTree = "<group>"; };
 		CDF7E4FB203DC6E9008F7286 /* UpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
 		CDF7E4FC203DC6E9008F7286 /* PreStartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreStartViewController.swift; sourceTree = "<group>"; };
 		CDF7E4FD203DC6E9008F7286 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -312,8 +312,8 @@
 				CDDC6AA52044562E007C4C2E /* musicIntro.m4a */,
 				CDDC6AA720445638007C4C2E /* buzz.m4a */,
 				CDDC6AA920445641007C4C2E /* signalReactive.m4a */,
-				CDDC6AAB20445648007C4C2E /* swoosh_2.m4a */,
-				CDDC6AAD20445650007C4C2E /* swoosh_1.m4a */,
+				CDDC6AAD20445650007C4C2E /* swooshOne.m4a */,
+				CDDC6AAB20445648007C4C2E /* swooshTwo.m4a */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -413,7 +413,7 @@
 				253E8E6F203B17A500FE75AD /* LaunchScreen.storyboard in Resources */,
 				CDDC6AA820445638007C4C2E /* buzz.m4a in Resources */,
 				CDDC6A9E20445610007C4C2E /* timerTick.m4a in Resources */,
-				CDDC6AAE20445651007C4C2E /* swoosh_1.m4a in Resources */,
+				CDDC6AAE20445651007C4C2E /* swooshOne.m4a in Resources */,
 				253E8E6C203B17A500FE75AD /* Assets.xcassets in Resources */,
 				CD2E986E203C58BA00CE646E /* ShakeBuzzer.xib in Resources */,
 				CD2E985F203C58AB00CE646E /* BlowBuzzerPopUp.xib in Resources */,
@@ -427,7 +427,7 @@
 				CD8E4F72203B3728008C48AE /* Main.storyboard in Resources */,
 				CDDC6AA02044561A007C4C2E /* answerWrong.m4a in Resources */,
 				CD2E986D203C58BA00CE646E /* OneBuzzer.xib in Resources */,
-				CDDC6AAC20445649007C4C2E /* swoosh_2.m4a in Resources */,
+				CDDC6AAC20445649007C4C2E /* swooshTwo.m4a in Resources */,
 				CD2E985C203C58AB00CE646E /* TwoBuzzersPopUp.xib in Resources */,
 				CD2E9877203C58C400CE646E /* ProgressView.xib in Resources */,
 				CDDC6AA420445627007C4C2E /* buttonClick.m4a in Resources */,
